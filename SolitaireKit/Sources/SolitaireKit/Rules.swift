@@ -1,5 +1,5 @@
 /// Klondike placement rules, independent of any board state.
-public enum Rules {
+public enum Rules: Sendable {
     /// Tableau columns build down in alternating colours; only a king starts an empty column.
     public static func canPlace(_ card: Card, onTableauTop top: Card?) -> Bool {
         guard let top else { return card.rank == .king }

@@ -3,6 +3,7 @@ import SwiftUI
 
 struct GameView: View {
     private static let rowSpacing: CGFloat = 12
+    private static let verticalGapCount: CGFloat = 3
 
     @Bindable var viewModel: GameViewModel
     @State private var pileFrames: [PileID: CGRect] = [:]
@@ -26,7 +27,8 @@ struct GameView: View {
     private var board: some View {
         GeometryReader { geometry in
             let metrics = BoardMetrics(boardWidth: geometry.size.width)
-            let tableauHeight = geometry.size.height - metrics.cardHeight - 2 * Self.rowSpacing
+            // Vertical padding above and below, plus the gap between the two rows.
+            let tableauHeight = geometry.size.height - metrics.cardHeight - Self.verticalGapCount * Self.rowSpacing
             VStack(spacing: Self.rowSpacing) {
                 TopRowView(viewModel: viewModel, metrics: metrics, dropTarget: dropTarget)
                     .zIndex(viewModel.drag?.source.isTableau == false ? 1 : 0)

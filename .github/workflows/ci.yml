@@ -32,7 +32,12 @@ jobs:
         run: |
           brew install xcodegen
           xcodegen generate
-          git diff --exit-code -- Solitaire.xcodeproj
+          changes=$(git status --porcelain --untracked-files=all -- Solitaire.xcodeproj)
+          if [ -n "$changes" ]; then
+            echo "Solitaire.xcodeproj is out of date; run xcodegen generate and commit:"
+            echo "$changes"
+            exit 1
+          fi
       - name: Pick an iPhone simulator
         run: |
           udid=$(xcrun simctl list devices available -j | python3 -c '

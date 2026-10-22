@@ -81,6 +81,8 @@ struct WasteView: View {
 struct FoundationView: View {
     /// The card under the top one stays visible while the top card is dragged away.
     private static let visibleCardCount = 2
+    /// Any ace can start any foundation, so the empty slot shows a generic marker, not a suit.
+    private static let emptySymbol = "a.square"
 
     let viewModel: GameViewModel
     let metrics: BoardMetrics
@@ -92,7 +94,7 @@ struct FoundationView: View {
 
     var body: some View {
         ZStack {
-            EmptySlotView(metrics: metrics, symbol: "suit.spade")
+            EmptySlotView(metrics: metrics, symbol: Self.emptySymbol)
             ForEach(Array(cards.indices.suffix(Self.visibleCardCount)), id: \.self) { index in
                 let isTop = index == cards.count - 1
                 CardView(card: cards[index], metrics: metrics)

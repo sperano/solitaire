@@ -1,6 +1,8 @@
 import XCTest
 
 /// Launches the app with the deterministic in-memory configuration.
+/// XCUIElement APIs are main-actor isolated, so the whole test case is too.
+@MainActor
 class SolitaireUITestCase: XCTestCase {
     static let stockSize = 24
     static let columnCount = 7
@@ -8,11 +10,13 @@ class SolitaireUITestCase: XCTestCase {
     static let cardsPerDrawThree = 3
     static let defaultSeed = "42"
     static let timeout: TimeInterval = 5
+    /// How long to wait before concluding that something did not appear.
+    static let absenceTimeout: TimeInterval = 1
     static let dragHold: TimeInterval = 0.3
 
     var app: XCUIApplication!
 
-    override func setUp() {
+    override func setUp() async throws {
         continueAfterFailure = false
         app = launchApp()
     }

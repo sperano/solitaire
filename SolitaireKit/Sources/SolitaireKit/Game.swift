@@ -51,6 +51,7 @@ public struct Game: Hashable, Codable, Sendable {
     public var canAutoComplete: Bool {
         !isWon && state.stock.isEmpty && state.waste.isEmpty
             && state.tableau.allSatisfy { $0.allSatisfy(\.isFaceUp) }
+            && nextAutoCompleteMove() != nil
     }
 
     /// The next card that can go to a foundation during auto-completion, if any.

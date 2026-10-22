@@ -1,12 +1,17 @@
 import SwiftUI
 
 struct WinOverlayView: View {
+    private static let dimOpacity = 0.45
+    private static let spacing: CGFloat = 16
+    private static let padding: CGFloat = 32
+    private static let cornerRadius: CGFloat = 20
+
     let viewModel: GameViewModel
 
     var body: some View {
         ZStack {
-            Color.black.opacity(0.45).ignoresSafeArea()
-            VStack(spacing: 16) {
+            Color.black.opacity(Self.dimOpacity).ignoresSafeArea()
+            VStack(spacing: Self.spacing) {
                 Text("You won!")
                     .font(.largeTitle.bold())
                 Text("\(viewModel.moveCount) moves in \(viewModel.formattedTime)")
@@ -16,8 +21,8 @@ struct WinOverlayView: View {
                     .buttonStyle(.borderedProminent)
                     .accessibilityIdentifier("winNewGameButton")
             }
-            .padding(32)
-            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .padding(Self.padding)
+            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: Self.cornerRadius, style: .continuous))
         }
         .accessibilityIdentifier("winOverlay")
     }

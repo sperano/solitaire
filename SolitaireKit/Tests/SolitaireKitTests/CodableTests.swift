@@ -54,4 +54,32 @@ final class CodableTests: XCTestCase {
         XCTAssertEqual(try roundTrip(up), up)
         XCTAssertEqual(try roundTrip(up.faceDown()), up.faceDown())
     }
+
+    private func jsonObject(_ state: GameState) throws -> [String: Any] {
+        try XCTUnwrap(JSONSerialization.jsonObject(with: JSONEncoder().encode(state)) as? [String: Any])
+    }
+
+    private func decode(_ object: [String: Any]) throws -> GameState {
+        try JSONDecoder().decode(GameState.self, from: JSONSerialization.data(withJSONObject: object))
+    }
+
+    func testDecodingRejectsMissingColumns() throws {
+        var object = try jsonObject(.deal(seed: seed, drawMode: .one))
+        object["tableau"] = Array((object["tableau"] as? [Any] ?? []).dropLast())
+        XCTAssertThrowsError(try decode(object))
+    }
+
+    func testDecodingRejectsMissingFoundations() throws {
+        var object = try jsonObject(.deal(seed: seed, drawMode: .one))
+        object["foundations"] = Array((object["foundations"] as? [Any] ?? []).dropLast())
+        XCTAssertThrowsError(try decode(object))
+    }
+
+    func testDecodingRejectsDuplicatedCards() throws {
+        var object = try jsonObject(.deal(seed: seed, drawMode: .one))
+        var stock = object["stock"] as? [Any] ?? []
+        stock[0] = stock[1]
+        object["stock"] = stock
+        XCTAssertThrowsError(try decode(object))
+    }
 }

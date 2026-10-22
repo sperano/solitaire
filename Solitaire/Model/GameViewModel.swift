@@ -7,6 +7,7 @@ import SolitaireKit
 final class GameViewModel {
     static let autoCompleteStepNanoseconds: UInt64 = 120_000_000
     private static let timerTickNanoseconds: UInt64 = 1_000_000_000
+    private static let secondsPerMinute = 60
 
     private(set) var game: Game
     private(set) var elapsedSeconds: Int
@@ -36,19 +37,21 @@ final class GameViewModel {
     var state: GameState { game.state }
     var isWon: Bool { game.isWon }
     var canUndo: Bool { game.canUndo && !isAutoCompleting }
+    /// Player input is ignored while auto-complete plays the remaining cards.
+    var acceptsInput: Bool { !isAutoCompleting && !game.isWon }
     var canAutoComplete: Bool { game.canAutoComplete && !isAutoCompleting }
     var moveCount: Int { game.moveCount }
 
     var formattedTime: String {
-        let minutes = elapsedSeconds / 60
-        let seconds = elapsedSeconds % 60
+        let minutes = elapsedSeconds / Self.secondsPerMinute
+        let seconds = elapsedSeconds % Self.secondsPerMinute
         return String(format: "%d:%02d", minutes, seconds)
     }
 
     // MARK: Actions
 
     func newGame() {
-        timerTask?.cancel()
+        stopTimer()
         isAutoCompleting = false
         drag = nil
         game = Game(seed: fixedSeed ?? UInt64.random(in: .min ... .max), drawMode: settings.drawMode)
@@ -57,13 +60,14 @@ final class GameViewModel {
     }
 
     func draw() {
+        guard acceptsInput else { return }
         perform(.draw)
     }
 
     /// Tap on the card at `index` of `pile`: send it (and the run above it) to the best destination.
     func tapCard(in pile: PileID, index: Int) {
         let count = state.pile(pile).count - index
-        guard count >= 1, let destination = game.autoMoveDestination(count: count, from: pile) else { return }
+        guard acceptsInput, count >= 1, let destination = game.autoMoveDestination(count: count, from: pile) else { return }
         perform(.move(from: pile, to: destination, count: count))
     }
 
@@ -71,12 +75,13 @@ final class GameViewModel {
     @discardableResult
     func drop(on destination: PileID?) -> Bool {
         defer { drag = nil }
-        guard let drag, let destination else { return false }
+        guard acceptsInput, let drag, let destination else { return false }
         return perform(.move(from: drag.source, to: destination, count: drag.count))
     }
 
     func undo() {
         guard canUndo, game.undo() else { return }
+        syncTimer()
         persist()
     }
 
@@ -113,8 +118,7 @@ final class GameViewModel {
     /// The clock runs from the first move until the game is won.
     private func syncTimer() {
         if game.isWon || game.moveCount == 0 {
-            timerTask?.cancel()
-            timerTask = nil
+            stopTimer()
             return
         }
         guard timerTask == nil else { return }
@@ -123,7 +127,13 @@ final class GameViewModel {
                 try? await Task.sleep(nanoseconds: Self.timerTickNanoseconds)
                 guard !Task.isCancelled, let self else { return }
                 elapsedSeconds += 1
+                persist()
             }
         }
+    }
+
+    private func stopTimer() {
+        timerTask?.cancel()
+        timerTask = nil
     }
 }

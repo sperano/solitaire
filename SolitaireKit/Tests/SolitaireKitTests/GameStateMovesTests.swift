@@ -23,6 +23,7 @@ final class GameStateMovesTests: XCTestCase {
         var state = blankState(waste: [card(.ace, .hearts)])
         try state.apply(move(.waste, .foundation(2)))
         XCTAssertEqual(state.foundations[2], [card(.ace, .hearts)])
+        XCTAssertTrue(state.waste.isEmpty)
     }
 
     func testWasteToFoundationIllegal() {
@@ -49,16 +50,16 @@ final class GameStateMovesTests: XCTestCase {
         )
         try state.apply(move(.foundation(0), .tableau(0)))
         XCTAssertEqual(state.foundations[0], [card(.ace, .hearts)])
-        XCTAssertEqual(state.tableau[0].last, card(.two, .hearts))
+        XCTAssertEqual(state.tableau[0], [card(.three, .spades), card(.two, .hearts)])
     }
 
     func testMultiCardRunMoves() throws {
         var state = blankState(tableau: [
             [card(.nine, .clubs, up: false), card(.eight, .hearts), card(.seven, .spades)],
-            [card(.nine, .clubs)],
+            [card(.nine, .spades)],
         ])
         try state.apply(move(.tableau(0), .tableau(1), 2))
-        XCTAssertEqual(state.tableau[1], [card(.nine, .clubs), card(.eight, .hearts), card(.seven, .spades)])
+        XCTAssertEqual(state.tableau[1], [card(.nine, .spades), card(.eight, .hearts), card(.seven, .spades)])
         XCTAssertEqual(state.tableau[0], [card(.nine, .clubs)])
     }
 
@@ -169,5 +170,17 @@ final class GameStateMovesTests: XCTestCase {
         try state.apply(move(.waste, .foundation(0)))
         try state.apply(move(.waste, .tableau(0)))
         XCTAssertEqual(state.moveCount, 2)
+    }
+
+    func testOutOfRangeSourceThrows() {
+        let state = GameState.deal(seed: 0, drawMode: .one)
+        assertThrows(.illegalSource, state, move(.tableau(GameState.tableauColumnCount), .tableau(0)))
+        assertThrows(.illegalSource, state, move(.foundation(-1), .tableau(0)))
+    }
+
+    func testOutOfRangeDestinationThrows() {
+        let state = GameState.deal(seed: 0, drawMode: .one)
+        assertThrows(.illegalDestination, state, move(.tableau(0), .foundation(GameState.foundationCount)))
+        assertThrows(.illegalDestination, state, move(.tableau(0), .tableau(-1)))
     }
 }

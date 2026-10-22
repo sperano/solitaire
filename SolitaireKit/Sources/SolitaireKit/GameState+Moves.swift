@@ -32,6 +32,8 @@ extension GameState {
     }
 
     private mutating func move(count: Int, from: PileID, to: PileID) throws {
+        guard contains(from) else { throw MoveError.illegalSource }
+        guard contains(to) else { throw MoveError.illegalDestination }
         guard from != to else { throw MoveError.sameDestination }
         let cards = try cardsToMove(count: count, from: from)
         try validateDestination(to, for: cards)

@@ -19,7 +19,7 @@ public struct SeededRandomNumberGenerator: RandomNumberGenerator, Sendable {
     }
 }
 
-public enum Deck {
+public enum Deck: Sendable {
     public static let cardCount = Suit.allCases.count * Rank.allCases.count
 
     /// The 52 cards in suit then rank order, all face down.
@@ -27,6 +27,11 @@ public enum Deck {
         Suit.allCases.flatMap { suit in
             Rank.allCases.map { Card(suit: suit, rank: $0) }
         }
+    }
+
+    /// True when `cards` holds each of the 52 cards exactly once.
+    public static func isComplete(_ cards: [Card]) -> Bool {
+        cards.count == cardCount && Set(cards.map(\.id)).count == cardCount
     }
 
     /// A full deck shuffled deterministically from `seed`.

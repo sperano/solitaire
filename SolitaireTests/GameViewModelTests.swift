@@ -271,4 +271,22 @@ final class GameViewModelTests: XCTestCase {
         XCTAssertEqual(model.moveCount, Rank.allCases.count)
         XCTAssertFalse(model.isAutoCompleting)
     }
+
+    func testBoardIgnoresInputWhileAutoCompleting() throws {
+        let game = try makeCompletableGame()
+        let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: 0))
+        let column = try XCTUnwrap(PileID.allTableau.first { !model.state.pile($0).isEmpty })
+        let top = model.state.pile(column).count - 1
+
+        model.autoComplete()
+        XCTAssertFalse(model.acceptsInput)
+        model.tapCard(in: column, index: top)
+        model.drag = DragInfo(source: column, count: 1, translation: .zero)
+        XCTAssertFalse(model.drop(on: .foundation(0)))
+        XCTAssertEqual(model.moveCount, 0, "no move may slip in before auto-complete runs")
+    }
+
+    func testAcceptsInputDuringNormalPlay() {
+        XCTAssertTrue(makeModel().acceptsInput)
+    }
 }

@@ -2,11 +2,15 @@ import SwiftUI
 
 /// Moves, time and the game controls.
 struct StatusBarView: View {
+    private static let itemSpacing: CGFloat = 16
+    private static let horizontalPadding: CGFloat = 16
+    private static let verticalPadding: CGFloat = 8
+
     let viewModel: GameViewModel
     @State private var isConfirmingNewGame = false
 
     var body: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: Self.itemSpacing) {
             Label("\(viewModel.moveCount)", systemImage: "arrow.left.arrow.right")
                 .labelStyle(.titleAndIcon)
                 .accessibilityElement(children: .ignore)
@@ -34,8 +38,8 @@ struct StatusBarView: View {
         .font(.title3)
         .monospacedDigit()
         .foregroundStyle(.white)
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
+        .padding(.horizontal, Self.horizontalPadding)
+        .padding(.vertical, Self.verticalPadding)
         .confirmationDialog("Start a new game?", isPresented: $isConfirmingNewGame, titleVisibility: .visible) {
             Button("New Game", role: .destructive) { viewModel.newGame() }
                 .accessibilityIdentifier("confirmNewGameButton")

@@ -51,4 +51,16 @@ final class DeckTests: XCTestCase {
         let values = (0 ..< sampleCount).map { _ in first.next() }
         XCTAssertEqual(Set(values).count, sampleCount)
     }
+
+    func testIsCompleteAcceptsAShuffledDeck() {
+        XCTAssertTrue(Deck.isComplete(Deck.shuffled(seed: 7)))
+    }
+
+    func testIsCompleteRejectsMissingOrDuplicateCards() {
+        var deck = Deck.standard()
+        deck.removeLast()
+        XCTAssertFalse(Deck.isComplete(deck))
+        deck.append(deck[0])
+        XCTAssertFalse(Deck.isComplete(deck), "52 cards with a duplicate is not a deck")
+    }
 }

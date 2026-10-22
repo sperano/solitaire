@@ -3,7 +3,7 @@ import XCTest
 final class UndoAndNewGameUITests: SolitaireUITestCase {
     func testNewGameWithoutMovesAsksNoConfirmation() {
         tap("newGameButton")
-        XCTAssertFalse(element("confirmNewGameButton").waitForExistence(timeout: 1))
+        XCTAssertFalse(element("confirmNewGameButton").waitForExistence(timeout: Self.absenceTimeout))
         expectCards(Self.stockSize, in: "stock")
         XCTAssertEqual(moves, "0")
     }

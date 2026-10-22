@@ -20,7 +20,7 @@ public struct GameState: Hashable, Codable, Sendable {
 
     /// Deal a new game from an explicit deck; cards are dealt from the end of the array.
     public static func deal(deck: [Card], seed: UInt64 = 0, drawMode: DrawMode) -> GameState {
-        precondition(deck.count == Deck.cardCount, "a Klondike deal needs a full deck")
+        precondition(Deck.isComplete(deck), "a Klondike deal needs each of the 52 cards exactly once")
         var remaining = deck
         var tableau = Array(repeating: [Card](), count: tableauColumnCount)
         for row in 0 ..< tableauColumnCount {
@@ -60,6 +60,21 @@ public struct GameState: Hashable, Codable, Sendable {
     /// Index of the first face-up card in a tableau column, or nil when the column is empty.
     public func faceUpStart(inTableau column: Int) -> Int? {
         tableau[column].firstIndex(where: \.isFaceUp)
+    }
+
+    /// The index exists for this board: a valid foundation or tableau column, or the stock or waste.
+    public func contains(_ id: PileID) -> Bool {
+        switch id {
+        case .stock, .waste: true
+        case let .foundation(index): foundations.indices.contains(index)
+        case let .tableau(index): tableau.indices.contains(index)
+        }
+    }
+
+    /// Every card appears exactly once and the board has the right number of piles.
+    public var isStructurallyValid: Bool {
+        guard foundations.count == Self.foundationCount, tableau.count == Self.tableauColumnCount else { return false }
+        return Deck.isComplete(stock + waste + foundations.flatMap { $0 } + tableau.flatMap { $0 })
     }
 
     mutating func setPile(_ id: PileID, to cards: [Card]) {

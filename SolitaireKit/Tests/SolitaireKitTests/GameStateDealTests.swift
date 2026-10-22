@@ -83,4 +83,20 @@ final class GameStateDealTests: XCTestCase {
         XCTAssertEqual(dealt.stock.last?.id, top[0].id)
         XCTAssertEqual(dealt.stock[stockCardCount - 2].id, top[1].id)
     }
+
+    func testDealtStateIsStructurallyValid() {
+        XCTAssertTrue(GameState.deal(seed: 3, drawMode: .three).isStructurallyValid)
+    }
+
+    func testStateWithDuplicateOrMissingCardsIsInvalid() {
+        XCTAssertFalse(blankState(tableau: [[card(.ace, .spades)]]).isStructurallyValid)
+    }
+
+    func testContainsOnlyExistingPiles() {
+        let state = GameState.deal(seed: 0, drawMode: .one)
+        XCTAssertTrue(state.contains(.stock))
+        XCTAssertTrue(state.contains(.tableau(GameState.tableauColumnCount - 1)))
+        XCTAssertFalse(state.contains(.tableau(GameState.tableauColumnCount)))
+        XCTAssertFalse(state.contains(.foundation(GameState.foundationCount)))
+    }
 }

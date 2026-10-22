@@ -9,11 +9,19 @@ final class SettingsUITests: SolitaireUITestCase {
     }
 
     func testChoosingDrawThreeAppliesToTheNextGame() {
+        tapStock()
+        expectCards(1, in: "waste")
+
         let picker = openSettings()
         picker.buttons["Draw 3"].tap()
         tap("settingsDoneButton")
 
+        // The game in progress keeps drawing one card at a time.
+        tapStock()
+        expectCards(2, in: "waste")
+
         tap("newGameButton")
+        tap("confirmNewGameButton")
         tapStock()
         expectCards(Self.cardsPerDrawThree, in: "waste")
         expectCards(Self.stockSize - Self.cardsPerDrawThree, in: "stock")
