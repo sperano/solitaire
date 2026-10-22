@@ -1,8 +1,10 @@
 import SwiftUI
 
-/// Moves, time and the game controls.
+/// Moves, time, score and the game controls.
 struct StatusBarView: View {
-    private static let itemSpacing: CGFloat = 16
+    private static let itemSpacing: CGFloat = 12
+    /// Moves, time and score shrink this far rather than wrap on narrow phones.
+    private static let minimumStatScale: CGFloat = 0.7
     private static let horizontalPadding: CGFloat = 16
     private static let verticalPadding: CGFloat = 8
 
@@ -11,28 +13,9 @@ struct StatusBarView: View {
 
     var body: some View {
         HStack(spacing: Self.itemSpacing) {
-            Label("\(viewModel.moveCount)", systemImage: "arrow.left.arrow.right")
-                .labelStyle(.titleAndIcon)
-                .accessibilityElement(children: .ignore)
-                .accessibilityIdentifier("movesLabel")
-                .accessibilityLabel("\(viewModel.moveCount) moves")
-            Label(viewModel.formattedTime, systemImage: "clock")
-                .labelStyle(.titleAndIcon)
-                .accessibilityElement(children: .ignore)
-                .accessibilityIdentifier("timeLabel")
-                .accessibilityLabel("Time \(viewModel.formattedTime)")
-            Spacer()
-            if viewModel.canAutoComplete {
-                Button("Finish", systemImage: "checkmark.circle") { viewModel.autoComplete() }
-                    .accessibilityIdentifier("autoCompleteButton")
-            }
-            Button("Undo", systemImage: "arrow.uturn.backward") { viewModel.undo() }
-                .disabled(!viewModel.canUndo)
-                .accessibilityIdentifier("undoButton")
-            Button("New Game", systemImage: "plus.circle") { requestNewGame() }
-                .accessibilityIdentifier("newGameButton")
-            Button("Settings", systemImage: "gearshape") { viewModel.isShowingSettings = true }
-                .accessibilityIdentifier("settingsButton")
+            stats
+            Spacer(minLength: 0)
+            controls
         }
         .labelStyle(.iconOnly)
         .font(.title3)
@@ -46,6 +29,46 @@ struct StatusBarView: View {
         } message: {
             Text("The current game will be lost.")
         }
+    }
+
+    private var stats: some View {
+        HStack(spacing: Self.itemSpacing) {
+            stat(
+                "\(viewModel.moveCount)", icon: "arrow.left.arrow.right",
+                identifier: "movesLabel", spoken: "\(viewModel.moveCount) moves"
+            )
+            stat(viewModel.formattedTime, icon: "clock", identifier: "timeLabel", spoken: "Time \(viewModel.formattedTime)")
+            if let score = viewModel.formattedScore {
+                stat(
+                    score, icon: viewModel.scoringMode == .vegas ? "dollarsign.circle" : "star",
+                    identifier: "scoreLabel", spoken: "Score \(score)"
+                )
+            }
+        }
+        .lineLimit(1)
+        .minimumScaleFactor(Self.minimumStatScale)
+    }
+
+    private func stat(_ title: String, icon: String, identifier: String, spoken: String) -> some View {
+        Label(title, systemImage: icon)
+            .labelStyle(.titleAndIcon)
+            .accessibilityElement(children: .ignore)
+            .accessibilityIdentifier(identifier)
+            .accessibilityLabel(spoken)
+    }
+
+    @ViewBuilder private var controls: some View {
+        if viewModel.canAutoComplete {
+            Button("Finish", systemImage: "checkmark.circle") { viewModel.autoComplete() }
+                .accessibilityIdentifier("autoCompleteButton")
+        }
+        Button("Undo", systemImage: "arrow.uturn.backward") { viewModel.undo() }
+            .disabled(!viewModel.canUndo)
+            .accessibilityIdentifier("undoButton")
+        Button("New Game", systemImage: "plus.circle") { requestNewGame() }
+            .accessibilityIdentifier("newGameButton")
+        Button("Settings", systemImage: "gearshape") { viewModel.isShowingSettings = true }
+            .accessibilityIdentifier("settingsButton")
     }
 
     private func requestNewGame() {

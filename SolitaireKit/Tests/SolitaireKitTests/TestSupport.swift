@@ -37,12 +37,15 @@ func orderedDeck(tableau: [TableauSlot: Card] = [:], stockTop: [Card] = []) -> [
 /// A state with exactly the piles given (all others empty). Cards are taken as written.
 func blankState(
     drawMode: DrawMode = .one,
+    scoringMode: ScoringMode = .none,
+    score: Int? = nil,
     tableau: [[Card]] = [],
     stock: [Card] = [],
     waste: [Card] = [],
     foundations: [[Card]] = []
 ) -> GameState {
-    var state = GameState.deal(seed: 0, drawMode: drawMode)
+    var state = GameState.deal(seed: 0, drawMode: drawMode, scoringMode: scoringMode)
+    if let score { state.score = score }
     state.stock = stock
     state.waste = waste
     state.foundations = foundations + Array(repeating: [], count: GameState.foundationCount - foundations.count)

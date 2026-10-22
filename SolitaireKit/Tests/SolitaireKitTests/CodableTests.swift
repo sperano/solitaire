@@ -3,6 +3,7 @@ import XCTest
 
 final class CodableTests: XCTestCase {
     private let seed: UInt64 = 99
+    private static let balanceAboveBuyIn = 20
 
     private func roundTrip<T: Codable & Equatable>(_ value: T) throws -> T {
         let data = try JSONEncoder().encode(value)
@@ -47,6 +48,7 @@ final class CodableTests: XCTestCase {
         let piles: [PileID] = [.stock, .waste, .foundation(2), .tableau(6)]
         for pile in piles { XCTAssertEqual(try roundTrip(pile), pile) }
         for mode in DrawMode.allCases { XCTAssertEqual(try roundTrip(mode), mode) }
+        for mode in ScoringMode.allCases { XCTAssertEqual(try roundTrip(mode), mode) }
     }
 
     func testCardFaceStateRoundTrips() throws {
@@ -80,6 +82,52 @@ final class CodableTests: XCTestCase {
         var stock = object["stock"] as? [Any] ?? []
         stock[0] = stock[1]
         object["stock"] = stock
+        XCTAssertThrowsError(try decode(object))
+    }
+
+    func testScoredStateRoundTripsWithScoreAndRecycles() throws {
+        let balance = Scoring.vegasBuyIn + Self.balanceAboveBuyIn
+        var state = GameState.deal(seed: seed, drawMode: .three, scoringMode: .vegas, carriedBalance: balance)
+        while !state.stock.isEmpty { try state.apply(.draw) }
+        try state.apply(.draw)
+        let decoded = try roundTrip(state)
+        XCTAssertEqual(decoded, state)
+        XCTAssertEqual(decoded.scoringMode, .vegas)
+        XCTAssertEqual(decoded.score, Self.balanceAboveBuyIn)
+        XCTAssertEqual(decoded.recycleCount, 1)
+    }
+
+    func testDecodingRejectsASaveWithOnlySomeScoringFields() throws {
+        let state = GameState.deal(seed: seed, drawMode: .three, scoringMode: .vegas)
+        for key in ["scoringMode", "score", "recycleCount"] {
+            var object = try jsonObject(state)
+            object.removeValue(forKey: key)
+            XCTAssertThrowsError(try decode(object), "missing only \(key)")
+        }
+    }
+
+    func testDecodingRejectsAScoreOutsideTheScoreRange() throws {
+        for score in [Int.max, Int.min] {
+            var object = try jsonObject(.deal(seed: seed, drawMode: .one, scoringMode: .vegas))
+            object["score"] = score
+            XCTAssertThrowsError(try decode(object), "\(score)")
+        }
+    }
+
+    func testSaveFromBeforeScoringLoadsAsAnUnscoredGame() throws {
+        var object = try jsonObject(.deal(seed: seed, drawMode: .one, scoringMode: .standard))
+        for key in ["scoringMode", "score", "recycleCount"] {
+            XCTAssertNotNil(object.removeValue(forKey: key), key)
+        }
+        let decoded = try decode(object)
+        XCTAssertEqual(decoded.scoringMode, ScoringMode.none)
+        XCTAssertEqual(decoded.score, 0)
+        XCTAssertEqual(decoded.recycleCount, 0)
+    }
+
+    func testDecodingRejectsAnImpossibleScore() throws {
+        var object = try jsonObject(.deal(seed: seed, drawMode: .one, scoringMode: .standard))
+        object["score"] = -1
         XCTAssertThrowsError(try decode(object))
     }
 }

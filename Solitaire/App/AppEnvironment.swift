@@ -7,6 +7,7 @@ struct AppEnvironment {
     static let uiTestingFlag = "--ui-testing"
     static let seedArgument = "-seed"
     static let drawModeArgument = "-drawMode"
+    static let scoringModeArgument = "-scoringMode"
     private static let uiTestingDefaultsSuite = "quebec.spe.Solitaire.ui-testing"
     private static let savedGameFileName = "current-game.json"
 
@@ -32,6 +33,10 @@ struct AppEnvironment {
         let settings = GameSettings(defaults: defaults)
         if let raw = value(after: drawModeArgument, in: arguments), let mode = Int(raw).flatMap(DrawMode.init(rawValue:)) {
             settings.drawMode = mode
+        }
+        if let raw = value(after: scoringModeArgument, in: arguments),
+           let mode = Int(raw).flatMap(ScoringMode.init(rawValue:)) {
+            settings.scoringMode = mode
         }
         let seed = value(after: seedArgument, in: arguments).flatMap { UInt64($0) }
         return AppEnvironment(store: InMemoryGameStore(), settings: settings, fixedSeed: seed)

@@ -10,6 +10,9 @@ interrupts the game with something.
 - Tap a card to send it to the best legal spot, or drag it where you want
 - Unlimited undo
 - Move counter and timer
+- Scoring: none, standard (Windows-style points with a time bonus) or Vegas
+  ($52 per game, $5 per card on a foundation, limited passes through the
+  stock, optional balance carried between games)
 - The current game resumes when you reopen the app
 - "Finish" button once every card is face up
 
@@ -61,8 +64,9 @@ xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
 ```
 
 For deterministic runs, launch with `--ui-testing` (in-memory storage, fresh
-settings). Together with it, `-seed <number>` fixes the deal and
-`-drawMode 1|3` sets the draw mode; a normal launch ignores both.
+settings). Together with it, `-seed <number>` fixes the deal,
+`-drawMode 1|3` sets the draw mode and `-scoringMode 0|1|2` sets the scoring
+(none, standard, Vegas); a normal launch ignores all three.
 
 ## Licence
 

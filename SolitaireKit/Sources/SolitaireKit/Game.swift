@@ -3,8 +3,8 @@ public struct Game: Hashable, Codable, Sendable {
     public private(set) var state: GameState
     public private(set) var history: [GameState]
 
-    public init(seed: UInt64, drawMode: DrawMode) {
-        self.init(state: .deal(seed: seed, drawMode: drawMode))
+    public init(seed: UInt64, drawMode: DrawMode, scoringMode: ScoringMode = .none, carriedBalance: Int = 0) {
+        self.init(state: .deal(seed: seed, drawMode: drawMode, scoringMode: scoringMode, carriedBalance: carriedBalance))
     }
 
     public init(state: GameState) {
@@ -16,6 +16,10 @@ public struct Game: Hashable, Codable, Sendable {
     public var canUndo: Bool { !history.isEmpty }
     public var moveCount: Int { state.moveCount }
     public var drawMode: DrawMode { state.drawMode }
+    public var scoringMode: ScoringMode { state.scoringMode }
+    public var score: Int { state.score }
+    /// Tapping the stock does something: it draws, or it recycles a waste the scoring mode still allows.
+    public var canDraw: Bool { state.canApply(.draw) }
 
     public mutating func perform(_ move: Move) throws {
         var next = state

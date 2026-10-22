@@ -99,4 +99,54 @@ final class GameStateValidationTests: XCTestCase {
         state.tableau[0].insert(moved, at: 0)
         XCTAssertFalse(state.isValidPosition, "column 0 is dealt no face-down card")
     }
+
+    // MARK: Scoring
+
+    func testScoredDealsAreValidPositions() {
+        for mode in ScoringMode.allCases {
+            XCTAssertTrue(GameState.deal(seed: seed, drawMode: .one, scoringMode: mode).isValidPosition, mode.title)
+        }
+    }
+
+    func testUnscoredGameWithAScoreIsInvalid() {
+        var state = dealt
+        state.score = Scoring.toFoundationPoints
+        XCTAssertFalse(state.isValidPosition)
+    }
+
+    func testNegativeStandardScoreIsInvalid() {
+        var state = GameState.deal(seed: seed, drawMode: .one, scoringMode: .standard)
+        state.score = -1
+        XCTAssertFalse(state.isValidPosition)
+    }
+
+    func testNegativeVegasBalanceIsValid() {
+        let state = GameState.deal(seed: seed, drawMode: .one, scoringMode: .vegas, carriedBalance: -Scoring.vegasBuyIn)
+        XCTAssertTrue(state.isValidPosition)
+    }
+
+    func testRecycleCountOutsideTheAllowedRangeIsInvalid() throws {
+        var state = try played()
+        state.recycleCount = -1
+        XCTAssertFalse(state.isValidPosition)
+        state.recycleCount = state.moveCount + 1
+        XCTAssertFalse(state.isValidPosition, "every recycle is a move")
+    }
+
+    func testVegasRecycleCountOverTheLimitIsInvalid() throws {
+        var state = GameState.deal(seed: seed, drawMode: .one, scoringMode: .vegas)
+        try state.apply(.draw)
+        state.recycleCount = 1
+        XCTAssertFalse(state.isValidPosition)
+    }
+
+    func testVegasDrawThreeAllowsTwoRecyclesAndNoMore() {
+        var state = GameState.deal(seed: seed, drawMode: .three, scoringMode: .vegas)
+        let limit = Scoring.vegasDrawThreePasses - 1
+        state.moveCount = limit + 1
+        state.recycleCount = limit
+        XCTAssertTrue(state.isValidPosition)
+        state.recycleCount = limit + 1
+        XCTAssertFalse(state.isValidPosition)
+    }
 }

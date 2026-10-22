@@ -12,6 +12,8 @@ final class GameViewModelTests: XCTestCase {
     private static let remainingRanks = Rank.allCases.filter { $0 >= firstRemainingRank }.reversed()
     /// Seven to king of hearts and spades.
     private static let remainingCardCount = 2 * remainingRanks.count
+    private static let carriedBalance = 100
+    private static let longGameSeconds = 100
 
     private var suiteName = ""
     private var defaults: UserDefaults!
@@ -53,7 +55,7 @@ final class GameViewModelTests: XCTestCase {
 
     /// Clubs and diamonds are complete, hearts and spades are up to the six, and the
     /// seven to king of both sit face up in two alternating runs, so the game can finish itself.
-    private func makeCompletableGame() throws -> Game {
+    private func makeCompletableGame(scoringMode: ScoringMode = .none) throws -> Game {
         var json = try XCTUnwrap(
             JSONSerialization.jsonObject(with: JSONEncoder().encode(GameState.deal(seed: 1, drawMode: .one))) as? [String: Any]
         )
@@ -72,6 +74,7 @@ final class GameViewModelTests: XCTestCase {
         let partial = Rank.allCases.filter { $0 < Self.firstRemainingRank }
         json["stock"] = []
         json["waste"] = []
+        json["scoringMode"] = scoringMode.rawValue
         json["foundations"] = try [
             encode(faceUp(.clubs, Rank.allCases)), encode(faceUp(.diamonds, Rank.allCases)),
             encode(faceUp(.hearts, partial)), encode(faceUp(.spades, partial)),
@@ -301,5 +304,95 @@ final class GameViewModelTests: XCTestCase {
 
     func testAcceptsInputDuringNormalPlay() {
         XCTAssertTrue(makeModel().acceptsInput)
+    }
+
+    // MARK: Scoring
+
+    func testNewGameUsesSettingsScoringMode() {
+        XCTAssertEqual(makeModel().scoringMode, GameSettings.defaultScoringMode)
+        settings.scoringMode = .vegas
+        let model = makeModel()
+        XCTAssertEqual(model.scoringMode, .vegas)
+        XCTAssertEqual(model.score, -Scoring.vegasBuyIn)
+    }
+
+    func testScoringModeChangeAppliesToTheNextGame() {
+        let model = makeModel()
+        settings.scoringMode = .none
+        XCTAssertEqual(model.scoringMode, .standard)
+        model.newGame()
+        XCTAssertEqual(model.scoringMode, ScoringMode.none)
+    }
+
+    func testVegasBalanceCarriesIntoTheNextGameWhenEnabled() {
+        settings.scoringMode = .vegas
+        settings.carryVegasBalance = true
+        let model = makeModel()
+
+        model.newGame()
+
+        XCTAssertEqual(settings.vegasBalance, -Scoring.vegasBuyIn, "the abandoned game's balance is kept")
+        XCTAssertEqual(model.score, -2 * Scoring.vegasBuyIn)
+    }
+
+    func testEveryVegasGameStartsFromZeroWithoutCarry() {
+        settings.scoringMode = .vegas
+        let model = makeModel()
+        model.newGame()
+        XCTAssertEqual(model.score, -Scoring.vegasBuyIn)
+        XCTAssertEqual(settings.vegasBalance, 0)
+    }
+
+    func testFinishingANonVegasGameLeavesTheCarriedBalanceAlone() {
+        settings.carryVegasBalance = true
+        settings.vegasBalance = Self.carriedBalance
+        let model = makeModel()
+        settings.scoringMode = .vegas
+
+        model.newGame()
+
+        XCTAssertEqual(settings.vegasBalance, Self.carriedBalance)
+        XCTAssertEqual(model.score, Self.carriedBalance - Scoring.vegasBuyIn)
+    }
+
+    func testFormattedScoreByMode() {
+        settings.scoringMode = .none
+        XCTAssertNil(makeModel().formattedScore)
+        settings.scoringMode = .standard
+        XCTAssertEqual(makeModel().formattedScore, "0")
+        settings.scoringMode = .vegas
+        XCTAssertEqual(makeModel().formattedScore, "-$\(Scoring.vegasBuyIn)")
+        settings.carryVegasBalance = true
+        settings.vegasBalance = Self.carriedBalance
+        XCTAssertEqual(makeModel().formattedScore, "$\(Self.carriedBalance - Scoring.vegasBuyIn)")
+    }
+
+    func testWonStandardGameAddsTheTimeBonus() throws {
+        var game = try makeCompletableGame(scoringMode: .standard)
+        while let move = game.nextAutoCompleteMove() { try game.perform(move) }
+        XCTAssertTrue(game.isWon)
+        let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: Self.longGameSeconds))
+
+        let bonus = Scoring.timeBonusNumerator / Self.longGameSeconds
+        XCTAssertEqual(model.timeBonus, bonus)
+        XCTAssertEqual(model.score, game.score + bonus)
+    }
+
+    func testNoTimeBonusBeforeTheWin() throws {
+        let game = try makeCompletableGame(scoringMode: .standard)
+        let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: Self.longGameSeconds))
+        XCTAssertEqual(model.timeBonus, 0)
+        XCTAssertEqual(model.score, game.score)
+    }
+
+    func testStockStopsOnceVegasPassesAreUsedUp() {
+        settings.scoringMode = .vegas
+        let model = makeModel()
+        while !model.state.stock.isEmpty { model.draw() }
+        let drawn = model.moveCount
+
+        XCTAssertFalse(model.canDraw)
+        model.draw()
+        XCTAssertEqual(model.moveCount, drawn)
     }
 }
