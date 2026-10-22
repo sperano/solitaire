@@ -51,6 +51,8 @@ enum Theme {
     static let cardBackInner = Color.white.opacity(0.7)
     static let red = Color(red: 0.80, green: 0.10, blue: 0.12)
     static let black = Color.black
+    /// Outline of the cards and empty slots a hint points at.
+    static let hint = Color.yellow
 }
 
 /// Frames of the piles in board coordinates, used to find the drop target of a drag.

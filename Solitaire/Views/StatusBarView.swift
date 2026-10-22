@@ -58,9 +58,15 @@ struct StatusBarView: View {
     }
 
     @ViewBuilder private var controls: some View {
-        if viewModel.canAutoComplete {
+        // Finish stays, disabled, while it runs, so the toolbar doesn't swap buttons mid-animation.
+        if viewModel.canAutoComplete || viewModel.isAutoCompleting {
             Button("Finish", systemImage: "checkmark.circle") { viewModel.autoComplete() }
+                .disabled(viewModel.isAutoCompleting)
                 .accessibilityIdentifier("autoCompleteButton")
+        } else {
+            Button("Hint", systemImage: "lightbulb") { viewModel.showHint() }
+                .disabled(!viewModel.canHint)
+                .accessibilityIdentifier("hintButton")
         }
         Button("Undo", systemImage: "arrow.uturn.backward") { viewModel.undo() }
             .disabled(!viewModel.canUndo)

@@ -14,9 +14,9 @@ struct TableauColumnView: View {
     var body: some View {
         let offsets = metrics.columnOffsets(for: cards, availableHeight: availableHeight)
         ZStack(alignment: .top) {
-            EmptySlotView(metrics: metrics)
+            EmptySlotView(metrics: metrics, isHinted: viewModel.isHintedEmptySlot(pile))
             ForEach(Array(cards.enumerated()), id: \.element.id) { cardIndex, card in
-                CardView(card: card, metrics: metrics)
+                CardView(card: card, metrics: metrics, isHinted: viewModel.isHinted(pile, index: cardIndex))
                     .offset(y: offsets[cardIndex])
                     .dragOffset(viewModel.drag, pile: pile, index: cardIndex, pileCount: cards.count)
                     .zIndex(Double(cardIndex))

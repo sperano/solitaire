@@ -152,7 +152,7 @@ final class GameViewModelStatisticsTests: XCTestCase {
     }
 
     func testAutoCompleteWinIsRecorded() async throws {
-        let model = makeModel(resuming: SavedGame(game: try Game.completable(), elapsedSeconds: Self.winningSeconds))
+        let model = makeModel(resuming: SavedGame(game: Game.completable(), elapsedSeconds: Self.winningSeconds))
         model.autoComplete()
         let deadline = ContinuousClock.now + .seconds(10)
         while model.isAutoCompleting, ContinuousClock.now < deadline {

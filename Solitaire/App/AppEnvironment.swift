@@ -49,8 +49,12 @@ struct AppEnvironment {
             settings.scoringMode = mode
         }
         let seed = value(after: seedArgument, in: arguments).flatMap { UInt64($0) }
+        let position = value(after: FixturePosition.argument, in: arguments).flatMap(FixturePosition.init(rawValue:))
+        let saved = position.map {
+            SavedGame(game: Game(state: $0.state(drawMode: settings.drawMode, scoringMode: settings.scoringMode)), elapsedSeconds: 0)
+        }
         return AppEnvironment(
-            store: InMemoryGameStore(),
+            store: InMemoryGameStore(saved: saved),
             statistics: StatisticsModel(store: InMemoryStatisticsStore()),
             settings: settings,
             fixedSeed: seed

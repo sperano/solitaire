@@ -9,6 +9,7 @@ final class GameSettings {
     static let scoringModeKey = "scoringMode"
     static let carryVegasBalanceKey = "carryVegasBalance"
     static let vegasBalanceKey = "vegasBalance"
+    static let autoFinishKey = "autoFinish"
     static let defaultDrawMode = DrawMode.one
     static let defaultScoringMode = ScoringMode.standard
 
@@ -35,6 +36,11 @@ final class GameSettings {
         didSet { defaults.set(vegasBalance, forKey: Self.vegasBalanceKey) }
     }
 
+    /// Finish the game without asking once every remaining card can go to the foundations.
+    var autoFinish: Bool {
+        didSet { defaults.set(autoFinish, forKey: Self.autoFinishKey) }
+    }
+
     init(defaults: UserDefaults) {
         self.defaults = defaults
         drawMode = DrawMode(rawValue: defaults.integer(forKey: Self.drawModeKey)) ?? Self.defaultDrawMode
@@ -43,6 +49,7 @@ final class GameSettings {
         scoringMode = storedScoring ?? Self.defaultScoringMode
         carryVegasBalance = defaults.bool(forKey: Self.carryVegasBalanceKey)
         vegasBalance = defaults.integer(forKey: Self.vegasBalanceKey)
+        autoFinish = defaults.bool(forKey: Self.autoFinishKey)
     }
 
     /// The balance a new Vegas game starts from before the buy-in.

@@ -58,6 +58,12 @@ public struct Game: Hashable, Codable, Sendable {
             && nextAutoCompleteMove() != nil
     }
 
+    /// See `GameState.availableMoves()`.
+    public func availableMoves() -> [Move] { state.availableMoves() }
+
+    /// See `GameState.suggestedMove()`.
+    public func suggestedMove() -> Move? { state.suggestedMove() }
+
     /// The next card that can go to a foundation during auto-completion, if any.
     public func nextAutoCompleteMove() -> Move? {
         for column in PileID.allTableau where !state.pile(column).isEmpty {
