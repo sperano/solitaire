@@ -60,9 +60,9 @@ xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
   -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing:SolitaireUITests
 ```
 
-The app accepts launch arguments for deterministic runs: `--ui-testing`
-(in-memory storage, fresh settings), `-seed <number>` (fixed deal) and
-`-drawMode 1|3`.
+For deterministic runs, launch with `--ui-testing` (in-memory storage, fresh
+settings). Together with it, `-seed <number>` fixes the deal and
+`-drawMode 1|3` sets the draw mode; a normal launch ignores both.
 
 ## Licence
 

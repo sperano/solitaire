@@ -71,12 +71,6 @@ public struct GameState: Hashable, Codable, Sendable {
         }
     }
 
-    /// Every card appears exactly once and the board has the right number of piles.
-    public var isStructurallyValid: Bool {
-        guard foundations.count == Self.foundationCount, tableau.count == Self.tableauColumnCount else { return false }
-        return Deck.isComplete(stock + waste + foundations.flatMap { $0 } + tableau.flatMap { $0 })
-    }
-
     mutating func setPile(_ id: PileID, to cards: [Card]) {
         switch id {
         case .stock: stock = cards

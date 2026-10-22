@@ -8,7 +8,10 @@ final class GameViewModelTests: XCTestCase {
     private static let savedSeed: UInt64 = 5
     private static let savedElapsed = 65
     private static let seedSearchRange: ClosedRange<UInt64> = 0 ... 200
-    private static let completableFoundationCount = 3
+    private static let firstRemainingRank = Rank.seven
+    private static let remainingRanks = Rank.allCases.filter { $0 >= firstRemainingRank }.reversed()
+    /// Seven to king of hearts and spades.
+    private static let remainingCardCount = 2 * remainingRanks.count
 
     private var suiteName = ""
     private var defaults: UserDefaults!
@@ -48,7 +51,8 @@ final class GameViewModelTests: XCTestCase {
         throw XCTSkip("no suitable seed found")
     }
 
-    /// A position where only the spades remain, in one face-up column, so the game can finish itself.
+    /// Clubs and diamonds are complete, hearts and spades are up to the six, and the
+    /// seven to king of both sit face up in two alternating runs, so the game can finish itself.
     private func makeCompletableGame() throws -> Game {
         var json = try XCTUnwrap(
             JSONSerialization.jsonObject(with: JSONEncoder().encode(GameState.deal(seed: 1, drawMode: .one))) as? [String: Any]
@@ -56,15 +60,24 @@ final class GameViewModelTests: XCTestCase {
         func encode(_ cards: [Card]) throws -> Any {
             try JSONSerialization.jsonObject(with: JSONEncoder().encode(cards))
         }
-        func suit(_ suit: Suit, ascending: Bool) -> [Card] {
-            let ranks = ascending ? Rank.allCases : Rank.allCases.reversed()
-            return ranks.map { Card(suit: suit, rank: $0, isFaceUp: true) }
+        func faceUp(_ suit: Suit, _ ranks: some Sequence<Rank>) -> [Card] {
+            ranks.map { Card(suit: suit, rank: $0, isFaceUp: true) }
         }
-        let foundationSuits: [Suit] = [.clubs, .diamonds, .hearts]
+        /// Kings down to sevens, alternating between the two suits.
+        func run(startingWith first: Suit, then second: Suit) -> [Card] {
+            Self.remainingRanks.enumerated().map { offset, rank in
+                Card(suit: offset.isMultiple(of: 2) ? first : second, rank: rank, isFaceUp: true)
+            }
+        }
+        let partial = Rank.allCases.filter { $0 < Self.firstRemainingRank }
         json["stock"] = []
         json["waste"] = []
-        json["foundations"] = try foundationSuits.map { try encode(suit($0, ascending: true)) } + [[Any]()]
-        json["tableau"] = try [encode(suit(.spades, ascending: false))] + Array(repeating: [Any](), count: GameState.tableauColumnCount - 1)
+        json["foundations"] = try [
+            encode(faceUp(.clubs, Rank.allCases)), encode(faceUp(.diamonds, Rank.allCases)),
+            encode(faceUp(.hearts, partial)), encode(faceUp(.spades, partial)),
+        ]
+        json["tableau"] = try [encode(run(startingWith: .spades, then: .hearts)), encode(run(startingWith: .hearts, then: .spades))]
+            + Array(repeating: [Any](), count: GameState.tableauColumnCount - 2)
         let state = try JSONDecoder().decode(GameState.self, from: JSONSerialization.data(withJSONObject: json))
         return Game(state: state)
     }
@@ -268,7 +281,7 @@ final class GameViewModelTests: XCTestCase {
             await Task.yield()
         }
         XCTAssertTrue(model.isWon)
-        XCTAssertEqual(model.moveCount, Rank.allCases.count)
+        XCTAssertEqual(model.moveCount, Self.remainingCardCount)
         XCTAssertFalse(model.isAutoCompleting)
     }
 

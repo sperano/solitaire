@@ -16,10 +16,10 @@ extension GameState {
             seed: try container.decode(UInt64.self, forKey: .seed),
             moveCount: try container.decode(Int.self, forKey: .moveCount)
         )
-        guard isStructurallyValid else {
+        guard isValidPosition else {
             throw DecodingError.dataCorrupted(.init(
                 codingPath: decoder.codingPath,
-                debugDescription: "saved game does not hold each card exactly once in 4 foundations and 7 columns"
+                debugDescription: "saved game is not a position legal play can reach"
             ))
         }
     }
