@@ -28,6 +28,7 @@ final class FixturePositionTests: XCTestCase {
         var game = Game(state: FixturePosition.oneMoveFromCompletable.state())
         XCTAssertFalse(game.canAutoComplete)
         let destination = try XCTUnwrap(game.autoMoveDestination(count: 1, from: .waste))
+        XCTAssertTrue(destination.isFoundation)
         try game.perform(.move(from: .waste, to: destination, count: 1))
         XCTAssertTrue(game.canAutoComplete)
     }
