@@ -64,7 +64,9 @@ struct GameView: View {
             .padding(.horizontal, BoardMetrics.horizontalPadding)
             .padding(.vertical, Self.rowSpacing)
         }
-        .animation(viewModel.isAutoCompleting ? Self.autoCompleteAnimation : nil, value: viewModel.moveCount)
+        .transaction(value: viewModel.moveCount) { transaction in
+            if viewModel.isAutoCompleting { transaction.animation = Self.autoCompleteAnimation }
+        }
         .coordinateSpace(name: BoardMetrics.coordinateSpace)
         .onPreferenceChange(PileFramePreferenceKey.self) { pileFrames = $0 }
     }
