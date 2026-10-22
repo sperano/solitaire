@@ -146,4 +146,26 @@ final class GameTests: XCTestCase {
         let state = blankState(tableau: [[card(.two, .hearts)]])
         XCTAssertNil(Game(state: state).nextAutoCompleteMove())
     }
+
+    // MARK: Scoring
+
+    func testNewGameCarriesScoringModeAndBalance() {
+        let game = Game(seed: 1, drawMode: .three, scoringMode: .vegas, carriedBalance: Scoring.vegasBuyIn)
+        XCTAssertEqual(game.scoringMode, .vegas)
+        XCTAssertEqual(game.score, 0)
+    }
+
+    func testUndoRestoresTheScore() throws {
+        var game = Game(state: blankState(scoringMode: .standard, waste: [card(.ace, .hearts)]))
+        try game.perform(.move(from: .waste, to: .foundation(0), count: 1))
+        XCTAssertEqual(game.score, Scoring.toFoundationPoints)
+        game.undo()
+        XCTAssertEqual(game.score, 0)
+    }
+
+    func testCanDrawIsFalseWhenVegasPassesAreUsedUp() {
+        XCTAssertTrue(Game(state: blankState(waste: [card(.five, .clubs)])).canDraw)
+        XCTAssertFalse(Game(state: blankState(scoringMode: .vegas, waste: [card(.five, .clubs)])).canDraw)
+        XCTAssertFalse(Game(state: blankState()).canDraw)
+    }
 }

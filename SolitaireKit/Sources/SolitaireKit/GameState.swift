@@ -12,14 +12,27 @@ public struct GameState: Hashable, Codable, Sendable {
     public let drawMode: DrawMode
     public let seed: UInt64
     public internal(set) var moveCount: Int
+    public let scoringMode: ScoringMode
+    /// Points in standard scoring, dollars in Vegas; always 0 with no scoring.
+    public internal(set) var score: Int
+    /// How many times the waste has been turned back into the stock.
+    public internal(set) var recycleCount: Int
 
-    /// Deal a new game from the deck produced by `seed`.
-    public static func deal(seed: UInt64, drawMode: DrawMode) -> GameState {
-        deal(deck: Deck.shuffled(seed: seed), seed: seed, drawMode: drawMode)
+    /// Deal a new game from the deck produced by `seed`. `carriedBalance` is the Vegas balance
+    /// brought from earlier games; the buy-in is taken from it.
+    public static func deal(
+        seed: UInt64, drawMode: DrawMode, scoringMode: ScoringMode = .none, carriedBalance: Int = 0
+    ) -> GameState {
+        deal(
+            deck: Deck.shuffled(seed: seed), seed: seed, drawMode: drawMode,
+            scoringMode: scoringMode, carriedBalance: carriedBalance
+        )
     }
 
     /// Deal a new game from an explicit deck; cards are dealt from the end of the array.
-    public static func deal(deck: [Card], seed: UInt64 = 0, drawMode: DrawMode) -> GameState {
+    public static func deal(
+        deck: [Card], seed: UInt64 = 0, drawMode: DrawMode, scoringMode: ScoringMode = .none, carriedBalance: Int = 0
+    ) -> GameState {
         precondition(Deck.isComplete(deck), "a Klondike deal needs each of the 52 cards exactly once")
         var remaining = deck
         var tableau = Array(repeating: [Card](), count: tableauColumnCount)
@@ -37,7 +50,10 @@ public struct GameState: Hashable, Codable, Sendable {
             tableau: tableau,
             drawMode: drawMode,
             seed: seed,
-            moveCount: 0
+            moveCount: 0,
+            scoringMode: scoringMode,
+            score: Scoring.initialScore(mode: scoringMode, carriedBalance: carriedBalance),
+            recycleCount: 0
         )
     }
 
@@ -51,6 +67,11 @@ public struct GameState: Hashable, Codable, Sendable {
     }
 
     public func topCard(of id: PileID) -> Card? { pile(id).last }
+
+    /// Recycles still allowed, or nil when the scoring mode sets no limit.
+    public var remainingRecycles: Int? {
+        Scoring.recycleLimit(mode: scoringMode, drawMode: drawMode).map { max(0, $0 - recycleCount) }
+    }
 
     /// Every foundation holds a complete suit.
     public var isWon: Bool {

@@ -17,6 +17,11 @@ struct WinOverlayView: View {
                 Text("\(viewModel.moveCount) moves in \(viewModel.formattedTime)")
                     .font(.title3)
                     .accessibilityIdentifier("winSummary")
+                if let score = viewModel.formattedScore {
+                    Text(scoreSummary(score))
+                        .font(.title3)
+                        .accessibilityIdentifier("winScore")
+                }
                 Button("New Game") { viewModel.newGame() }
                     .buttonStyle(.borderedProminent)
                     .accessibilityIdentifier("winNewGameButton")
@@ -25,5 +30,10 @@ struct WinOverlayView: View {
             .background(.regularMaterial, in: RoundedRectangle(cornerRadius: Self.cornerRadius, style: .continuous))
         }
         .accessibilityIdentifier("winOverlay")
+    }
+
+    private func scoreSummary(_ score: String) -> String {
+        let bonus = viewModel.timeBonus
+        return bonus > 0 ? "Score \(score), including a time bonus of \(bonus)" : "Score \(score)"
     }
 }

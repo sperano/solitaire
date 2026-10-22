@@ -10,16 +10,29 @@ extension GameState {
 
     /// The position could have been reached by legal play: right pile shapes and cards, pile sizes the
     /// deal allows, face-up flags where play puts them, foundations built by suit from the ace, and a
-    /// move counter that can still grow.
+    /// move counter that can still grow, and a score and recycle count the scoring mode allows.
     public var isValidPosition: Bool {
         isStructurallyValid
             && (0 ..< Int.max).contains(moveCount)
+            && isValidScoring
             && stock.count + waste.count <= Self.stockDealCount
             && tableau.indices.allSatisfy { faceDownCount(inTableau: $0) <= $0 }
             && stock.allSatisfy { !$0.isFaceUp }
             && waste.allSatisfy(\.isFaceUp)
             && foundations.allSatisfy(Self.isValidFoundation)
             && tableau.allSatisfy(Self.isValidTableauColumn)
+    }
+
+    /// Recycles within the mode's limit (and never more than moves made); an unscored game scores 0
+    /// and a standard score never drops below 0. A Vegas balance may be negative.
+    var isValidScoring: Bool {
+        guard (0 ... moveCount).contains(recycleCount) else { return false }
+        if let limit = Scoring.recycleLimit(mode: scoringMode, drawMode: drawMode), recycleCount > limit { return false }
+        switch scoringMode {
+        case .none: return score == 0
+        case .standard: return score >= 0
+        case .vegas: return true
+        }
     }
 
     /// Column `n` is dealt `n` face-down cards and never gains more.

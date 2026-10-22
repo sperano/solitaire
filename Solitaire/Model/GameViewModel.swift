@@ -28,7 +28,7 @@ final class GameViewModel {
             game = saved.game
             elapsedSeconds = saved.elapsedSeconds
         } else {
-            game = Game(seed: fixedSeed ?? UInt64.random(in: .min ... .max), drawMode: settings.drawMode)
+            game = Self.deal(seed: fixedSeed, settings: settings)
             elapsedSeconds = 0
         }
         syncTimer()
@@ -41,6 +41,26 @@ final class GameViewModel {
     var acceptsInput: Bool { !isAutoCompleting && !game.isWon }
     var canAutoComplete: Bool { game.canAutoComplete && !isAutoCompleting }
     var moveCount: Int { game.moveCount }
+    var canDraw: Bool { game.canDraw }
+    var scoringMode: ScoringMode { game.scoringMode }
+
+    /// The engine's score, plus the standard time bonus once the game is won.
+    var score: Int {
+        game.score + timeBonus
+    }
+
+    var timeBonus: Int {
+        isWon ? Scoring.timeBonus(mode: game.scoringMode, elapsedSeconds: elapsedSeconds) : 0
+    }
+
+    /// Points in standard scoring, dollars in Vegas, nil when the game is not scored.
+    var formattedScore: String? {
+        switch game.scoringMode {
+        case .none: nil
+        case .standard: "\(score)"
+        case .vegas: score < 0 ? "-$\(-score)" : "$\(score)"
+        }
+    }
 
     var formattedTime: String {
         let minutes = elapsedSeconds / Self.secondsPerMinute
@@ -54,7 +74,10 @@ final class GameViewModel {
         stopTimer()
         isAutoCompleting = false
         drag = nil
-        game = Game(seed: fixedSeed ?? UInt64.random(in: .min ... .max), drawMode: settings.drawMode)
+        if game.scoringMode == .vegas, settings.carryVegasBalance {
+            settings.vegasBalance = game.score
+        }
+        game = Self.deal(seed: fixedSeed, settings: settings)
         elapsedSeconds = 0
         persist()
     }
@@ -98,6 +121,16 @@ final class GameViewModel {
     }
 
     // MARK: Helpers
+
+    /// A new game with the current settings; a Vegas game pays its buy-in from the carried balance.
+    private static func deal(seed: UInt64?, settings: GameSettings) -> Game {
+        Game(
+            seed: seed ?? UInt64.random(in: .min ... .max),
+            drawMode: settings.drawMode,
+            scoringMode: settings.scoringMode,
+            carriedBalance: settings.carriedVegasBalance
+        )
+    }
 
     @discardableResult
     private func perform(_ move: Move) -> Bool {

@@ -5,6 +5,7 @@ import XCTest
 @MainActor
 final class GameSettingsTests: XCTestCase {
     private static let invalidStoredMode = 7
+    private static let balance = -104
     private var suiteName = ""
     private var defaults: UserDefaults!
 
@@ -35,5 +36,48 @@ final class GameSettingsTests: XCTestCase {
         defaults.set(Self.invalidStoredMode, forKey: GameSettings.drawModeKey)
 
         XCTAssertEqual(GameSettings(defaults: defaults).drawMode, GameSettings.defaultDrawMode)
+    }
+
+    func testDefaultScoringModeIsStandardWhenSuiteIsEmpty() {
+        XCTAssertEqual(GameSettings(defaults: defaults).scoringMode, .standard)
+        XCTAssertEqual(GameSettings.defaultScoringMode, .standard)
+    }
+
+    func testStoredNoScoringIsNotMistakenForAMissingValue() {
+        defaults.set(ScoringMode.none.rawValue, forKey: GameSettings.scoringModeKey)
+        XCTAssertEqual(GameSettings(defaults: defaults).scoringMode, ScoringMode.none)
+    }
+
+    func testScoringModePersists() {
+        GameSettings(defaults: defaults).scoringMode = .vegas
+        XCTAssertEqual(GameSettings(defaults: defaults).scoringMode, .vegas)
+    }
+
+    func testInvalidStoredScoringModeFallsBackToDefault() {
+        defaults.set(Self.invalidStoredMode, forKey: GameSettings.scoringModeKey)
+        XCTAssertEqual(GameSettings(defaults: defaults).scoringMode, GameSettings.defaultScoringMode)
+    }
+
+    func testVegasBalanceIsCarriedOnlyWhenEnabledAndPersists() {
+        let settings = GameSettings(defaults: defaults)
+        XCTAssertFalse(settings.carryVegasBalance)
+        settings.carryVegasBalance = true
+        settings.vegasBalance = Self.balance
+        XCTAssertEqual(settings.carriedVegasBalance, Self.balance)
+
+        let reloaded = GameSettings(defaults: defaults)
+        XCTAssertTrue(reloaded.carryVegasBalance)
+        XCTAssertEqual(reloaded.vegasBalance, Self.balance)
+    }
+
+    func testTurningCarryOffClearsTheBalance() {
+        let settings = GameSettings(defaults: defaults)
+        settings.carryVegasBalance = true
+        settings.vegasBalance = Self.balance
+        settings.carryVegasBalance = false
+
+        XCTAssertEqual(settings.vegasBalance, 0)
+        XCTAssertEqual(settings.carriedVegasBalance, 0)
+        XCTAssertEqual(GameSettings(defaults: defaults).vegasBalance, 0)
     }
 }

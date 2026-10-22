@@ -7,6 +7,8 @@ public enum Move: Hashable, Codable, Sendable {
 
 public enum MoveError: Error, Equatable, Sendable {
     case nothingToDraw
+    /// Vegas scoring limits how many times the waste can go back to the stock.
+    case noPassesLeft
     case sameDestination
     case invalidCount
     case faceDownCard

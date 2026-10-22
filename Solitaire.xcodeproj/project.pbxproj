@@ -10,6 +10,7 @@
 		02BDC0125168A3F002885F92 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B34F7B5FA290B9B7404AD /* CardView.swift */; };
 		05DB23E5DB08FB4B3024178C /* LaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4F54565EDD69A0D47C3CA /* LaunchUITests.swift */; };
 		15A005B9551623D9ADDD6BB3 /* StockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE713015454D0BC9AEADACF /* StockUITests.swift */; };
+		29DBF2E362873348E4A9824E /* ScoringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21705F50790032AA25E8FFCA /* ScoringUITests.swift */; };
 		3EB3D86B022DD1893897B4D7 /* SolitaireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8230985F1F039EE51984B743 /* SolitaireApp.swift */; };
 		535A2F714901237672E02CD2 /* DragInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C1AE9A75946D0CF906612 /* DragInfoTests.swift */; };
 		5F75F37D82AD73213E79FB36 /* BoardMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75731013731545F928BCC21F /* BoardMetrics.swift */; };
@@ -60,6 +61,7 @@
 		0AE713015454D0BC9AEADACF /* StockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockUITests.swift; sourceTree = "<group>"; };
 		0CF147627AAD6FBA72A4F124 /* TableauColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableauColumnView.swift; sourceTree = "<group>"; };
 		1B2B34F7B5FA290B9B7404AD /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		21705F50790032AA25E8FFCA /* ScoringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringUITests.swift; sourceTree = "<group>"; };
 		297809B5DAFBE5609BE6A757 /* DragInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragInfo.swift; sourceTree = "<group>"; };
 		2E9FE67FEA57B694C1D03C24 /* SolitaireUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SolitaireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B10ABDB682FDB5C88ED4D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				93B4F54565EDD69A0D47C3CA /* LaunchUITests.swift */,
 				CB5D214114FBC3644DA2B0CC /* MoveUITests.swift */,
+				21705F50790032AA25E8FFCA /* ScoringUITests.swift */,
 				C11C43C337B1A4FC08D51F13 /* SettingsUITests.swift */,
 				6823827B75B372C9252C5178 /* SolitaireUITestCase.swift */,
 				0AE713015454D0BC9AEADACF /* StockUITests.swift */,
@@ -366,6 +369,7 @@
 			files = (
 				05DB23E5DB08FB4B3024178C /* LaunchUITests.swift in Sources */,
 				91A48CAE8FCBBD6B6C4668DA /* MoveUITests.swift in Sources */,
+				29DBF2E362873348E4A9824E /* ScoringUITests.swift in Sources */,
 				95D4F55C313ED60CB183BD5A /* SettingsUITests.swift in Sources */,
 				EFFDE84FAF73DA97300C8BD8 /* SolitaireUITestCase.swift in Sources */,
 				15A005B9551623D9ADDD6BB3 /* StockUITests.swift in Sources */,

@@ -25,9 +25,18 @@ struct StockView: View {
 
     private var cards: [Card] { viewModel.state.stock }
 
+    /// The waste is waiting but Vegas scoring allows no more passes through the stock.
+    private var passesUsedUp: Bool { !viewModel.state.waste.isEmpty && !viewModel.canDraw }
+
+    /// Recycle arrow while the waste can go back, a stop sign once Vegas passes run out.
+    private var emptySymbol: String? {
+        if viewModel.state.waste.isEmpty { return nil }
+        return passesUsedUp ? "nosign" : "arrow.counterclockwise"
+    }
+
     var body: some View {
         ZStack {
-            EmptySlotView(metrics: metrics, symbol: viewModel.state.waste.isEmpty ? nil : "arrow.counterclockwise")
+            EmptySlotView(metrics: metrics, symbol: emptySymbol)
             if let top = cards.last {
                 CardView(card: top, metrics: metrics)
             }
@@ -39,6 +48,7 @@ struct StockView: View {
         .accessibilityIdentifier(PileID.stock.accessibilityIdentifier)
         .accessibilityLabel("Stock")
         .accessibilityValue("\(cards.count) cards")
+        .accessibilityHint(passesUsedUp ? "No passes left" : "")
         .accessibilityAddTraits(.isButton)
     }
 }

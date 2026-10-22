@@ -9,6 +9,7 @@ extension GameState {
             try next.move(count: count, from: from, to: to)
         }
         next.moveCount += 1
+        next.score = Scoring.score(after: move, from: self, to: next)
         self = next
     }
 
@@ -21,8 +22,10 @@ extension GameState {
     private mutating func draw() throws {
         if stock.isEmpty {
             guard !waste.isEmpty else { throw MoveError.nothingToDraw }
+            guard remainingRecycles != 0 else { throw MoveError.noPassesLeft }
             stock = waste.reversed().map { $0.faceDown() }
             waste = []
+            recycleCount += 1
             return
         }
         let count = min(drawMode.cardsPerDraw, stock.count)

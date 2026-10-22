@@ -12,7 +12,11 @@ them. Never add a dependency or feature that sends data anywhere.
   on CI without a simulator. Every public engine type is `Sendable`; game data
   are value types. Decoding a `GameState` checks `isValidPosition` (pile
   counts, each card once, face-up flags, foundations by suit from the ace,
-  tableau runs, move counter range) so a corrupt save never reaches the board.
+  tableau runs, move counter range, score and recycle count the scoring mode
+  allows) so a corrupt save never reaches the board. Scoring lives in the
+  engine (`Scoring`, `ScoringMode`): the score is part of `GameState`, so undo
+  restores it; only the standard time bonus is added by the view model, since
+  the clock lives in the app.
 - `Solitaire/` is the app. `GameViewModel` (`@MainActor @Observable`) is what
   the board views talk to; it owns the `Game`, the timer, the drag state and
   persistence through the `GameStore` protocol. The settings sheet is the one
@@ -31,15 +35,18 @@ them. Never add a dependency or feature that sends data anywhere.
   `stock`, `waste`, `foundation-N`, `tableau-N` with value `"<n> cards"`;
   cards are `card-<rank><suit letter>` (`card-10D`, `card-KS`). Controls:
   `undoButton`, `newGameButton`, `confirmNewGameButton`, `settingsButton`,
-  `autoCompleteButton`, `drawModePicker`, `settingsDoneButton`,
-  `winNewGameButton`; labels `movesLabel`, `timeLabel`, `winSummary`; the
+  `autoCompleteButton`, `drawModePicker`, `scoringModePicker`,
+  `carryVegasBalanceToggle`, `settingsDoneButton`, `winNewGameButton`; labels
+  `movesLabel`, `timeLabel`, `scoreLabel` (absent without scoring),
+  `winSummary`, `winScore`; the
   `winOverlay` container. The waste, foundations and tableau columns are
   accessibility containers so their card identifiers stay reachable; the
   stock is a single button element and exposes no card identifiers. Keep these stable; UI tests depend on them.
 - UI-test launch arguments: `--ui-testing` gives an in-memory store and fresh
   defaults. Only with it, `-seed <UInt64>` fixes the deal (required for a
-  reproducible board, otherwise the seed is random) and `-drawMode 1|3` sets
-  the draw mode; a normal launch ignores both.
+  reproducible board, otherwise the seed is random), `-drawMode 1|3` sets
+  the draw mode and `-scoringMode 0|1|2` sets none, standard or Vegas
+  scoring (standard by default); a normal launch ignores all three.
   See `AppEnvironment`. UI tests use seed 42, whose tableau tops are
   2♣ 8♣ Q♣ 5♥ 6♠ 5♣ A♥.
 - Tests live in the matching test target, one file per source file
