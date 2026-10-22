@@ -1,0 +1,691 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02BDC0125168A3F002885F92 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B34F7B5FA290B9B7404AD /* CardView.swift */; };
+		05DB23E5DB08FB4B3024178C /* LaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4F54565EDD69A0D47C3CA /* LaunchUITests.swift */; };
+		15A005B9551623D9ADDD6BB3 /* StockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE713015454D0BC9AEADACF /* StockUITests.swift */; };
+		3EB3D86B022DD1893897B4D7 /* SolitaireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8230985F1F039EE51984B743 /* SolitaireApp.swift */; };
+		535A2F714901237672E02CD2 /* DragInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C1AE9A75946D0CF906612 /* DragInfoTests.swift */; };
+		5F75F37D82AD73213E79FB36 /* BoardMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75731013731545F928BCC21F /* BoardMetrics.swift */; };
+		60D2732AF994FFB0ED448940 /* BoardMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56401D3B2BDAC32D62730329 /* BoardMetricsTests.swift */; };
+		60E0BC92DC50A40B2B4E4C0F /* CardGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4B141B85E5BEAEAE2F656 /* CardGestures.swift */; };
+		67C2B9F0CE1A326A3E41D752 /* GameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA979238030680CFEA76B25 /* GameViewModelTests.swift */; };
+		784834E1869D01A8907E171C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33B10ABDB682FDB5C88ED4D4 /* Assets.xcassets */; };
+		7A5DB439E08B2189A939B517 /* GameSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419E549A994DD21713B1C2FE /* GameSettingsTests.swift */; };
+		85A55743DC993674365CFDCC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67F7911E127A089B8FC962 /* GameView.swift */; };
+		91A48CAE8FCBBD6B6C4668DA /* MoveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5D214114FBC3644DA2B0CC /* MoveUITests.swift */; };
+		927F291891C0CECCB9015114 /* GameStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D7DD552D98768A887A1C7 /* GameStoreTests.swift */; };
+		95D4F55C313ED60CB183BD5A /* SettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11C43C337B1A4FC08D51F13 /* SettingsUITests.swift */; };
+		9948E2B9D64D491C13586130 /* UndoAndNewGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DE13E014397FE0C63559F /* UndoAndNewGameUITests.swift */; };
+		9B5B9122E93BB25C71168D05 /* WinOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD224867BFAD53B911B39CFE /* WinOverlayView.swift */; };
+		A29634B91720E5D883E02C56 /* SolitaireKit in Frameworks */ = {isa = PBXBuildFile; productRef = AFCA65B95D2B3B7A8A1F4034 /* SolitaireKit */; };
+		A85B601EBA0C55144F04E517 /* SolitaireKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD32F132760D3F980B3FF78 /* SolitaireKit */; };
+		B57A6776A203A289ED0CEF3C /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4094C6E1FDC724871DBFB210 /* GameStore.swift */; };
+		C097A293DD6E2FF945782C2F /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A22F3D94D4758EDCFD6A09C /* GameViewModel.swift */; };
+		C1CFF7ACDE371C1D384EFCD5 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C7A9B4E04148B3DABE403E /* GameSettings.swift */; };
+		D0B3FE11D3E96C84A3F75D29 /* TopRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6935303D39BBF948A7FCF4B /* TopRowView.swift */; };
+		D78FD80EAF214C0C991ABE51 /* TableauColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF147627AAD6FBA72A4F124 /* TableauColumnView.swift */; };
+		D8185410A47EE51111BDACD5 /* DragInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297809B5DAFBE5609BE6A757 /* DragInfo.swift */; };
+		D990B3AEB5325A2848C49FA1 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722CC9BD7D1C2111C350F85E /* StatusBarView.swift */; };
+		EE5B294EC4E4C2A905134111 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88766F0F426DB5C2EA7FCF94 /* AppEnvironment.swift */; };
+		EFFDE84FAF73DA97300C8BD8 /* SolitaireUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6823827B75B372C9252C5178 /* SolitaireUITestCase.swift */; };
+		F24DCE1120A6EE85430E8357 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED68BBC67D6440E14C20A58D /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5EF36173B7B91F7E79638E40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B109D54CA6AEDE41F66BC97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B9C219FA383C1323F2B00DD;
+			remoteInfo = Solitaire;
+		};
+		6A0FDE06742747DE5351B852 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B109D54CA6AEDE41F66BC97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B9C219FA383C1323F2B00DD;
+			remoteInfo = Solitaire;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01C4B141B85E5BEAEAE2F656 /* CardGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGestures.swift; sourceTree = "<group>"; };
+		0AE713015454D0BC9AEADACF /* StockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockUITests.swift; sourceTree = "<group>"; };
+		0CF147627AAD6FBA72A4F124 /* TableauColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableauColumnView.swift; sourceTree = "<group>"; };
+		1B2B34F7B5FA290B9B7404AD /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		297809B5DAFBE5609BE6A757 /* DragInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragInfo.swift; sourceTree = "<group>"; };
+		2E9FE67FEA57B694C1D03C24 /* SolitaireUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SolitaireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33B10ABDB682FDB5C88ED4D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4094C6E1FDC724871DBFB210 /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
+		419E549A994DD21713B1C2FE /* GameSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsTests.swift; sourceTree = "<group>"; };
+		41B5F45E238FDAB320D8FF70 /* SolitaireKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SolitaireKit; path = SolitaireKit; sourceTree = SOURCE_ROOT; };
+		49C7A9B4E04148B3DABE403E /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		4AA979238030680CFEA76B25 /* GameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelTests.swift; sourceTree = "<group>"; };
+		56401D3B2BDAC32D62730329 /* BoardMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMetricsTests.swift; sourceTree = "<group>"; };
+		6823827B75B372C9252C5178 /* SolitaireUITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireUITestCase.swift; sourceTree = "<group>"; };
+		722CC9BD7D1C2111C350F85E /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		75731013731545F928BCC21F /* BoardMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMetrics.swift; sourceTree = "<group>"; };
+		7A22F3D94D4758EDCFD6A09C /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		7D67F7911E127A089B8FC962 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		80B7CF6947CF1DF4BB5B35CC /* SolitaireTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SolitaireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8230985F1F039EE51984B743 /* SolitaireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireApp.swift; sourceTree = "<group>"; };
+		88766F0F426DB5C2EA7FCF94 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		912D7DD552D98768A887A1C7 /* GameStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStoreTests.swift; sourceTree = "<group>"; };
+		91346649DA5363C64A6A7B32 /* Solitaire.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Solitaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93B4F54565EDD69A0D47C3CA /* LaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUITests.swift; sourceTree = "<group>"; };
+		A6935303D39BBF948A7FCF4B /* TopRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRowView.swift; sourceTree = "<group>"; };
+		B2E3470629350F650DC87F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C11C43C337B1A4FC08D51F13 /* SettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITests.swift; sourceTree = "<group>"; };
+		CB5D214114FBC3644DA2B0CC /* MoveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveUITests.swift; sourceTree = "<group>"; };
+		E38DE13E014397FE0C63559F /* UndoAndNewGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoAndNewGameUITests.swift; sourceTree = "<group>"; };
+		ED68BBC67D6440E14C20A58D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F05C1AE9A75946D0CF906612 /* DragInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragInfoTests.swift; sourceTree = "<group>"; };
+		FD224867BFAD53B911B39CFE /* WinOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinOverlayView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B862B98C18FD721ADC5E7CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A85B601EBA0C55144F04E517 /* SolitaireKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D04D118B90D15B0C4297A643 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A29634B91720E5D883E02C56 /* SolitaireKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4DEE70E09ED1A8D5F157900D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91346649DA5363C64A6A7B32 /* Solitaire.app */,
+				80B7CF6947CF1DF4BB5B35CC /* SolitaireTests.xctest */,
+				2E9FE67FEA57B694C1D03C24 /* SolitaireUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66E11722D92556FE95A60955 /* SolitaireUITests */ = {
+			isa = PBXGroup;
+			children = (
+				93B4F54565EDD69A0D47C3CA /* LaunchUITests.swift */,
+				CB5D214114FBC3644DA2B0CC /* MoveUITests.swift */,
+				C11C43C337B1A4FC08D51F13 /* SettingsUITests.swift */,
+				6823827B75B372C9252C5178 /* SolitaireUITestCase.swift */,
+				0AE713015454D0BC9AEADACF /* StockUITests.swift */,
+				E38DE13E014397FE0C63559F /* UndoAndNewGameUITests.swift */,
+			);
+			path = SolitaireUITests;
+			sourceTree = "<group>";
+		};
+		72F6F73CBB66EF014A33ABE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75731013731545F928BCC21F /* BoardMetrics.swift */,
+				01C4B141B85E5BEAEAE2F656 /* CardGestures.swift */,
+				1B2B34F7B5FA290B9B7404AD /* CardView.swift */,
+				7D67F7911E127A089B8FC962 /* GameView.swift */,
+				ED68BBC67D6440E14C20A58D /* SettingsView.swift */,
+				722CC9BD7D1C2111C350F85E /* StatusBarView.swift */,
+				0CF147627AAD6FBA72A4F124 /* TableauColumnView.swift */,
+				A6935303D39BBF948A7FCF4B /* TopRowView.swift */,
+				FD224867BFAD53B911B39CFE /* WinOverlayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		807F2695005F92D372732322 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				41B5F45E238FDAB320D8FF70 /* SolitaireKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		82D2B8C9A73F4951A28AE356 /* SolitaireTests */ = {
+			isa = PBXGroup;
+			children = (
+				56401D3B2BDAC32D62730329 /* BoardMetricsTests.swift */,
+				F05C1AE9A75946D0CF906612 /* DragInfoTests.swift */,
+				419E549A994DD21713B1C2FE /* GameSettingsTests.swift */,
+				912D7DD552D98768A887A1C7 /* GameStoreTests.swift */,
+				4AA979238030680CFEA76B25 /* GameViewModelTests.swift */,
+			);
+			path = SolitaireTests;
+			sourceTree = "<group>";
+		};
+		9E8929446A897454B5D83965 /* Solitaire */ = {
+			isa = PBXGroup;
+			children = (
+				A3A84B0242C674699846CA8E /* App */,
+				C3AFE7A3EF2EEA76A148E81C /* Model */,
+				A893596324F4D77A66206CAA /* Resources */,
+				72F6F73CBB66EF014A33ABE0 /* Views */,
+			);
+			path = Solitaire;
+			sourceTree = "<group>";
+		};
+		A3A84B0242C674699846CA8E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				88766F0F426DB5C2EA7FCF94 /* AppEnvironment.swift */,
+				8230985F1F039EE51984B743 /* SolitaireApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A893596324F4D77A66206CAA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				33B10ABDB682FDB5C88ED4D4 /* Assets.xcassets */,
+				B2E3470629350F650DC87F1C /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AB22EE3BDEFE79884A341E7D = {
+			isa = PBXGroup;
+			children = (
+				807F2695005F92D372732322 /* Packages */,
+				9E8929446A897454B5D83965 /* Solitaire */,
+				82D2B8C9A73F4951A28AE356 /* SolitaireTests */,
+				66E11722D92556FE95A60955 /* SolitaireUITests */,
+				4DEE70E09ED1A8D5F157900D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3AFE7A3EF2EEA76A148E81C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				297809B5DAFBE5609BE6A757 /* DragInfo.swift */,
+				49C7A9B4E04148B3DABE403E /* GameSettings.swift */,
+				4094C6E1FDC724871DBFB210 /* GameStore.swift */,
+				7A22F3D94D4758EDCFD6A09C /* GameViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4365D55B25E44290CF0D3A78 /* SolitaireTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8974EF5CB9D409FEEDB5448 /* Build configuration list for PBXNativeTarget "SolitaireTests" */;
+			buildPhases = (
+				B496EC1D49D5A668548DE00A /* Sources */,
+				D04D118B90D15B0C4297A643 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A8DE335FAAF759E8EADF320 /* PBXTargetDependency */,
+			);
+			name = SolitaireTests;
+			packageProductDependencies = (
+				AFCA65B95D2B3B7A8A1F4034 /* SolitaireKit */,
+			);
+			productName = SolitaireTests;
+			productReference = 80B7CF6947CF1DF4BB5B35CC /* SolitaireTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5B9C219FA383C1323F2B00DD /* Solitaire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0724A9159990806E88DDBDC /* Build configuration list for PBXNativeTarget "Solitaire" */;
+			buildPhases = (
+				3309FB3DF2CEE6C8B7CA88F2 /* Sources */,
+				D0339A6816A1DCFD2F39AB4F /* Resources */,
+				6B862B98C18FD721ADC5E7CA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Solitaire;
+			packageProductDependencies = (
+				2AD32F132760D3F980B3FF78 /* SolitaireKit */,
+			);
+			productName = Solitaire;
+			productReference = 91346649DA5363C64A6A7B32 /* Solitaire.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C9A08733FA9B9F8D5CCF032 /* SolitaireUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F17BE02DA4F28512E1127917 /* Build configuration list for PBXNativeTarget "SolitaireUITests" */;
+			buildPhases = (
+				729B5530A99F29F0711DA13B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3691868A8F27E70F072E83BC /* PBXTargetDependency */,
+			);
+			name = SolitaireUITests;
+			packageProductDependencies = (
+			);
+			productName = SolitaireUITests;
+			productReference = 2E9FE67FEA57B694C1D03C24 /* SolitaireUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B109D54CA6AEDE41F66BC97 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					4365D55B25E44290CF0D3A78 = {
+						ProvisioningStyle = Automatic;
+					};
+					5B9C219FA383C1323F2B00DD = {
+						ProvisioningStyle = Automatic;
+					};
+					9C9A08733FA9B9F8D5CCF032 = {
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5B9C219FA383C1323F2B00DD;
+					};
+				};
+			};
+			buildConfigurationList = 4C159AF0F0B85FAD88C7666C /* Build configuration list for PBXProject "Solitaire" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = AB22EE3BDEFE79884A341E7D;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1654DE64265BF10C17047584 /* XCLocalSwiftPackageReference "SolitaireKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4DEE70E09ED1A8D5F157900D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B9C219FA383C1323F2B00DD /* Solitaire */,
+				4365D55B25E44290CF0D3A78 /* SolitaireTests */,
+				9C9A08733FA9B9F8D5CCF032 /* SolitaireUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0339A6816A1DCFD2F39AB4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				784834E1869D01A8907E171C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3309FB3DF2CEE6C8B7CA88F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE5B294EC4E4C2A905134111 /* AppEnvironment.swift in Sources */,
+				5F75F37D82AD73213E79FB36 /* BoardMetrics.swift in Sources */,
+				60E0BC92DC50A40B2B4E4C0F /* CardGestures.swift in Sources */,
+				02BDC0125168A3F002885F92 /* CardView.swift in Sources */,
+				D8185410A47EE51111BDACD5 /* DragInfo.swift in Sources */,
+				C1CFF7ACDE371C1D384EFCD5 /* GameSettings.swift in Sources */,
+				B57A6776A203A289ED0CEF3C /* GameStore.swift in Sources */,
+				85A55743DC993674365CFDCC /* GameView.swift in Sources */,
+				C097A293DD6E2FF945782C2F /* GameViewModel.swift in Sources */,
+				F24DCE1120A6EE85430E8357 /* SettingsView.swift in Sources */,
+				3EB3D86B022DD1893897B4D7 /* SolitaireApp.swift in Sources */,
+				D990B3AEB5325A2848C49FA1 /* StatusBarView.swift in Sources */,
+				D78FD80EAF214C0C991ABE51 /* TableauColumnView.swift in Sources */,
+				D0B3FE11D3E96C84A3F75D29 /* TopRowView.swift in Sources */,
+				9B5B9122E93BB25C71168D05 /* WinOverlayView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		729B5530A99F29F0711DA13B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05DB23E5DB08FB4B3024178C /* LaunchUITests.swift in Sources */,
+				91A48CAE8FCBBD6B6C4668DA /* MoveUITests.swift in Sources */,
+				95D4F55C313ED60CB183BD5A /* SettingsUITests.swift in Sources */,
+				EFFDE84FAF73DA97300C8BD8 /* SolitaireUITestCase.swift in Sources */,
+				15A005B9551623D9ADDD6BB3 /* StockUITests.swift in Sources */,
+				9948E2B9D64D491C13586130 /* UndoAndNewGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B496EC1D49D5A668548DE00A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60D2732AF994FFB0ED448940 /* BoardMetricsTests.swift in Sources */,
+				535A2F714901237672E02CD2 /* DragInfoTests.swift in Sources */,
+				7A5DB439E08B2189A939B517 /* GameSettingsTests.swift in Sources */,
+				927F291891C0CECCB9015114 /* GameStoreTests.swift in Sources */,
+				67C2B9F0CE1A326A3E41D752 /* GameViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3691868A8F27E70F072E83BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B9C219FA383C1323F2B00DD /* Solitaire */;
+			targetProxy = 6A0FDE06742747DE5351B852 /* PBXContainerItemProxy */;
+		};
+		9A8DE335FAAF759E8EADF320 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B9C219FA383C1323F2B00DD /* Solitaire */;
+			targetProxy = 5EF36173B7B91F7E79638E40 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1CA94F19DEC2B50B67321C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = quebec.spe.SolitaireUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Solitaire;
+			};
+			name = Release;
+		};
+		226A7A37B04B35D49511DBBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Solitaire/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = quebec.spe.Solitaire;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		372C358A4FF16494D4DD6A7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = quebec.spe.SolitaireTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solitaire.app/Solitaire";
+			};
+			name = Release;
+		};
+		8824F620B636AA7C254557DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = quebec.spe.SolitaireTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solitaire.app/Solitaire";
+			};
+			name = Debug;
+		};
+		8B492BB0C9717E213FCBD1A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = quebec.spe.SolitaireUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Solitaire;
+			};
+			name = Debug;
+		};
+		938683AA993C1EB20AD10D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		AEE8D14486872FCE7388AF89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		FFD0876E312EC51F49888765 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Solitaire/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = quebec.spe.Solitaire;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C159AF0F0B85FAD88C7666C /* Build configuration list for PBXProject "Solitaire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				938683AA993C1EB20AD10D20 /* Debug */,
+				AEE8D14486872FCE7388AF89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A8974EF5CB9D409FEEDB5448 /* Build configuration list for PBXNativeTarget "SolitaireTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8824F620B636AA7C254557DD /* Debug */,
+				372C358A4FF16494D4DD6A7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D0724A9159990806E88DDBDC /* Build configuration list for PBXNativeTarget "Solitaire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFD0876E312EC51F49888765 /* Debug */,
+				226A7A37B04B35D49511DBBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F17BE02DA4F28512E1127917 /* Build configuration list for PBXNativeTarget "SolitaireUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B492BB0C9717E213FCBD1A5 /* Debug */,
+				1CA94F19DEC2B50B67321C8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		1654DE64265BF10C17047584 /* XCLocalSwiftPackageReference "SolitaireKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = SolitaireKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2AD32F132760D3F980B3FF78 /* SolitaireKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SolitaireKit;
+		};
+		AFCA65B95D2B3B7A8A1F4034 /* SolitaireKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SolitaireKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5B109D54CA6AEDE41F66BC97 /* Project object */;
+}
