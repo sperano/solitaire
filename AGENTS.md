@@ -12,7 +12,7 @@ them. Never add a dependency or feature that sends data anywhere.
   on CI without a simulator. Every public engine type is `Sendable`; game data
   are value types. Decoding a `GameState` checks `isValidPosition` (pile
   counts, each card once, face-up flags, foundations by suit from the ace,
-  tableau runs, move counter range, score and recycle count the scoring mode
+  tableau runs, move counter range, score in range and recycle count the scoring mode
   allows) so a corrupt save never reaches the board. Scoring lives in the
   engine (`Scoring`, `ScoringMode`): the score is part of `GameState`, so undo
   restores it; only the standard time bonus is added by the view model, since

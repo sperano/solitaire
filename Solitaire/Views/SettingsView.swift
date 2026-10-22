@@ -53,7 +53,8 @@ private extension SettingsView {
         guard settings.scoringMode == .vegas else { return timing }
         let passes = Scoring.vegasPasses(drawMode: settings.drawMode)
         return "Vegas: each game costs $\(Scoring.vegasBuyIn), each card on a foundation pays "
-            + "$\(Scoring.vegasPointsPerFoundationCard), and \(settings.drawMode.title) allows "
+            + "$\(Scoring.vegasPointsPerFoundationCard) (taken back if it leaves), "
+            + "and \(settings.drawMode.title) allows "
             + "\(passes) \(passes == 1 ? "pass" : "passes") through the stock. \(timing)"
     }
 }

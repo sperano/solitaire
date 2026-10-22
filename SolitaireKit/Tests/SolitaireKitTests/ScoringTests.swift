@@ -211,4 +211,22 @@ final class ScoringTests: XCTestCase {
         XCTAssertNil(Scoring.recycleLimit(mode: .standard, drawMode: .one))
         XCTAssertNil(Scoring.recycleLimit(mode: .none, drawMode: .three))
     }
+
+    // MARK: Score range
+
+    func testExtremeCarriedBalanceIsClampedInsteadOfOverflowing() {
+        let low = GameState.deal(seed: 1, drawMode: .one, scoringMode: .vegas, carriedBalance: .min)
+        XCTAssertEqual(low.score, Scoring.scoreRange.lowerBound)
+        let high = GameState.deal(seed: 1, drawMode: .one, scoringMode: .vegas, carriedBalance: .max)
+        XCTAssertEqual(high.score, Scoring.scoreRange.upperBound - Scoring.vegasBuyIn)
+        XCTAssertTrue(low.isValidPosition && high.isValidPosition)
+    }
+
+    func testScoreUpdatesStayInsideTheScoreRange() throws {
+        var state = vegas(waste: [card(.ace, .hearts)])
+        state.score = Scoring.scoreRange.upperBound
+        XCTAssertEqual(try applied(.move(from: .waste, to: .foundation(0), count: 1), to: state).score, Scoring.scoreRange.upperBound)
+        state.score = .max
+        XCTAssertEqual(try applied(.move(from: .waste, to: .foundation(0), count: 1), to: state).score, Scoring.scoreRange.upperBound)
+    }
 }

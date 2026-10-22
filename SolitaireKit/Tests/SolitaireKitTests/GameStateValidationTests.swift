@@ -139,4 +139,14 @@ final class GameStateValidationTests: XCTestCase {
         state.recycleCount = 1
         XCTAssertFalse(state.isValidPosition)
     }
+
+    func testVegasDrawThreeAllowsTwoRecyclesAndNoMore() {
+        var state = GameState.deal(seed: seed, drawMode: .three, scoringMode: .vegas)
+        let limit = Scoring.vegasDrawThreePasses - 1
+        state.moveCount = limit + 1
+        state.recycleCount = limit
+        XCTAssertTrue(state.isValidPosition)
+        state.recycleCount = limit + 1
+        XCTAssertFalse(state.isValidPosition)
+    }
 }

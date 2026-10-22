@@ -23,10 +23,11 @@ extension GameState {
             && tableau.allSatisfy(Self.isValidTableauColumn)
     }
 
-    /// Recycles within the mode's limit (and never more than moves made); an unscored game scores 0
-    /// and a standard score never drops below 0. A Vegas balance may be negative.
+    /// Recycles within the mode's limit (and never more than moves made); a score inside
+    /// `Scoring.scoreRange`; an unscored game scores 0 and a standard score never drops below 0.
+    /// A Vegas balance may be negative.
     var isValidScoring: Bool {
-        guard (0 ... moveCount).contains(recycleCount) else { return false }
+        guard (0 ... moveCount).contains(recycleCount), Scoring.scoreRange.contains(score) else { return false }
         if let limit = Scoring.recycleLimit(mode: scoringMode, drawMode: drawMode), recycleCount > limit { return false }
         switch scoringMode {
         case .none: return score == 0

@@ -10,6 +10,10 @@ public enum Scoring {
     public static let timeBonusMinimumSeconds = 30
     public static let timeBonusNumerator = 700_000
 
+    /// Every score stays in this range, far beyond what play can reach, so a tampered save or
+    /// carried balance can never overflow an update.
+    public static let scoreRange = -1_000_000_000_000 ... 1_000_000_000_000
+
     // Vegas scoring, in dollars.
     public static let vegasBuyIn = 52
     public static let vegasPointsPerFoundationCard = 5
@@ -19,7 +23,7 @@ public enum Scoring {
 
     /// The score a new game starts with; Vegas pays the buy-in out of the carried balance.
     public static func initialScore(mode: ScoringMode, carriedBalance: Int) -> Int {
-        mode == .vegas ? carriedBalance - vegasBuyIn : 0
+        mode == .vegas ? clamped(clamped(carriedBalance) - vegasBuyIn) : 0
     }
 
     /// Passes through the stock a Vegas game allows in `drawMode`.
@@ -44,10 +48,15 @@ public enum Scoring {
         case .none:
             return before.score
         case .standard:
-            return max(0, before.score + standardPoints(for: move, from: before, to: after))
+            return clamped(max(0, clamped(before.score) + standardPoints(for: move, from: before, to: after)))
         case .vegas:
-            return before.score + vegasPoints(for: move)
+            return clamped(clamped(before.score) + vegasPoints(for: move))
         }
+    }
+
+    /// `score` limited to `scoreRange`.
+    public static func clamped(_ score: Int) -> Int {
+        min(max(score, scoreRange.lowerBound), scoreRange.upperBound)
     }
 
     private static func standardPoints(for move: Move, from before: GameState, to after: GameState) -> Int {

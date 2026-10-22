@@ -3,6 +3,7 @@ import XCTest
 
 final class CodableTests: XCTestCase {
     private let seed: UInt64 = 99
+    private static let balanceAboveBuyIn = 20
 
     private func roundTrip<T: Codable & Equatable>(_ value: T) throws -> T {
         let data = try JSONEncoder().encode(value)
@@ -85,13 +86,32 @@ final class CodableTests: XCTestCase {
     }
 
     func testScoredStateRoundTripsWithScoreAndRecycles() throws {
-        var state = GameState.deal(seed: seed, drawMode: .three, scoringMode: .vegas, carriedBalance: Scoring.vegasBuyIn)
+        let balance = Scoring.vegasBuyIn + Self.balanceAboveBuyIn
+        var state = GameState.deal(seed: seed, drawMode: .three, scoringMode: .vegas, carriedBalance: balance)
         while !state.stock.isEmpty { try state.apply(.draw) }
         try state.apply(.draw)
         let decoded = try roundTrip(state)
         XCTAssertEqual(decoded, state)
         XCTAssertEqual(decoded.scoringMode, .vegas)
+        XCTAssertEqual(decoded.score, Self.balanceAboveBuyIn)
         XCTAssertEqual(decoded.recycleCount, 1)
+    }
+
+    func testDecodingRejectsASaveWithOnlySomeScoringFields() throws {
+        let state = GameState.deal(seed: seed, drawMode: .three, scoringMode: .vegas)
+        for key in ["scoringMode", "score", "recycleCount"] {
+            var object = try jsonObject(state)
+            object.removeValue(forKey: key)
+            XCTAssertThrowsError(try decode(object), "missing only \(key)")
+        }
+    }
+
+    func testDecodingRejectsAScoreOutsideTheScoreRange() throws {
+        for score in [Int.max, Int.min] {
+            var object = try jsonObject(.deal(seed: seed, drawMode: .one, scoringMode: .vegas))
+            object["score"] = score
+            XCTAssertThrowsError(try decode(object), "\(score)")
+        }
     }
 
     func testSaveFromBeforeScoringLoadsAsAnUnscoredGame() throws {
