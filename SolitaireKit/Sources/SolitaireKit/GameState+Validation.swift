@@ -5,15 +5,26 @@ extension GameState {
         return Deck.isComplete(stock + waste + foundations.flatMap { $0 } + tableau.flatMap { $0 })
     }
 
-    /// The position could have been reached by legal play: right pile shapes and cards, face-up flags
-    /// where play puts them, foundations built by suit from the ace, and a move counter that can still grow.
+    /// Cards dealt to the stock; nothing ever returns to the stock or waste, so together they never hold more.
+    public static let stockDealCount = Deck.cardCount - tableauCardCount
+
+    /// The position could have been reached by legal play: right pile shapes and cards, pile sizes the
+    /// deal allows, face-up flags where play puts them, foundations built by suit from the ace, and a
+    /// move counter that can still grow.
     public var isValidPosition: Bool {
         isStructurallyValid
             && (0 ..< Int.max).contains(moveCount)
+            && stock.count + waste.count <= Self.stockDealCount
+            && tableau.indices.allSatisfy { faceDownCount(inTableau: $0) <= $0 }
             && stock.allSatisfy { !$0.isFaceUp }
             && waste.allSatisfy(\.isFaceUp)
             && foundations.allSatisfy(Self.isValidFoundation)
             && tableau.allSatisfy(Self.isValidTableauColumn)
+    }
+
+    /// Column `n` is dealt `n` face-down cards and never gains more.
+    func faceDownCount(inTableau column: Int) -> Int {
+        tableau[column].count { !$0.isFaceUp }
     }
 
     /// Face up, starting with an ace and building up by suit.

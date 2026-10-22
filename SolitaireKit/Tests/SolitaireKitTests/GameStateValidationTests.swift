@@ -82,4 +82,21 @@ final class GameStateValidationTests: XCTestCase {
         ]), "face-down card above a face-up one")
         XCTAssertFalse(GameState.isValidTableauColumn([card(.nine, .spades), card(.eight, .clubs)]), "same colour run")
     }
+
+    // MARK: Pile sizes
+
+    func testAllCardsInTheStockIsInvalid() {
+        var state = dealt
+        state.stock = Deck.standard()
+        state.tableau = Array(repeating: [], count: GameState.tableauColumnCount)
+        XCTAssertTrue(state.isStructurallyValid, "every card is still present exactly once")
+        XCTAssertFalse(state.isValidPosition)
+    }
+
+    func testMoreFaceDownCardsThanTheDealGaveIsInvalid() {
+        var state = dealt
+        let moved = state.tableau[GameState.tableauColumnCount - 1].removeFirst()
+        state.tableau[0].insert(moved, at: 0)
+        XCTAssertFalse(state.isValidPosition, "column 0 is dealt no face-down card")
+    }
 }
