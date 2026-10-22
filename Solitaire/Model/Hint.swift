@@ -22,7 +22,7 @@ extension GameViewModel {
         }
     }
 
-    /// `pile` is empty and the hint points at it: the column a king goes to, or the stock to recycle.
+    /// `pile` is empty and the hint points at it: a column a king goes to, a foundation an ace goes to, or the stock to recycle.
     func isHintedEmptySlot(_ pile: PileID) -> Bool {
         guard case let .move(move) = hint, state.pile(pile).isEmpty else { return false }
         switch move {
