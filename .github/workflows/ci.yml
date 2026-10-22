@@ -9,17 +9,14 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  SIMULATOR: platform=iOS Simulator,name=iPhone 17
-
 jobs:
   engine:
     name: SolitaireKit tests
     runs-on: macos-26
     steps:
-      - uses: actions/checkout@v4
-      - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_26.app
+      - uses: actions/checkout@v5
+      - name: Show toolchain
+        run: xcodebuild -version && swift --version
       - name: Run package tests
         working-directory: SolitaireKit
         run: swift test --parallel
@@ -28,14 +25,22 @@ jobs:
     name: App unit and UI tests
     runs-on: macos-26
     steps:
-      - uses: actions/checkout@v4
-      - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_26.app
+      - uses: actions/checkout@v5
+      - name: Show toolchain
+        run: xcodebuild -version
       - name: Check the generated project is up to date
         run: |
           brew install xcodegen
           xcodegen generate
           git diff --exit-code -- Solitaire.xcodeproj
+      - name: Pick an iPhone simulator
+        run: |
+          udid=$(xcrun simctl list devices available -j | python3 -c '
+          import json, sys
+          devices = json.load(sys.stdin)["devices"]
+          ios = sorted((k for k in devices if ".iOS-" in k), reverse=True)
+          print(next(d["udid"] for k in ios for d in devices[k] if d["name"].startswith("iPhone")))')
+          echo "SIMULATOR=id=$udid" >> "$GITHUB_ENV"
       - name: Unit tests
         run: |
           set -o pipefail
