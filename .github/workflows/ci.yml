@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  engine:
+    name: SolitaireKit tests
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v5
+      - name: Show toolchain
+        run: xcodebuild -version && swift --version
+      - name: Run package tests
+        working-directory: SolitaireKit
+        run: swift test --parallel
+
+  app:
+    name: App unit and UI tests
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v5
+      - name: Show toolchain
+        run: xcodebuild -version
+      - name: Check the generated project is up to date
+        run: |
+          brew install xcodegen
+          xcodegen generate
+          changes=$(git status --porcelain --untracked-files=all -- Solitaire.xcodeproj)
+          if [ -n "$changes" ]; then
+            echo "Solitaire.xcodeproj is out of date; run xcodegen generate and commit:"
+            echo "$changes"
+            exit 1
+          fi
+      - name: Pick an iPhone simulator
+        run: |
+          udid=$(xcrun simctl list devices available -j | python3 -c '
+          import json, sys
+          devices = json.load(sys.stdin)["devices"]
+          ios = sorted((k for k in devices if ".iOS-" in k), reverse=True)
+          print(next(d["udid"] for k in ios for d in devices[k] if d["name"].startswith("iPhone")))')
+          echo "SIMULATOR=id=$udid" >> "$GITHUB_ENV"
+      - name: Unit tests
+        run: |
+          set -o pipefail
+          xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
+            -destination "$SIMULATOR" -only-testing:SolitaireTests \
+            CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions
+      - name: UI tests
+        run: |
+          set -o pipefail
+          xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
+            -destination "$SIMULATOR" -only-testing:SolitaireUITests \
+            CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions
