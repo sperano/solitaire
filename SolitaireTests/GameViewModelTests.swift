@@ -11,6 +11,7 @@ final class GameViewModelTests: XCTestCase {
     private static let carriedBalance = 100
     private static let longGameSeconds = 100
     private static let autoCompleteWaitLimit = Duration.seconds(10)
+    private static let pollInterval = Duration.milliseconds(10)
 
     private var suiteName = ""
     private var defaults: UserDefaults!
@@ -319,7 +320,7 @@ final class GameViewModelTests: XCTestCase {
     private func waitForAutoComplete(_ model: GameViewModel) async {
         let deadline = ContinuousClock.now + Self.autoCompleteWaitLimit
         while model.isAutoCompleting, ContinuousClock.now < deadline {
-            try? await Task.sleep(for: .milliseconds(10))
+            try? await Task.sleep(for: Self.pollInterval)
         }
     }
 

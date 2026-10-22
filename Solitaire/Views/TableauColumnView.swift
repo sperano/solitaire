@@ -20,6 +20,7 @@ struct TableauColumnView: View {
                     .offset(y: offsets[cardIndex])
                     .dragOffset(viewModel.drag, pile: pile, index: cardIndex, pileCount: cards.count)
                     .zIndex(Double(cardIndex))
+                    .transition(.opacity)
                     .modifier(FaceUpGestures(
                         enabled: card.isFaceUp,
                         viewModel: viewModel,

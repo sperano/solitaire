@@ -8,6 +8,7 @@ final class HintTests: XCTestCase {
     private static let seedSearchRange: ClosedRange<UInt64> = 0 ... 500
     private static let shortHintDuration = Duration.milliseconds(50)
     private static let waitLimit = Duration.seconds(5)
+    private static let pollInterval = Duration.milliseconds(5)
 
     private var suiteName = ""
     private var defaults: UserDefaults!
@@ -44,7 +45,7 @@ final class HintTests: XCTestCase {
     private func waitUntil(_ condition: () -> Bool) async {
         let deadline = ContinuousClock.now + Self.waitLimit
         while !condition(), ContinuousClock.now < deadline {
-            await Task.yield()
+            try? await Task.sleep(for: Self.pollInterval)
         }
     }
 

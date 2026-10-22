@@ -64,7 +64,7 @@ struct StatusBarView: View {
                 .disabled(viewModel.isAutoCompleting)
                 .accessibilityIdentifier("autoCompleteButton")
         } else {
-            Button("Hint", systemImage: "lightbulb") { viewModel.showHint() }
+            Button("Hint", systemImage: "lightbulb") { showHint() }
                 .disabled(!viewModel.canHint)
                 .accessibilityIdentifier("hintButton")
         }
@@ -75,6 +75,14 @@ struct StatusBarView: View {
             .accessibilityIdentifier("newGameButton")
         Button("Settings", systemImage: "gearshape") { viewModel.isShowingSettings = true }
             .accessibilityIdentifier("settingsButton")
+    }
+
+    /// Every tap is announced, even when it repeats the hint already on show.
+    private func showHint() {
+        viewModel.showHint()
+        if let hint = viewModel.hint {
+            AccessibilityNotification.Announcement(HintAnnouncement.text(for: hint, in: viewModel.state)).post()
+        }
     }
 
     private func requestNewGame() {
