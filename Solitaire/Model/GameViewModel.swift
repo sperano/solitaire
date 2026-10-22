@@ -1,36 +1,42 @@
 import Foundation
 import SolitaireKit
 
-/// Drives the board: owns the game, the timer, the drag state and persistence.
+/// Drives the board: owns the game, the timer, the drag state and persistence, and reports
+/// each finished or abandoned game to the statistics.
 @MainActor
 @Observable
 final class GameViewModel {
     static let autoCompleteStepNanoseconds: UInt64 = 120_000_000
     private static let timerTickNanoseconds: UInt64 = 1_000_000_000
-    private static let secondsPerMinute = 60
 
     private(set) var game: Game
+    /// See `SavedGame.gameID`.
+    private(set) var gameID: UInt64
     private(set) var elapsedSeconds: Int
     var drag: DragInfo?
     var isShowingSettings = false
     private(set) var isAutoCompleting = false
+    /// See `SavedGame.isStarted` and `SavedGame.isResultRecorded`.
+    private(set) var isStarted: Bool
+    private(set) var isResultRecorded: Bool
 
     let settings: GameSettings
+    let statistics: StatisticsModel
     private let store: any GameStore
     private let fixedSeed: UInt64?
     private var timerTask: Task<Void, Never>?
 
-    init(store: any GameStore, settings: GameSettings, fixedSeed: UInt64? = nil) {
+    init(store: any GameStore, settings: GameSettings, statistics: StatisticsModel, fixedSeed: UInt64? = nil) {
         self.store = store
         self.settings = settings
+        self.statistics = statistics
         self.fixedSeed = fixedSeed
-        if let saved = store.load() {
-            game = saved.game
-            elapsedSeconds = saved.elapsedSeconds
-        } else {
-            game = Self.deal(seed: fixedSeed, settings: settings)
-            elapsedSeconds = 0
-        }
+        let saved = store.load()
+        game = saved?.game ?? Self.deal(seed: fixedSeed, settings: settings)
+        gameID = saved?.gameID ?? Self.newGameID()
+        elapsedSeconds = saved?.elapsedSeconds ?? 0
+        isStarted = saved?.isStarted ?? false
+        isResultRecorded = saved?.isResultRecorded ?? false
         syncTimer()
     }
 
@@ -62,23 +68,26 @@ final class GameViewModel {
         }
     }
 
-    var formattedTime: String {
-        let minutes = elapsedSeconds / Self.secondsPerMinute
-        let seconds = elapsedSeconds % Self.secondsPerMinute
-        return String(format: "%d:%02d", minutes, seconds)
-    }
+    var formattedTime: String { TimeFormat.minutesAndSeconds(elapsedSeconds) }
 
     // MARK: Actions
 
+    /// Deals a new game. Abandoning a started game that is not won counts as a loss.
     func newGame() {
         stopTimer()
         isAutoCompleting = false
         drag = nil
+        if isStarted, !isResultRecorded {
+            statistics.recordLoss(gameID: gameID, drawMode: game.drawMode)
+        }
         if game.scoringMode == .vegas, settings.carryVegasBalance {
             settings.vegasBalance = game.score
         }
         game = Self.deal(seed: fixedSeed, settings: settings)
+        gameID = Self.newGameID()
         elapsedSeconds = 0
+        isStarted = false
+        isResultRecorded = false
         persist()
     }
 
@@ -132,6 +141,8 @@ final class GameViewModel {
         )
     }
 
+    private static func newGameID() -> UInt64 { .random(in: .min ... .max) }
+
     @discardableResult
     private func perform(_ move: Move) -> Bool {
         do {
@@ -139,13 +150,25 @@ final class GameViewModel {
         } catch {
             return false
         }
+        isStarted = true
         syncTimer()
+        recordWinIfNeeded()
         persist()
         return true
     }
 
+    /// Counts a win once, with the time and moves it took.
+    private func recordWinIfNeeded() {
+        guard game.isWon, !isResultRecorded else { return }
+        statistics.recordWin(gameID: gameID, drawMode: game.drawMode, seconds: elapsedSeconds, moves: game.moveCount)
+        isResultRecorded = true
+    }
+
     private func persist() {
-        store.save(SavedGame(game: game, elapsedSeconds: elapsedSeconds))
+        store.save(SavedGame(
+            game: game, gameID: gameID, elapsedSeconds: elapsedSeconds,
+            isStarted: isStarted, isResultRecorded: isResultRecorded
+        ))
     }
 
     /// The clock runs from the first move until the game is won.

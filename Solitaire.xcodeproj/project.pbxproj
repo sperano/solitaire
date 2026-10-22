@@ -9,14 +9,20 @@
 /* Begin PBXBuildFile section */
 		02BDC0125168A3F002885F92 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B34F7B5FA290B9B7404AD /* CardView.swift */; };
 		05DB23E5DB08FB4B3024178C /* LaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4F54565EDD69A0D47C3CA /* LaunchUITests.swift */; };
+		065FE93690D81108D276D615 /* StatisticsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941867F983BA26C752B76FD0 /* StatisticsModelTests.swift */; };
+		158D70E85867F92CEC280CFB /* JSONFileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E02E66D4C947CC161AFB049 /* JSONFileStorage.swift */; };
 		15A005B9551623D9ADDD6BB3 /* StockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE713015454D0BC9AEADACF /* StockUITests.swift */; };
 		29DBF2E362873348E4A9824E /* ScoringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21705F50790032AA25E8FFCA /* ScoringUITests.swift */; };
+		2BD6DCF7AB70BA4F447CF920 /* StatisticsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8FFA1F11245E5DFC9DBE27 /* StatisticsUITests.swift */; };
+		2F235689CB965D911C050D6B /* StatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076BAD83F0492AE4492CFF7 /* StatisticsModel.swift */; };
 		3EB3D86B022DD1893897B4D7 /* SolitaireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8230985F1F039EE51984B743 /* SolitaireApp.swift */; };
 		535A2F714901237672E02CD2 /* DragInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C1AE9A75946D0CF906612 /* DragInfoTests.swift */; };
+		57BEBB78747D1EFC64BD3E2C /* StatisticsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34371B9257945500E88A16E /* StatisticsStoreTests.swift */; };
 		5F75F37D82AD73213E79FB36 /* BoardMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75731013731545F928BCC21F /* BoardMetrics.swift */; };
 		60D2732AF994FFB0ED448940 /* BoardMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56401D3B2BDAC32D62730329 /* BoardMetricsTests.swift */; };
 		60E0BC92DC50A40B2B4E4C0F /* CardGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4B141B85E5BEAEAE2F656 /* CardGestures.swift */; };
 		67C2B9F0CE1A326A3E41D752 /* GameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA979238030680CFEA76B25 /* GameViewModelTests.swift */; };
+		6BAE163CA0801012FC42B706 /* TestFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10470C052B6015F3E635242B /* TestFixtures.swift */; };
 		784834E1869D01A8907E171C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33B10ABDB682FDB5C88ED4D4 /* Assets.xcassets */; };
 		7A5DB439E08B2189A939B517 /* GameSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419E549A994DD21713B1C2FE /* GameSettingsTests.swift */; };
 		85A55743DC993674365CFDCC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67F7911E127A089B8FC962 /* GameView.swift */; };
@@ -25,11 +31,16 @@
 		95D4F55C313ED60CB183BD5A /* SettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11C43C337B1A4FC08D51F13 /* SettingsUITests.swift */; };
 		9948E2B9D64D491C13586130 /* UndoAndNewGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DE13E014397FE0C63559F /* UndoAndNewGameUITests.swift */; };
 		9B5B9122E93BB25C71168D05 /* WinOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD224867BFAD53B911B39CFE /* WinOverlayView.swift */; };
+		9CF7AAE057CB54267E0C30DF /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942057C3D489DB52DBF7854A /* StatisticsView.swift */; };
 		A29634B91720E5D883E02C56 /* SolitaireKit in Frameworks */ = {isa = PBXBuildFile; productRef = AFCA65B95D2B3B7A8A1F4034 /* SolitaireKit */; };
 		A85B601EBA0C55144F04E517 /* SolitaireKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD32F132760D3F980B3FF78 /* SolitaireKit */; };
+		A8AD1D3700BB1382FFCB8479 /* TimeFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3C2AC1F7EF071160AEF14 /* TimeFormatTests.swift */; };
+		AB2014E78153ACEF14E6CE9C /* StatisticsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F21B189AE3E496FAD43D4C /* StatisticsStore.swift */; };
 		B57A6776A203A289ED0CEF3C /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4094C6E1FDC724871DBFB210 /* GameStore.swift */; };
+		B946A836C752D9BE7D489791 /* GameViewModelStatisticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393AD112551FA0E8666D008C /* GameViewModelStatisticsTests.swift */; };
 		C097A293DD6E2FF945782C2F /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A22F3D94D4758EDCFD6A09C /* GameViewModel.swift */; };
 		C1CFF7ACDE371C1D384EFCD5 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C7A9B4E04148B3DABE403E /* GameSettings.swift */; };
+		C50FAA8C2681C7BD0A064F93 /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035480A94AEF3063E1CCAA06 /* TimeFormat.swift */; };
 		D0B3FE11D3E96C84A3F75D29 /* TopRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6935303D39BBF948A7FCF4B /* TopRowView.swift */; };
 		D78FD80EAF214C0C991ABE51 /* TableauColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF147627AAD6FBA72A4F124 /* TableauColumnView.swift */; };
 		D8185410A47EE51111BDACD5 /* DragInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297809B5DAFBE5609BE6A757 /* DragInfo.swift */; };
@@ -58,13 +69,18 @@
 
 /* Begin PBXFileReference section */
 		01C4B141B85E5BEAEAE2F656 /* CardGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGestures.swift; sourceTree = "<group>"; };
+		02F21B189AE3E496FAD43D4C /* StatisticsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsStore.swift; sourceTree = "<group>"; };
+		035480A94AEF3063E1CCAA06 /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
 		0AE713015454D0BC9AEADACF /* StockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockUITests.swift; sourceTree = "<group>"; };
 		0CF147627AAD6FBA72A4F124 /* TableauColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableauColumnView.swift; sourceTree = "<group>"; };
+		10470C052B6015F3E635242B /* TestFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFixtures.swift; sourceTree = "<group>"; };
 		1B2B34F7B5FA290B9B7404AD /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		1E02E66D4C947CC161AFB049 /* JSONFileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileStorage.swift; sourceTree = "<group>"; };
 		21705F50790032AA25E8FFCA /* ScoringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringUITests.swift; sourceTree = "<group>"; };
 		297809B5DAFBE5609BE6A757 /* DragInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragInfo.swift; sourceTree = "<group>"; };
 		2E9FE67FEA57B694C1D03C24 /* SolitaireUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SolitaireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B10ABDB682FDB5C88ED4D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		393AD112551FA0E8666D008C /* GameViewModelStatisticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelStatisticsTests.swift; sourceTree = "<group>"; };
 		4094C6E1FDC724871DBFB210 /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
 		419E549A994DD21713B1C2FE /* GameSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsTests.swift; sourceTree = "<group>"; };
 		41B5F45E238FDAB320D8FF70 /* SolitaireKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SolitaireKit; path = SolitaireKit; sourceTree = SOURCE_ROOT; };
@@ -76,15 +92,21 @@
 		75731013731545F928BCC21F /* BoardMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMetrics.swift; sourceTree = "<group>"; };
 		7A22F3D94D4758EDCFD6A09C /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		7D67F7911E127A089B8FC962 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		7D8FFA1F11245E5DFC9DBE27 /* StatisticsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsUITests.swift; sourceTree = "<group>"; };
+		8076BAD83F0492AE4492CFF7 /* StatisticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsModel.swift; sourceTree = "<group>"; };
 		80B7CF6947CF1DF4BB5B35CC /* SolitaireTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SolitaireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8230985F1F039EE51984B743 /* SolitaireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireApp.swift; sourceTree = "<group>"; };
 		88766F0F426DB5C2EA7FCF94 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		912D7DD552D98768A887A1C7 /* GameStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStoreTests.swift; sourceTree = "<group>"; };
 		91346649DA5363C64A6A7B32 /* Solitaire.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Solitaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B4F54565EDD69A0D47C3CA /* LaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchUITests.swift; sourceTree = "<group>"; };
+		941867F983BA26C752B76FD0 /* StatisticsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsModelTests.swift; sourceTree = "<group>"; };
+		942057C3D489DB52DBF7854A /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		9CA3C2AC1F7EF071160AEF14 /* TimeFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatTests.swift; sourceTree = "<group>"; };
 		A6935303D39BBF948A7FCF4B /* TopRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRowView.swift; sourceTree = "<group>"; };
 		B2E3470629350F650DC87F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C11C43C337B1A4FC08D51F13 /* SettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITests.swift; sourceTree = "<group>"; };
+		C34371B9257945500E88A16E /* StatisticsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsStoreTests.swift; sourceTree = "<group>"; };
 		CB5D214114FBC3644DA2B0CC /* MoveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveUITests.swift; sourceTree = "<group>"; };
 		E38DE13E014397FE0C63559F /* UndoAndNewGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoAndNewGameUITests.swift; sourceTree = "<group>"; };
 		ED68BBC67D6440E14C20A58D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -130,6 +152,7 @@
 				21705F50790032AA25E8FFCA /* ScoringUITests.swift */,
 				C11C43C337B1A4FC08D51F13 /* SettingsUITests.swift */,
 				6823827B75B372C9252C5178 /* SolitaireUITestCase.swift */,
+				7D8FFA1F11245E5DFC9DBE27 /* StatisticsUITests.swift */,
 				0AE713015454D0BC9AEADACF /* StockUITests.swift */,
 				E38DE13E014397FE0C63559F /* UndoAndNewGameUITests.swift */,
 			);
@@ -144,6 +167,7 @@
 				1B2B34F7B5FA290B9B7404AD /* CardView.swift */,
 				7D67F7911E127A089B8FC962 /* GameView.swift */,
 				ED68BBC67D6440E14C20A58D /* SettingsView.swift */,
+				942057C3D489DB52DBF7854A /* StatisticsView.swift */,
 				722CC9BD7D1C2111C350F85E /* StatusBarView.swift */,
 				0CF147627AAD6FBA72A4F124 /* TableauColumnView.swift */,
 				A6935303D39BBF948A7FCF4B /* TopRowView.swift */,
@@ -167,7 +191,12 @@
 				F05C1AE9A75946D0CF906612 /* DragInfoTests.swift */,
 				419E549A994DD21713B1C2FE /* GameSettingsTests.swift */,
 				912D7DD552D98768A887A1C7 /* GameStoreTests.swift */,
+				393AD112551FA0E8666D008C /* GameViewModelStatisticsTests.swift */,
 				4AA979238030680CFEA76B25 /* GameViewModelTests.swift */,
+				941867F983BA26C752B76FD0 /* StatisticsModelTests.swift */,
+				C34371B9257945500E88A16E /* StatisticsStoreTests.swift */,
+				10470C052B6015F3E635242B /* TestFixtures.swift */,
+				9CA3C2AC1F7EF071160AEF14 /* TimeFormatTests.swift */,
 			);
 			path = SolitaireTests;
 			sourceTree = "<group>";
@@ -219,6 +248,10 @@
 				49C7A9B4E04148B3DABE403E /* GameSettings.swift */,
 				4094C6E1FDC724871DBFB210 /* GameStore.swift */,
 				7A22F3D94D4758EDCFD6A09C /* GameViewModel.swift */,
+				1E02E66D4C947CC161AFB049 /* JSONFileStorage.swift */,
+				8076BAD83F0492AE4492CFF7 /* StatisticsModel.swift */,
+				02F21B189AE3E496FAD43D4C /* StatisticsStore.swift */,
+				035480A94AEF3063E1CCAA06 /* TimeFormat.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,10 +387,15 @@
 				B57A6776A203A289ED0CEF3C /* GameStore.swift in Sources */,
 				85A55743DC993674365CFDCC /* GameView.swift in Sources */,
 				C097A293DD6E2FF945782C2F /* GameViewModel.swift in Sources */,
+				158D70E85867F92CEC280CFB /* JSONFileStorage.swift in Sources */,
 				F24DCE1120A6EE85430E8357 /* SettingsView.swift in Sources */,
 				3EB3D86B022DD1893897B4D7 /* SolitaireApp.swift in Sources */,
+				2F235689CB965D911C050D6B /* StatisticsModel.swift in Sources */,
+				AB2014E78153ACEF14E6CE9C /* StatisticsStore.swift in Sources */,
+				9CF7AAE057CB54267E0C30DF /* StatisticsView.swift in Sources */,
 				D990B3AEB5325A2848C49FA1 /* StatusBarView.swift in Sources */,
 				D78FD80EAF214C0C991ABE51 /* TableauColumnView.swift in Sources */,
+				C50FAA8C2681C7BD0A064F93 /* TimeFormat.swift in Sources */,
 				D0B3FE11D3E96C84A3F75D29 /* TopRowView.swift in Sources */,
 				9B5B9122E93BB25C71168D05 /* WinOverlayView.swift in Sources */,
 			);
@@ -372,6 +410,7 @@
 				29DBF2E362873348E4A9824E /* ScoringUITests.swift in Sources */,
 				95D4F55C313ED60CB183BD5A /* SettingsUITests.swift in Sources */,
 				EFFDE84FAF73DA97300C8BD8 /* SolitaireUITestCase.swift in Sources */,
+				2BD6DCF7AB70BA4F447CF920 /* StatisticsUITests.swift in Sources */,
 				15A005B9551623D9ADDD6BB3 /* StockUITests.swift in Sources */,
 				9948E2B9D64D491C13586130 /* UndoAndNewGameUITests.swift in Sources */,
 			);
@@ -385,7 +424,12 @@
 				535A2F714901237672E02CD2 /* DragInfoTests.swift in Sources */,
 				7A5DB439E08B2189A939B517 /* GameSettingsTests.swift in Sources */,
 				927F291891C0CECCB9015114 /* GameStoreTests.swift in Sources */,
+				B946A836C752D9BE7D489791 /* GameViewModelStatisticsTests.swift in Sources */,
 				67C2B9F0CE1A326A3E41D752 /* GameViewModelTests.swift in Sources */,
+				065FE93690D81108D276D615 /* StatisticsModelTests.swift in Sources */,
+				57BEBB78747D1EFC64BD3E2C /* StatisticsStoreTests.swift in Sources */,
+				6BAE163CA0801012FC42B706 /* TestFixtures.swift in Sources */,
+				A8AD1D3700BB1382FFCB8479 /* TimeFormatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
