@@ -5,30 +5,37 @@ import SolitaireKit
 /// and whether it already counts in the statistics.
 struct SavedGame: Codable, Equatable {
     var game: Game
+    /// Identifies this game to the statistics, so its result is never counted twice.
+    var gameID: UInt64
     var elapsedSeconds: Int
     /// A move has been made, so abandoning the game counts as a loss even after undoing to the deal.
     var isStarted: Bool
     /// The result is in the statistics; nothing more is recorded for this game.
     var isResultRecorded: Bool
 
-    init(game: Game, elapsedSeconds: Int, isStarted: Bool = false, isResultRecorded: Bool = false) {
+    init(
+        game: Game, gameID: UInt64 = .random(in: .min ... .max), elapsedSeconds: Int,
+        isStarted: Bool = false, isResultRecorded: Bool = false
+    ) {
         self.game = game
+        self.gameID = gameID
         self.elapsedSeconds = elapsedSeconds
         self.isStarted = isStarted || game.moveCount > 0
         self.isResultRecorded = isResultRecorded
     }
 
     private enum CodingKeys: String, CodingKey {
-        case game, elapsedSeconds, isStarted, isResultRecorded
+        case game, gameID, elapsedSeconds, isStarted, isResultRecorded
     }
 
-    /// Saves from before statistics have no flags: a won game is taken as already recorded,
-    /// since no statistics existed when it was won.
+    /// Saves from before statistics have no id or flags: they get a fresh id, and a won game is
+    /// taken as already recorded, since no statistics existed when it was won.
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let game = try container.decode(Game.self, forKey: .game)
         self.init(
             game: game,
+            gameID: try container.decodeIfPresent(UInt64.self, forKey: .gameID) ?? .random(in: .min ... .max),
             elapsedSeconds: try container.decode(Int.self, forKey: .elapsedSeconds),
             isStarted: try container.decodeIfPresent(Bool.self, forKey: .isStarted) ?? false,
             isResultRecorded: try container.decodeIfPresent(Bool.self, forKey: .isResultRecorded) ?? game.isWon

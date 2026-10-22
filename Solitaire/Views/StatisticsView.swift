@@ -20,6 +20,9 @@ struct StatisticsView: View {
         }
     }
 
+    /// Enough to show a rate below one half percent as non-zero.
+    private static let winRateFractionDigits = 0 ... 1
+
     let statistics: StatisticsModel
     @State private var scope = Scope.overall
     @State private var isConfirmingReset = false
@@ -41,7 +44,7 @@ struct StatisticsView: View {
             Section("Games") {
                 row("Played", "\(record.played)", id: "statsPlayed")
                 row("Won", "\(record.won)", id: "statsWon")
-                row("Win rate", record.winRate.map { $0.formatted(.percent.precision(.fractionLength(0))) }, id: "statsWinRate")
+                row("Win rate", record.winRate.map { $0.formatted(.percent.precision(.fractionLength(Self.winRateFractionDigits))) }, id: "statsWinRate")
             }
             Section("Best") {
                 row("Time", record.bestTimeSeconds.map(TimeFormat.minutesAndSeconds), id: "statsBestTime")

@@ -122,5 +122,10 @@ final class StatisticsRecordTests: XCTestCase {
         negativeBest.recordWin(seconds: Self.fastSeconds, moves: Self.fewMoves)
         negativeBest.bestTimeSeconds = -1
         XCTAssertFalse(negativeBest.isValid)
+
+        var negativeMoves = StatisticsRecord()
+        negativeMoves.recordWin(seconds: Self.fastSeconds, moves: Self.fewMoves)
+        negativeMoves.fewestMoves = -1
+        XCTAssertFalse(negativeMoves.isValid)
     }
 }

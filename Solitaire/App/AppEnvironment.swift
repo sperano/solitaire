@@ -13,7 +13,8 @@ struct AppEnvironment {
     private static let statisticsFileName = "statistics.json"
 
     let store: any GameStore
-    let statisticsStore: any StatisticsStore
+    /// One instance for the whole app: each `StatisticsModel` saves its full copy of the statistics.
+    let statistics: StatisticsModel
     let settings: GameSettings
     let fixedSeed: UInt64?
 
@@ -24,7 +25,7 @@ struct AppEnvironment {
         }
         return AppEnvironment(
             store: FileGameStore(url: applicationSupportURL(savedGameFileName)),
-            statisticsStore: FileStatisticsStore(url: applicationSupportURL(statisticsFileName)),
+            statistics: StatisticsModel(store: FileStatisticsStore(url: applicationSupportURL(statisticsFileName))),
             settings: GameSettings(defaults: .standard),
             fixedSeed: nil
         )
@@ -32,7 +33,7 @@ struct AppEnvironment {
 
     func makeViewModel() -> GameViewModel {
         GameViewModel(
-            store: store, settings: settings, statistics: StatisticsModel(store: statisticsStore), fixedSeed: fixedSeed
+            store: store, settings: settings, statistics: statistics, fixedSeed: fixedSeed
         )
     }
 
@@ -49,7 +50,10 @@ struct AppEnvironment {
         }
         let seed = value(after: seedArgument, in: arguments).flatMap { UInt64($0) }
         return AppEnvironment(
-            store: InMemoryGameStore(), statisticsStore: InMemoryStatisticsStore(), settings: settings, fixedSeed: seed
+            store: InMemoryGameStore(),
+            statistics: StatisticsModel(store: InMemoryStatisticsStore()),
+            settings: settings,
+            fixedSeed: seed
         )
     }
 

@@ -10,6 +10,8 @@ final class GameViewModel {
     private static let timerTickNanoseconds: UInt64 = 1_000_000_000
 
     private(set) var game: Game
+    /// See `SavedGame.gameID`.
+    private(set) var gameID: UInt64
     private(set) var elapsedSeconds: Int
     var drag: DragInfo?
     var isShowingSettings = false
@@ -31,6 +33,7 @@ final class GameViewModel {
         self.fixedSeed = fixedSeed
         let saved = store.load()
         game = saved?.game ?? Self.deal(seed: fixedSeed, settings: settings)
+        gameID = saved?.gameID ?? Self.newGameID()
         elapsedSeconds = saved?.elapsedSeconds ?? 0
         isStarted = saved?.isStarted ?? false
         isResultRecorded = saved?.isResultRecorded ?? false
@@ -75,12 +78,13 @@ final class GameViewModel {
         isAutoCompleting = false
         drag = nil
         if isStarted, !isResultRecorded {
-            statistics.recordLoss(drawMode: game.drawMode)
+            statistics.recordLoss(gameID: gameID, drawMode: game.drawMode)
         }
         if game.scoringMode == .vegas, settings.carryVegasBalance {
             settings.vegasBalance = game.score
         }
         game = Self.deal(seed: fixedSeed, settings: settings)
+        gameID = Self.newGameID()
         elapsedSeconds = 0
         isStarted = false
         isResultRecorded = false
@@ -137,6 +141,8 @@ final class GameViewModel {
         )
     }
 
+    private static func newGameID() -> UInt64 { .random(in: .min ... .max) }
+
     @discardableResult
     private func perform(_ move: Move) -> Bool {
         do {
@@ -154,13 +160,14 @@ final class GameViewModel {
     /// Counts a win once, with the time and moves it took.
     private func recordWinIfNeeded() {
         guard game.isWon, !isResultRecorded else { return }
-        statistics.recordWin(drawMode: game.drawMode, seconds: elapsedSeconds, moves: game.moveCount)
+        statistics.recordWin(gameID: gameID, drawMode: game.drawMode, seconds: elapsedSeconds, moves: game.moveCount)
         isResultRecorded = true
     }
 
     private func persist() {
         store.save(SavedGame(
-            game: game, elapsedSeconds: elapsedSeconds, isStarted: isStarted, isResultRecorded: isResultRecorded
+            game: game, gameID: gameID, elapsedSeconds: elapsedSeconds,
+            isStarted: isStarted, isResultRecorded: isResultRecorded
         ))
     }
 

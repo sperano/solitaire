@@ -11,4 +11,8 @@ final class TimeFormatTests: XCTestCase {
             XCTAssertEqual(TimeFormat.minutesAndSeconds(seconds), text, "\(seconds)")
         }
     }
+
+    func testNegativeInputShowsZero() {
+        XCTAssertEqual(TimeFormat.minutesAndSeconds(-5), "0:00")
+    }
 }

@@ -138,6 +138,19 @@ final class GameViewModelStatisticsTests: XCTestCase {
         XCTAssertEqual(recorded.overall.played, 1)
     }
 
+    func testReplayingAWinFromAStaleSaveDoesNotCountItAgain() throws {
+        // The statistics were written but the game file still holds the position before the
+        // winning move, as if the app died between the two writes.
+        let beforeWin = SavedGame(game: try Game.oneMoveFromWinning(), elapsedSeconds: Self.winningSeconds)
+        try playLastMove(makeModel(resuming: beforeWin))
+        XCTAssertEqual(recorded.overall.won, 1)
+
+        try playLastMove(makeModel(resuming: beforeWin))
+
+        XCTAssertEqual(recorded.overall.won, 1)
+        XCTAssertEqual(recorded.overall.played, 1)
+    }
+
     func testAutoCompleteWinIsRecorded() async throws {
         let model = makeModel(resuming: SavedGame(game: try Game.completable(), elapsedSeconds: Self.winningSeconds))
         model.autoComplete()

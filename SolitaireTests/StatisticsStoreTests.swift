@@ -18,8 +18,8 @@ final class StatisticsStoreTests: XCTestCase {
 
     private func sample() -> GameStatistics {
         var statistics = GameStatistics()
-        statistics.recordWin(drawMode: .one, seconds: Self.seconds, moves: Self.moves)
-        statistics.recordLoss(drawMode: .three)
+        statistics.recordWin(gameID: 1, drawMode: .one, seconds: Self.seconds, moves: Self.moves)
+        statistics.recordLoss(gameID: 2, drawMode: .three)
         return statistics
     }
 

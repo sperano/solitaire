@@ -9,7 +9,7 @@ final class StatisticsModelTests: XCTestCase {
 
     func testStartsFromTheStoredStatistics() {
         var stored = GameStatistics()
-        stored.recordLoss(drawMode: .one)
+        stored.recordLoss(gameID: 1, drawMode: .one)
         let model = StatisticsModel(store: InMemoryStatisticsStore(saved: stored))
         XCTAssertEqual(model.statistics, stored)
     }
@@ -22,10 +22,10 @@ final class StatisticsModelTests: XCTestCase {
         let store = InMemoryStatisticsStore()
         let model = StatisticsModel(store: store)
 
-        model.recordWin(drawMode: .three, seconds: Self.seconds, moves: Self.moves)
+        model.recordWin(gameID: 1, drawMode: .three, seconds: Self.seconds, moves: Self.moves)
         XCTAssertEqual(store.saved?[.three].won, 1)
 
-        model.recordLoss(drawMode: .one)
+        model.recordLoss(gameID: 2, drawMode: .one)
         XCTAssertEqual(store.saved?[.one].played, 1)
         XCTAssertEqual(store.saved, model.statistics)
     }
@@ -33,11 +33,19 @@ final class StatisticsModelTests: XCTestCase {
     func testResetClearsAndSaves() {
         let store = InMemoryStatisticsStore()
         let model = StatisticsModel(store: store)
-        model.recordLoss(drawMode: .one)
+        model.recordLoss(gameID: 1, drawMode: .one)
 
         model.reset()
 
         XCTAssertEqual(model.statistics, GameStatistics())
         XCTAssertEqual(store.saved, GameStatistics())
+    }
+
+    func testTheSameGameIsRecordedOnce() {
+        let store = InMemoryStatisticsStore()
+        let model = StatisticsModel(store: store)
+        model.recordWin(gameID: 1, drawMode: .one, seconds: Self.seconds, moves: Self.moves)
+        model.recordWin(gameID: 1, drawMode: .one, seconds: Self.seconds, moves: Self.moves)
+        XCTAssertEqual(store.saved?.overall.won, 1)
     }
 }

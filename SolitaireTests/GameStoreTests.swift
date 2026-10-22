@@ -87,6 +87,7 @@ final class GameStoreTests: XCTestCase {
 
     func testSaveFromBeforeStatisticsGetsFlagsFromTheGame() throws {
         let inProgress = try decodeWithoutFlags(try makeSaved())
+        XCTAssertNotEqual(inProgress.gameID, try decodeWithoutFlags(try makeSaved()).gameID, "each old save gets its own id")
         XCTAssertTrue(inProgress.isStarted)
         XCTAssertFalse(inProgress.isResultRecorded)
 
@@ -96,6 +97,7 @@ final class GameStoreTests: XCTestCase {
 
     private func decodeWithoutFlags(_ saved: SavedGame) throws -> SavedGame {
         var object = try XCTUnwrap(JSONSerialization.jsonObject(with: JSONEncoder().encode(saved)) as? [String: Any])
+        object.removeValue(forKey: "gameID")
         object.removeValue(forKey: "isStarted")
         object.removeValue(forKey: "isResultRecorded")
         return try JSONDecoder().decode(SavedGame.self, from: JSONSerialization.data(withJSONObject: object))
