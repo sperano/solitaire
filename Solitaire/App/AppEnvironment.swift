@@ -10,8 +10,10 @@ struct AppEnvironment {
     static let scoringModeArgument = "-scoringMode"
     private static let uiTestingDefaultsSuite = "quebec.spe.Solitaire.ui-testing"
     private static let savedGameFileName = "current-game.json"
+    private static let statisticsFileName = "statistics.json"
 
     let store: any GameStore
+    let statisticsStore: any StatisticsStore
     let settings: GameSettings
     let fixedSeed: UInt64?
 
@@ -20,11 +22,18 @@ struct AppEnvironment {
         if arguments.contains(uiTestingFlag) {
             return uiTesting(arguments: arguments)
         }
-        return AppEnvironment(store: FileGameStore(url: savedGameURL()), settings: GameSettings(defaults: .standard), fixedSeed: nil)
+        return AppEnvironment(
+            store: FileGameStore(url: applicationSupportURL(savedGameFileName)),
+            statisticsStore: FileStatisticsStore(url: applicationSupportURL(statisticsFileName)),
+            settings: GameSettings(defaults: .standard),
+            fixedSeed: nil
+        )
     }
 
     func makeViewModel() -> GameViewModel {
-        GameViewModel(store: store, settings: settings, fixedSeed: fixedSeed)
+        GameViewModel(
+            store: store, settings: settings, statistics: StatisticsModel(store: statisticsStore), fixedSeed: fixedSeed
+        )
     }
 
     private static func uiTesting(arguments: [String]) -> AppEnvironment {
@@ -39,7 +48,9 @@ struct AppEnvironment {
             settings.scoringMode = mode
         }
         let seed = value(after: seedArgument, in: arguments).flatMap { UInt64($0) }
-        return AppEnvironment(store: InMemoryGameStore(), settings: settings, fixedSeed: seed)
+        return AppEnvironment(
+            store: InMemoryGameStore(), statisticsStore: InMemoryStatisticsStore(), settings: settings, fixedSeed: seed
+        )
     }
 
     private static func value(after flag: String, in arguments: [String]) -> String? {
@@ -47,8 +58,8 @@ struct AppEnvironment {
         return arguments[index + 1]
     }
 
-    private static func savedGameURL() -> URL {
+    private static func applicationSupportURL(_ fileName: String) -> URL {
         let directory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        return directory.appending(path: savedGameFileName)
+        return directory.appending(path: fileName)
     }
 }

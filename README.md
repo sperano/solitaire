@@ -13,6 +13,9 @@ interrupts the game with something.
 - Scoring: none, standard (Windows-style points with a time bonus) or Vegas
   ($52 per game, $5 per card on a foundation, limited passes through the
   stock, optional balance carried between games)
+- Statistics per draw mode and overall: games played and won, win rate, best
+  time, fewest moves, current and longest win streak (Settings → Statistics);
+  abandoning a started game counts as a loss
 - The current game resumes when you reopen the app
 - "Finish" button once every card is face up
 

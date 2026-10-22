@@ -8,10 +8,6 @@ final class GameViewModelTests: XCTestCase {
     private static let savedSeed: UInt64 = 5
     private static let savedElapsed = 65
     private static let seedSearchRange: ClosedRange<UInt64> = 0 ... 200
-    private static let firstRemainingRank = Rank.seven
-    private static let remainingRanks = Rank.allCases.filter { $0 >= firstRemainingRank }.reversed()
-    /// Seven to king of hearts and spades.
-    private static let remainingCardCount = 2 * remainingRanks.count
     private static let carriedBalance = 100
     private static let longGameSeconds = 100
 
@@ -33,7 +29,10 @@ final class GameViewModelTests: XCTestCase {
     }
 
     private func makeModel(fixedSeed: UInt64? = GameViewModelTests.fixedSeed) -> GameViewModel {
-        GameViewModel(store: store, settings: settings, fixedSeed: fixedSeed)
+        GameViewModel(
+            store: store, settings: settings, statistics: StatisticsModel(store: InMemoryStatisticsStore()),
+            fixedSeed: fixedSeed
+        )
     }
 
     private func makeModel(resuming saved: SavedGame) -> GameViewModel {
@@ -51,38 +50,6 @@ final class GameViewModelTests: XCTestCase {
             }
         }
         throw XCTSkip("no suitable seed found")
-    }
-
-    /// Clubs and diamonds are complete, hearts and spades are up to the six, and the
-    /// seven to king of both sit face up in two alternating runs, so the game can finish itself.
-    private func makeCompletableGame(scoringMode: ScoringMode = .none) throws -> Game {
-        var json = try XCTUnwrap(
-            JSONSerialization.jsonObject(with: JSONEncoder().encode(GameState.deal(seed: 1, drawMode: .one))) as? [String: Any]
-        )
-        func encode(_ cards: [Card]) throws -> Any {
-            try JSONSerialization.jsonObject(with: JSONEncoder().encode(cards))
-        }
-        func faceUp(_ suit: Suit, _ ranks: some Sequence<Rank>) -> [Card] {
-            ranks.map { Card(suit: suit, rank: $0, isFaceUp: true) }
-        }
-        /// Kings down to sevens, alternating between the two suits.
-        func run(startingWith first: Suit, then second: Suit) -> [Card] {
-            Self.remainingRanks.enumerated().map { offset, rank in
-                Card(suit: offset.isMultiple(of: 2) ? first : second, rank: rank, isFaceUp: true)
-            }
-        }
-        let partial = Rank.allCases.filter { $0 < Self.firstRemainingRank }
-        json["stock"] = []
-        json["waste"] = []
-        json["scoringMode"] = scoringMode.rawValue
-        json["foundations"] = try [
-            encode(faceUp(.clubs, Rank.allCases)), encode(faceUp(.diamonds, Rank.allCases)),
-            encode(faceUp(.hearts, partial)), encode(faceUp(.spades, partial)),
-        ]
-        json["tableau"] = try [encode(run(startingWith: .spades, then: .hearts)), encode(run(startingWith: .hearts, then: .spades))]
-            + Array(repeating: [Any](), count: GameState.tableauColumnCount - 2)
-        let state = try JSONDecoder().decode(GameState.self, from: JSONSerialization.data(withJSONObject: json))
-        return Game(state: state)
     }
 
     // MARK: Init
@@ -265,14 +232,14 @@ final class GameViewModelTests: XCTestCase {
     }
 
     func testCanAutoCompleteOnCompletablePosition() throws {
-        let game = try makeCompletableGame()
+        let game = try Game.completable()
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: 0))
         XCTAssertTrue(model.canAutoComplete)
         XCTAssertFalse(model.isWon)
     }
 
     func testAutoCompleteFinishesTheGame() async throws {
-        let game = try makeCompletableGame()
+        let game = try Game.completable()
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: 0))
 
         model.autoComplete()
@@ -284,12 +251,12 @@ final class GameViewModelTests: XCTestCase {
             await Task.yield()
         }
         XCTAssertTrue(model.isWon)
-        XCTAssertEqual(model.moveCount, Self.remainingCardCount)
+        XCTAssertEqual(model.moveCount, Game.completableRemainingCardCount)
         XCTAssertFalse(model.isAutoCompleting)
     }
 
     func testBoardIgnoresInputWhileAutoCompleting() throws {
-        let game = try makeCompletableGame()
+        let game = try Game.completable()
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: 0))
         let column = try XCTUnwrap(PileID.allTableau.first { !model.state.pile($0).isEmpty })
         let top = model.state.pile(column).count - 1
@@ -368,7 +335,7 @@ final class GameViewModelTests: XCTestCase {
     }
 
     func testWonStandardGameAddsTheTimeBonus() throws {
-        var game = try makeCompletableGame(scoringMode: .standard)
+        var game = try Game.completable(scoringMode: .standard)
         while let move = game.nextAutoCompleteMove() { try game.perform(move) }
         XCTAssertTrue(game.isWon)
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: Self.longGameSeconds))
@@ -379,7 +346,7 @@ final class GameViewModelTests: XCTestCase {
     }
 
     func testNoTimeBonusBeforeTheWin() throws {
-        let game = try makeCompletableGame(scoringMode: .standard)
+        let game = try Game.completable(scoringMode: .standard)
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: Self.longGameSeconds))
         XCTAssertEqual(model.timeBonus, 0)
         XCTAssertEqual(model.score, game.score)

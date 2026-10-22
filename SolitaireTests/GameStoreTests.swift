@@ -69,4 +69,35 @@ final class GameStoreTests: XCTestCase {
         store.save(nil)
         XCTAssertNil(store.load())
     }
+
+    // MARK: Statistics flags
+
+    func testFlagsRoundTrip() throws {
+        let store = FileGameStore(url: directory.appending(path: "game.json"))
+        var saved = try makeSaved()
+        saved.isResultRecorded = true
+        store.save(saved)
+        XCTAssertEqual(store.load(), saved)
+    }
+
+    func testAGameWithMovesIsAlwaysStarted() throws {
+        XCTAssertTrue(SavedGame(game: try makeSaved().game, elapsedSeconds: 0).isStarted)
+        XCTAssertFalse(SavedGame(game: Game(seed: Self.seed, drawMode: .one), elapsedSeconds: 0).isStarted)
+    }
+
+    func testSaveFromBeforeStatisticsGetsFlagsFromTheGame() throws {
+        let inProgress = try decodeWithoutFlags(try makeSaved())
+        XCTAssertTrue(inProgress.isStarted)
+        XCTAssertFalse(inProgress.isResultRecorded)
+
+        let won = try decodeWithoutFlags(SavedGame(game: try Game.won(), elapsedSeconds: Self.elapsed))
+        XCTAssertTrue(won.isResultRecorded, "a game won before statistics existed is not counted later")
+    }
+
+    private func decodeWithoutFlags(_ saved: SavedGame) throws -> SavedGame {
+        var object = try XCTUnwrap(JSONSerialization.jsonObject(with: JSONEncoder().encode(saved)) as? [String: Any])
+        object.removeValue(forKey: "isStarted")
+        object.removeValue(forKey: "isResultRecorded")
+        return try JSONDecoder().decode(SavedGame.self, from: JSONSerialization.data(withJSONObject: object))
+    }
 }

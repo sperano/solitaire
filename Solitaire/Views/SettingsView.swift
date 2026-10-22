@@ -3,6 +3,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Bindable var settings: GameSettings
+    let statistics: StatisticsModel
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -31,6 +32,10 @@ struct SettingsView: View {
                     Text("Rules")
                 } footer: {
                     Text(rulesFooter)
+                }
+                Section {
+                    NavigationLink("Statistics") { StatisticsView(statistics: statistics) }
+                        .accessibilityIdentifier("statisticsLink")
                 }
                 Section("About") {
                     LabeledContent("Version", value: Bundle.main.shortVersion)

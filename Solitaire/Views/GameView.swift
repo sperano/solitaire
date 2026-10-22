@@ -20,7 +20,7 @@ struct GameView: View {
             }
         }
         .sheet(isPresented: $viewModel.isShowingSettings) {
-            SettingsView(settings: viewModel.settings)
+            SettingsView(settings: viewModel.settings, statistics: viewModel.statistics)
         }
     }
 
@@ -60,5 +60,9 @@ struct GameView: View {
 }
 
 #Preview {
-    GameView(viewModel: GameViewModel(store: InMemoryGameStore(), settings: GameSettings(defaults: .standard)))
+    GameView(viewModel: GameViewModel(
+        store: InMemoryGameStore(),
+        settings: GameSettings(defaults: .standard),
+        statistics: StatisticsModel(store: InMemoryStatisticsStore())
+    ))
 }
