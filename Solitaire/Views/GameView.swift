@@ -30,11 +30,6 @@ struct GameView: View {
                 WinOverlayView(viewModel: viewModel)
             }
         }
-        .onChange(of: viewModel.hint) { _, hint in
-            if let hint {
-                AccessibilityNotification.Announcement(HintAnnouncement.text(for: hint, in: viewModel.state)).post()
-            }
-        }
         .sheet(isPresented: $viewModel.isShowingSettings, onDismiss: viewModel.settingsDismissed) {
             SettingsView(settings: viewModel.settings, statistics: viewModel.statistics)
         }

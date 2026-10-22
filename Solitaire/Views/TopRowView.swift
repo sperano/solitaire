@@ -75,6 +75,7 @@ struct WasteView: View {
                     .offset(x: CGFloat(fanIndex) * metrics.wasteFanOffset)
                     .dragOffset(viewModel.drag, pile: .waste, index: entry.index, pileCount: cards.count)
                     .zIndex(Double(fanIndex))
+                    .transition(.opacity)
                     .allowsHitTesting(isTop)
                     .modifier(TopCardGestures(enabled: isTop, viewModel: viewModel, pile: .waste, pileCount: cards.count, dropTarget: dropTarget))
             }
@@ -109,6 +110,7 @@ struct FoundationView: View {
                 let isTop = index == cards.count - 1
                 CardView(card: cards[index], metrics: metrics, isHinted: viewModel.isHinted(pile, index: index))
                     .dragOffset(viewModel.drag, pile: pile, index: index, pileCount: cards.count)
+                    .transition(.opacity)
                     .allowsHitTesting(isTop)
                     .modifier(TopCardGestures(enabled: isTop, viewModel: viewModel, pile: pile, pileCount: cards.count, dropTarget: dropTarget))
             }
