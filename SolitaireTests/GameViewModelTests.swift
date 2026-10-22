@@ -319,7 +319,7 @@ final class GameViewModelTests: XCTestCase {
     private func waitForAutoComplete(_ model: GameViewModel) async {
         let deadline = ContinuousClock.now + Self.autoCompleteWaitLimit
         while model.isAutoCompleting, ContinuousClock.now < deadline {
-            await Task.yield()
+            try? await Task.sleep(for: .milliseconds(10))
         }
     }
 
