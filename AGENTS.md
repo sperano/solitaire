@@ -53,7 +53,8 @@ them. Never add a dependency or feature that sends data anywhere.
   accessibility containers so their card identifiers stay reachable; the
   stock is a single button element and exposes no card identifiers. Keep these stable; UI tests depend on them.
 - UI-test launch arguments: `--ui-testing` gives in-memory game and
-  statistics stores and fresh defaults. Only with it, `-seed <UInt64>` fixes the deal (required for a
+  statistics stores and fresh defaults, and keeps a hint up until the next
+  move (CI steps can outlast the normal 3 s). Only with it, `-seed <UInt64>` fixes the deal (required for a
   reproducible board, otherwise the seed is random), `-drawMode 1|3` sets
   the draw mode and `-scoringMode 0|1|2` sets none, standard or Vegas
   scoring (standard by default), and `-position <name>` starts from a
