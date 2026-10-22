@@ -36,9 +36,9 @@ struct StockView: View {
 
     var body: some View {
         ZStack {
-            EmptySlotView(metrics: metrics, symbol: emptySymbol)
+            EmptySlotView(metrics: metrics, symbol: emptySymbol, isHinted: viewModel.isHintedEmptySlot(.stock))
             if let top = cards.last {
-                CardView(card: top, metrics: metrics)
+                CardView(card: top, metrics: metrics, isHinted: viewModel.isHinted(.stock, index: cards.count - 1))
             }
         }
         .contentShape(Rectangle())
@@ -49,7 +49,7 @@ struct StockView: View {
         .accessibilityLabel("Stock")
         .accessibilityValue("\(cards.count) cards")
         .accessibilityHint(passesUsedUp ? "No passes left" : "")
-        .accessibilityAddTraits(.isButton)
+        .accessibilityAddTraits(viewModel.isStockHinted ? [.isButton, .isSelected] : .isButton)
     }
 }
 
@@ -71,7 +71,7 @@ struct WasteView: View {
             EmptySlotView(metrics: metrics)
             ForEach(Array(visible.enumerated()), id: \.element.card.id) { fanIndex, entry in
                 let isTop = entry.index == cards.count - 1
-                CardView(card: entry.card, metrics: metrics)
+                CardView(card: entry.card, metrics: metrics, isHinted: viewModel.isHinted(.waste, index: entry.index))
                     .offset(x: CGFloat(fanIndex) * metrics.wasteFanOffset)
                     .dragOffset(viewModel.drag, pile: .waste, index: entry.index, pileCount: cards.count)
                     .zIndex(Double(fanIndex))
@@ -104,10 +104,10 @@ struct FoundationView: View {
 
     var body: some View {
         ZStack {
-            EmptySlotView(metrics: metrics, symbol: Self.emptySymbol)
+            EmptySlotView(metrics: metrics, symbol: Self.emptySymbol, isHinted: viewModel.isHintedEmptySlot(pile))
             ForEach(Array(cards.indices.suffix(Self.visibleCardCount)), id: \.self) { index in
                 let isTop = index == cards.count - 1
-                CardView(card: cards[index], metrics: metrics)
+                CardView(card: cards[index], metrics: metrics, isHinted: viewModel.isHinted(pile, index: index))
                     .dragOffset(viewModel.drag, pile: pile, index: index, pileCount: cards.count)
                     .allowsHitTesting(isTop)
                     .modifier(TopCardGestures(enabled: isTop, viewModel: viewModel, pile: pile, pileCount: cards.count, dropTarget: dropTarget))

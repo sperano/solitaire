@@ -80,4 +80,12 @@ final class GameSettingsTests: XCTestCase {
         XCTAssertEqual(settings.carriedVegasBalance, 0)
         XCTAssertEqual(GameSettings(defaults: defaults).vegasBalance, 0)
     }
+
+    func testAutoFinishIsOffByDefaultAndPersists() {
+        let settings = GameSettings(defaults: defaults)
+        XCTAssertFalse(settings.autoFinish)
+        settings.autoFinish = true
+        XCTAssertTrue(defaults.bool(forKey: GameSettings.autoFinishKey))
+        XCTAssertTrue(GameSettings(defaults: defaults).autoFinish)
+    }
 }

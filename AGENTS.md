@@ -38,24 +38,30 @@ them. Never add a dependency or feature that sends data anywhere.
   `stock`, `waste`, `foundation-N`, `tableau-N` with value `"<n> cards"`;
   cards are `card-<rank><suit letter>` (`card-10D`, `card-KS`). Controls:
   `undoButton`, `newGameButton`, `confirmNewGameButton`, `settingsButton`,
-  `autoCompleteButton`, `drawModePicker`, `scoringModePicker`,
-  `carryVegasBalanceToggle`, `settingsDoneButton`, `winNewGameButton`,
+  `autoCompleteButton`, `hintButton` (shown instead of Finish),
+  `drawModePicker`, `scoringModePicker`, `carryVegasBalanceToggle`,
+  `autoFinishToggle`, `settingsDoneButton`, `winNewGameButton`,
   `statisticsLink`, `statisticsScopePicker`, `resetStatisticsButton`,
   `confirmResetStatisticsButton`; statistics rows `statsPlayed`, `statsWon`,
   `statsWinRate`, `statsBestTime`, `statsFewestMoves`, `statsCurrentStreak`,
   `statsLongestStreak` with the value as accessibility value (`none` when
   empty); labels
   `movesLabel`, `timeLabel`, `scoreLabel` (absent without scoring),
-  `winSummary`, `winScore`; the
-  `winOverlay` container. The waste, foundations and tableau columns are
+  `winSummary`, `winScore`, `noHintLabel` (shown when a hint finds no useful
+  move); the `winOverlay` container. Cards a hint points at, and the stock
+  when the hint is to draw, carry the `isSelected` accessibility trait. The waste, foundations and tableau columns are
   accessibility containers so their card identifiers stay reachable; the
   stock is a single button element and exposes no card identifiers. Keep these stable; UI tests depend on them.
 - UI-test launch arguments: `--ui-testing` gives in-memory game and
   statistics stores and fresh defaults. Only with it, `-seed <UInt64>` fixes the deal (required for a
   reproducible board, otherwise the seed is random), `-drawMode 1|3` sets
   the draw mode and `-scoringMode 0|1|2` sets none, standard or Vegas
-  scoring (standard by default); a normal launch ignores all three.
-  See `AppEnvironment`. UI tests use seed 42, whose tableau tops are
+  scoring (standard by default), and `-position <name>` starts from a
+  `FixturePosition` board (`completable`, `oneMoveFromCompletable`,
+  `deadlocked`) in the chosen modes instead of a deal; a normal launch
+  ignores them all. See `AppEnvironment`. Unit tests build the same boards
+  through `FixturePosition`, and engine fixtures through `GameState.position`,
+  which returns nil for a board legal play cannot reach. UI tests use seed 42, whose tableau tops are
   2♣ 8♣ Q♣ 5♥ 6♠ 5♣ A♥.
 - Tests live in the matching test target, one file per source file
   (`GameViewModel.swift` → `SolitaireTests/GameViewModelTests.swift`). Engine

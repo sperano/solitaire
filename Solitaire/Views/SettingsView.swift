@@ -34,6 +34,14 @@ struct SettingsView: View {
                     Text(rulesFooter)
                 }
                 Section {
+                    Toggle("Finish automatically", isOn: $settings.autoFinish)
+                        .accessibilityIdentifier("autoFinishToggle")
+                } header: {
+                    Text("Play")
+                } footer: {
+                    Text("Once every remaining card can go to the foundations, play them without tapping Finish.")
+                }
+                Section {
                     NavigationLink("Statistics") { StatisticsView(statistics: statistics) }
                         .accessibilityIdentifier("statisticsLink")
                 }

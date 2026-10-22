@@ -10,6 +10,7 @@ final class GameViewModelTests: XCTestCase {
     private static let seedSearchRange: ClosedRange<UInt64> = 0 ... 200
     private static let carriedBalance = 100
     private static let longGameSeconds = 100
+    private static let autoCompleteWaitLimit = Duration.seconds(10)
 
     private var suiteName = ""
     private var defaults: UserDefaults!
@@ -232,31 +233,28 @@ final class GameViewModelTests: XCTestCase {
     }
 
     func testCanAutoCompleteOnCompletablePosition() throws {
-        let game = try Game.completable()
+        let game = Game.completable()
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: 0))
         XCTAssertTrue(model.canAutoComplete)
         XCTAssertFalse(model.isWon)
     }
 
     func testAutoCompleteFinishesTheGame() async throws {
-        let game = try Game.completable()
+        let game = Game.completable()
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: 0))
 
         model.autoComplete()
         XCTAssertTrue(model.isAutoCompleting)
         XCTAssertFalse(model.canUndo)
 
-        let deadline = ContinuousClock.now + .seconds(10)
-        while model.isAutoCompleting, ContinuousClock.now < deadline {
-            await Task.yield()
-        }
+        await waitForAutoComplete(model)
         XCTAssertTrue(model.isWon)
         XCTAssertEqual(model.moveCount, Game.completableRemainingCardCount)
         XCTAssertFalse(model.isAutoCompleting)
     }
 
     func testBoardIgnoresInputWhileAutoCompleting() throws {
-        let game = try Game.completable()
+        let game = Game.completable()
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: 0))
         let column = try XCTUnwrap(PileID.allTableau.first { !model.state.pile($0).isEmpty })
         let top = model.state.pile(column).count - 1
@@ -267,6 +265,62 @@ final class GameViewModelTests: XCTestCase {
         model.drag = DragInfo(source: column, count: 1, translation: .zero)
         XCTAssertFalse(model.drop(on: .foundation(0)))
         XCTAssertEqual(model.moveCount, 0, "no move may slip in before auto-complete runs")
+    }
+
+    func testAutoFinishStartsOnceTheLastBlockingCardIsPlayed() async {
+        settings.autoFinish = true
+        let model = makeModel(resuming: SavedGame(game: Game.oneMoveFromCompletable(), elapsedSeconds: 0))
+        XCTAssertFalse(model.isAutoCompleting)
+
+        model.tapCard(in: .waste, index: 0)
+        XCTAssertTrue(model.isAutoCompleting)
+        await waitForAutoComplete(model)
+        XCTAssertTrue(model.isWon)
+    }
+
+    func testWithoutAutoFinishTheFinishButtonWaits() {
+        let model = makeModel(resuming: SavedGame(game: Game.oneMoveFromCompletable(), elapsedSeconds: 0))
+        model.tapCard(in: .waste, index: 0)
+        XCTAssertFalse(model.isAutoCompleting)
+        XCTAssertTrue(model.canAutoComplete)
+    }
+
+    func testAutoFinishStartsWhenACompletableGameIsResumed() async {
+        settings.autoFinish = true
+        let model = makeModel(resuming: SavedGame(game: Game.completable(), elapsedSeconds: 0))
+        XCTAssertTrue(model.isAutoCompleting)
+        await waitForAutoComplete(model)
+        XCTAssertTrue(model.isWon)
+    }
+
+    func testUndoingAnAutoFinishedWinDoesNotFinishAgain() async {
+        settings.autoFinish = true
+        let model = makeModel(resuming: SavedGame(game: Game.completable(), elapsedSeconds: 0))
+        await waitForAutoComplete(model)
+
+        model.undo()
+        XCTAssertFalse(model.isWon)
+        XCTAssertFalse(model.isAutoCompleting)
+        XCTAssertTrue(model.canAutoComplete)
+    }
+
+    func testTurningAutoFinishOnWhileFinishIsOfferedTakesEffectWhenSettingsClose() async {
+        let model = makeModel(resuming: SavedGame(game: Game.completable(), elapsedSeconds: 0))
+        model.settingsDismissed()
+        XCTAssertFalse(model.isAutoCompleting, "the setting is still off")
+
+        settings.autoFinish = true
+        model.settingsDismissed()
+        XCTAssertTrue(model.isAutoCompleting)
+        await waitForAutoComplete(model)
+        XCTAssertTrue(model.isWon)
+    }
+
+    private func waitForAutoComplete(_ model: GameViewModel) async {
+        let deadline = ContinuousClock.now + Self.autoCompleteWaitLimit
+        while model.isAutoCompleting, ContinuousClock.now < deadline {
+            try? await Task.sleep(for: .milliseconds(10))
+        }
     }
 
     func testAcceptsInputDuringNormalPlay() {
@@ -335,7 +389,7 @@ final class GameViewModelTests: XCTestCase {
     }
 
     func testWonStandardGameAddsTheTimeBonus() throws {
-        var game = try Game.completable(scoringMode: .standard)
+        var game = Game.completable(scoringMode: .standard)
         while let move = game.nextAutoCompleteMove() { try game.perform(move) }
         XCTAssertTrue(game.isWon)
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: Self.longGameSeconds))
@@ -346,7 +400,7 @@ final class GameViewModelTests: XCTestCase {
     }
 
     func testNoTimeBonusBeforeTheWin() throws {
-        let game = try Game.completable(scoringMode: .standard)
+        let game = Game.completable(scoringMode: .standard)
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: Self.longGameSeconds))
         XCTAssertEqual(model.timeBonus, 0)
         XCTAssertEqual(model.score, game.score)

@@ -8,9 +8,12 @@ struct CardView: View {
     private static let backInsetRatio: CGFloat = 0.1
     private static let borderWidth: CGFloat = 1
     private static let backInnerBorderWidth: CGFloat = 1.5
+    static let hintBorderWidth: CGFloat = 3
 
     let card: Card
     let metrics: BoardMetrics
+    /// Part of the move a hint shows.
+    var isHinted = false
 
     var body: some View {
         Group {
@@ -21,8 +24,14 @@ struct CardView: View {
             }
         }
         .frame(width: metrics.cardWidth, height: metrics.cardHeight)
+        .overlay {
+            if isHinted {
+                shape.strokeBorder(Theme.hint, lineWidth: Self.hintBorderWidth)
+            }
+        }
         .accessibilityIdentifier(card.accessibilityIdentifier)
         .accessibilityLabel(card.isFaceUp ? card.name : "face-down card")
+        .accessibilityAddTraits(isHinted ? .isSelected : [])
     }
 
     private var shape: RoundedRectangle {
@@ -68,10 +77,15 @@ struct EmptySlotView: View {
 
     let metrics: BoardMetrics
     var symbol: String?
+    /// The pile a hint points at.
+    var isHinted = false
 
     var body: some View {
         RoundedRectangle(cornerRadius: metrics.cornerRadius, style: .continuous)
-            .strokeBorder(Theme.slotStroke, lineWidth: Self.strokeWidth)
+            .strokeBorder(
+                isHinted ? Theme.hint : Theme.slotStroke,
+                lineWidth: isHinted ? CardView.hintBorderWidth : Self.strokeWidth
+            )
             .overlay {
                 if let symbol {
                     Image(systemName: symbol)

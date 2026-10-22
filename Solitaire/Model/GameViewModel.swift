@@ -6,8 +6,9 @@ import SolitaireKit
 @MainActor
 @Observable
 final class GameViewModel {
-    static let autoCompleteStepNanoseconds: UInt64 = 120_000_000
+    static let autoCompleteStepSeconds = 0.12
     private static let timerTickNanoseconds: UInt64 = 1_000_000_000
+    static let defaultHintDuration = Duration.seconds(3)
 
     private(set) var game: Game
     /// See `SavedGame.gameID`.
@@ -16,6 +17,10 @@ final class GameViewModel {
     var drag: DragInfo?
     var isShowingSettings = false
     private(set) var isAutoCompleting = false
+    /// The hint on show, cleared by the next move, undo or new game, or after `hintDuration`.
+    private(set) var hint: Hint?
+    /// How long a hint stays on the board when the player does nothing.
+    var hintDuration = defaultHintDuration
     /// See `SavedGame.isStarted` and `SavedGame.isResultRecorded`.
     private(set) var isStarted: Bool
     private(set) var isResultRecorded: Bool
@@ -25,6 +30,7 @@ final class GameViewModel {
     private let store: any GameStore
     private let fixedSeed: UInt64?
     private var timerTask: Task<Void, Never>?
+    private var hintTask: Task<Void, Never>?
 
     init(store: any GameStore, settings: GameSettings, statistics: StatisticsModel, fixedSeed: UInt64? = nil) {
         self.store = store
@@ -38,6 +44,7 @@ final class GameViewModel {
         isStarted = saved?.isStarted ?? false
         isResultRecorded = saved?.isResultRecorded ?? false
         syncTimer()
+        finishIfAutomatic()
     }
 
     var state: GameState { game.state }
@@ -46,6 +53,8 @@ final class GameViewModel {
     /// Player input is ignored while auto-complete plays the remaining cards.
     var acceptsInput: Bool { !isAutoCompleting && !game.isWon }
     var canAutoComplete: Bool { game.canAutoComplete && !isAutoCompleting }
+    /// Hints are offered during play, except when the Finish button already shows the way.
+    var canHint: Bool { acceptsInput && !game.canAutoComplete }
     var moveCount: Int { game.moveCount }
     var canDraw: Bool { game.canDraw }
     var scoringMode: ScoringMode { game.scoringMode }
@@ -77,6 +86,7 @@ final class GameViewModel {
         stopTimer()
         isAutoCompleting = false
         drag = nil
+        clearHint()
         if isStarted, !isResultRecorded {
             statistics.recordLoss(gameID: gameID, drawMode: game.drawMode)
         }
@@ -113,6 +123,7 @@ final class GameViewModel {
 
     func undo() {
         guard canUndo, game.undo() else { return }
+        clearHint()
         syncTimer()
         persist()
     }
@@ -123,10 +134,27 @@ final class GameViewModel {
         Task {
             while let move = game.nextAutoCompleteMove(), isAutoCompleting {
                 perform(move)
-                try? await Task.sleep(nanoseconds: Self.autoCompleteStepNanoseconds)
+                try? await Task.sleep(for: .seconds(Self.autoCompleteStepSeconds))
             }
             isAutoCompleting = false
         }
+    }
+
+    /// Shows the engine's suggested move, or that no useful move is left, for `hintDuration`.
+    func showHint() {
+        guard canHint else { return }
+        clearHint()
+        hint = game.suggestedMove().map(Hint.move) ?? .noUsefulMove
+        hintTask = Task { [weak self, hintDuration] in
+            try? await Task.sleep(for: hintDuration)
+            guard !Task.isCancelled, let self else { return }
+            hint = nil
+        }
+    }
+
+    /// Turning on auto-finish while Finish is already offered takes effect when Settings closes.
+    func settingsDismissed() {
+        finishIfAutomatic()
     }
 
     // MARK: Helpers
@@ -151,10 +179,24 @@ final class GameViewModel {
             return false
         }
         isStarted = true
+        clearHint()
         syncTimer()
         recordWinIfNeeded()
         persist()
+        finishIfAutomatic()
         return true
+    }
+
+    /// Starts auto-complete when the setting asks for it and the position allows it; it does
+    /// nothing while auto-complete runs, and undo never calls it, so undoing a finish sticks.
+    private func finishIfAutomatic() {
+        if settings.autoFinish { autoComplete() }
+    }
+
+    private func clearHint() {
+        hintTask?.cancel()
+        hintTask = nil
+        hint = nil
     }
 
     /// Counts a win once, with the time and moves it took.

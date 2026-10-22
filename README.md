@@ -17,7 +17,11 @@ interrupts the game with something.
   time, fewest moves, current and longest win streak (Settings → Statistics);
   abandoning a started game counts as a loss
 - The current game resumes when you reopen the app
-- "Finish" button once every card is face up
+- "Finish" button once every card is face up, or finish automatically
+  (Settings → Finish automatically)
+- Hint button: highlights a useful move (a card to a foundation, a run that
+  uncovers a face-down card, a waste card to the tableau, then the draw), or
+  says that no useful move is left
 
 ## Requirements
 
@@ -69,7 +73,9 @@ xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
 For deterministic runs, launch with `--ui-testing` (in-memory storage, fresh
 settings). Together with it, `-seed <number>` fixes the deal,
 `-drawMode 1|3` sets the draw mode and `-scoringMode 0|1|2` sets the scoring
-(none, standard, Vegas); a normal launch ignores all three.
+(none, standard, Vegas) and `-position completable|oneMoveFromCompletable|deadlocked`
+starts from a fixed board instead of a deal (see `FixturePosition`); a normal
+launch ignores them all.
 
 ## Licence
 
