@@ -21,7 +21,9 @@ them. Never add a dependency or feature that sends data anywhere.
   closure) decides whether a deal is winnable; `GameState.seed` is the deal
   number players see (`GameState.dealNumberRange`).
 - `Solitaire/` is the app. `GameViewModel` (`@MainActor @Observable`) is what
-  the board views talk to; it owns the `Game`, the timer, the drag state and
+  the board views talk to; it owns the `Game`, the timer (on an injected
+  `GameClock`, paused in the background, while Settings is open and in untimed
+  mode), the drag state and
   persistence through the `GameStore` protocol, and reports results to
   `StatisticsModel` (`StatisticsStore` protocol; the counting rules are
   `GameStatistics` in the engine). The settings sheet is the one exception: it
@@ -59,13 +61,13 @@ them. Never add a dependency or feature that sends data anywhere.
   `winnableDealsOnlyToggle`, `dealNumberLabel` (value: the number),
   `shareDealButton`, `playDealButton`, `confirmPlayDealButton` (the alert's text
   field carries no identifier: alerts drop them; use `app.alerts.textFields`),
-  `autoFinishToggle`, `hapticsToggle`, `fourColorDeckToggle`, `settingsDoneButton`, `winNewGameButton`,
+  `timerToggle`, `autoFinishToggle`, `hapticsToggle`, `fourColorDeckToggle`, `settingsDoneButton`, `winNewGameButton`,
   `statisticsLink`, `statisticsScopePicker`, `resetStatisticsButton`,
   `confirmResetStatisticsButton`; statistics rows `statsPlayed`, `statsWon`,
   `statsWinRate`, `statsBestTime`, `statsFewestMoves`, `statsCurrentStreak`,
   `statsLongestStreak` with the value as accessibility value (`none` when
   empty); labels
-  `movesLabel`, `timeLabel`, `scoreLabel` (absent without scoring),
+  `movesLabel`, `timeLabel` (absent in untimed mode), `scoreLabel` (absent without scoring),
   `winSummary`, `winScore`, `noHintLabel` (shown when a hint finds no useful
   move); the `winOverlay` container. Cards a hint points at, and the stock
   when the hint is to draw, carry the `isSelected` accessibility trait. The waste, foundations and tableau columns are

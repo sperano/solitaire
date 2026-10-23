@@ -112,4 +112,12 @@ final class GameSettingsTests: XCTestCase {
         XCTAssertTrue(defaults.bool(forKey: GameSettings.winnableDealsOnlyKey))
         XCTAssertTrue(GameSettings(defaults: defaults).winnableDealsOnly)
     }
+
+    func testGamesAreTimedUntilTurnedOff() {
+        let settings = GameSettings(defaults: defaults)
+        XCTAssertTrue(settings.timed)
+        settings.timed = false
+        XCTAssertEqual(defaults.object(forKey: GameSettings.timedKey) as? Bool, false)
+        XCTAssertFalse(GameSettings(defaults: defaults).timed)
+    }
 }

@@ -107,11 +107,24 @@ final class StatisticsRecordTests: XCTestCase {
         XCTAssertFalse(longestAboveWon.isValid)
     }
 
+    func testAnUntimedWinCountsButLeavesTheBestTimeAlone() {
+        var record = StatisticsRecord()
+        record.recordWin(seconds: nil, moves: Self.manyMoves)
+        XCTAssertEqual(record.won, 1)
+        XCTAssertNil(record.bestTimeSeconds)
+        XCTAssertEqual(record.fewestMoves, Self.manyMoves)
+        XCTAssertTrue(record.isValid, "a win with no time is what untimed mode records")
+
+        record.recordWin(seconds: Self.slowSeconds, moves: Self.fewMoves)
+        record.recordWin(seconds: nil, moves: Self.manyMoves)
+        XCTAssertEqual(record.bestTimeSeconds, Self.slowSeconds)
+    }
+
     func testBestsMustExistExactlyWhenAGameWasWon() {
         var winWithoutBests = StatisticsRecord()
         winWithoutBests.recordWin(seconds: Self.fastSeconds, moves: Self.fewMoves)
         winWithoutBests.fewestMoves = nil
-        XCTAssertFalse(winWithoutBests.isValid)
+        XCTAssertFalse(winWithoutBests.isValid, "every win has a move count")
 
         var bestsWithoutWin = StatisticsRecord()
         bestsWithoutWin.recordLoss()

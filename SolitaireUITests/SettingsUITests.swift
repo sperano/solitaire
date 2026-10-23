@@ -61,4 +61,22 @@ final class SettingsUITests: SolitaireUITestCase {
         _ = openSettings()
         XCTAssertEqual(app.switches["winnableDealsOnlyToggle"].value as? String, "1")
     }
+
+    func testTurningTheTimerOffHidesTheClockAndTheWinTime() {
+        app.terminate()
+        app = launchApp(extraArguments: ["-drawMode", "1", "-position", "completable"])
+        XCTAssertTrue(element("timeLabel").waitForExistence(timeout: Self.timeout))
+        _ = openSettings()
+        let toggle = app.switches["timerToggle"]
+        XCTAssertTrue(toggle.waitForExistence(timeout: Self.timeout))
+        XCTAssertEqual(toggle.value as? String, "1")
+        toggle.switches.firstMatch.tap()
+        tap("settingsDoneButton")
+
+        XCTAssertFalse(element("timeLabel").waitForExistence(timeout: Self.absenceTimeout))
+        tap("autoCompleteButton")
+        let summary = element("winSummary")
+        XCTAssertTrue(summary.waitForExistence(timeout: Self.timeout))
+        XCTAssertFalse(summary.label.contains(" in "), summary.label)
+    }
 }

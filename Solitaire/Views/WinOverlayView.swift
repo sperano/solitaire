@@ -18,7 +18,7 @@ struct WinOverlayView: View {
             VStack(spacing: Self.spacing) {
                 Text("You won!")
                     .font(.largeTitle.bold())
-                Text("\(viewModel.moveCount) moves in \(viewModel.formattedTime)")
+                Text(summary)
                     .font(.title3)
                     .accessibilityIdentifier("winSummary")
                 if let score = viewModel.formattedScore {
@@ -37,6 +37,12 @@ struct WinOverlayView: View {
         // A container, so the identifier doesn't replace those of the texts and button inside it.
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("winOverlay")
+    }
+
+    /// The moves, and the time when the game was timed.
+    private var summary: String {
+        let moves = "\(viewModel.moveCount) moves"
+        return viewModel.settings.timed ? "\(moves) in \(viewModel.formattedTime)" : moves
     }
 
     private func scoreSummary(_ score: String) -> String {

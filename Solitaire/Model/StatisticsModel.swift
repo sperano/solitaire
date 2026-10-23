@@ -14,7 +14,8 @@ final class StatisticsModel {
         statistics = store.load() ?? GameStatistics()
     }
 
-    func recordWin(gameID: UInt64, drawMode: DrawMode, seconds: Int, moves: Int) {
+    /// `seconds` is nil for a win in untimed mode.
+    func recordWin(gameID: UInt64, drawMode: DrawMode, seconds: Int?, moves: Int) {
         statistics.recordWin(gameID: gameID, drawMode: drawMode, seconds: seconds, moves: moves)
         store.save(statistics)
     }

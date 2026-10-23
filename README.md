@@ -9,7 +9,9 @@ interrupts the game with something.
 - Klondike with draw 1 or draw 3 (Settings)
 - Tap a card to send it to the best legal spot, or drag it where you want
 - Unlimited undo
-- Move counter and timer
+- Move counter and timer; the clock pauses in the background and while
+  Settings are open, and can be turned off for untimed games (no time bonus,
+  no best time)
 - Scoring: none, standard (Windows-style points with a time bonus) or Vegas
   ($52 per game, $5 per card on a foundation, limited passes through the
   stock, optional balance carried between games)

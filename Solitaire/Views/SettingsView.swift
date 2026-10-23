@@ -41,6 +41,8 @@ struct SettingsView: View {
                     Text(rulesFooter).formFooter()
                 }
                 Section {
+                    Toggle("Timer", isOn: $settings.timed)
+                        .accessibilityIdentifier("timerToggle")
                     Toggle("Finish automatically", isOn: $settings.autoFinish)
                         .accessibilityIdentifier("autoFinishToggle")
                     Toggle("Haptics", isOn: $settings.haptics)
@@ -48,7 +50,7 @@ struct SettingsView: View {
                 } header: {
                     Text("Play").formHeader()
                 } footer: {
-                    Text("Once every remaining card can go to the foundations, play them without tapping Finish.").formFooter()
+                    Text(playFooter).formFooter()
                 }
                 Section {
                     Toggle("Four-colour deck", isOn: $settings.fourColorDeck)
@@ -82,6 +84,13 @@ struct SettingsView: View {
 }
 
 private extension SettingsView {
+    var playFooter: String {
+        let timer = settings.timed
+            ? "The clock pauses while the app is in the background or Settings are open."
+            : "Untimed: no clock, no time bonus and no best time."
+        return "\(timer) Finish automatically plays the remaining cards once every one can go to the foundations."
+    }
+
     var rulesFooter: String {
         var sentences: [String] = []
         if settings.scoringMode == .vegas {

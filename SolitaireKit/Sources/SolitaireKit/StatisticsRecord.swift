@@ -2,7 +2,7 @@
 public struct StatisticsRecord: Hashable, Codable, Sendable {
     public internal(set) var played = 0
     public internal(set) var won = 0
-    /// Fastest win, nil until the first win.
+    /// Fastest timed win, nil until the first one: untimed wins carry no time.
     public internal(set) var bestTimeSeconds: Int?
     /// Win with the fewest moves, nil until the first win.
     public internal(set) var fewestMoves: Int?
@@ -19,10 +19,11 @@ public struct StatisticsRecord: Hashable, Codable, Sendable {
         played == 0 ? nil : Double(won) / Double(played)
     }
 
-    mutating func recordWin(seconds: Int, moves: Int) {
+    /// `seconds` is nil for a win in untimed mode, which leaves the best time alone.
+    mutating func recordWin(seconds: Int?, moves: Int) {
         played += 1
         won += 1
-        bestTimeSeconds = min(bestTimeSeconds ?? seconds, seconds)
+        if let seconds { bestTimeSeconds = min(bestTimeSeconds ?? seconds, seconds) }
         fewestMoves = min(fewestMoves ?? moves, moves)
         currentStreak += 1
         longestStreak = max(longestStreak, currentStreak)
@@ -39,12 +40,14 @@ public struct StatisticsRecord: Hashable, Codable, Sendable {
             && (0 ... played).contains(won)
             && (0 ... won).contains(longestStreak)
             && (0 ... longestStreak).contains(currentStreak)
-            && hasBestsExactlyWhenWon
+            && hasBestsOnlyWhenWon
     }
 
-    private var hasBestsExactlyWhenWon: Bool {
+    /// Fewest moves exactly when a game was won; a best time only then, and not necessarily,
+    /// since untimed wins record none.
+    private var hasBestsOnlyWhenWon: Bool {
         guard won > 0 else { return bestTimeSeconds == nil && fewestMoves == nil }
-        guard let bestTimeSeconds, let fewestMoves else { return false }
-        return bestTimeSeconds >= 0 && fewestMoves >= 0
+        guard let fewestMoves, fewestMoves >= 0 else { return false }
+        return bestTimeSeconds.map { $0 >= 0 } ?? true
     }
 }
