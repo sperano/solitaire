@@ -4,6 +4,9 @@ public struct GameState: Hashable, Codable, Sendable {
     public static let foundationCount = 4
     /// Cards dealt to the tableau: 1 + 2 + … + 7.
     public static let tableauCardCount = tableauColumnCount * (tableauColumnCount + 1) / 2
+    /// Seeds handed out as deal numbers: any `UInt64` deals, but a number a player can read out,
+    /// type and share stays within nine digits.
+    public static let dealNumberRange: ClosedRange<UInt64> = 1 ... 999_999_999
 
     public internal(set) var stock: [Card]
     public internal(set) var waste: [Card]

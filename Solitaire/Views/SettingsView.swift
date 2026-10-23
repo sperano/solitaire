@@ -4,6 +4,11 @@ import SwiftUI
 struct SettingsView: View {
     @Bindable var settings: GameSettings
     let statistics: StatisticsModel
+    /// The deal on the board, for the Deal section.
+    let dealNumber: UInt64
+    let drawMode: DrawMode
+    let isGameStarted: Bool
+    let playDeal: (UInt64) -> Void
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -28,6 +33,8 @@ struct SettingsView: View {
                         Toggle("Carry balance between games", isOn: $settings.carryVegasBalance)
                             .accessibilityIdentifier("carryVegasBalanceToggle")
                     }
+                    Toggle("Winnable deals only", isOn: $settings.winnableDealsOnly)
+                        .accessibilityIdentifier("winnableDealsOnlyToggle")
                 } header: {
                     Text("Rules").formHeader()
                 } footer: {
@@ -55,6 +62,8 @@ struct SettingsView: View {
                     NavigationLink("Statistics") { StatisticsView(statistics: statistics) }
                         .accessibilityIdentifier("statisticsLink")
                 }
+                // Below Statistics, which UI tests reach without scrolling.
+                DealSection(dealNumber: dealNumber, drawMode: drawMode, isGameStarted: isGameStarted, playDeal: playDeal)
                 Section {
                     LabeledContent("Version", value: Bundle.main.shortVersion)
                     Text("Free, no ads, no tracking, no account.")
@@ -74,13 +83,21 @@ struct SettingsView: View {
 
 private extension SettingsView {
     var rulesFooter: String {
-        let timing = "Changes take effect on the next game."
-        guard settings.scoringMode == .vegas else { return timing }
-        let passes = Scoring.vegasPasses(drawMode: settings.drawMode)
-        return "Vegas: each game costs $\(Scoring.vegasBuyIn), each card on a foundation pays "
-            + "$\(Scoring.vegasPointsPerFoundationCard) (taken back if it leaves), "
-            + "and \(settings.drawMode.title) allows "
-            + "\(passes) \(passes == 1 ? "pass" : "passes") through the stock. \(timing)"
+        var sentences: [String] = []
+        if settings.scoringMode == .vegas {
+            let passes = Scoring.vegasPasses(drawMode: settings.drawMode)
+            sentences.append(
+                "Vegas: each game costs $\(Scoring.vegasBuyIn), each card on a foundation pays "
+                    + "$\(Scoring.vegasPointsPerFoundationCard) (taken back if it leaves), "
+                    + "and \(settings.drawMode.title) allows "
+                    + "\(passes) \(passes == 1 ? "pass" : "passes") through the stock."
+            )
+        }
+        if settings.winnableDealsOnly {
+            sentences.append("New games are dealt until the solver finds a way to win one; a deal number you enter is played as it is.")
+        }
+        sentences.append("Changes take effect on the next game.")
+        return sentences.joined(separator: " ")
     }
 }
 

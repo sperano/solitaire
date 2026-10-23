@@ -20,6 +20,7 @@
 		2C9D02882C4E3126F74B9C78 /* CardStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA56B0CC8CCA2A834F4C081C /* CardStyleTests.swift */; };
 		2F235689CB965D911C050D6B /* StatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076BAD83F0492AE4492CFF7 /* StatisticsModel.swift */; };
 		38AB843E0566EBAA6B7C7C01 /* MotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BAFB1C5226D95A0D7E50F5 /* MotionTests.swift */; };
+		38B01E8D8081AB17DD2EF326 /* DealSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D2EADB3DD1BC01219E341 /* DealSection.swift */; };
 		3EB3D86B022DD1893897B4D7 /* SolitaireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8230985F1F039EE51984B743 /* SolitaireApp.swift */; };
 		40B4A687B7569DD4A193E9E3 /* CardViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC904947FF9B0E2A53AE6B0 /* CardViewTests.swift */; };
 		41D64E1A5E4E00E5B2FA6912 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C1600364471C580C8AFC9 /* Hint.swift */; };
@@ -37,8 +38,10 @@
 		6ABC4086720F2A18DE9C3D8E /* FlightLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCC867A9A0A93F3619C439 /* FlightLayer.swift */; };
 		6BAE163CA0801012FC42B706 /* TestFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10470C052B6015F3E635242B /* TestFixtures.swift */; };
 		6CBC356F680CA849A4B4B824 /* FormText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DD087A6DD8F4AFED2FDCB /* FormText.swift */; };
+		767265B999FE1C1CE38F8E74 /* DealNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2701B9E4C6572F6ECE1DD /* DealNumber.swift */; };
 		784834E1869D01A8907E171C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33B10ABDB682FDB5C88ED4D4 /* Assets.xcassets */; };
 		7A5DB439E08B2189A939B517 /* GameSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419E549A994DD21713B1C2FE /* GameSettingsTests.swift */; };
+		7E1A80A6194D7A72E51EA9B6 /* DealSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AC80023FBE681BF3172F3F /* DealSearchTests.swift */; };
 		846918A13193C370936F37DE /* HintAnnouncementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660BC8591F292528636EC7F /* HintAnnouncementTests.swift */; };
 		85A55743DC993674365CFDCC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67F7911E127A089B8FC962 /* GameView.swift */; };
 		8EC1831F896C7A3FF3D6999C /* AccessibilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5486466E56571D83D3D700 /* AccessibilityUITests.swift */; };
@@ -59,17 +62,20 @@
 		AB2014E78153ACEF14E6CE9C /* StatisticsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F21B189AE3E496FAD43D4C /* StatisticsStore.swift */; };
 		B57A6776A203A289ED0CEF3C /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4094C6E1FDC724871DBFB210 /* GameStore.swift */; };
 		B8B8432EFECFF7EE0C75D8FC /* BoardAccessibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3E585F7D0AC19F2F8E546F /* BoardAccessibilityTests.swift */; };
+		B8D836A077B5E2B18CC91281 /* GameViewModelDealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE4D6F83FDE28E385D2D5F /* GameViewModelDealTests.swift */; };
 		B946A836C752D9BE7D489791 /* GameViewModelStatisticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393AD112551FA0E8666D008C /* GameViewModelStatisticsTests.swift */; };
 		BE499AF6D089CD6257906211 /* BoardTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6097D47E8AD3C8585AD1A5F /* BoardTransitionTests.swift */; };
 		C097A293DD6E2FF945782C2F /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A22F3D94D4758EDCFD6A09C /* GameViewModel.swift */; };
 		C1CFF7ACDE371C1D384EFCD5 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C7A9B4E04148B3DABE403E /* GameSettings.swift */; };
 		C2EE8D2EA36CD39D4BEEB09B /* HintUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1825D8387624F41405C00 /* HintUITests.swift */; };
+		C32E8E76E67DBB6FA60571B0 /* DealUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B3EDA90A714CDCED34E3B2 /* DealUITests.swift */; };
 		C4127DC1C9A761920425699E /* GameViewModel+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DACB95C12FC761D37AC7B87 /* GameViewModel+Accessibility.swift */; };
 		C50FAA8C2681C7BD0A064F93 /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035480A94AEF3063E1CCAA06 /* TimeFormat.swift */; };
 		C743621687891F88B20565A5 /* FlightPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6421F0CD1091F7BD7090B7D /* FlightPlannerTests.swift */; };
 		CDE6AF9F82D6562E70F5C8D7 /* BoardGeometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6209B6305B1B7C565AA6F27 /* BoardGeometryTests.swift */; };
 		D0B3FE11D3E96C84A3F75D29 /* TopRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6935303D39BBF948A7FCF4B /* TopRowView.swift */; };
 		D3D0FF18B8871F684880DE1A /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C01DE359FB816B3DE35DC7 /* FlipView.swift */; };
+		D3E5930F1F6243240B03ADF1 /* DealNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E72EF41A48A420D836565D /* DealNumberTests.swift */; };
 		D78FD80EAF214C0C991ABE51 /* TableauColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF147627AAD6FBA72A4F124 /* TableauColumnView.swift */; };
 		D8185410A47EE51111BDACD5 /* DragInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297809B5DAFBE5609BE6A757 /* DragInfo.swift */; };
 		D828D8FA527CA22E44B37FDD /* CascadePhysicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940C8AE8C5124EA6F340986A /* CascadePhysicsTests.swift */; };
@@ -80,6 +86,7 @@
 		EFFDE84FAF73DA97300C8BD8 /* SolitaireUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6823827B75B372C9252C5178 /* SolitaireUITestCase.swift */; };
 		F24DCE1120A6EE85430E8357 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED68BBC67D6440E14C20A58D /* SettingsView.swift */; };
 		F66E7281A331E1104DDEF1C2 /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11085BFFF3256C20BDD70059 /* CardStyle.swift */; };
+		FA7C446356E24E8861372A09 /* DealSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF65B090C2727C4DCED0239 /* DealSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +117,7 @@
 		0DACB95C12FC761D37AC7B87 /* GameViewModel+Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewModel+Accessibility.swift"; sourceTree = "<group>"; };
 		10470C052B6015F3E635242B /* TestFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFixtures.swift; sourceTree = "<group>"; };
 		11085BFFF3256C20BDD70059 /* CardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
+		17AC80023FBE681BF3172F3F /* DealSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealSearchTests.swift; sourceTree = "<group>"; };
 		1B2B34F7B5FA290B9B7404AD /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		1E02E66D4C947CC161AFB049 /* JSONFileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileStorage.swift; sourceTree = "<group>"; };
 		21705F50790032AA25E8FFCA /* ScoringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringUITests.swift; sourceTree = "<group>"; };
@@ -131,6 +139,7 @@
 		4FE1825D8387624F41405C00 /* HintUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintUITests.swift; sourceTree = "<group>"; };
 		51DCC867A9A0A93F3619C439 /* FlightLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLayer.swift; sourceTree = "<group>"; };
 		56401D3B2BDAC32D62730329 /* BoardMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMetricsTests.swift; sourceTree = "<group>"; };
+		59E72EF41A48A420D836565D /* DealNumberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNumberTests.swift; sourceTree = "<group>"; };
 		6823827B75B372C9252C5178 /* SolitaireUITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireUITestCase.swift; sourceTree = "<group>"; };
 		69CB03A3CE6A7C5D00026264 /* BoardAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAccessibility.swift; sourceTree = "<group>"; };
 		6ABDB708AD758B0B1F751021 /* WinCascadeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinCascadeView.swift; sourceTree = "<group>"; };
@@ -153,14 +162,18 @@
 		940C8AE8C5124EA6F340986A /* CascadePhysicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CascadePhysicsTests.swift; sourceTree = "<group>"; };
 		941867F983BA26C752B76FD0 /* StatisticsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsModelTests.swift; sourceTree = "<group>"; };
 		942057C3D489DB52DBF7854A /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		9BC2701B9E4C6572F6ECE1DD /* DealNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNumber.swift; sourceTree = "<group>"; };
 		9CA3C2AC1F7EF071160AEF14 /* TimeFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatTests.swift; sourceTree = "<group>"; };
 		A6421F0CD1091F7BD7090B7D /* FlightPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightPlannerTests.swift; sourceTree = "<group>"; };
 		A6935303D39BBF948A7FCF4B /* TopRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRowView.swift; sourceTree = "<group>"; };
 		A91D4B6859C83EB913AA5478 /* FixturePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturePosition.swift; sourceTree = "<group>"; };
 		B2E3470629350F650DC87F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B5DE4D6F83FDE28E385D2D5F /* GameViewModelDealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelDealTests.swift; sourceTree = "<group>"; };
+		BBF65B090C2727C4DCED0239 /* DealSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealSearch.swift; sourceTree = "<group>"; };
 		BED1D70E911F8A5BEC061C4C /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
 		C11C43C337B1A4FC08D51F13 /* SettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITests.swift; sourceTree = "<group>"; };
 		C34371B9257945500E88A16E /* StatisticsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsStoreTests.swift; sourceTree = "<group>"; };
+		C9B3EDA90A714CDCED34E3B2 /* DealUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealUITests.swift; sourceTree = "<group>"; };
 		CA56B0CC8CCA2A834F4C081C /* CardStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyleTests.swift; sourceTree = "<group>"; };
 		CB5D214114FBC3644DA2B0CC /* MoveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveUITests.swift; sourceTree = "<group>"; };
 		D87A24FE0357FA76D76F03D9 /* AutoCompleteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteUITests.swift; sourceTree = "<group>"; };
@@ -170,6 +183,7 @@
 		E6097D47E8AD3C8585AD1A5F /* BoardTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTransitionTests.swift; sourceTree = "<group>"; };
 		E660BC8591F292528636EC7F /* HintAnnouncementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAnnouncementTests.swift; sourceTree = "<group>"; };
 		ED68BBC67D6440E14C20A58D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EE3D2EADB3DD1BC01219E341 /* DealSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealSection.swift; sourceTree = "<group>"; };
 		EE5DD087A6DD8F4AFED2FDCB /* FormText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormText.swift; sourceTree = "<group>"; };
 		F05C1AE9A75946D0CF906612 /* DragInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragInfoTests.swift; sourceTree = "<group>"; };
 		F4D278D1A5476EEC58982B2A /* GameViewModelFeedbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelFeedbackTests.swift; sourceTree = "<group>"; };
@@ -213,6 +227,7 @@
 			children = (
 				4C5486466E56571D83D3D700 /* AccessibilityUITests.swift */,
 				D87A24FE0357FA76D76F03D9 /* AutoCompleteUITests.swift */,
+				C9B3EDA90A714CDCED34E3B2 /* DealUITests.swift */,
 				4FE1825D8387624F41405C00 /* HintUITests.swift */,
 				93B4F54565EDD69A0D47C3CA /* LaunchUITests.swift */,
 				CB5D214114FBC3644DA2B0CC /* MoveUITests.swift */,
@@ -234,6 +249,7 @@
 				01C4B141B85E5BEAEAE2F656 /* CardGestures.swift */,
 				11085BFFF3256C20BDD70059 /* CardStyle.swift */,
 				1B2B34F7B5FA290B9B7404AD /* CardView.swift */,
+				EE3D2EADB3DD1BC01219E341 /* DealSection.swift */,
 				EE5DD087A6DD8F4AFED2FDCB /* FormText.swift */,
 				7D67F7911E127A089B8FC962 /* GameView.swift */,
 				7ACA2012AA7BF17ED5BF0F80 /* HintAnnouncement.swift */,
@@ -267,12 +283,15 @@
 				CA56B0CC8CCA2A834F4C081C /* CardStyleTests.swift */,
 				3EC904947FF9B0E2A53AE6B0 /* CardViewTests.swift */,
 				940C8AE8C5124EA6F340986A /* CascadePhysicsTests.swift */,
+				59E72EF41A48A420D836565D /* DealNumberTests.swift */,
+				17AC80023FBE681BF3172F3F /* DealSearchTests.swift */,
 				F05C1AE9A75946D0CF906612 /* DragInfoTests.swift */,
 				DFADFC04F90E520A7289AF43 /* FixturePositionTests.swift */,
 				A6421F0CD1091F7BD7090B7D /* FlightPlannerTests.swift */,
 				419E549A994DD21713B1C2FE /* GameSettingsTests.swift */,
 				912D7DD552D98768A887A1C7 /* GameStoreTests.swift */,
 				27F4F5C846AB56BC8BB68761 /* GameViewModelAccessibilityTests.swift */,
+				B5DE4D6F83FDE28E385D2D5F /* GameViewModelDealTests.swift */,
 				F4D278D1A5476EEC58982B2A /* GameViewModelFeedbackTests.swift */,
 				393AD112551FA0E8666D008C /* GameViewModelStatisticsTests.swift */,
 				4AA979238030680CFEA76B25 /* GameViewModelTests.swift */,
@@ -345,6 +364,8 @@
 		C3AFE7A3EF2EEA76A148E81C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9BC2701B9E4C6572F6ECE1DD /* DealNumber.swift */,
+				BBF65B090C2727C4DCED0239 /* DealSearch.swift */,
 				297809B5DAFBE5609BE6A757 /* DragInfo.swift */,
 				49C7A9B4E04148B3DABE403E /* GameSettings.swift */,
 				4094C6E1FDC724871DBFB210 /* GameStore.swift */,
@@ -491,6 +512,9 @@
 				F66E7281A331E1104DDEF1C2 /* CardStyle.swift in Sources */,
 				02BDC0125168A3F002885F92 /* CardView.swift in Sources */,
 				041FD9D538BCD51933FBDC02 /* CascadePhysics.swift in Sources */,
+				767265B999FE1C1CE38F8E74 /* DealNumber.swift in Sources */,
+				FA7C446356E24E8861372A09 /* DealSearch.swift in Sources */,
+				38B01E8D8081AB17DD2EF326 /* DealSection.swift in Sources */,
 				D8185410A47EE51111BDACD5 /* DragInfo.swift in Sources */,
 				A2396CF71287D2227A747069 /* FixturePosition.swift in Sources */,
 				6ABC4086720F2A18DE9C3D8E /* FlightLayer.swift in Sources */,
@@ -527,6 +551,7 @@
 			files = (
 				8EC1831F896C7A3FF3D6999C /* AccessibilityUITests.swift in Sources */,
 				15404DA9B6A1589D6F673E4C /* AutoCompleteUITests.swift in Sources */,
+				C32E8E76E67DBB6FA60571B0 /* DealUITests.swift in Sources */,
 				C2EE8D2EA36CD39D4BEEB09B /* HintUITests.swift in Sources */,
 				05DB23E5DB08FB4B3024178C /* LaunchUITests.swift in Sources */,
 				91A48CAE8FCBBD6B6C4668DA /* MoveUITests.swift in Sources */,
@@ -550,12 +575,15 @@
 				2C9D02882C4E3126F74B9C78 /* CardStyleTests.swift in Sources */,
 				40B4A687B7569DD4A193E9E3 /* CardViewTests.swift in Sources */,
 				D828D8FA527CA22E44B37FDD /* CascadePhysicsTests.swift in Sources */,
+				D3E5930F1F6243240B03ADF1 /* DealNumberTests.swift in Sources */,
+				7E1A80A6194D7A72E51EA9B6 /* DealSearchTests.swift in Sources */,
 				535A2F714901237672E02CD2 /* DragInfoTests.swift in Sources */,
 				DEA4FF861166E068A7FBE34D /* FixturePositionTests.swift in Sources */,
 				C743621687891F88B20565A5 /* FlightPlannerTests.swift in Sources */,
 				7A5DB439E08B2189A939B517 /* GameSettingsTests.swift in Sources */,
 				927F291891C0CECCB9015114 /* GameStoreTests.swift in Sources */,
 				61A7CFE54243062C8F748426 /* GameViewModelAccessibilityTests.swift in Sources */,
+				B8D836A077B5E2B18CC91281 /* GameViewModelDealTests.swift in Sources */,
 				53ADEAA40F1B6582ECEDACE8 /* GameViewModelFeedbackTests.swift in Sources */,
 				B946A836C752D9BE7D489791 /* GameViewModelStatisticsTests.swift in Sources */,
 				67C2B9F0CE1A326A3E41D752 /* GameViewModelTests.swift in Sources */,

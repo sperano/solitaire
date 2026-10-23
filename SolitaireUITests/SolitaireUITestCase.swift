@@ -21,11 +21,11 @@ class SolitaireUITestCase: XCTestCase {
         app = launchApp()
     }
 
-    /// Terminates the current app and relaunches it with `extraArguments`.
+    /// Launches the app with `extraArguments`; `seed` nil leaves the deal random.
     @discardableResult
-    func launchApp(extraArguments: [String] = ["-drawMode", "1"]) -> XCUIApplication {
+    func launchApp(extraArguments: [String] = ["-drawMode", "1"], seed: String? = SolitaireUITestCase.defaultSeed) -> XCUIApplication {
         let application = XCUIApplication()
-        application.launchArguments = ["--ui-testing", "-seed", Self.defaultSeed] + extraArguments
+        application.launchArguments = ["--ui-testing"] + (seed.map { ["-seed", $0] } ?? []) + extraArguments
         application.launch()
         return application
     }

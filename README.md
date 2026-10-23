@@ -29,6 +29,11 @@ interrupts the game with something.
 - Hint button: highlights a useful move (a card to a foundation, a run that
   uncovers a face-down card, a waste card to the tableau, then the draw), or
   says that no useful move is left
+- Deal numbers: every deal has a number (Settings → Deal) to share or type
+  in to play that deal; "Replay This Deal" in the new-game dialog starts the
+  same deal over
+- Winnable deals only (Settings → Rules): new games are dealt until a solver
+  finds a way to win them
 
 ## Requirements
 
@@ -79,8 +84,9 @@ xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
 
 For deterministic runs, launch with `--ui-testing` (in-memory storage, fresh
 settings). Together with it, `-seed <number>` fixes the deal,
-`-drawMode 1|3` sets the draw mode and `-scoringMode 0|1|2` sets the scoring
-(none, standard, Vegas) and `-position completable|oneMoveFromCompletable|deadlocked`
+`-drawMode 1|3` sets the draw mode, `-scoringMode 0|1|2` sets the scoring
+(none, standard, Vegas), `-winnableDealsOnly 1` turns the solver check on
+and `-position completable|oneMoveFromCompletable|deadlocked`
 starts from a fixed board instead of a deal (see `FixturePosition`); a normal
 launch ignores them all.
 

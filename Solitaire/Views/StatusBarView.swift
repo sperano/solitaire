@@ -21,6 +21,8 @@ struct StatusBarView: View {
         .confirmationDialog("Start a new game?", isPresented: $isConfirmingNewGame, titleVisibility: .visible) {
             Button("New Game", role: .destructive) { viewModel.newGame() }
                 .accessibilityIdentifier("confirmNewGameButton")
+            Button("Replay This Deal") { viewModel.replayDeal() }
+                .accessibilityIdentifier("replayDealButton")
         } message: {
             Text("The current game will be lost.")
         }
@@ -111,8 +113,10 @@ struct StatusBarView: View {
         }
     }
 
+    /// Asks first when a started game would be lost; a won game, an untouched deal and a board
+    /// still waiting for a deal (its game is already closed) start over at once.
     private func requestNewGame() {
-        if viewModel.moveCount == 0 || viewModel.isWon {
+        if viewModel.moveCount == 0 || viewModel.isWon || viewModel.isDealing {
             viewModel.newGame()
         } else {
             isConfirmingNewGame = true
