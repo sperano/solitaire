@@ -11,11 +11,11 @@ import XCTest
 class SnapshotTestCase: XCTestCase {
     /// The simulator the references are recorded on, and the one CI runs these tests on.
     static let deviceName = "iPhone 17"
-    /// The share of pixels that must match: antialiasing at text edges can shift a few pixels
-    /// between simulator builds.
+    /// The share of pixels that must match byte for byte: antialiasing at text edges can shift
+    /// a few pixels between machines. The images are compared pixel by pixel, never perceptually:
+    /// the perceptual comparison goes through CoreImage, which fails on GitHub's runners even for
+    /// identical images.
     static let pixelPrecision: Float = 0.995
-    /// How close in colour a differing pixel must still be, so a slightly lighter edge passes.
-    static let perceptualPrecision: Float = 0.98
 
     private static let modes: [(name: String, style: UIUserInterfaceStyle)] = [("light", .light), ("dark", .dark)]
 
@@ -56,7 +56,7 @@ class SnapshotTestCase: XCTestCase {
                 of: view,
                 as: .image(
                     drawHierarchyInKeyWindow: layout.isDevice,
-                    precision: Self.pixelPrecision, perceptualPrecision: Self.perceptualPrecision,
+                    precision: Self.pixelPrecision,
                     layout: layout, traits: UITraitCollection { $0.userInterfaceStyle = mode.style }
                 ),
                 named: mode.name, fileID: fileID, file: file, testName: testName, line: line
