@@ -36,6 +36,8 @@ struct SettingsView: View {
                 Section {
                     Toggle("Finish automatically", isOn: $settings.autoFinish)
                         .accessibilityIdentifier("autoFinishToggle")
+                    Toggle("Haptics", isOn: $settings.haptics)
+                        .accessibilityIdentifier("hapticsToggle")
                 } header: {
                     Text("Play").formHeader()
                 } footer: {

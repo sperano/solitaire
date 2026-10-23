@@ -26,8 +26,8 @@ final class AccessibilityUITests: SolitaireUITestCase {
     private static let cardGlyphs: Set<String> = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "♣", "♦", "♥", "♠"]
 
     /// Runs the audit and fails once, listing every issue it found. `ignoringDimmedCards` skips the
-    /// card glyphs a modal overlay dims on purpose; `ignoredContrast` names texts whose contrast the
-    /// audit misreports.
+    /// card glyphs a modal overlay dims on purpose and the cards the win cascade draws;
+    /// `ignoredContrast` names texts whose contrast the audit misreports.
     private func audit(
         ignoringDimmedCards: Bool = false, ignoredContrast: Set<String> = [],
         file: StaticString = #filePath, line: UInt = #line
@@ -38,6 +38,10 @@ final class AccessibilityUITests: SolitaireUITestCase {
             issues = []
             try app.performAccessibilityAudit(for: Self.auditedTypes) { issue in
                 let label = issue.element?.label ?? ""
+                // The win cascade draws cards into a canvas hidden from VoiceOver: decoration.
+                if ignoringDimmedCards, issue.auditType == .elementDetection, issue.element == nil {
+                    return true
+                }
                 if issue.auditType == .contrast,
                    ignoredContrast.contains(label) || (ignoringDimmedCards && Self.cardGlyphs.contains(label)) {
                     return true

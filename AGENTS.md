@@ -30,6 +30,13 @@ them. Never add a dependency or feature that sends data anywhere.
 
 ## Conventions
 
+- Animations stay in the view layer (`Solitaire/Views/Animation`): `GameView`
+  compares the board before and after every change (`BoardTransition`) and
+  flies the cards that changed pile in `FlightLayer`, from frames worked out
+  by `BoardGeometry`; the piles hide those cards (`cardsInFlight`) until they
+  land. So a new kind of move needs no animation code. Haptics go through
+  `HapticPlayer` from the view model (`SilentHaptics` in tests).
+
 - Engine first: a rule change goes in `SolitaireKit` with a test, then the UI.
 - Named constants for every size, ratio, count and duration (`BoardMetrics`,
   `GameState.tableauColumnCount`, …). No magic numbers in views either.
@@ -40,7 +47,7 @@ them. Never add a dependency or feature that sends data anywhere.
   `undoButton`, `newGameButton`, `confirmNewGameButton`, `settingsButton`,
   `autoCompleteButton`, `hintButton` (shown instead of Finish),
   `drawModePicker`, `scoringModePicker`, `carryVegasBalanceToggle`,
-  `autoFinishToggle`, `fourColorDeckToggle`, `settingsDoneButton`, `winNewGameButton`,
+  `autoFinishToggle`, `hapticsToggle`, `fourColorDeckToggle`, `settingsDoneButton`, `winNewGameButton`,
   `statisticsLink`, `statisticsScopePicker`, `resetStatisticsButton`,
   `confirmResetStatisticsButton`; statistics rows `statsPlayed`, `statsWon`,
   `statsWinRate`, `statsBestTime`, `statsFewestMoves`, `statsCurrentStreak`,
@@ -60,7 +67,7 @@ them. Never add a dependency or feature that sends data anywhere.
   per legal destination (`GameViewModel.destinations`, `moveCards`), so every
   move works without dragging. VoiceOver strings live in
   `BoardAccessibility`. Every animation goes through `Motion.animation` so
-  Reduce Motion drops it; card colours come from the `cardStyle`
+  Reduce Motion drops it (card flights, flips, the deal and the win cascade too); card colours come from the `cardStyle`
   environment value (Increase Contrast, four-colour deck). Toolbar buttons
   use `HitTargetButtonStyle` (44 pt). `AccessibilityUITests` runs Xcode's
   accessibility audit on every screen; fix what it finds rather than adding

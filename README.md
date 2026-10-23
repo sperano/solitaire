@@ -16,6 +16,9 @@ interrupts the game with something.
 - Statistics per draw mode and overall: games played and won, win rate, best
   time, fewest moves, current and longest win streak (Settings → Statistics);
   abandoning a started game counts as a loss
+- Cards fly between piles, turn over and are dealt from the stock; a bouncing
+  cascade celebrates the win; haptic feedback on moves, refused moves and the
+  win (Settings → Play → Haptics)
 - Accessibility: full VoiceOver play (every card and pile is described, and
   each card offers its legal moves as actions, so no drag is needed), Dynamic
   Type on the toolbar and settings, Reduce Motion, a high-contrast card style

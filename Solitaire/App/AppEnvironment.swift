@@ -37,7 +37,7 @@ struct AppEnvironment {
 
     func makeViewModel() -> GameViewModel {
         let model = GameViewModel(
-            store: store, settings: settings, statistics: statistics, fixedSeed: fixedSeed
+            store: store, settings: settings, statistics: statistics, haptics: SystemHaptics(), fixedSeed: fixedSeed
         )
         model.hintDuration = hintDuration
         return model

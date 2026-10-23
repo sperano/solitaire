@@ -15,6 +15,8 @@ final class GameViewModel {
     private(set) var gameID: UInt64
     private(set) var elapsedSeconds: Int
     var drag: DragInfo?
+    /// The drag behind the last move, if a drop made it; the board flies its cards from there.
+    private(set) var lastDrop: DragInfo?
     var isShowingSettings = false
     private(set) var isAutoCompleting = false
     /// The hint on show, cleared by the next move, undo or new game, or after `hintDuration`.
@@ -28,12 +30,17 @@ final class GameViewModel {
     let settings: GameSettings
     let statistics: StatisticsModel
     private let store: any GameStore
+    private let haptics: any HapticPlayer
     private let fixedSeed: UInt64?
     private var timerTask: Task<Void, Never>?
     private var hintTask: Task<Void, Never>?
 
-    init(store: any GameStore, settings: GameSettings, statistics: StatisticsModel, fixedSeed: UInt64? = nil) {
+    init(
+        store: any GameStore, settings: GameSettings, statistics: StatisticsModel,
+        haptics: any HapticPlayer = SilentHaptics(), fixedSeed: UInt64? = nil
+    ) {
         self.store = store
+        self.haptics = haptics
         self.settings = settings
         self.statistics = statistics
         self.fixedSeed = fixedSeed
@@ -86,6 +93,7 @@ final class GameViewModel {
         stopTimer()
         isAutoCompleting = false
         drag = nil
+        lastDrop = nil
         clearHint()
         if isStarted, !isResultRecorded {
             statistics.recordLoss(gameID: gameID, drawMode: game.drawMode)
@@ -103,14 +111,24 @@ final class GameViewModel {
 
     func draw() {
         guard acceptsInput else { return }
-        perform(.draw)
+        if !perform(.draw) { feedback(.invalidMove) }
     }
 
     /// Tap on the card at `index` of `pile`: send it (and the run above it) to the best destination.
     func tapCard(in pile: PileID, index: Int) {
         let count = state.pile(pile).count - index
-        guard acceptsInput, count >= 1, let destination = game.autoMoveDestination(count: count, from: pile) else { return }
+        guard acceptsInput, count >= 1 else { return }
+        guard let destination = game.autoMoveDestination(count: count, from: pile) else {
+            feedback(.invalidMove)
+            return
+        }
         perform(.move(from: pile, to: destination, count: count))
+    }
+
+    /// The dragged cards may be dropped on `destination`.
+    func canDrop(on destination: PileID?) -> Bool {
+        guard acceptsInput, let drag, let destination else { return false }
+        return game.canMove(count: drag.count, from: drag.source, to: destination)
     }
 
     /// Drop the dragged cards on `destination`. Returns false when the move is illegal.
@@ -118,7 +136,9 @@ final class GameViewModel {
     func drop(on destination: PileID?) -> Bool {
         defer { drag = nil }
         guard acceptsInput, let drag, let destination else { return false }
-        return perform(.move(from: drag.source, to: destination, count: drag.count))
+        let moved = perform(.move(from: drag.source, to: destination, count: drag.count))
+        if moved { lastDrop = drag } else { feedback(.invalidMove) }
+        return moved
     }
 
     /// Moves the card at `index` of `pile`, with the run above it, to `destination`; VoiceOver's
@@ -132,6 +152,7 @@ final class GameViewModel {
 
     func undo() {
         guard canUndo, game.undo() else { return }
+        lastDrop = nil
         clearHint()
         syncTimer()
         persist()
@@ -182,6 +203,7 @@ final class GameViewModel {
 
     @discardableResult
     private func perform(_ move: Move) -> Bool {
+        lastDrop = nil
         do {
             try game.perform(move)
         } catch {
@@ -192,8 +214,18 @@ final class GameViewModel {
         syncTimer()
         recordWinIfNeeded()
         persist()
+        // Auto-complete plays many moves in a row; only its last one, the win, is felt.
+        if game.isWon {
+            feedback(.win)
+        } else if !isAutoCompleting {
+            feedback(.move)
+        }
         finishIfAutomatic()
         return true
+    }
+
+    private func feedback(_ event: HapticEvent) {
+        if settings.haptics { haptics.play(event) }
     }
 
     /// Starts auto-complete when the setting asks for it and the position allows it; it does

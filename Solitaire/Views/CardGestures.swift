@@ -28,8 +28,14 @@ struct CardGestures: ViewModifier {
                     }
                     .onEnded { value in
                         let target = dropTarget(value.location)
-                        withAnimation(Motion.animation(.easeOut(duration: Self.snapBackDuration), reduceMotion: reduceMotion)) {
-                            _ = viewModel.drop(on: target == pile ? nil : target)
+                        let destination = target == pile ? nil : target
+                        // A legal drop is animated by the flight layer; only a refused one snaps back.
+                        if viewModel.canDrop(on: destination) {
+                            viewModel.drop(on: destination)
+                        } else {
+                            withAnimation(Motion.animation(.easeOut(duration: Self.snapBackDuration), reduceMotion: reduceMotion)) {
+                                _ = viewModel.drop(on: destination)
+                            }
                         }
                     }
             )
