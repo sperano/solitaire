@@ -36,7 +36,7 @@ struct TableauColumnView: View {
         .reportFrame(as: pile)
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier(pile.accessibilityIdentifier)
-        .accessibilityLabel("Column \(index + 1)")
+        .accessibilityLabel(BoardAccessibility.label(for: pile, in: viewModel.state))
         .accessibilityValue("\(cards.count) cards")
     }
 }

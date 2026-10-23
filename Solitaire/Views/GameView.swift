@@ -13,12 +13,19 @@ struct GameView: View {
 
     @Bindable var viewModel: GameViewModel
     @State private var pileFrames: [PileID: CGRect] = [:]
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private var cardStyle: CardStyle {
+        CardStyle(isFourColour: viewModel.settings.fourColorDeck, isHighContrast: contrast == .increased)
+    }
 
     var body: some View {
         VStack(spacing: 0) {
             StatusBarView(viewModel: viewModel)
             board
         }
+        .environment(\.cardStyle, cardStyle)
         .background(Theme.felt.ignoresSafeArea())
         .overlay(alignment: .bottom) {
             if viewModel.hint == .noUsefulMove {
@@ -60,7 +67,9 @@ struct GameView: View {
             .padding(.vertical, Self.rowSpacing)
         }
         .transaction(value: viewModel.moveCount) { transaction in
-            if viewModel.isAutoCompleting { transaction.animation = Self.autoCompleteAnimation }
+            if viewModel.isAutoCompleting {
+                transaction.animation = Motion.animation(Self.autoCompleteAnimation, reduceMotion: reduceMotion)
+            }
         }
         .coordinateSpace(name: BoardMetrics.coordinateSpace)
         .onPreferenceChange(PileFramePreferenceKey.self) { pileFrames = $0 }

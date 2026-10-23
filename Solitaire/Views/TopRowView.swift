@@ -46,9 +46,10 @@ struct StockView: View {
         .reportFrame(as: .stock)
         .accessibilityElement(children: .ignore)
         .accessibilityIdentifier(PileID.stock.accessibilityIdentifier)
-        .accessibilityLabel("Stock")
+        .accessibilityLabel(BoardAccessibility.label(for: .stock, in: viewModel.state))
         .accessibilityValue("\(cards.count) cards")
-        .accessibilityHint(passesUsedUp ? "No passes left" : "")
+        .accessibilityHint(BoardAccessibility.stockHint(in: viewModel.state, canDraw: viewModel.canDraw))
+        .accessibilityAction { viewModel.draw() }
         .accessibilityAddTraits(viewModel.isStockHinted ? [.isButton, .isSelected] : .isButton)
     }
 }
@@ -77,6 +78,8 @@ struct WasteView: View {
                     .zIndex(Double(fanIndex))
                     .transition(.opacity)
                     .allowsHitTesting(isTop)
+                    // Only the top card can move; VoiceOver skips the rest of the fan.
+                    .accessibilityHidden(!isTop)
                     .modifier(TopCardGestures(enabled: isTop, viewModel: viewModel, pile: .waste, pileCount: cards.count, dropTarget: dropTarget))
             }
         }
@@ -84,7 +87,7 @@ struct WasteView: View {
         .reportFrame(as: .waste)
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier(PileID.waste.accessibilityIdentifier)
-        .accessibilityLabel("Waste")
+        .accessibilityLabel(BoardAccessibility.label(for: .waste, in: viewModel.state))
         .accessibilityValue("\(cards.count) cards")
     }
 }
@@ -112,13 +115,15 @@ struct FoundationView: View {
                     .dragOffset(viewModel.drag, pile: pile, index: index, pileCount: cards.count)
                     .transition(.opacity)
                     .allowsHitTesting(isTop)
+                    // Only drawn for drags; the pile's label already names the top card.
+                    .accessibilityHidden(!isTop)
                     .modifier(TopCardGestures(enabled: isTop, viewModel: viewModel, pile: pile, pileCount: cards.count, dropTarget: dropTarget))
             }
         }
         .reportFrame(as: pile)
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier(pile.accessibilityIdentifier)
-        .accessibilityLabel("Foundation \(index + 1)")
+        .accessibilityLabel(BoardAccessibility.label(for: pile, in: viewModel.state))
         .accessibilityValue("\(cards.count) cards")
     }
 }

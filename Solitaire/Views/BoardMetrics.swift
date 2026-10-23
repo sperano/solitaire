@@ -51,6 +51,17 @@ enum Theme {
     static let cardBackInner = Color.white.opacity(0.7)
     static let red = Color(red: 0.80, green: 0.10, blue: 0.12)
     static let black = Color.black
+    static let blue = Color(red: 0.05, green: 0.30, blue: 0.80)
+    static let green = Color(red: 0.00, green: 0.50, blue: 0.15)
+    /// Darker inks for Increase Contrast, each at least 7:1 against the white card face.
+    static let highContrastRed = Color(red: 0.62, green: 0.00, blue: 0.00)
+    static let highContrastBlue = Color(red: 0.00, green: 0.17, blue: 0.55)
+    static let highContrastGreen = Color(red: 0.00, green: 0.30, blue: 0.08)
+    /// Section footers in Settings and Statistics; the system grey falls just short of 4.5:1.
+    static let formFooter = Color.primary.opacity(0.75)
+    static let highContrastBorder = Color.black
+    static let highContrastSlotStroke = Color.white.opacity(0.85)
+    static let highContrastBackInner = Color.white
     /// Outline of the cards and empty slots a hint points at.
     static let hint = Color.yellow
 }

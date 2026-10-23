@@ -29,6 +29,8 @@ struct WinOverlayView: View {
             .padding(Self.padding)
             .background(.regularMaterial, in: RoundedRectangle(cornerRadius: Self.cornerRadius, style: .continuous))
         }
+        // A container, so the identifier doesn't replace those of the texts and button inside it.
+        .accessibilityElement(children: .contain)
         .accessibilityIdentifier("winOverlay")
     }
 

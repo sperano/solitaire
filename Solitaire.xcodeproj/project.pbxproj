@@ -15,21 +15,28 @@
 		15A005B9551623D9ADDD6BB3 /* StockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE713015454D0BC9AEADACF /* StockUITests.swift */; };
 		29DBF2E362873348E4A9824E /* ScoringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21705F50790032AA25E8FFCA /* ScoringUITests.swift */; };
 		2BD6DCF7AB70BA4F447CF920 /* StatisticsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8FFA1F11245E5DFC9DBE27 /* StatisticsUITests.swift */; };
+		2C9D02882C4E3126F74B9C78 /* CardStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA56B0CC8CCA2A834F4C081C /* CardStyleTests.swift */; };
 		2F235689CB965D911C050D6B /* StatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076BAD83F0492AE4492CFF7 /* StatisticsModel.swift */; };
+		38AB843E0566EBAA6B7C7C01 /* MotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BAFB1C5226D95A0D7E50F5 /* MotionTests.swift */; };
 		3EB3D86B022DD1893897B4D7 /* SolitaireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8230985F1F039EE51984B743 /* SolitaireApp.swift */; };
+		40B4A687B7569DD4A193E9E3 /* CardViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC904947FF9B0E2A53AE6B0 /* CardViewTests.swift */; };
 		41D64E1A5E4E00E5B2FA6912 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C1600364471C580C8AFC9 /* Hint.swift */; };
 		535A2F714901237672E02CD2 /* DragInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C1AE9A75946D0CF906612 /* DragInfoTests.swift */; };
+		56315D8022DE627BFCC00FAE /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1D70E911F8A5BEC061C4C /* Motion.swift */; };
 		57BEBB78747D1EFC64BD3E2C /* StatisticsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34371B9257945500E88A16E /* StatisticsStoreTests.swift */; };
 		5F75F37D82AD73213E79FB36 /* BoardMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75731013731545F928BCC21F /* BoardMetrics.swift */; };
 		60D2732AF994FFB0ED448940 /* BoardMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56401D3B2BDAC32D62730329 /* BoardMetricsTests.swift */; };
 		60E0BC92DC50A40B2B4E4C0F /* CardGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4B141B85E5BEAEAE2F656 /* CardGestures.swift */; };
+		61A7CFE54243062C8F748426 /* GameViewModelAccessibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4F5C846AB56BC8BB68761 /* GameViewModelAccessibilityTests.swift */; };
 		67C2B9F0CE1A326A3E41D752 /* GameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA979238030680CFEA76B25 /* GameViewModelTests.swift */; };
 		694076C4D20C3B6328704CC6 /* HintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC01E5094653A372C1BD75 /* HintTests.swift */; };
 		6BAE163CA0801012FC42B706 /* TestFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10470C052B6015F3E635242B /* TestFixtures.swift */; };
+		6CBC356F680CA849A4B4B824 /* FormText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DD087A6DD8F4AFED2FDCB /* FormText.swift */; };
 		784834E1869D01A8907E171C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33B10ABDB682FDB5C88ED4D4 /* Assets.xcassets */; };
 		7A5DB439E08B2189A939B517 /* GameSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419E549A994DD21713B1C2FE /* GameSettingsTests.swift */; };
 		846918A13193C370936F37DE /* HintAnnouncementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660BC8591F292528636EC7F /* HintAnnouncementTests.swift */; };
 		85A55743DC993674365CFDCC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67F7911E127A089B8FC962 /* GameView.swift */; };
+		8EC1831F896C7A3FF3D6999C /* AccessibilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5486466E56571D83D3D700 /* AccessibilityUITests.swift */; };
 		91A48CAE8FCBBD6B6C4668DA /* MoveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5D214114FBC3644DA2B0CC /* MoveUITests.swift */; };
 		927F291891C0CECCB9015114 /* GameStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D7DD552D98768A887A1C7 /* GameStoreTests.swift */; };
 		92A7D1AEA924DE4E51A9B4A3 /* HintAnnouncement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACA2012AA7BF17ED5BF0F80 /* HintAnnouncement.swift */; };
@@ -43,19 +50,23 @@
 		A8AD1D3700BB1382FFCB8479 /* TimeFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3C2AC1F7EF071160AEF14 /* TimeFormatTests.swift */; };
 		AB2014E78153ACEF14E6CE9C /* StatisticsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F21B189AE3E496FAD43D4C /* StatisticsStore.swift */; };
 		B57A6776A203A289ED0CEF3C /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4094C6E1FDC724871DBFB210 /* GameStore.swift */; };
+		B8B8432EFECFF7EE0C75D8FC /* BoardAccessibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3E585F7D0AC19F2F8E546F /* BoardAccessibilityTests.swift */; };
 		B946A836C752D9BE7D489791 /* GameViewModelStatisticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393AD112551FA0E8666D008C /* GameViewModelStatisticsTests.swift */; };
 		C097A293DD6E2FF945782C2F /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A22F3D94D4758EDCFD6A09C /* GameViewModel.swift */; };
 		C1CFF7ACDE371C1D384EFCD5 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C7A9B4E04148B3DABE403E /* GameSettings.swift */; };
 		C2EE8D2EA36CD39D4BEEB09B /* HintUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1825D8387624F41405C00 /* HintUITests.swift */; };
+		C4127DC1C9A761920425699E /* GameViewModel+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DACB95C12FC761D37AC7B87 /* GameViewModel+Accessibility.swift */; };
 		C50FAA8C2681C7BD0A064F93 /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035480A94AEF3063E1CCAA06 /* TimeFormat.swift */; };
 		D0B3FE11D3E96C84A3F75D29 /* TopRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6935303D39BBF948A7FCF4B /* TopRowView.swift */; };
 		D78FD80EAF214C0C991ABE51 /* TableauColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF147627AAD6FBA72A4F124 /* TableauColumnView.swift */; };
 		D8185410A47EE51111BDACD5 /* DragInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297809B5DAFBE5609BE6A757 /* DragInfo.swift */; };
 		D990B3AEB5325A2848C49FA1 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722CC9BD7D1C2111C350F85E /* StatusBarView.swift */; };
 		DEA4FF861166E068A7FBE34D /* FixturePositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFADFC04F90E520A7289AF43 /* FixturePositionTests.swift */; };
+		DF1E101BAF468C2CE98085E2 /* BoardAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB03A3CE6A7C5D00026264 /* BoardAccessibility.swift */; };
 		EE5B294EC4E4C2A905134111 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88766F0F426DB5C2EA7FCF94 /* AppEnvironment.swift */; };
 		EFFDE84FAF73DA97300C8BD8 /* SolitaireUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6823827B75B372C9252C5178 /* SolitaireUITestCase.swift */; };
 		F24DCE1120A6EE85430E8357 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED68BBC67D6440E14C20A58D /* SettingsView.swift */; };
+		F66E7281A331E1104DDEF1C2 /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11085BFFF3256C20BDD70059 /* CardStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,23 +92,31 @@
 		02F21B189AE3E496FAD43D4C /* StatisticsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsStore.swift; sourceTree = "<group>"; };
 		035480A94AEF3063E1CCAA06 /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
 		0AE713015454D0BC9AEADACF /* StockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockUITests.swift; sourceTree = "<group>"; };
+		0C3E585F7D0AC19F2F8E546F /* BoardAccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAccessibilityTests.swift; sourceTree = "<group>"; };
 		0CF147627AAD6FBA72A4F124 /* TableauColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableauColumnView.swift; sourceTree = "<group>"; };
+		0DACB95C12FC761D37AC7B87 /* GameViewModel+Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewModel+Accessibility.swift"; sourceTree = "<group>"; };
 		10470C052B6015F3E635242B /* TestFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFixtures.swift; sourceTree = "<group>"; };
+		11085BFFF3256C20BDD70059 /* CardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
 		1B2B34F7B5FA290B9B7404AD /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		1E02E66D4C947CC161AFB049 /* JSONFileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileStorage.swift; sourceTree = "<group>"; };
 		21705F50790032AA25E8FFCA /* ScoringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringUITests.swift; sourceTree = "<group>"; };
+		21BAFB1C5226D95A0D7E50F5 /* MotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTests.swift; sourceTree = "<group>"; };
+		27F4F5C846AB56BC8BB68761 /* GameViewModelAccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelAccessibilityTests.swift; sourceTree = "<group>"; };
 		297809B5DAFBE5609BE6A757 /* DragInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragInfo.swift; sourceTree = "<group>"; };
 		2E9FE67FEA57B694C1D03C24 /* SolitaireUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SolitaireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B10ABDB682FDB5C88ED4D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		393AD112551FA0E8666D008C /* GameViewModelStatisticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelStatisticsTests.swift; sourceTree = "<group>"; };
+		3EC904947FF9B0E2A53AE6B0 /* CardViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewTests.swift; sourceTree = "<group>"; };
 		4094C6E1FDC724871DBFB210 /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
 		419E549A994DD21713B1C2FE /* GameSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsTests.swift; sourceTree = "<group>"; };
 		41B5F45E238FDAB320D8FF70 /* SolitaireKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SolitaireKit; path = SolitaireKit; sourceTree = SOURCE_ROOT; };
 		49C7A9B4E04148B3DABE403E /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		4AA979238030680CFEA76B25 /* GameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelTests.swift; sourceTree = "<group>"; };
+		4C5486466E56571D83D3D700 /* AccessibilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityUITests.swift; sourceTree = "<group>"; };
 		4FE1825D8387624F41405C00 /* HintUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintUITests.swift; sourceTree = "<group>"; };
 		56401D3B2BDAC32D62730329 /* BoardMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMetricsTests.swift; sourceTree = "<group>"; };
 		6823827B75B372C9252C5178 /* SolitaireUITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireUITestCase.swift; sourceTree = "<group>"; };
+		69CB03A3CE6A7C5D00026264 /* BoardAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAccessibility.swift; sourceTree = "<group>"; };
 		722CC9BD7D1C2111C350F85E /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
 		75731013731545F928BCC21F /* BoardMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMetrics.swift; sourceTree = "<group>"; };
 		7A22F3D94D4758EDCFD6A09C /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
@@ -118,14 +137,17 @@
 		A6935303D39BBF948A7FCF4B /* TopRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRowView.swift; sourceTree = "<group>"; };
 		A91D4B6859C83EB913AA5478 /* FixturePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturePosition.swift; sourceTree = "<group>"; };
 		B2E3470629350F650DC87F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BED1D70E911F8A5BEC061C4C /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
 		C11C43C337B1A4FC08D51F13 /* SettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITests.swift; sourceTree = "<group>"; };
 		C34371B9257945500E88A16E /* StatisticsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsStoreTests.swift; sourceTree = "<group>"; };
+		CA56B0CC8CCA2A834F4C081C /* CardStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyleTests.swift; sourceTree = "<group>"; };
 		CB5D214114FBC3644DA2B0CC /* MoveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveUITests.swift; sourceTree = "<group>"; };
 		D87A24FE0357FA76D76F03D9 /* AutoCompleteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteUITests.swift; sourceTree = "<group>"; };
 		DFADFC04F90E520A7289AF43 /* FixturePositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturePositionTests.swift; sourceTree = "<group>"; };
 		E38DE13E014397FE0C63559F /* UndoAndNewGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoAndNewGameUITests.swift; sourceTree = "<group>"; };
 		E660BC8591F292528636EC7F /* HintAnnouncementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAnnouncementTests.swift; sourceTree = "<group>"; };
 		ED68BBC67D6440E14C20A58D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EE5DD087A6DD8F4AFED2FDCB /* FormText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormText.swift; sourceTree = "<group>"; };
 		F05C1AE9A75946D0CF906612 /* DragInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragInfoTests.swift; sourceTree = "<group>"; };
 		FD224867BFAD53B911B39CFE /* WinOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinOverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +185,7 @@
 		66E11722D92556FE95A60955 /* SolitaireUITests */ = {
 			isa = PBXGroup;
 			children = (
+				4C5486466E56571D83D3D700 /* AccessibilityUITests.swift */,
 				D87A24FE0357FA76D76F03D9 /* AutoCompleteUITests.swift */,
 				4FE1825D8387624F41405C00 /* HintUITests.swift */,
 				93B4F54565EDD69A0D47C3CA /* LaunchUITests.swift */,
@@ -180,11 +203,15 @@
 		72F6F73CBB66EF014A33ABE0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				69CB03A3CE6A7C5D00026264 /* BoardAccessibility.swift */,
 				75731013731545F928BCC21F /* BoardMetrics.swift */,
 				01C4B141B85E5BEAEAE2F656 /* CardGestures.swift */,
+				11085BFFF3256C20BDD70059 /* CardStyle.swift */,
 				1B2B34F7B5FA290B9B7404AD /* CardView.swift */,
+				EE5DD087A6DD8F4AFED2FDCB /* FormText.swift */,
 				7D67F7911E127A089B8FC962 /* GameView.swift */,
 				7ACA2012AA7BF17ED5BF0F80 /* HintAnnouncement.swift */,
+				BED1D70E911F8A5BEC061C4C /* Motion.swift */,
 				ED68BBC67D6440E14C20A58D /* SettingsView.swift */,
 				942057C3D489DB52DBF7854A /* StatisticsView.swift */,
 				722CC9BD7D1C2111C350F85E /* StatusBarView.swift */,
@@ -206,15 +233,20 @@
 		82D2B8C9A73F4951A28AE356 /* SolitaireTests */ = {
 			isa = PBXGroup;
 			children = (
+				0C3E585F7D0AC19F2F8E546F /* BoardAccessibilityTests.swift */,
 				56401D3B2BDAC32D62730329 /* BoardMetricsTests.swift */,
+				CA56B0CC8CCA2A834F4C081C /* CardStyleTests.swift */,
+				3EC904947FF9B0E2A53AE6B0 /* CardViewTests.swift */,
 				F05C1AE9A75946D0CF906612 /* DragInfoTests.swift */,
 				DFADFC04F90E520A7289AF43 /* FixturePositionTests.swift */,
 				419E549A994DD21713B1C2FE /* GameSettingsTests.swift */,
 				912D7DD552D98768A887A1C7 /* GameStoreTests.swift */,
+				27F4F5C846AB56BC8BB68761 /* GameViewModelAccessibilityTests.swift */,
 				393AD112551FA0E8666D008C /* GameViewModelStatisticsTests.swift */,
 				4AA979238030680CFEA76B25 /* GameViewModelTests.swift */,
 				E660BC8591F292528636EC7F /* HintAnnouncementTests.swift */,
 				8ACC01E5094653A372C1BD75 /* HintTests.swift */,
+				21BAFB1C5226D95A0D7E50F5 /* MotionTests.swift */,
 				941867F983BA26C752B76FD0 /* StatisticsModelTests.swift */,
 				C34371B9257945500E88A16E /* StatisticsStoreTests.swift */,
 				10470C052B6015F3E635242B /* TestFixtures.swift */,
@@ -271,6 +303,7 @@
 				49C7A9B4E04148B3DABE403E /* GameSettings.swift */,
 				4094C6E1FDC724871DBFB210 /* GameStore.swift */,
 				7A22F3D94D4758EDCFD6A09C /* GameViewModel.swift */,
+				0DACB95C12FC761D37AC7B87 /* GameViewModel+Accessibility.swift */,
 				012C1600364471C580C8AFC9 /* Hint.swift */,
 				1E02E66D4C947CC161AFB049 /* JSONFileStorage.swift */,
 				8076BAD83F0492AE4492CFF7 /* StatisticsModel.swift */,
@@ -403,18 +436,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE5B294EC4E4C2A905134111 /* AppEnvironment.swift in Sources */,
+				DF1E101BAF468C2CE98085E2 /* BoardAccessibility.swift in Sources */,
 				5F75F37D82AD73213E79FB36 /* BoardMetrics.swift in Sources */,
 				60E0BC92DC50A40B2B4E4C0F /* CardGestures.swift in Sources */,
+				F66E7281A331E1104DDEF1C2 /* CardStyle.swift in Sources */,
 				02BDC0125168A3F002885F92 /* CardView.swift in Sources */,
 				D8185410A47EE51111BDACD5 /* DragInfo.swift in Sources */,
 				A2396CF71287D2227A747069 /* FixturePosition.swift in Sources */,
+				6CBC356F680CA849A4B4B824 /* FormText.swift in Sources */,
 				C1CFF7ACDE371C1D384EFCD5 /* GameSettings.swift in Sources */,
 				B57A6776A203A289ED0CEF3C /* GameStore.swift in Sources */,
 				85A55743DC993674365CFDCC /* GameView.swift in Sources */,
+				C4127DC1C9A761920425699E /* GameViewModel+Accessibility.swift in Sources */,
 				C097A293DD6E2FF945782C2F /* GameViewModel.swift in Sources */,
 				41D64E1A5E4E00E5B2FA6912 /* Hint.swift in Sources */,
 				92A7D1AEA924DE4E51A9B4A3 /* HintAnnouncement.swift in Sources */,
 				158D70E85867F92CEC280CFB /* JSONFileStorage.swift in Sources */,
+				56315D8022DE627BFCC00FAE /* Motion.swift in Sources */,
 				F24DCE1120A6EE85430E8357 /* SettingsView.swift in Sources */,
 				3EB3D86B022DD1893897B4D7 /* SolitaireApp.swift in Sources */,
 				2F235689CB965D911C050D6B /* StatisticsModel.swift in Sources */,
@@ -432,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC1831F896C7A3FF3D6999C /* AccessibilityUITests.swift in Sources */,
 				15404DA9B6A1589D6F673E4C /* AutoCompleteUITests.swift in Sources */,
 				C2EE8D2EA36CD39D4BEEB09B /* HintUITests.swift in Sources */,
 				05DB23E5DB08FB4B3024178C /* LaunchUITests.swift in Sources */,
@@ -449,15 +488,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B8432EFECFF7EE0C75D8FC /* BoardAccessibilityTests.swift in Sources */,
 				60D2732AF994FFB0ED448940 /* BoardMetricsTests.swift in Sources */,
+				2C9D02882C4E3126F74B9C78 /* CardStyleTests.swift in Sources */,
+				40B4A687B7569DD4A193E9E3 /* CardViewTests.swift in Sources */,
 				535A2F714901237672E02CD2 /* DragInfoTests.swift in Sources */,
 				DEA4FF861166E068A7FBE34D /* FixturePositionTests.swift in Sources */,
 				7A5DB439E08B2189A939B517 /* GameSettingsTests.swift in Sources */,
 				927F291891C0CECCB9015114 /* GameStoreTests.swift in Sources */,
+				61A7CFE54243062C8F748426 /* GameViewModelAccessibilityTests.swift in Sources */,
 				B946A836C752D9BE7D489791 /* GameViewModelStatisticsTests.swift in Sources */,
 				67C2B9F0CE1A326A3E41D752 /* GameViewModelTests.swift in Sources */,
 				846918A13193C370936F37DE /* HintAnnouncementTests.swift in Sources */,
 				694076C4D20C3B6328704CC6 /* HintTests.swift in Sources */,
+				38AB843E0566EBAA6B7C7C01 /* MotionTests.swift in Sources */,
 				065FE93690D81108D276D615 /* StatisticsModelTests.swift in Sources */,
 				57BEBB78747D1EFC64BD3E2C /* StatisticsStoreTests.swift in Sources */,
 				6BAE163CA0801012FC42B706 /* TestFixtures.swift in Sources */,

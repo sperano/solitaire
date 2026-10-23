@@ -40,7 +40,7 @@ them. Never add a dependency or feature that sends data anywhere.
   `undoButton`, `newGameButton`, `confirmNewGameButton`, `settingsButton`,
   `autoCompleteButton`, `hintButton` (shown instead of Finish),
   `drawModePicker`, `scoringModePicker`, `carryVegasBalanceToggle`,
-  `autoFinishToggle`, `settingsDoneButton`, `winNewGameButton`,
+  `autoFinishToggle`, `fourColorDeckToggle`, `settingsDoneButton`, `winNewGameButton`,
   `statisticsLink`, `statisticsScopePicker`, `resetStatisticsButton`,
   `confirmResetStatisticsButton`; statistics rows `statsPlayed`, `statsWon`,
   `statsWinRate`, `statsBestTime`, `statsFewestMoves`, `statsCurrentStreak`,
@@ -52,6 +52,19 @@ them. Never add a dependency or feature that sends data anywhere.
   when the hint is to draw, carry the `isSelected` accessibility trait. The waste, foundations and tableau columns are
   accessibility containers so their card identifiers stay reachable; the
   stock is a single button element and exposes no card identifiers. Keep these stable; UI tests depend on them.
+- Accessibility: a card is one element (`accessibilityElement(children:
+  .ignore)` in `CardView`) labelled "Seven of hearts, face up" or
+  "Face-down card". Pile labels carry the state ("Foundation 2, empty",
+  "Column 3, 2 face down", "Waste, seven of hearts on top") while the value
+  stays "<n> cards". Face-up cards get a hint and one VoiceOver custom action
+  per legal destination (`GameViewModel.destinations`, `moveCards`), so every
+  move works without dragging. VoiceOver strings live in
+  `BoardAccessibility`. Every animation goes through `Motion.animation` so
+  Reduce Motion drops it; card colours come from the `cardStyle`
+  environment value (Increase Contrast, four-colour deck). Toolbar buttons
+  use `HitTargetButtonStyle` (44 pt). `AccessibilityUITests` runs Xcode's
+  accessibility audit on every screen; fix what it finds rather than adding
+  to its ignore lists, which hold only documented false positives.
 - UI-test launch arguments: `--ui-testing` gives in-memory game and
   statistics stores and fresh defaults, and keeps a hint up until the next
   move (CI steps can outlast the normal 3 s). Only with it, `-seed <UInt64>` fixes the deal (required for a

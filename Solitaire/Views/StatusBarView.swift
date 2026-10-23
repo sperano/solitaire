@@ -3,23 +3,18 @@ import SwiftUI
 /// Moves, time, score and the game controls.
 struct StatusBarView: View {
     private static let itemSpacing: CGFloat = 12
-    /// Moves, time and score shrink this far rather than wrap on narrow phones.
-    private static let minimumStatScale: CGFloat = 0.7
     private static let horizontalPadding: CGFloat = 16
     private static let verticalPadding: CGFloat = 8
+    /// The smallest tap target Apple's guidelines allow.
+    static let minimumHitSize: CGFloat = 44
 
     let viewModel: GameViewModel
     @State private var isConfirmingNewGame = false
 
     var body: some View {
-        HStack(spacing: Self.itemSpacing) {
-            stats
-            Spacer(minLength: 0)
-            controls
-        }
-        .labelStyle(.iconOnly)
+        layout
+            .labelStyle(.iconOnly)
         .font(.title3)
-        .monospacedDigit()
         .foregroundStyle(.white)
         .padding(.horizontal, Self.horizontalPadding)
         .padding(.vertical, Self.verticalPadding)
@@ -31,26 +26,57 @@ struct StatusBarView: View {
         }
     }
 
-    private var stats: some View {
-        HStack(spacing: Self.itemSpacing) {
+    @ViewBuilder private var stats: some View {
+        stat(
+            "\(viewModel.moveCount)", icon: "arrow.left.arrow.right",
+            identifier: "movesLabel", spoken: "\(viewModel.moveCount) moves"
+        )
+        stat(viewModel.formattedTime, icon: "clock", identifier: "timeLabel", spoken: "Time \(viewModel.formattedTime)")
+        if let score = viewModel.formattedScore {
             stat(
-                "\(viewModel.moveCount)", icon: "arrow.left.arrow.right",
-                identifier: "movesLabel", spoken: "\(viewModel.moveCount) moves"
+                score, icon: viewModel.scoringMode == .vegas ? "dollarsign.circle" : "star",
+                identifier: "scoreLabel", spoken: "Score \(score)"
             )
-            stat(viewModel.formattedTime, icon: "clock", identifier: "timeLabel", spoken: "Time \(viewModel.formattedTime)")
-            if let score = viewModel.formattedScore {
-                stat(
-                    score, icon: viewModel.scoringMode == .vegas ? "dollarsign.circle" : "star",
-                    identifier: "scoreLabel", spoken: "Score \(score)"
-                )
+        }
+    }
+
+    /// One row when everything fits; otherwise, as with large text, the stats get a row of their own,
+    /// and stack when even that row is too narrow. Nothing shrinks or gets cut off.
+    private var layout: some View {
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: Self.itemSpacing) {
+                statsRow
+                Spacer(minLength: 0)
+                controlsRow
+            }
+            VStack(alignment: .leading, spacing: 0) {
+                ViewThatFits(in: .horizontal) {
+                    statsRow
+                    VStack(alignment: .leading) { stats }
+                }
+                HStack(spacing: 0) {
+                    Spacer(minLength: 0)
+                    controlsRow
+                }
             }
         }
-        .lineLimit(1)
-        .minimumScaleFactor(Self.minimumStatScale)
+    }
+
+    private var statsRow: some View {
+        HStack(spacing: Self.itemSpacing) { stats }
+    }
+
+    private var controlsRow: some View {
+        HStack(spacing: 0) { controls }
+            .buttonStyle(HitTargetButtonStyle())
     }
 
     private func stat(_ title: String, icon: String, identifier: String, spoken: String) -> some View {
-        Label(title, systemImage: icon)
+        Label {
+            Text(title).monospacedDigit()
+        } icon: {
+            Image(systemName: icon)
+        }
             .labelStyle(.titleAndIcon)
             .accessibilityElement(children: .ignore)
             .accessibilityIdentifier(identifier)
@@ -91,5 +117,27 @@ struct StatusBarView: View {
         } else {
             isConfirmingNewGame = true
         }
+    }
+}
+
+/// Tap targets at least `minimumHitSize` square, so the small toolbar icons are easy to hit.
+private struct HitTargetButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HitTargetLabel(configuration: configuration)
+    }
+}
+
+private struct HitTargetLabel: View {
+    private static let pressedOpacity = 0.5
+    private static let disabledOpacity = 0.35
+
+    let configuration: ButtonStyleConfiguration
+    @Environment(\.isEnabled) private var isEnabled
+
+    var body: some View {
+        configuration.label
+            .frame(minWidth: StatusBarView.minimumHitSize, minHeight: StatusBarView.minimumHitSize)
+            .contentShape(Rectangle())
+            .opacity(isEnabled ? (configuration.isPressed ? Self.pressedOpacity : 1) : Self.disabledOpacity)
     }
 }

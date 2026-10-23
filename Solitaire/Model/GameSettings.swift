@@ -10,6 +10,7 @@ final class GameSettings {
     static let carryVegasBalanceKey = "carryVegasBalance"
     static let vegasBalanceKey = "vegasBalance"
     static let autoFinishKey = "autoFinish"
+    static let fourColorDeckKey = "fourColorDeck"
     static let defaultDrawMode = DrawMode.one
     static let defaultScoringMode = ScoringMode.standard
 
@@ -41,6 +42,11 @@ final class GameSettings {
         didSet { defaults.set(autoFinish, forKey: Self.autoFinishKey) }
     }
 
+    /// Diamonds blue and clubs green, so every suit has its own colour.
+    var fourColorDeck: Bool {
+        didSet { defaults.set(fourColorDeck, forKey: Self.fourColorDeckKey) }
+    }
+
     init(defaults: UserDefaults) {
         self.defaults = defaults
         drawMode = DrawMode(rawValue: defaults.integer(forKey: Self.drawModeKey)) ?? Self.defaultDrawMode
@@ -50,6 +56,7 @@ final class GameSettings {
         carryVegasBalance = defaults.bool(forKey: Self.carryVegasBalanceKey)
         vegasBalance = defaults.integer(forKey: Self.vegasBalanceKey)
         autoFinish = defaults.bool(forKey: Self.autoFinishKey)
+        fourColorDeck = defaults.bool(forKey: Self.fourColorDeckKey)
     }
 
     /// The balance a new Vegas game starts from before the buy-in.
