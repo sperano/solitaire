@@ -62,6 +62,9 @@ targets:
     platform: iOS
     sources:
       - path: SolitaireSnapshotTests
+        # The reference images are read by path, not from the bundle.
+        excludes:
+          - "__Snapshots__"
     dependencies:
       - target: Solitaire
       - package: SolitaireKit
