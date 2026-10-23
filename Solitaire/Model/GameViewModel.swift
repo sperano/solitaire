@@ -121,6 +121,15 @@ final class GameViewModel {
         return perform(.move(from: drag.source, to: destination, count: drag.count))
     }
 
+    /// Moves the card at `index` of `pile`, with the run above it, to `destination`; VoiceOver's
+    /// custom actions use it so the game is playable without dragging. Returns false when illegal.
+    @discardableResult
+    func moveCards(from pile: PileID, index: Int, to destination: PileID) -> Bool {
+        let count = state.pile(pile).count - index
+        guard acceptsInput, count >= 1 else { return false }
+        return perform(.move(from: pile, to: destination, count: count))
+    }
+
     func undo() {
         guard canUndo, game.undo() else { return }
         clearHint()

@@ -88,4 +88,12 @@ final class GameSettingsTests: XCTestCase {
         XCTAssertTrue(defaults.bool(forKey: GameSettings.autoFinishKey))
         XCTAssertTrue(GameSettings(defaults: defaults).autoFinish)
     }
+
+    func testFourColorDeckIsOffByDefaultAndPersists() {
+        let settings = GameSettings(defaults: defaults)
+        XCTAssertFalse(settings.fourColorDeck)
+        settings.fourColorDeck = true
+        XCTAssertTrue(defaults.bool(forKey: GameSettings.fourColorDeckKey))
+        XCTAssertTrue(GameSettings(defaults: defaults).fourColorDeck)
+    }
 }

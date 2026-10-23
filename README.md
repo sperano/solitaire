@@ -16,6 +16,10 @@ interrupts the game with something.
 - Statistics per draw mode and overall: games played and won, win rate, best
   time, fewest moves, current and longest win streak (Settings → Statistics);
   abandoning a started game counts as a loss
+- Accessibility: full VoiceOver play (every card and pile is described, and
+  each card offers its legal moves as actions, so no drag is needed), Dynamic
+  Type on the toolbar and settings, Reduce Motion, a high-contrast card style
+  with Increase Contrast, and a four-colour deck (Settings → Cards)
 - The current game resumes when you reopen the app
 - "Finish" button once every card is face up, or finish automatically
   (Settings → Finish automatically)

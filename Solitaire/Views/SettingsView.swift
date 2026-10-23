@@ -29,25 +29,35 @@ struct SettingsView: View {
                             .accessibilityIdentifier("carryVegasBalanceToggle")
                     }
                 } header: {
-                    Text("Rules")
+                    Text("Rules").formHeader()
                 } footer: {
-                    Text(rulesFooter)
+                    Text(rulesFooter).formFooter()
                 }
                 Section {
                     Toggle("Finish automatically", isOn: $settings.autoFinish)
                         .accessibilityIdentifier("autoFinishToggle")
                 } header: {
-                    Text("Play")
+                    Text("Play").formHeader()
                 } footer: {
-                    Text("Once every remaining card can go to the foundations, play them without tapping Finish.")
+                    Text("Once every remaining card can go to the foundations, play them without tapping Finish.").formFooter()
+                }
+                Section {
+                    Toggle("Four-colour deck", isOn: $settings.fourColorDeck)
+                        .accessibilityIdentifier("fourColorDeckToggle")
+                } header: {
+                    Text("Cards").formHeader()
+                } footer: {
+                    Text("Diamonds blue and clubs green, so no two suits share a colour.").formFooter()
                 }
                 Section {
                     NavigationLink("Statistics") { StatisticsView(statistics: statistics) }
                         .accessibilityIdentifier("statisticsLink")
                 }
-                Section("About") {
+                Section {
                     LabeledContent("Version", value: Bundle.main.shortVersion)
                     Text("Free, no ads, no tracking, no account.")
+                } header: {
+                    Text("About").formHeader()
                 }
             }
             .navigationTitle("Settings")

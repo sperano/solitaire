@@ -6,7 +6,6 @@ struct CardView: View {
     private static let centerFontRatio: CGFloat = 0.55
     private static let cornerInsetRatio: CGFloat = 0.07
     private static let backInsetRatio: CGFloat = 0.1
-    private static let borderWidth: CGFloat = 1
     private static let backInnerBorderWidth: CGFloat = 1.5
     static let hintBorderWidth: CGFloat = 3
 
@@ -14,6 +13,14 @@ struct CardView: View {
     let metrics: BoardMetrics
     /// Part of the move a hint shows.
     var isHinted = false
+    @Environment(\.cardStyle) private var style
+
+    /// "Seven of hearts, face up", or "Face-down card" for a card whose face is hidden.
+    static func accessibilityLabel(for card: Card) -> String {
+        guard card.isFaceUp else { return "Face-down card" }
+        let name = card.name
+        return name.prefix(1).uppercased() + name.dropFirst() + ", face up"
+    }
 
     var body: some View {
         Group {
@@ -23,14 +30,18 @@ struct CardView: View {
                 back
             }
         }
+        // The glyphs are sized to the card, not to Dynamic Type; VoiceOver reads the card's name instead.
+        .accessibilityHidden(true)
         .frame(width: metrics.cardWidth, height: metrics.cardHeight)
         .overlay {
             if isHinted {
                 shape.strokeBorder(Theme.hint, lineWidth: Self.hintBorderWidth)
             }
         }
+        // One element the size of the card, not one per rank and suit text inside it.
+        .accessibilityElement(children: .ignore)
         .accessibilityIdentifier(card.accessibilityIdentifier)
-        .accessibilityLabel(card.isFaceUp ? card.name : "face-down card")
+        .accessibilityLabel(Self.accessibilityLabel(for: card))
         .accessibilityAddTraits(isHinted ? .isSelected : [])
     }
 
@@ -38,14 +49,12 @@ struct CardView: View {
         RoundedRectangle(cornerRadius: metrics.cornerRadius, style: .continuous)
     }
 
-    private var inkColor: Color {
-        card.color == .red ? Theme.red : Theme.black
-    }
+    private var inkColor: Color { style.ink(for: card.suit) }
 
     private var face: some View {
         ZStack(alignment: .topLeading) {
             shape.fill(Theme.cardFace)
-            shape.strokeBorder(Theme.cardBorder, lineWidth: Self.borderWidth)
+            shape.strokeBorder(style.border, lineWidth: style.borderWidth)
             Text(card.suit.symbol)
                 .font(.system(size: metrics.cardWidth * Self.centerFontRatio))
                 .frame(width: metrics.cardWidth, height: metrics.cardHeight)
@@ -62,10 +71,10 @@ struct CardView: View {
     private var back: some View {
         ZStack {
             shape.fill(Theme.cardBack)
-            shape.strokeBorder(Theme.cardBorder, lineWidth: Self.borderWidth)
+            shape.strokeBorder(style.border, lineWidth: style.borderWidth)
             shape
                 .inset(by: metrics.cardWidth * Self.backInsetRatio)
-                .strokeBorder(Theme.cardBackInner, lineWidth: Self.backInnerBorderWidth)
+                .strokeBorder(style.backInner, lineWidth: Self.backInnerBorderWidth)
         }
     }
 }
@@ -73,24 +82,25 @@ struct CardView: View {
 /// The outline drawn where a pile has no cards.
 struct EmptySlotView: View {
     private static let symbolRatio: CGFloat = 0.4
-    private static let strokeWidth: CGFloat = 1.5
 
     let metrics: BoardMetrics
     var symbol: String?
     /// The pile a hint points at.
     var isHinted = false
 
+    @Environment(\.cardStyle) private var style
+
     var body: some View {
         RoundedRectangle(cornerRadius: metrics.cornerRadius, style: .continuous)
             .strokeBorder(
-                isHinted ? Theme.hint : Theme.slotStroke,
-                lineWidth: isHinted ? CardView.hintBorderWidth : Self.strokeWidth
+                isHinted ? Theme.hint : style.slotStroke,
+                lineWidth: isHinted ? CardView.hintBorderWidth : style.slotStrokeWidth
             )
             .overlay {
                 if let symbol {
                     Image(systemName: symbol)
                         .font(.system(size: metrics.cardWidth * Self.symbolRatio))
-                        .foregroundStyle(Theme.slotStroke)
+                        .foregroundStyle(style.slotStroke)
                 }
             }
             .frame(width: metrics.cardWidth, height: metrics.cardHeight)

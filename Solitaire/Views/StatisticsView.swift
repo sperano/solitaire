@@ -41,21 +41,29 @@ struct StatisticsView: View {
             }
             .pickerStyle(.segmented)
             .accessibilityIdentifier("statisticsScopePicker")
-            Section("Games") {
+            Section {
                 row("Played", "\(record.played)", id: "statsPlayed")
                 row("Won", "\(record.won)", id: "statsWon")
                 row("Win rate", record.winRate.map { $0.formatted(.percent.precision(.fractionLength(Self.winRateFractionDigits))) }, id: "statsWinRate")
-            }
-            Section("Best") {
-                row("Time", record.bestTimeSeconds.map(TimeFormat.minutesAndSeconds), id: "statsBestTime")
-                row("Fewest moves", record.fewestMoves.map(String.init), id: "statsFewestMoves")
-            }
-            Section("Streaks") {
-                row("Current", "\(record.currentStreak)", id: "statsCurrentStreak")
-                row("Longest", "\(record.longestStreak)", id: "statsLongestStreak")
+            } header: {
+                Text("Games").formHeader()
             }
             Section {
-                Button("Reset Statistics", role: .destructive) { isConfirmingReset = true }
+                row("Time", record.bestTimeSeconds.map(TimeFormat.minutesAndSeconds), id: "statsBestTime")
+                row("Fewest moves", record.fewestMoves.map(String.init), id: "statsFewestMoves")
+            } header: {
+                Text("Best").formHeader()
+            }
+            Section {
+                row("Current", "\(record.currentStreak)", id: "statsCurrentStreak")
+                row("Longest", "\(record.longestStreak)", id: "statsLongestStreak")
+            } header: {
+                Text("Streaks").formHeader()
+            }
+            Section {
+                Button(role: .destructive) { isConfirmingReset = true } label: {
+                    Text("Reset Statistics").foregroundStyle(Theme.destructiveText)
+                }
                     .accessibilityIdentifier("resetStatisticsButton")
             }
         }

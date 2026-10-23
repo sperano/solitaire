@@ -11,6 +11,7 @@ struct CardGestures: ViewModifier {
     let index: Int
     let pileCount: Int
     let dropTarget: (CGPoint) -> PileID?
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private var count: Int { pileCount - index }
 
@@ -19,6 +20,7 @@ struct CardGestures: ViewModifier {
             .onTapGesture {
                 viewModel.tapCard(in: pile, index: index)
             }
+            .modifier(CardAccessibility(viewModel: viewModel, pile: pile, index: index))
             .gesture(
                 DragGesture(minimumDistance: Self.dragMinimumDistance, coordinateSpace: .named(BoardMetrics.coordinateSpace))
                     .onChanged { value in
@@ -26,7 +28,7 @@ struct CardGestures: ViewModifier {
                     }
                     .onEnded { value in
                         let target = dropTarget(value.location)
-                        withAnimation(.easeOut(duration: Self.snapBackDuration)) {
+                        withAnimation(Motion.animation(.easeOut(duration: Self.snapBackDuration), reduceMotion: reduceMotion)) {
                             _ = viewModel.drop(on: target == pile ? nil : target)
                         }
                     }
