@@ -37,4 +37,16 @@ final class SettingsUITests: SolitaireUITestCase {
         XCTAssertTrue(picker.buttons["Draw 3"].isSelected)
         XCTAssertFalse(picker.buttons["Draw 1"].isSelected)
     }
+
+    func testHapticsAreOnUntilTurnedOff() {
+        _ = openSettings()
+        let toggle = app.switches["hapticsToggle"]
+        XCTAssertTrue(toggle.waitForExistence(timeout: Self.timeout))
+        XCTAssertEqual(toggle.value as? String, "1")
+        toggle.switches.firstMatch.tap()
+        tap("settingsDoneButton")
+
+        _ = openSettings()
+        XCTAssertEqual(app.switches["hapticsToggle"].value as? String, "0")
+    }
 }

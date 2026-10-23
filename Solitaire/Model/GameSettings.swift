@@ -11,6 +11,7 @@ final class GameSettings {
     static let vegasBalanceKey = "vegasBalance"
     static let autoFinishKey = "autoFinish"
     static let fourColorDeckKey = "fourColorDeck"
+    static let hapticsKey = "haptics"
     static let defaultDrawMode = DrawMode.one
     static let defaultScoringMode = ScoringMode.standard
 
@@ -47,6 +48,11 @@ final class GameSettings {
         didSet { defaults.set(fourColorDeck, forKey: Self.fourColorDeckKey) }
     }
 
+    /// A tap of the Taptic Engine on moves, refused moves and the win. On unless turned off.
+    var haptics: Bool {
+        didSet { defaults.set(haptics, forKey: Self.hapticsKey) }
+    }
+
     init(defaults: UserDefaults) {
         self.defaults = defaults
         drawMode = DrawMode(rawValue: defaults.integer(forKey: Self.drawModeKey)) ?? Self.defaultDrawMode
@@ -57,6 +63,7 @@ final class GameSettings {
         vegasBalance = defaults.integer(forKey: Self.vegasBalanceKey)
         autoFinish = defaults.bool(forKey: Self.autoFinishKey)
         fourColorDeck = defaults.bool(forKey: Self.fourColorDeckKey)
+        haptics = defaults.object(forKey: Self.hapticsKey) as? Bool ?? true
     }
 
     /// The balance a new Vegas game starts from before the buy-in.

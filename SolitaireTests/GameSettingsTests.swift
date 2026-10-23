@@ -96,4 +96,12 @@ final class GameSettingsTests: XCTestCase {
         XCTAssertTrue(defaults.bool(forKey: GameSettings.fourColorDeckKey))
         XCTAssertTrue(GameSettings(defaults: defaults).fourColorDeck)
     }
+
+    func testHapticsAreOnByDefaultAndPersist() {
+        let settings = GameSettings(defaults: defaults)
+        XCTAssertTrue(settings.haptics)
+        settings.haptics = false
+        XCTAssertEqual(defaults.object(forKey: GameSettings.hapticsKey) as? Bool, false)
+        XCTAssertFalse(GameSettings(defaults: defaults).haptics)
+    }
 }

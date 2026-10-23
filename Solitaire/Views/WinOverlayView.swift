@@ -7,10 +7,14 @@ struct WinOverlayView: View {
     private static let cornerRadius: CGFloat = 20
 
     let viewModel: GameViewModel
+    /// The cascade for a screen of the given size, played between the dimmed board and the panel;
+    /// nil under Reduce Motion.
+    let celebration: (CGSize) -> WinCascadeView?
 
     var body: some View {
         ZStack {
             Color.black.opacity(Self.dimOpacity).ignoresSafeArea()
+            GeometryReader { proxy in celebration(proxy.size) }
             VStack(spacing: Self.spacing) {
                 Text("You won!")
                     .font(.largeTitle.bold())
@@ -27,7 +31,8 @@ struct WinOverlayView: View {
                     .accessibilityIdentifier("winNewGameButton")
             }
             .padding(Self.padding)
-            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: Self.cornerRadius, style: .continuous))
+            // Opaque: cascading cards pass behind the panel and must not show through its text.
+            .background(.background, in: RoundedRectangle(cornerRadius: Self.cornerRadius, style: .continuous))
         }
         // A container, so the identifier doesn't replace those of the texts and button inside it.
         .accessibilityElement(children: .contain)

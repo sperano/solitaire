@@ -8,12 +8,15 @@ struct CardView: View {
     private static let backInsetRatio: CGFloat = 0.1
     private static let backInnerBorderWidth: CGFloat = 1.5
     static let hintBorderWidth: CGFloat = 3
+    static let flipSeconds = 0.3
 
     let card: Card
     let metrics: BoardMetrics
     /// Part of the move a hint shows.
     var isHinted = false
     @Environment(\.cardStyle) private var style
+    @Environment(\.cardsInFlight) private var cardsInFlight
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     /// "Seven of hearts, face up", or "Face-down card" for a card whose face is hidden.
     static func accessibilityLabel(for card: Card) -> String {
@@ -23,13 +26,8 @@ struct CardView: View {
     }
 
     var body: some View {
-        Group {
-            if card.isFaceUp {
-                face
-            } else {
-                back
-            }
-        }
+        FlipView(isFaceUp: card.isFaceUp) { face } back: { back }
+            .animation(Motion.animation(.easeInOut(duration: Self.flipSeconds), reduceMotion: reduceMotion), value: card.isFaceUp)
         // The glyphs are sized to the card, not to Dynamic Type; VoiceOver reads the card's name instead.
         .accessibilityHidden(true)
         .frame(width: metrics.cardWidth, height: metrics.cardHeight)
@@ -43,6 +41,9 @@ struct CardView: View {
         .accessibilityIdentifier(card.accessibilityIdentifier)
         .accessibilityLabel(Self.accessibilityLabel(for: card))
         .accessibilityAddTraits(isHinted ? .isSelected : [])
+        // A copy flies above the board; this one appears, and can be touched, when it lands.
+        .opacity(cardsInFlight.contains(card.id) ? 0 : 1)
+        .allowsHitTesting(!cardsInFlight.contains(card.id))
     }
 
     private var shape: RoundedRectangle {

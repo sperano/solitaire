@@ -63,8 +63,7 @@ struct WasteView: View {
 
     /// Only the last few cards are visible, fanned to the right, and only the top one moves.
     private var visible: [(index: Int, card: Card)] {
-        let shown = min(cards.count, viewModel.state.drawMode.cardsPerDraw)
-        return cards.indices.suffix(shown).map { ($0, cards[$0]) }
+        cards.indices.suffix(BoardGeometry.visibleWasteCount(in: viewModel.state)).map { ($0, cards[$0]) }
     }
 
     var body: some View {
@@ -76,7 +75,7 @@ struct WasteView: View {
                     .offset(x: CGFloat(fanIndex) * metrics.wasteFanOffset)
                     .dragOffset(viewModel.drag, pile: .waste, index: entry.index, pileCount: cards.count)
                     .zIndex(Double(fanIndex))
-                    .transition(.opacity)
+                    .transition(.identity)
                     .allowsHitTesting(isTop)
                     // Only the top card can move; VoiceOver skips the rest of the fan.
                     .accessibilityHidden(!isTop)
@@ -113,7 +112,7 @@ struct FoundationView: View {
                 let isTop = index == cards.count - 1
                 CardView(card: cards[index], metrics: metrics, isHinted: viewModel.isHinted(pile, index: index))
                     .dragOffset(viewModel.drag, pile: pile, index: index, pileCount: cards.count)
-                    .transition(.opacity)
+                    .transition(.identity)
                     .allowsHitTesting(isTop)
                     // Only drawn for drags; the pile's label already names the top card.
                     .accessibilityHidden(!isTop)
