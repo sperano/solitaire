@@ -102,9 +102,15 @@ them. Never add a dependency or feature that sends data anywhere.
 - Tests live in the matching test target, one file per source file
   (`GameViewModel.swift` → `SolitaireTests/GameViewModelTests.swift`). Engine
   tests go in `SolitaireKit/Tests/SolitaireKitTests`. Never inline tests.
+- `SolitaireSnapshotTests` (swift-snapshot-testing) compares the cards, the
+  board, the win panel and Settings with the PNGs in its `__Snapshots__`, in
+  light and dark mode, one test file per view. They are recorded on the
+  iPhone 17 simulator running iOS 26.5, which CI pins, and skip elsewhere.
+  After a deliberate visual change, re-record (README, "Snapshot tests"),
+  look at the changed images and commit them with the change.
 - Every PR runs: `swift test` in `SolitaireKit`, the `SolitaireTests` unit
-  tests and the `SolitaireUITests` on an iPhone simulator. Run all three
-  locally before opening a PR (commands in README.md).
+  tests, the `SolitaireSnapshotTests` and the `SolitaireUITests` on an iPhone
+  simulator. Run all four locally before opening a PR (commands in README.md).
 - User-facing text is English for now; keep strings in the views so the
   localisation task can move them into a String Catalog later.
 

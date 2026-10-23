@@ -66,8 +66,9 @@ xcodebuild build -project Solitaire.xcodeproj -scheme Solitaire \
 | `Solitaire/` | The SwiftUI app: views, view model, settings, persistence. |
 | `SolitaireTests/` | Unit tests for the app layer (view model, settings, stores, layout metrics). |
 | `SolitaireUITests/` | XCUITests that play the game through the accessibility tree. |
+| `SolitaireSnapshotTests/` | Image comparisons of the cards, the board, the win panel and Settings against the PNGs in `__Snapshots__`. |
 | `project.yml` | xcodegen definition of the Xcode project. |
-| `.github/workflows/ci.yml` | Runs the package tests and the simulator tests on every PR. |
+| `.github/workflows/ci.yml` | Runs the package tests, the simulator tests and the snapshot tests on every PR. |
 
 ## Testing
 
@@ -82,6 +83,10 @@ xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
 # UI tests
 xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
   -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing:SolitaireUITests
+
+# Snapshot tests, on the simulator the images were recorded on
+xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
+  -destination 'platform=iOS Simulator,name=iPhone 17,OS=26.5' -only-testing:SolitaireSnapshotTests
 ```
 
 For deterministic runs, launch with `--ui-testing` (in-memory storage, fresh
@@ -91,6 +96,32 @@ settings). Together with it, `-seed <number>` fixes the deal,
 and `-position completable|oneMoveFromCompletable|deadlocked`
 starts from a fixed board instead of a deal (see `FixturePosition`); a normal
 launch ignores them all.
+
+### Snapshot tests
+
+`SolitaireSnapshotTests` renders the views with
+[swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing)
+and compares them pixel for pixel (within a small tolerance) with the PNGs
+committed under `SolitaireSnapshotTests/__Snapshots__`: every card face and
+the back in each card style, the board at the deal and mid-game with a lifted
+run, the win panel and the Settings screen, in light and dark mode. The
+images are recorded on the iPhone 17 simulator running iOS 26.5, the one CI
+uses; on any other simulator the tests skip, since the screen size would not
+match.
+
+After a deliberate change to how something looks, re-record and commit the
+new images:
+
+```sh
+TEST_RUNNER_SNAPSHOT_TESTING_RECORD=all xcodebuild test \
+  -project Solitaire.xcodeproj -scheme Solitaire \
+  -destination 'platform=iOS Simulator,name=iPhone 17,OS=26.5' -only-testing:SolitaireSnapshotTests
+```
+
+A recording run reports every snapshot test as failed ("Record mode is on");
+that is expected. Review the changed PNGs before committing them. When a
+snapshot fails on CI, the failed image and a diff are uploaded as the
+`snapshot-failures` artifact of the run.
 
 ## Licence
 
