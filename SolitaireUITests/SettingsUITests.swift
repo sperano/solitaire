@@ -49,4 +49,16 @@ final class SettingsUITests: SolitaireUITestCase {
         _ = openSettings()
         XCTAssertEqual(app.switches["hapticsToggle"].value as? String, "0")
     }
+
+    func testWinnableDealsOnlyIsOffUntilTurnedOn() {
+        _ = openSettings()
+        let toggle = app.switches["winnableDealsOnlyToggle"]
+        XCTAssertTrue(toggle.waitForExistence(timeout: Self.timeout))
+        XCTAssertEqual(toggle.value as? String, "0")
+        toggle.switches.firstMatch.tap()
+        tap("settingsDoneButton")
+
+        _ = openSettings()
+        XCTAssertEqual(app.switches["winnableDealsOnlyToggle"].value as? String, "1")
+    }
 }

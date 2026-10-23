@@ -8,6 +8,7 @@ struct AppEnvironment {
     static let seedArgument = "-seed"
     static let drawModeArgument = "-drawMode"
     static let scoringModeArgument = "-scoringMode"
+    static let winnableDealsOnlyArgument = "-winnableDealsOnly"
     private static let uiTestingDefaultsSuite = "quebec.spe.Solitaire.ui-testing"
     private static let savedGameFileName = "current-game.json"
     private static let statisticsFileName = "statistics.json"
@@ -53,6 +54,9 @@ struct AppEnvironment {
         if let raw = value(after: scoringModeArgument, in: arguments),
            let mode = Int(raw).flatMap(ScoringMode.init(rawValue:)) {
             settings.scoringMode = mode
+        }
+        if value(after: winnableDealsOnlyArgument, in: arguments) == "1" {
+            settings.winnableDealsOnly = true
         }
         let seed = value(after: seedArgument, in: arguments).flatMap { UInt64($0) }
         let position = value(after: FixturePosition.argument, in: arguments).flatMap(FixturePosition.init(rawValue:))

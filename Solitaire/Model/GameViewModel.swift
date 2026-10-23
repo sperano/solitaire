@@ -19,6 +19,8 @@ final class GameViewModel {
     private(set) var lastDrop: DragInfo?
     var isShowingSettings = false
     private(set) var isAutoCompleting = false
+    /// A winnable deal is being searched for; the board shows the previous game and ignores input.
+    private(set) var isDealing = false
     /// The hint on show, cleared by the next move, undo or new game, or after `hintDuration`.
     private(set) var hint: Hint?
     /// How long a hint stays on the board when the player does nothing.
@@ -34,6 +36,7 @@ final class GameViewModel {
     private let fixedSeed: UInt64?
     private var timerTask: Task<Void, Never>?
     private var hintTask: Task<Void, Never>?
+    private var dealTask: Task<Void, Never>?
 
     init(
         store: any GameStore, settings: GameSettings, statistics: StatisticsModel,
@@ -52,19 +55,24 @@ final class GameViewModel {
         isResultRecorded = saved?.isResultRecorded ?? false
         syncTimer()
         finishIfAutomatic()
+        if saved == nil, fixedSeed == nil, settings.winnableDealsOnly {
+            searchWinnableDeal(startingWith: game.state.seed)
+        }
     }
 
     var state: GameState { game.state }
     var isWon: Bool { game.isWon }
-    var canUndo: Bool { game.canUndo && !isAutoCompleting }
-    /// Player input is ignored while auto-complete plays the remaining cards.
-    var acceptsInput: Bool { !isAutoCompleting && !game.isWon }
+    var canUndo: Bool { game.canUndo && !isAutoCompleting && !isDealing }
+    /// Player input is ignored while auto-complete plays the remaining cards or a deal is searched for.
+    var acceptsInput: Bool { !isAutoCompleting && !game.isWon && !isDealing }
     var canAutoComplete: Bool { game.canAutoComplete && !isAutoCompleting }
     /// Hints are offered during play, except when the Finish button already shows the way.
     var canHint: Bool { acceptsInput && !game.canAutoComplete }
     var moveCount: Int { game.moveCount }
     var canDraw: Bool { game.canDraw }
     var scoringMode: ScoringMode { game.scoringMode }
+    /// The seed of the current deal, which players see, share and type to play it again.
+    var dealNumber: UInt64 { game.state.seed }
 
     /// The engine's score, plus the standard time bonus once the game is won.
     var score: Int {
@@ -88,25 +96,29 @@ final class GameViewModel {
 
     // MARK: Actions
 
-    /// Deals a new game. Abandoning a started game that is not won counts as a loss.
+    /// Deals a new game: a fresh deal number, or with winnable deals only, one the solver wins
+    /// (searched off the main actor; see `isDealing`). Abandoning a started game that is not won
+    /// counts as a loss.
     func newGame() {
-        stopTimer()
-        isAutoCompleting = false
-        drag = nil
-        lastDrop = nil
-        clearHint()
-        if isStarted, !isResultRecorded {
-            statistics.recordLoss(gameID: gameID, drawMode: game.drawMode)
+        closeCurrentGame()
+        if let fixedSeed {
+            install(Self.deal(seed: fixedSeed, settings: settings))
+        } else if settings.winnableDealsOnly {
+            searchWinnableDeal(startingWith: UInt64.random(in: GameState.dealNumberRange))
+        } else {
+            install(Self.deal(seed: nil, settings: settings))
         }
-        if game.scoringMode == .vegas, settings.carryVegasBalance {
-            settings.vegasBalance = game.score
-        }
-        game = Self.deal(seed: fixedSeed, settings: settings)
-        gameID = Self.newGameID()
-        elapsedSeconds = 0
-        isStarted = false
-        isResultRecorded = false
-        persist()
+    }
+
+    /// Deals the current deal number again, in the current settings.
+    func replayDeal() {
+        playDeal(number: dealNumber)
+    }
+
+    /// Deals the game with that deal number, as it is: a deal asked for is never checked for winnability.
+    func playDeal(number: UInt64) {
+        closeCurrentGame()
+        install(Self.deal(seed: number, settings: settings))
     }
 
     func draw() {
@@ -192,11 +204,61 @@ final class GameViewModel {
     /// A new game with the current settings; a Vegas game pays its buy-in from the carried balance.
     private static func deal(seed: UInt64?, settings: GameSettings) -> Game {
         Game(
-            seed: seed ?? UInt64.random(in: .min ... .max),
+            seed: seed ?? UInt64.random(in: GameState.dealNumberRange),
             drawMode: settings.drawMode,
             scoringMode: settings.scoringMode,
             carriedBalance: settings.carriedVegasBalance
         )
+    }
+
+    /// Ends the game on the board: stops the clock and any search, records the loss of a started
+    /// game and keeps a Vegas balance for the next game. The board keeps showing it until `install`.
+    private func closeCurrentGame() {
+        stopTimer()
+        dealTask?.cancel()
+        dealTask = nil
+        isDealing = false
+        isAutoCompleting = false
+        drag = nil
+        lastDrop = nil
+        clearHint()
+        if isStarted, !isResultRecorded {
+            statistics.recordLoss(gameID: gameID, drawMode: game.drawMode)
+            isResultRecorded = true
+        }
+        if game.scoringMode == .vegas, settings.carryVegasBalance {
+            settings.vegasBalance = game.score
+        }
+    }
+
+    /// Puts a new game on the board and saves it.
+    private func install(_ newGame: Game) {
+        game = newGame
+        gameID = Self.newGameID()
+        elapsedSeconds = 0
+        isStarted = false
+        isResultRecorded = false
+        persist()
+    }
+
+    /// Looks for a winnable deal off the main actor, trying `first` and then random deal numbers,
+    /// and installs it; until then `isDealing` is true. A new game or deal number cancels the search.
+    private func searchWinnableDeal(startingWith first: UInt64) {
+        isDealing = true
+        let (drawMode, scoringMode, carriedBalance) = (settings.drawMode, settings.scoringMode, settings.carriedVegasBalance)
+        dealTask = Task { [weak self] in
+            let found = await DealSearch.winnableDeal(
+                startingWith: first, drawMode: drawMode, scoringMode: scoringMode, carriedBalance: carriedBalance
+            )
+            guard let self, let found, !Task.isCancelled else { return }
+            isDealing = false
+            // The deal shown at launch is kept, and now saved, when it turns out to be winnable.
+            if found.seed == game.state.seed, game.moveCount == 0 {
+                persist()
+            } else {
+                install(Game(state: found))
+            }
+        }
     }
 
     private static func newGameID() -> UInt64 { .random(in: .min ... .max) }

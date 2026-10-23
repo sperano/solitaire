@@ -24,6 +24,7 @@ struct CardGestures: ViewModifier {
             .gesture(
                 DragGesture(minimumDistance: Self.dragMinimumDistance, coordinateSpace: .named(BoardMetrics.coordinateSpace))
                     .onChanged { value in
+                        guard viewModel.acceptsInput else { return }
                         viewModel.drag = DragInfo(source: pile, count: count, translation: value.translation)
                     }
                     .onEnded { value in

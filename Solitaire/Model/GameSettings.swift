@@ -12,6 +12,7 @@ final class GameSettings {
     static let autoFinishKey = "autoFinish"
     static let fourColorDeckKey = "fourColorDeck"
     static let hapticsKey = "haptics"
+    static let winnableDealsOnlyKey = "winnableDealsOnly"
     static let defaultDrawMode = DrawMode.one
     static let defaultScoringMode = ScoringMode.standard
 
@@ -53,6 +54,11 @@ final class GameSettings {
         didSet { defaults.set(haptics, forKey: Self.hapticsKey) }
     }
 
+    /// Deal only games the solver can win; a deal number asked for is dealt as it is.
+    var winnableDealsOnly: Bool {
+        didSet { defaults.set(winnableDealsOnly, forKey: Self.winnableDealsOnlyKey) }
+    }
+
     init(defaults: UserDefaults) {
         self.defaults = defaults
         drawMode = DrawMode(rawValue: defaults.integer(forKey: Self.drawModeKey)) ?? Self.defaultDrawMode
@@ -64,6 +70,7 @@ final class GameSettings {
         autoFinish = defaults.bool(forKey: Self.autoFinishKey)
         fourColorDeck = defaults.bool(forKey: Self.fourColorDeckKey)
         haptics = defaults.object(forKey: Self.hapticsKey) as? Bool ?? true
+        winnableDealsOnly = defaults.bool(forKey: Self.winnableDealsOnlyKey)
     }
 
     /// The balance a new Vegas game starts from before the buy-in.

@@ -104,4 +104,12 @@ final class GameSettingsTests: XCTestCase {
         XCTAssertEqual(defaults.object(forKey: GameSettings.hapticsKey) as? Bool, false)
         XCTAssertFalse(GameSettings(defaults: defaults).haptics)
     }
+
+    func testWinnableDealsOnlyIsOffByDefaultAndPersists() {
+        let settings = GameSettings(defaults: defaults)
+        XCTAssertFalse(settings.winnableDealsOnly)
+        settings.winnableDealsOnly = true
+        XCTAssertTrue(defaults.bool(forKey: GameSettings.winnableDealsOnlyKey))
+        XCTAssertTrue(GameSettings(defaults: defaults).winnableDealsOnly)
+    }
 }

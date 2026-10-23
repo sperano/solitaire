@@ -33,7 +33,9 @@ struct GameView: View {
         }
         .background(Theme.felt.ignoresSafeArea())
         .overlay(alignment: .bottom) {
-            if viewModel.hint == .noUsefulMove {
+            if viewModel.isDealing {
+                dealingBanner
+            } else if viewModel.hint == .noUsefulMove {
                 noHintBanner
             }
         }
@@ -43,7 +45,11 @@ struct GameView: View {
             }
         }
         .sheet(isPresented: $viewModel.isShowingSettings, onDismiss: viewModel.settingsDismissed) {
-            SettingsView(settings: viewModel.settings, statistics: viewModel.statistics)
+            SettingsView(
+                settings: viewModel.settings, statistics: viewModel.statistics,
+                dealNumber: viewModel.dealNumber, drawMode: viewModel.state.drawMode,
+                isGameStarted: viewModel.moveCount > 0 && !viewModel.isWon, playDeal: viewModel.playDeal
+            )
         }
     }
 
@@ -81,6 +87,19 @@ struct GameView: View {
         }
         .coordinateSpace(name: BoardMetrics.coordinateSpace)
         .onPreferenceChange(PileFramePreferenceKey.self) { pileFrames = $0 }
+    }
+
+    /// Shown while a winnable deal is searched for; the board behind it ignores input.
+    private var dealingBanner: some View {
+        ProgressView {
+            Text("Dealing…").font(.headline)
+        }
+        .progressViewStyle(.circular)
+        .padding(Self.noHintPadding)
+        .background(.thinMaterial, in: Capsule())
+        .padding(Self.noHintPadding)
+        .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("dealingLabel")
     }
 
     private var noHintBanner: some View {
