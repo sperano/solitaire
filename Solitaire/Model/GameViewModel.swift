@@ -7,17 +7,22 @@ import SolitaireKit
 @Observable
 final class GameViewModel {
     static let autoCompleteStepSeconds = 0.12
-    private static let timerTickNanoseconds: UInt64 = 1_000_000_000
+    /// How often the clock on show and the saved elapsed time are refreshed while the clock runs.
+    static let clockTick = Duration.seconds(1)
     static let defaultHintDuration = Duration.seconds(3)
 
     private(set) var game: Game
     /// See `SavedGame.gameID`.
     private(set) var gameID: UInt64
-    private(set) var elapsedSeconds: Int
+    /// Bumped every `clockTick` while the clock runs, so whatever shows `elapsedSeconds` refreshes.
+    private var clockTicks = 0
     var drag: DragInfo?
     /// The drag behind the last move, if a drop made it; the board flies its cards from there.
     private(set) var lastDrop: DragInfo?
-    var isShowingSettings = false
+    /// The clock pauses while Settings is open.
+    var isShowingSettings = false {
+        didSet { syncTimer() }
+    }
     private(set) var isAutoCompleting = false
     /// A winnable deal is being searched for; the board shows the previous game and ignores input.
     private(set) var isDealing = false
@@ -34,23 +39,31 @@ final class GameViewModel {
     private let store: any GameStore
     private let haptics: any HapticPlayer
     private let fixedSeed: UInt64?
+    private let clock: any GameClock
+    /// Time the clock ran before its current run; the whole elapsed time while it is stopped.
+    private var bankedTime: Duration
+    /// `clock.now` when the current run started; nil while the clock is stopped or paused.
+    private var runStart: Duration?
+    /// The scene is active; the clock pauses in the background and in the app switcher.
+    private var isAppActive = true
     private var timerTask: Task<Void, Never>?
     private var hintTask: Task<Void, Never>?
     private var dealTask: Task<Void, Never>?
 
     init(
         store: any GameStore, settings: GameSettings, statistics: StatisticsModel,
-        haptics: any HapticPlayer = SilentHaptics(), fixedSeed: UInt64? = nil
+        haptics: any HapticPlayer = SilentHaptics(), fixedSeed: UInt64? = nil, clock: any GameClock = SystemGameClock()
     ) {
         self.store = store
         self.haptics = haptics
         self.settings = settings
         self.statistics = statistics
         self.fixedSeed = fixedSeed
+        self.clock = clock
         let saved = store.load()
         game = saved?.game ?? Self.deal(seed: fixedSeed, settings: settings)
         gameID = saved?.gameID ?? Self.newGameID()
-        elapsedSeconds = saved?.elapsedSeconds ?? 0
+        bankedTime = .seconds(saved?.elapsedSeconds ?? 0)
         isStarted = saved?.isStarted ?? false
         isResultRecorded = saved?.isResultRecorded ?? false
         syncTimer()
@@ -61,6 +74,13 @@ final class GameViewModel {
     }
 
     var state: GameState { game.state }
+    /// Whole seconds the clock has run for this game: the banked time plus the current run.
+    var elapsedSeconds: Int {
+        // Read so that a view showing the time depends on the ticks and refreshes every second.
+        _ = clockTicks
+        let running = runStart.map { clock.now - $0 } ?? .zero
+        return Int((bankedTime + running).components.seconds)
+    }
     var isWon: Bool { game.isWon }
     var canUndo: Bool { game.canUndo && !isAutoCompleting && !isDealing }
     /// Player input is ignored while auto-complete plays the remaining cards or a deal is searched for.
@@ -74,13 +94,14 @@ final class GameViewModel {
     /// The seed of the current deal, which players see, share and type to play it again.
     var dealNumber: UInt64 { game.state.seed }
 
-    /// The engine's score, plus the standard time bonus once the game is won.
+    /// The engine's score, plus the standard time bonus once a timed game is won.
     var score: Int {
         game.score + timeBonus
     }
 
+    /// Nothing in untimed mode: the clock does not run, so there is no time to reward.
     var timeBonus: Int {
-        isWon ? Scoring.timeBonus(mode: game.scoringMode, elapsedSeconds: elapsedSeconds) : 0
+        isWon && settings.timed ? Scoring.timeBonus(mode: game.scoringMode, elapsedSeconds: elapsedSeconds) : 0
     }
 
     /// Points in standard scoring, dollars in Vegas, nil when the game is not scored.
@@ -194,9 +215,17 @@ final class GameViewModel {
         }
     }
 
-    /// Turning on auto-finish while Finish is already offered takes effect when Settings closes.
+    /// Turning on auto-finish while Finish is already offered takes effect when Settings closes,
+    /// and so does turning the timer on or off.
     func settingsDismissed() {
         finishIfAutomatic()
+        syncTimer()
+    }
+
+    /// The scene became active or left the foreground; the clock only runs while active.
+    func setAppActive(_ active: Bool) {
+        isAppActive = active
+        syncTimer()
     }
 
     // MARK: Helpers
@@ -214,7 +243,7 @@ final class GameViewModel {
     /// Ends the game on the board: stops the clock and any search, records the loss of a started
     /// game and keeps a Vegas balance for the next game. The board keeps showing it until `install`.
     private func closeCurrentGame() {
-        stopTimer()
+        stopClock()
         dealTask?.cancel()
         dealTask = nil
         isDealing = false
@@ -235,7 +264,8 @@ final class GameViewModel {
     private func install(_ newGame: Game) {
         game = newGame
         gameID = Self.newGameID()
-        elapsedSeconds = 0
+        bankedTime = .zero
+        runStart = nil
         isStarted = false
         isResultRecorded = false
         persist()
@@ -302,10 +332,12 @@ final class GameViewModel {
         hint = nil
     }
 
-    /// Counts a win once, with the time and moves it took.
+    /// Counts a win once, with the moves it took and, in timed mode, the time.
     private func recordWinIfNeeded() {
         guard game.isWon, !isResultRecorded else { return }
-        statistics.recordWin(gameID: gameID, drawMode: game.drawMode, seconds: elapsedSeconds, moves: game.moveCount)
+        statistics.recordWin(
+            gameID: gameID, drawMode: game.drawMode, seconds: settings.timed ? elapsedSeconds : nil, moves: game.moveCount
+        )
         isResultRecorded = true
     }
 
@@ -316,25 +348,40 @@ final class GameViewModel {
         ))
     }
 
-    /// The clock runs from the first move until the game is won.
+    /// The clock runs from the first move until the game is won, except while the app is in the
+    /// background, Settings is open, the game is untimed or a deal is being searched for. Pausing
+    /// saves the time so far, so a game killed in the background resumes from the right value.
     private func syncTimer() {
-        if game.isWon || game.moveCount == 0 {
-            stopTimer()
-            return
+        let shouldRun = game.moveCount > 0 && !game.isWon && !isDealing
+            && isAppActive && !isShowingSettings && settings.timed
+        if shouldRun {
+            startClock()
+        } else if stopClock() {
+            persist()
         }
+    }
+
+    private func startClock() {
+        if runStart == nil { runStart = clock.now }
         guard timerTask == nil else { return }
-        timerTask = Task { [weak self] in
+        timerTask = Task { [weak self, clock] in
             while !Task.isCancelled {
-                try? await Task.sleep(nanoseconds: Self.timerTickNanoseconds)
+                try? await clock.sleep(for: Self.clockTick)
                 guard !Task.isCancelled, let self else { return }
-                elapsedSeconds += 1
+                clockTicks &+= 1
                 persist()
             }
         }
     }
 
-    private func stopTimer() {
+    /// Banks the current run and stops the ticks. Returns false when the clock was not running.
+    @discardableResult
+    private func stopClock() -> Bool {
         timerTask?.cancel()
         timerTask = nil
+        guard let runStart else { return false }
+        bankedTime += clock.now - runStart
+        self.runStart = nil
+        return true
     }
 }

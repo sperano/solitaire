@@ -16,6 +16,7 @@ struct GameView: View {
     @State private var flights: [ActiveFlight] = []
     @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.scenePhase) private var scenePhase
 
     private var cardStyle: CardStyle {
         CardStyle(isFourColour: viewModel.settings.fourColorDeck, isHighContrast: contrast == .increased)
@@ -30,6 +31,9 @@ struct GameView: View {
         .environment(\.cardStyle, cardStyle)
         .onChange(of: BoardSnapshot(gameID: viewModel.gameID, state: viewModel.state)) { old, new in
             startFlights(from: old, to: new)
+        }
+        .onChange(of: scenePhase, initial: true) { _, phase in
+            viewModel.setAppActive(phase == .active)
         }
         .background(Theme.felt.ignoresSafeArea())
         .overlay(alignment: .bottom) {

@@ -101,6 +101,17 @@ final class GameStatisticsTests: XCTestCase {
         XCTAssertTrue(statistics.isValid)
     }
 
+    func testUntimedWinsCountWithoutATimeInEveryRecord() {
+        var statistics = GameStatistics()
+        statistics.recordWin(gameID: Self.gameID, drawMode: .three, seconds: nil, moves: Self.moves)
+        XCTAssertEqual(statistics.overall.won, 1)
+        XCTAssertNil(statistics.overall.bestTimeSeconds)
+        XCTAssertNil(statistics[.three].bestTimeSeconds)
+        XCTAssertEqual(statistics[.three].fewestMoves, Self.moves)
+        XCTAssertTrue(statistics.isValid)
+        XCTAssertEqual(try roundTrip(statistics), statistics)
+    }
+
     func testModeCountsWhoseSumOverflowsAreInvalidNotACrash() {
         var statistics = GameStatistics()
         statistics.drawOne.played = .max - 1

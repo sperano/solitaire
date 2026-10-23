@@ -13,6 +13,7 @@ final class GameSettings {
     static let fourColorDeckKey = "fourColorDeck"
     static let hapticsKey = "haptics"
     static let winnableDealsOnlyKey = "winnableDealsOnly"
+    static let timedKey = "timed"
     static let defaultDrawMode = DrawMode.one
     static let defaultScoringMode = ScoringMode.standard
 
@@ -59,6 +60,12 @@ final class GameSettings {
         didSet { defaults.set(winnableDealsOnly, forKey: Self.winnableDealsOnlyKey) }
     }
 
+    /// Games are timed: the clock shows and runs, a standard win earns its time bonus and a win
+    /// can set a best time. Off, the game is untimed and none of that happens. On unless turned off.
+    var timed: Bool {
+        didSet { defaults.set(timed, forKey: Self.timedKey) }
+    }
+
     init(defaults: UserDefaults) {
         self.defaults = defaults
         drawMode = DrawMode(rawValue: defaults.integer(forKey: Self.drawModeKey)) ?? Self.defaultDrawMode
@@ -71,6 +78,7 @@ final class GameSettings {
         fourColorDeck = defaults.bool(forKey: Self.fourColorDeckKey)
         haptics = defaults.object(forKey: Self.hapticsKey) as? Bool ?? true
         winnableDealsOnly = defaults.bool(forKey: Self.winnableDealsOnlyKey)
+        timed = defaults.object(forKey: Self.timedKey) as? Bool ?? true
     }
 
     /// The balance a new Vegas game starts from before the buy-in.

@@ -33,7 +33,9 @@ struct StatusBarView: View {
             "\(viewModel.moveCount)", icon: "arrow.left.arrow.right",
             identifier: "movesLabel", spoken: "\(viewModel.moveCount) moves"
         )
-        stat(viewModel.formattedTime, icon: "clock", identifier: "timeLabel", spoken: "Time \(viewModel.formattedTime)")
+        if viewModel.settings.timed {
+            stat(viewModel.formattedTime, icon: "clock", identifier: "timeLabel", spoken: "Time \(viewModel.formattedTime)")
+        }
         if let score = viewModel.formattedScore {
             stat(
                 score, icon: viewModel.scoringMode == .vegas ? "dollarsign.circle" : "star",

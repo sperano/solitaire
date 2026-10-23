@@ -18,7 +18,8 @@ public struct GameStatistics: Hashable, Codable, Sendable {
     }
 
     /// Records a win for game `gameID`; ignored when that game's result is already recorded.
-    public mutating func recordWin(gameID: UInt64, drawMode: DrawMode, seconds: Int, moves: Int) {
+    /// `seconds` is nil for an untimed win.
+    public mutating func recordWin(gameID: UInt64, drawMode: DrawMode, seconds: Int?, moves: Int) {
         guard claim(gameID) else { return }
         overall.recordWin(seconds: seconds, moves: moves)
         update(drawMode) { $0.recordWin(seconds: seconds, moves: moves) }
