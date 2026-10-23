@@ -29,6 +29,20 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "639C8623C6B33DFDF0D9A4A2"
+               BuildableName = "SolitaireSnapshotTests.xctest"
+               BlueprintName = "SolitaireSnapshotTests"
+               ReferencedContainer = "container:Solitaire.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "4365D55B25E44290CF0D3A78"
                BuildableName = "SolitaireTests.xctest"
                BlueprintName = "SolitaireTests"
@@ -76,6 +90,17 @@
                BlueprintIdentifier = "4365D55B25E44290CF0D3A78"
                BuildableName = "SolitaireTests.xctest"
                BlueprintName = "SolitaireTests"
+               ReferencedContainer = "container:Solitaire.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "639C8623C6B33DFDF0D9A4A2"
+               BuildableName = "SolitaireSnapshotTests.xctest"
+               BlueprintName = "SolitaireSnapshotTests"
                ReferencedContainer = "container:Solitaire.xcodeproj">
             </BuildableReference>
          </TestableReference>

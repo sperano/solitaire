@@ -16,6 +16,9 @@ settings:
 packages:
   SolitaireKit:
     path: SolitaireKit
+  SnapshotTesting:
+    url: https://github.com/pointfreeco/swift-snapshot-testing
+    exactVersion: 1.19.7
 targets:
   Solitaire:
     type: application
@@ -54,6 +57,18 @@ targets:
     dependencies:
       - target: Solitaire
       - package: SolitaireKit
+  SolitaireSnapshotTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: SolitaireSnapshotTests
+        # The reference images are read by path, not from the bundle.
+        excludes:
+          - "__Snapshots__"
+    dependencies:
+      - target: Solitaire
+      - package: SolitaireKit
+      - package: SnapshotTesting
   SolitaireUITests:
     type: bundle.ui-testing
     platform: iOS
@@ -67,6 +82,7 @@ schemes:
       targets:
         Solitaire: all
         SolitaireTests: [test]
+        SolitaireSnapshotTests: [test]
         SolitaireUITests: [test]
     run:
       config: Debug
@@ -75,4 +91,5 @@ schemes:
       gatherCoverageData: true
       targets:
         - SolitaireTests
+        - SolitaireSnapshotTests
         - SolitaireUITests
