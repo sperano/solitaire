@@ -8,8 +8,7 @@ struct StatusBarView: View {
     /// The smallest tap target Apple's guidelines allow.
     static let minimumHitSize: CGFloat = 44
 
-    let viewModel: GameViewModel
-    @State private var isConfirmingNewGame = false
+    @Bindable var viewModel: GameViewModel
 
     var body: some View {
         layout
@@ -18,7 +17,7 @@ struct StatusBarView: View {
         .foregroundStyle(.white)
         .padding(.horizontal, Self.horizontalPadding)
         .padding(.vertical, Self.verticalPadding)
-        .confirmationDialog("Start a new game?", isPresented: $isConfirmingNewGame, titleVisibility: .visible) {
+        .confirmationDialog("Start a new game?", isPresented: $viewModel.isConfirmingNewGame, titleVisibility: .visible) {
             Button("New Game", role: .destructive) { viewModel.newGame() }
                 .accessibilityIdentifier("confirmNewGameButton")
             Button("Replay This Deal") { viewModel.replayDeal() }
@@ -101,7 +100,7 @@ struct StatusBarView: View {
         Button("Undo", systemImage: "arrow.uturn.backward") { viewModel.undo() }
             .disabled(!viewModel.canUndo)
             .accessibilityIdentifier("undoButton")
-        Button("New Game", systemImage: "plus.circle") { requestNewGame() }
+        Button("New Game", systemImage: "plus.circle") { viewModel.requestNewGame() }
             .accessibilityIdentifier("newGameButton")
         Button("Settings", systemImage: "gearshape") { viewModel.isShowingSettings = true }
             .accessibilityIdentifier("settingsButton")
@@ -112,16 +111,6 @@ struct StatusBarView: View {
         viewModel.showHint()
         if let hint = viewModel.hint {
             AccessibilityNotification.Announcement(HintAnnouncement.text(for: hint, in: viewModel.state)).post()
-        }
-    }
-
-    /// Asks first when a started game would be lost; a won game, an untouched deal and a board
-    /// still waiting for a deal (its game is already closed) start over at once.
-    private func requestNewGame() {
-        if viewModel.moveCount == 0 || viewModel.isWon || viewModel.isDealing {
-            viewModel.newGame()
-        } else {
-            isConfirmingNewGame = true
         }
     }
 }

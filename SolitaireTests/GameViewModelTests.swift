@@ -127,6 +127,31 @@ final class GameViewModelTests: XCTestCase {
         XCTAssertEqual(store.saved?.elapsedSeconds, 0)
     }
 
+    func testRequestNewGameOnAnUntouchedDealStartsOverAtOnce() {
+        let model = makeModel()
+        model.requestNewGame()
+        XCTAssertFalse(model.isConfirmingNewGame)
+        XCTAssertEqual(model.moveCount, 0)
+    }
+
+    func testRequestNewGameAfterAMoveAsksFirst() {
+        let model = makeModel()
+        model.draw()
+        model.requestNewGame()
+        XCTAssertTrue(model.isConfirmingNewGame)
+        XCTAssertEqual(model.moveCount, 1, "the game waits for the answer")
+    }
+
+    func testRequestNewGameOnAWonGameStartsOverAtOnce() async {
+        let model = makeModel(resuming: SavedGame(game: Game.completable(), elapsedSeconds: 0))
+        model.autoComplete()
+        await waitForAutoComplete(model)
+        XCTAssertTrue(model.isWon)
+        model.requestNewGame()
+        XCTAssertFalse(model.isConfirmingNewGame)
+        XCTAssertFalse(model.isWon)
+    }
+
     func testNewGameClearsDrag() {
         let model = makeModel()
         model.drag = DragInfo(source: .waste, count: 1, translation: .zero)

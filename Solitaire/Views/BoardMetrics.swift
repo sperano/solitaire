@@ -12,12 +12,30 @@ struct BoardMetrics {
     static let faceUpOffsetRatio: CGFloat = 0.30
     static let wasteFanRatio: CGFloat = 0.28
     static let cornerRadiusRatio: CGFloat = 0.08
+    /// Between the top row and the tableau, and above and below them.
+    static let rowSpacing: CGFloat = 12
+    /// Vertical padding above and below the board, plus the gap between its two rows.
+    static let verticalGapCount: CGFloat = 3
+    /// Card heights the tableau gets below the top row before the cards shrink to fit the board's
+    /// height: room for the deal's longest column (six cards face down under one face up) and
+    /// then some. In portrait the width limits the cards and the tableau gets the rest of the screen.
+    static let tableauCardHeights: CGFloat = 2.5
 
     let cardWidth: CGFloat
 
-    init(boardWidth: CGFloat) {
+    /// Cards as wide as the board allows, and no taller than its height allows: in landscape, and in
+    /// a short Stage Manager window, the height is what binds, and the board is centred.
+    init(boardSize: CGSize) {
         let gaps = CGFloat(Self.columnCount - 1) * Self.columnSpacing
-        cardWidth = max(1, (boardWidth - 2 * Self.horizontalPadding - gaps) / CGFloat(Self.columnCount))
+        let widthLimited = (boardSize.width - 2 * Self.horizontalPadding - gaps) / CGFloat(Self.columnCount)
+        let rowsHeight = boardSize.height - Self.verticalGapCount * Self.rowSpacing
+        let heightLimited = rowsHeight / ((1 + Self.tableauCardHeights) * Self.cardAspectRatio)
+        cardWidth = max(1, min(widthLimited, heightLimited))
+    }
+
+    /// What is left for the tableau under the top row in a board `boardHeight` tall, never less than a card.
+    func tableauHeight(boardHeight: CGFloat) -> CGFloat {
+        max(cardHeight, boardHeight - cardHeight - Self.verticalGapCount * Self.rowSpacing)
     }
 
     var cardHeight: CGFloat { cardWidth * Self.cardAspectRatio }

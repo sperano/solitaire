@@ -46,6 +46,16 @@ them. Never add a dependency or feature that sends data anywhere.
   land. So a new kind of move needs no animation code. Haptics go through
   `HapticPlayer` from the view model (`SilentHaptics` in tests).
 
+- Layout: `BoardMetrics(boardSize:)` sizes the cards from the board's width
+  and, when that is the tighter limit (landscape, a short Stage Manager
+  window), from its height, with `tableauCardHeights` card heights kept for
+  the tableau; `GameView` centres the board. iPhone supports portrait and
+  landscape, iPad every orientation plus Split View and Stage Manager
+  (`UIRequiresFullScreen` is off in `project.yml`). Keyboard shortcuts live
+  in `GameCommands` (scene commands, so the iPad's ⌘ overlay lists them):
+  ⌘Z, ⌘N and space, all inert while Settings is open. The New Game
+  confirmation is `GameViewModel.requestNewGame()` / `isConfirmingNewGame`, shared
+  by the button and ⌘N.
 - Engine first: a rule change goes in `SolitaireKit` with a test, then the UI.
 - Named constants for every size, ratio, count and duration (`BoardMetrics`,
   `GameState.tableauColumnCount`, …). No magic numbers in views either.
@@ -110,7 +120,9 @@ them. Never add a dependency or feature that sends data anywhere.
   look at the changed images and commit them with the change.
 - Every PR runs: `swift test` in `SolitaireKit`, the `SolitaireTests` unit
   tests, the `SolitaireSnapshotTests` and the `SolitaireUITests` on an iPhone
-  simulator. Run all four locally before opening a PR (commands in README.md).
+  simulator, then `LayoutUITests` (both orientations) and `KeyboardUITests`
+  again on an iPad simulator. Run all four locally before opening a PR
+  (commands in README.md).
 - User-facing text is English for now; keep strings in the views so the
   localisation task can move them into a String Catalog later.
 

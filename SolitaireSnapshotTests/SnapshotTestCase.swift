@@ -18,6 +18,9 @@ class SnapshotTestCase: XCTestCase {
     static let pixelPrecision: Float = 0.995
 
     private static let modes: [(name: String, style: UIUserInterfaceStyle)] = [("light", .light), ("dark", .dark)]
+    /// Layout snapshots are drawn at 2x whatever the host's scale: they check where things go, and
+    /// an iPad screen at 3x would weigh a megabyte.
+    static let layoutScale: CGFloat = 2
 
     override func setUp() async throws {
         try await super.setUp()
@@ -45,6 +48,25 @@ class SnapshotTestCase: XCTestCase {
         testName: String = #function, line: UInt = #line
     ) {
         assertLightAndDark(view, layout: .sizeThatFits, fileID: fileID, file: file, testName: testName, line: line)
+    }
+
+    /// Asserts a screen at another device's size and safe area, in light mode, drawn in the
+    /// library's own window since the host's has the wrong size.
+    func assertLayout(
+        _ view: some View, config: ViewImageConfig, named name: String,
+        fileID: StaticString = #fileID, file: StaticString = #filePath, testName: String = #function, line: UInt = #line
+    ) {
+        assertSnapshot(
+            of: view,
+            as: .image(
+                precision: Self.pixelPrecision, layout: .device(config: config),
+                traits: UITraitCollection { traits in
+                    traits.userInterfaceStyle = .light
+                    traits.displayScale = Self.layoutScale
+                }
+            ),
+            named: name, fileID: fileID, file: file, testName: testName, line: line
+        )
     }
 
     private func assertLightAndDark(

@@ -77,3 +77,18 @@ jobs:
           xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
             -destination "$SIMULATOR" -only-testing:SolitaireUITests \
             CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions
+      - name: Pick an iPad simulator
+        run: |
+          udid=$(xcrun simctl list devices available -j | python3 -c '
+          import json, sys
+          devices = json.load(sys.stdin)["devices"]
+          ios = sorted((k for k in devices if ".iOS-" in k), reverse=True)
+          print(next(d["udid"] for k in ios for d in devices[k] if d["name"].startswith("iPad")))')
+          echo "IPAD_SIMULATOR=id=$udid" >> "$GITHUB_ENV"
+      - name: Layout and keyboard UI tests on iPad
+        run: |
+          set -o pipefail
+          xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
+            -destination "$IPAD_SIMULATOR" \
+            -only-testing:SolitaireUITests/LayoutUITests -only-testing:SolitaireUITests/KeyboardUITests \
+            CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions

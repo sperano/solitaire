@@ -37,6 +37,15 @@ interrupts the game with something.
 - Winnable deals only (Settings → Rules): new games are dealt until a solver
   finds a way to win them
 
+## Devices
+
+iPhone in portrait and landscape, iPad in every orientation, including Split
+View and Stage Manager windows: the cards take the width of the board unless
+its height is the tighter limit, as in landscape, and then the board is
+centred. With a hardware keyboard, ⌘Z undoes, ⌘N starts a new game (asking
+first when a started game would be lost) and the space bar draws; hold ⌘ on
+an iPad to see them.
+
 ## Requirements
 
 - iOS 17 or later
@@ -66,7 +75,7 @@ xcodebuild build -project Solitaire.xcodeproj -scheme Solitaire \
 | `Solitaire/` | The SwiftUI app: views, view model, settings, persistence. |
 | `SolitaireTests/` | Unit tests for the app layer (view model, settings, stores, layout metrics). |
 | `SolitaireUITests/` | XCUITests that play the game through the accessibility tree. |
-| `SolitaireSnapshotTests/` | Image comparisons of the cards, the board, the win panel and Settings against the PNGs in `__Snapshots__`. |
+| `SolitaireSnapshotTests/` | Image comparisons of the cards, the board (also at three screen sizes in both orientations), the win panel and Settings against the PNGs in `__Snapshots__`. |
 | `project.yml` | xcodegen definition of the Xcode project. |
 | `.github/workflows/ci.yml` | Runs the package tests, the simulator tests and the snapshot tests on every PR. |
 
@@ -83,6 +92,11 @@ xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
 # UI tests
 xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
   -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing:SolitaireUITests
+
+# Layout and keyboard UI tests on an iPad (CI runs these on an iPad as well as an iPhone)
+xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
+  -destination 'platform=iOS Simulator,name=iPad Pro 13-inch (M5)' \
+  -only-testing:SolitaireUITests/LayoutUITests -only-testing:SolitaireUITests/KeyboardUITests
 
 # Snapshot tests, on the simulator the images were recorded on
 xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
@@ -104,10 +118,12 @@ launch ignores them all.
 and compares them pixel for pixel (within a small tolerance) with the PNGs
 committed under `SolitaireSnapshotTests/__Snapshots__`: every card face and
 the back in each card style, the board at the deal and mid-game with a lifted
-run, the win panel and the Settings screen, in light and dark mode. The
-images are recorded on the iPhone 17 simulator running iOS 26.5, the one CI
-uses; on any other simulator the tests skip, since the screen size would not
-match.
+run, the win panel and the Settings screen, in light and dark mode, and the
+board at the iPhone SE, iPhone Pro Max and iPad Pro sizes in both
+orientations (`LayoutSnapshotTests`, light mode, drawn at those sizes on the
+same simulator). The images are recorded on the iPhone 17 simulator running
+iOS 26.5, the one CI uses; on any other simulator the tests skip, since the
+screen size would not match.
 
 After a deliberate change to how something looks, re-record and commit the
 new images:

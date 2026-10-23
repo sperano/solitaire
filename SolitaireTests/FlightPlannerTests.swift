@@ -3,10 +3,10 @@ import XCTest
 @testable import Solitaire
 
 final class FlightPlannerTests: XCTestCase {
-    private static let boardWidth: CGFloat = 390
+    private static let boardSize = CGSize(width: 390, height: 844)
     private static let tableauHeight: CGFloat = 500
     private static let columnStride: CGFloat = 52
-    private let metrics = BoardMetrics(boardWidth: boardWidth)
+    private let metrics = BoardMetrics(boardSize: boardSize)
     private let dealt = GameState.deal(seed: 42, drawMode: .one)
 
     private var planner: FlightPlanner {
