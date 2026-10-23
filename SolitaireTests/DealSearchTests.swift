@@ -2,6 +2,9 @@ import SolitaireKit
 import XCTest
 @testable import Solitaire
 
+/// Main-actor isolated: the Swift 6.3 compiler on CI cannot check a `@concurrent` call from a
+/// nonisolated async test ("pattern that the region-based isolation checker does not understand").
+@MainActor
 final class DealSearchTests: XCTestCase {
     /// Seed 1 is won in both draw modes and seed 18 is rejected in draw 3 (see `SolverTests` in the engine package).
     static let solvableSeed: UInt64 = 1
