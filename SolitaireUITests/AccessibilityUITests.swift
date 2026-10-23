@@ -12,6 +12,10 @@ final class AccessibilityUITests: SolitaireUITestCase {
     /// the card glyphs, which are sized to the card on purpose, and the toolbar's stats, which
     /// reflow instead (see `StatusBarView.layout`). The largest-text tests below check what
     /// really renders at that size instead.
+    private static let auditAttempts = 3
+    private static let auditErrorDomain = "com.apple.xcode.xctest.accessibilityAudit"
+    /// "Audit failed to complete in time".
+    private static let auditTimedOutCode = -56
     private static let auditedTypes = XCUIAccessibilityAuditType.all.subtracting([.dynamicType, .textClipped])
 
     private func settle() {
@@ -30,17 +34,33 @@ final class AccessibilityUITests: SolitaireUITestCase {
     ) throws {
         settle()
         var issues: [String] = []
-        try app.performAccessibilityAudit(for: Self.auditedTypes) { issue in
-            let label = issue.element?.label ?? ""
-            if issue.auditType == .contrast,
-               ignoredContrast.contains(label) || (ignoringDimmedCards && Self.cardGlyphs.contains(label)) {
+        try withAuditRetries {
+            issues = []
+            try app.performAccessibilityAudit(for: Self.auditedTypes) { issue in
+                let label = issue.element?.label ?? ""
+                if issue.auditType == .contrast,
+                   ignoredContrast.contains(label) || (ignoringDimmedCards && Self.cardGlyphs.contains(label)) {
+                    return true
+                }
+                let element = issue.element.map { "\($0.identifier) '\($0.label)'" } ?? "?"
+                issues.append("\(issue.auditType.rawValue) \(issue.compactDescription) on \(element)")
                 return true
             }
-            let element = issue.element.map { "\($0.identifier) '\($0.label)'" } ?? "?"
-            issues.append("\(issue.auditType.rawValue) \(issue.compactDescription) on \(element)")
-            return true
         }
         XCTAssertEqual(issues, [], file: file, line: line)
+    }
+
+    /// On a slow CI runner the audit can give up with "Audit failed to complete in time"; that says
+    /// nothing about the app, so a timed-out audit runs again. Every other error is thrown at once.
+    private func withAuditRetries(_ run: () throws -> Void) throws {
+        for attempt in 1 ... Self.auditAttempts {
+            do {
+                return try run()
+            } catch let error as NSError
+                where error.domain == Self.auditErrorDomain && error.code == Self.auditTimedOutCode && attempt < Self.auditAttempts {
+                continue
+            }
+        }
     }
 
     private func label(of identifier: String) -> String {
