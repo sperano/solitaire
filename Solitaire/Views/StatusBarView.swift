@@ -109,6 +109,9 @@ struct StatusBarView: View {
         Button("Undo", systemImage: "arrow.uturn.backward") { viewModel.undo() }
             .disabled(!viewModel.canUndo)
             .accessibilityIdentifier("undoButton")
+        Button("Redo", systemImage: "arrow.uturn.forward") { viewModel.redo() }
+            .disabled(!viewModel.canRedo)
+            .accessibilityIdentifier("redoButton")
         Button("New Game", systemImage: "plus.circle") { viewModel.requestNewGame() }
             .accessibilityIdentifier("newGameButton")
         Button("Settings", systemImage: "gearshape") { viewModel.isShowingSettings = true }

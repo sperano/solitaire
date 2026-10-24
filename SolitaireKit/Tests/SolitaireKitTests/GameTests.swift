@@ -57,6 +57,71 @@ final class GameTests: XCTestCase {
         XCTAssertFalse(game.undo())
     }
 
+    func testUndoThenRedoRestoresTheState() throws {
+        var game = Game(seed: seed, drawMode: .one)
+        try game.perform(.draw)
+        let afterDraw = game
+        XCTAssertFalse(game.canRedo)
+        XCTAssertTrue(game.undo())
+        XCTAssertTrue(game.canRedo)
+        XCTAssertTrue(game.redo())
+        XCTAssertEqual(game.state, afterDraw.state)
+        XCTAssertEqual(game.history, afterDraw.history)
+        XCTAssertFalse(game.canRedo)
+        XCTAssertTrue(game.canUndo)
+    }
+
+    func testRedoOnNothingUndoneReturnsFalse() throws {
+        var game = Game(seed: seed, drawMode: .one)
+        XCTAssertFalse(game.redo())
+        try game.perform(.draw)
+        XCTAssertFalse(game.redo())
+        XCTAssertEqual(game.moveCount, 1)
+    }
+
+    func testRedoReplaysSeveralUndosInOrder() throws {
+        var game = Game(seed: seed, drawMode: .one)
+        var snapshots: [GameState] = []
+        for _ in 0 ..< 3 {
+            try game.perform(.draw)
+            snapshots.append(game.state)
+        }
+        for _ in snapshots { XCTAssertTrue(game.undo()) }
+        for expected in snapshots {
+            XCTAssertTrue(game.redo())
+            XCTAssertEqual(game.state, expected)
+        }
+        XCTAssertFalse(game.redo())
+    }
+
+    func testANewMoveClearsWhatCouldBeRedone() throws {
+        var game = Game(seed: seed, drawMode: .one)
+        try game.perform(.draw)
+        try game.perform(.draw)
+        XCTAssertTrue(game.undo())
+        XCTAssertTrue(game.undo())
+        try game.perform(.draw)
+        XCTAssertFalse(game.canRedo)
+        XCTAssertFalse(game.redo())
+    }
+
+    func testAFailedMoveKeepsWhatCouldBeRedone() throws {
+        var game = Game(seed: seed, drawMode: .one)
+        try game.perform(.draw)
+        XCTAssertTrue(game.undo())
+        XCTAssertThrowsError(try game.perform(.move(from: .foundation(0), to: .tableau(0), count: 1)))
+        XCTAssertTrue(game.canRedo)
+    }
+
+    func testRedoRestoresTheScore() throws {
+        var game = Game(state: blankState(scoringMode: .standard, waste: [card(.ace, .hearts)]))
+        try game.perform(.move(from: .waste, to: .foundation(0), count: 1))
+        XCTAssertTrue(game.undo())
+        XCTAssertEqual(game.score, 0)
+        XCTAssertTrue(game.redo())
+        XCTAssertEqual(game.score, Scoring.toFoundationPoints)
+    }
+
     func testCanMoveMatchesCanApply() {
         let game = game(blankState(tableau: [[card(.seven, .spades)]], waste: [card(.six, .hearts)]))
         XCTAssertTrue(game.canMove(count: 1, from: .waste, to: .tableau(0)))

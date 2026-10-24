@@ -1,7 +1,10 @@
-/// A Klondike game in progress: the current position plus the history needed for undo.
+/// A Klondike game in progress: the current position plus the history needed for undo, and the
+/// positions undone, for redo, until a new move makes them unreachable.
 public struct Game: Hashable, Codable, Sendable {
     public private(set) var state: GameState
     public private(set) var history: [GameState]
+    /// The positions undo left, the most recently undone last.
+    public private(set) var undone: [GameState]
 
     public init(seed: UInt64, drawMode: DrawMode, scoringMode: ScoringMode = .none, carriedBalance: Int = 0) {
         self.init(state: .deal(
@@ -15,10 +18,12 @@ public struct Game: Hashable, Codable, Sendable {
     public init(state: GameState) {
         self.state = state
         history = []
+        undone = []
     }
 
     public var isWon: Bool { state.isWon }
     public var canUndo: Bool { !history.isEmpty }
+    public var canRedo: Bool { !undone.isEmpty }
     public var moveCount: Int { state.moveCount }
     public var drawMode: DrawMode { state.drawMode }
     public var scoringMode: ScoringMode { state.scoringMode }
@@ -31,13 +36,24 @@ public struct Game: Hashable, Codable, Sendable {
         try next.apply(move)
         history.append(state)
         state = next
+        undone = []
     }
 
     /// Restore the previous position. Returns false when there is nothing to undo.
     @discardableResult
     public mutating func undo() -> Bool {
         guard let previous = history.popLast() else { return false }
+        undone.append(state)
         state = previous
+        return true
+    }
+
+    /// Return to the position the last undo left. Returns false when there is nothing to redo.
+    @discardableResult
+    public mutating func redo() -> Bool {
+        guard let next = undone.popLast() else { return false }
+        history.append(state)
+        state = next
         return true
     }
 
@@ -77,5 +93,27 @@ public struct Game: Hashable, Codable, Sendable {
             }
         }
         return nil
+    }
+}
+
+public extension Game {
+    internal enum CodingKeys: String, CodingKey {
+        case state, history, undone
+    }
+
+    /// Decodes a saved game. A save from before redo existed has no `undone` and loads with
+    /// nothing to redo.
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        state = try container.decode(GameState.self, forKey: .state)
+        history = try container.decode([GameState].self, forKey: .history)
+        undone = try container.decodeIfPresent([GameState].self, forKey: .undone) ?? []
+    }
+
+    func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(state, forKey: .state)
+        try container.encode(history, forKey: .history)
+        try container.encode(undone, forKey: .undone)
     }
 }

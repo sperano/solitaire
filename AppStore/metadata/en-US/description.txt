@@ -4,7 +4,7 @@ Klondike solitaire with nothing in the way. No ads, no in-app purchases, no acco
 • Standard or Vegas scoring, or none, with the Vegas balance carried between games if you like
 • Winnable deals only: a solver checks each new deal before you play it
 • Every deal has a number to share or play again
-• Unlimited undo, hints, and an automatic finish once every card can go up
+• Unlimited undo and redo, hints, and an automatic finish once every card can go up
 • Statistics for each draw mode: games won, best time, fewest moves, streaks
 • An untimed mode for a relaxed game
 • Full VoiceOver support: every card can be moved without dragging

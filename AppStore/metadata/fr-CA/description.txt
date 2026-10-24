@@ -4,7 +4,7 @@ Le solitaire Klondike, sans rien qui dérange. Pas de publicité, pas d’achats
 • Pointage standard, Vegas ou aucun, avec le solde Vegas reporté d’une partie à l’autre si vous le voulez
 • Donnes gagnables seulement : un solveur vérifie chaque nouvelle donne avant que vous la jouiez
 • Chaque donne a un numéro à partager ou à rejouer
-• Annulation illimitée, indices et fin automatique dès que toutes les cartes peuvent monter
+• Annuler et rétablir sans limite, indices et fin automatique dès que toutes les cartes peuvent monter
 • Statistiques pour chaque mode de pige : parties gagnées, meilleur temps, moins de coups, séries
 • Un mode sans chronomètre pour jouer en toute détente
 • Prise en charge complète de VoiceOver : chaque carte se déplace sans glisser
