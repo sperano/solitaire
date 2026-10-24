@@ -34,6 +34,7 @@
 		57BEBB78747D1EFC64BD3E2C /* StatisticsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34371B9257945500E88A16E /* StatisticsStoreTests.swift */; };
 		5E94E6DA7C9710B545E8E72E /* SnapshotFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABD480C10BC3AB3671B8985 /* SnapshotFixtures.swift */; };
 		5EF8F2E3F21BA4831D8C2526 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6CFEDB186354A29CCD28B /* Haptics.swift */; };
+		5F5BD1B8DD3863297C47ADFE /* LaunchScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C894AAA42C67B1AFC2CD7156 /* LaunchScreenTests.swift */; };
 		5F75F37D82AD73213E79FB36 /* BoardMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75731013731545F928BCC21F /* BoardMetrics.swift */; };
 		60D2732AF994FFB0ED448940 /* BoardMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56401D3B2BDAC32D62730329 /* BoardMetricsTests.swift */; };
 		60E0BC92DC50A40B2B4E4C0F /* CardGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4B141B85E5BEAEAE2F656 /* CardGestures.swift */; };
@@ -76,6 +77,7 @@
 		B946A836C752D9BE7D489791 /* GameViewModelStatisticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393AD112551FA0E8666D008C /* GameViewModelStatisticsTests.swift */; };
 		BE499AF6D089CD6257906211 /* BoardTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6097D47E8AD3C8585AD1A5F /* BoardTransitionTests.swift */; };
 		C097A293DD6E2FF945782C2F /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A22F3D94D4758EDCFD6A09C /* GameViewModel.swift */; };
+		C10C78E7D988053BFD98581F /* AppIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277300B5CAA4BC000529C6DC /* AppIconTests.swift */; };
 		C1CFF7ACDE371C1D384EFCD5 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C7A9B4E04148B3DABE403E /* GameSettings.swift */; };
 		C2EE8D2EA36CD39D4BEEB09B /* HintUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1825D8387624F41405C00 /* HintUITests.swift */; };
 		C32E8E76E67DBB6FA60571B0 /* DealUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B3EDA90A714CDCED34E3B2 /* DealUITests.swift */; };
@@ -146,6 +148,7 @@
 		21705F50790032AA25E8FFCA /* ScoringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringUITests.swift; sourceTree = "<group>"; };
 		21BAFB1C5226D95A0D7E50F5 /* MotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTests.swift; sourceTree = "<group>"; };
 		2586B2FD3A4A9BDAA02ECF4B /* CascadePhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CascadePhysics.swift; sourceTree = "<group>"; };
+		277300B5CAA4BC000529C6DC /* AppIconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTests.swift; sourceTree = "<group>"; };
 		27F4F5C846AB56BC8BB68761 /* GameViewModelAccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelAccessibilityTests.swift; sourceTree = "<group>"; };
 		297809B5DAFBE5609BE6A757 /* DragInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragInfo.swift; sourceTree = "<group>"; };
 		2E9FE67FEA57B694C1D03C24 /* SolitaireUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SolitaireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +211,7 @@
 		BED1D70E911F8A5BEC061C4C /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
 		C11C43C337B1A4FC08D51F13 /* SettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITests.swift; sourceTree = "<group>"; };
 		C34371B9257945500E88A16E /* StatisticsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsStoreTests.swift; sourceTree = "<group>"; };
+		C894AAA42C67B1AFC2CD7156 /* LaunchScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenTests.swift; sourceTree = "<group>"; };
 		C9B3EDA90A714CDCED34E3B2 /* DealUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealUITests.swift; sourceTree = "<group>"; };
 		CA56B0CC8CCA2A834F4C081C /* CardStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyleTests.swift; sourceTree = "<group>"; };
 		CB5D214114FBC3644DA2B0CC /* MoveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveUITests.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 		82D2B8C9A73F4951A28AE356 /* SolitaireTests */ = {
 			isa = PBXGroup;
 			children = (
+				277300B5CAA4BC000529C6DC /* AppIconTests.swift */,
 				0C3E585F7D0AC19F2F8E546F /* BoardAccessibilityTests.swift */,
 				F6209B6305B1B7C565AA6F27 /* BoardGeometryTests.swift */,
 				56401D3B2BDAC32D62730329 /* BoardMetricsTests.swift */,
@@ -360,6 +365,7 @@
 				76E8C79CD8C52B0463BC7817 /* GameViewModelTimerTests.swift */,
 				E660BC8591F292528636EC7F /* HintAnnouncementTests.swift */,
 				8ACC01E5094653A372C1BD75 /* HintTests.swift */,
+				C894AAA42C67B1AFC2CD7156 /* LaunchScreenTests.swift */,
 				21BAFB1C5226D95A0D7E50F5 /* MotionTests.swift */,
 				941867F983BA26C752B76FD0 /* StatisticsModelTests.swift */,
 				C34371B9257945500E88A16E /* StatisticsStoreTests.swift */,
@@ -665,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C10C78E7D988053BFD98581F /* AppIconTests.swift in Sources */,
 				B8B8432EFECFF7EE0C75D8FC /* BoardAccessibilityTests.swift in Sources */,
 				CDE6AF9F82D6562E70F5C8D7 /* BoardGeometryTests.swift in Sources */,
 				60D2732AF994FFB0ED448940 /* BoardMetricsTests.swift in Sources */,
@@ -687,6 +694,7 @@
 				265E9A4D0F729F713C3CDF6E /* GameViewModelTimerTests.swift in Sources */,
 				846918A13193C370936F37DE /* HintAnnouncementTests.swift in Sources */,
 				694076C4D20C3B6328704CC6 /* HintTests.swift in Sources */,
+				5F5BD1B8DD3863297C47ADFE /* LaunchScreenTests.swift in Sources */,
 				38AB843E0566EBAA6B7C7C01 /* MotionTests.swift in Sources */,
 				065FE93690D81108D276D615 /* StatisticsModelTests.swift in Sources */,
 				57BEBB78747D1EFC64BD3E2C /* StatisticsStoreTests.swift in Sources */,

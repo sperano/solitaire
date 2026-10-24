@@ -61,7 +61,9 @@ struct BoardMetrics {
 }
 
 enum Theme {
-    static let felt = Color(red: 0.07, green: 0.40, blue: 0.23)
+    /// The table. A colour asset so the launch screen (`UILaunchScreen` in project.yml) and the
+    /// app icon's background (`Design/AppIcon.svg`) can be the same green: no flash at launch.
+    static let felt = Color(.felt)
     static let slotStroke = Color.white.opacity(0.35)
     static let cardFace = Color.white
     static let cardBorder = Color.black.opacity(0.25)

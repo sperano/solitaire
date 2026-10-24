@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The app icon: a face-down card and a face-up heart on the felt, the stock and the waste of a
+  game just dealt. The colours are the app's (Theme in BoardMetrics.swift) and are CSS variables
+  so render_icons.swift can swap them for the dark and tinted variants. No text: the icon must
+  read at 29 pt as well as at 1024. Square, full bleed: iOS rounds the corners itself. Only what
+  CoreSVG draws (shapes, transforms, CSS variables; no filters), so the script renders it alone.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <style>
+    :root {
+      --felt: #12663B;
+      --face: #FFFFFF;
+      --back: #2952B3;
+      --back-inner: rgba(255, 255, 255, 0.7);
+      --border: rgba(0, 0, 0, 0.25);
+      --pip: #CC1A1F;
+      --shadow: rgba(0, 0, 0, 0.25);
+    }
+    .felt { fill: var(--felt); }
+    .face { fill: var(--face); }
+    .back { fill: var(--back); }
+    .back-inner { fill: none; stroke: var(--back-inner); stroke-width: 10; }
+    .border { fill: none; stroke: var(--border); stroke-width: 6; }
+    .pip { fill: var(--pip); }
+    .shadow { fill: var(--shadow); }
+  </style>
+  <defs>
+    <!-- A playing card, 5:7 like the ones on the board, centred on the origin. -->
+    <rect id="card" x="-200" y="-280" width="400" height="560" rx="32" ry="32"/>
+    <!-- A heart centred on the origin, 300 wide. -->
+    <path id="heart" d="M 0 130
+      C -190 -10, -170 -150, -75 -150
+      C -32 -150, -8 -122, 0 -95
+      C 8 -122, 32 -150, 75 -150
+      C 170 -150, 190 -10, 0 130 Z"/>
+  </defs>
+  <rect class="felt" width="1024" height="1024"/>
+  <!-- The stock: a face-down card, tilted left. -->
+  <g transform="translate(432 488) rotate(-14)">
+    <use class="shadow" href="#card" x="10" y="16"/>
+    <use class="back" href="#card"/>
+    <rect class="back-inner" x="-160" y="-240" width="320" height="480" rx="18" ry="18"/>
+    <use class="border" href="#card"/>
+  </g>
+  <!-- The waste: the heart turned over, tilted right. -->
+  <g transform="translate(600 536) rotate(9)">
+    <use class="shadow" href="#card" x="10" y="16"/>
+    <use class="face" href="#card"/>
+    <use class="pip" href="#heart" y="10"/>
+    <use class="border" href="#card"/>
+  </g>
+</svg>

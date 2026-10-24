@@ -67,6 +67,22 @@ xcodebuild build -project Solitaire.xcodeproj -scheme Solitaire \
   -destination 'platform=iOS Simulator,name=iPhone 17'
 ```
 
+## App icon and launch screen
+
+The icon is two cards on the felt: the stock face down and a heart turned
+over. `Design/AppIcon.svg` is the artwork; its colours are CSS variables at
+the top of the file, and `Design/render_icons.swift` renders the light icon
+and, with the background left clear for the system's own gradient, the dark
+and the grey tinted icons into the asset catalog:
+
+```sh
+swift Design/render_icons.swift     # after editing Design/AppIcon.svg; commit the PNGs
+```
+
+The launch screen is the felt alone, from the same `Felt` colour asset the
+board paints, so the game appears without a flash. `AppIconTests` and
+`LaunchScreenTests` check the icon set and that the three greens agree.
+
 ## Layout
 
 | Path | What it is |
@@ -76,6 +92,7 @@ xcodebuild build -project Solitaire.xcodeproj -scheme Solitaire \
 | `SolitaireTests/` | Unit tests for the app layer (view model, settings, stores, layout metrics). |
 | `SolitaireUITests/` | XCUITests that play the game through the accessibility tree. |
 | `SolitaireSnapshotTests/` | Image comparisons of the cards, the board (also at three screen sizes in both orientations), the win panel and Settings against the PNGs in `__Snapshots__`. |
+| `Design/` | The app icon's source artwork (`AppIcon.svg`) and the script that renders the icon variants from it. |
 | `project.yml` | xcodegen definition of the Xcode project. |
 | `.github/workflows/ci.yml` | Runs the package tests, the simulator tests and the snapshot tests on every PR. |
 
