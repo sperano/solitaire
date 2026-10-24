@@ -43,8 +43,7 @@ cd "$root"
 rm -rf "$output"
 echo "$devices" | while IFS= read -r device; do
     udid=$(udid_of "$device")
-    # A simulator this script boots is shut down after: left running, it dropped the keystrokes
-    # of the next KeyboardUITests run.
+    # A simulator this script boots is shut down after, so the machine is left as it was found.
     booted_here=false
     if xcrun simctl boot "$udid" 2>/dev/null; then booted_here=true; fi
     xcrun simctl bootstatus "$udid" -b >/dev/null
