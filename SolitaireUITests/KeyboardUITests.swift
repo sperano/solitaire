@@ -7,8 +7,9 @@ final class KeyboardUITests: SolitaireUITestCase {
     private static let newGameKey = "n"
     /// After a launch, the first ⌘ keystroke XCUITest synthesizes usually does nothing (19 of 20
     /// launches), whether the shortcut is a scene command or a view's, and however long after the
-    /// launch it comes; a second one works. Later ones are not lost (0 of 180).
-    private static let commandKeyAttempts = 3
+    /// launch it comes; a second one works. Later ones are not lost (0 of 180). On CI's freshly
+    /// booted iPad, three were once not enough.
+    private static let commandKeyAttempts = 5
     private static let commandKeyWait: TimeInterval = 2
 
     override func setUp() async throws {
@@ -30,7 +31,8 @@ final class KeyboardUITests: SolitaireUITestCase {
             }
         }
         // Never undone: the shortcut itself is broken, not just the first keystroke.
-        XCTFail("⌘Z did not undo the draw in \(Self.commandKeyAttempts) tries")
+        let waste = element("waste").value as? String ?? "?"
+        XCTFail("⌘Z did not undo the draw in \(Self.commandKeyAttempts) tries; the waste has \(waste)")
     }
 
     func testSpaceDrawsAndCommandZUndoes() {
