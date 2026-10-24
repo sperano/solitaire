@@ -118,7 +118,10 @@ final class GameViewModelStatisticsTests: XCTestCase {
     }
 
     func testNewGameAfterAWinDoesNotAddALoss() throws {
-        let model = makeModel(resuming: SavedGame(game: try Game.oneMoveFromWinning(), elapsedSeconds: Self.winningSeconds))
+        let model = makeModel(resuming: SavedGame(
+            game: try Game.oneMoveFromWinning(),
+            elapsedSeconds: Self.winningSeconds
+        ))
         try playLastMove(model)
 
         model.newGame()
@@ -128,7 +131,10 @@ final class GameViewModelStatisticsTests: XCTestCase {
     }
 
     func testAWinIsCountedOnceEvenIfUndoneAndReplayed() throws {
-        let model = makeModel(resuming: SavedGame(game: try Game.oneMoveFromWinning(), elapsedSeconds: Self.winningSeconds))
+        let model = makeModel(resuming: SavedGame(
+            game: try Game.oneMoveFromWinning(),
+            elapsedSeconds: Self.winningSeconds
+        ))
         try playLastMove(model)
         model.undo()
         XCTAssertFalse(model.isWon)
@@ -151,7 +157,7 @@ final class GameViewModelStatisticsTests: XCTestCase {
         XCTAssertEqual(recorded.overall.played, 1)
     }
 
-    func testAutoCompleteWinIsRecorded() async throws {
+    func testAutoCompleteWinIsRecorded() async {
         let model = makeModel(resuming: SavedGame(game: Game.completable(), elapsedSeconds: Self.winningSeconds))
         model.autoComplete()
         let deadline = ContinuousClock.now + .seconds(10)

@@ -14,7 +14,10 @@ final class HintAnnouncementTests: XCTestCase {
 
     func testCardToAFoundation() {
         let state = FixturePosition.oneMoveFromCompletable.state()
-        XCTAssertEqual(text(.move(from: .waste, to: .foundation(2), count: 1), state), "Move seven of hearts to a foundation")
+        XCTAssertEqual(
+            text(.move(from: .waste, to: .foundation(2), count: 1), state),
+            "Move seven of hearts to a foundation"
+        )
     }
 
     func testCardOntoACard() {

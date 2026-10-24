@@ -22,23 +22,29 @@ struct CardGestures: ViewModifier {
             }
             .modifier(CardAccessibility(viewModel: viewModel, pile: pile, index: index))
             .gesture(
-                DragGesture(minimumDistance: Self.dragMinimumDistance, coordinateSpace: .named(BoardMetrics.coordinateSpace))
-                    .onChanged { value in
-                        guard viewModel.acceptsInput else { return }
-                        viewModel.drag = DragInfo(source: pile, count: count, translation: value.translation)
-                    }
-                    .onEnded { value in
-                        let target = dropTarget(value.location)
-                        let destination = target == pile ? nil : target
-                        // A legal drop is animated by the flight layer; only a refused one snaps back.
-                        if viewModel.canDrop(on: destination) {
-                            viewModel.drop(on: destination)
-                        } else {
-                            withAnimation(Motion.animation(.easeOut(duration: Self.snapBackDuration), reduceMotion: reduceMotion)) {
-                                _ = viewModel.drop(on: destination)
-                            }
+                DragGesture(
+                    minimumDistance: Self.dragMinimumDistance,
+                    coordinateSpace: .named(BoardMetrics.coordinateSpace)
+                )
+                .onChanged { value in
+                    guard viewModel.acceptsInput else { return }
+                    viewModel.drag = DragInfo(source: pile, count: count, translation: value.translation)
+                }
+                .onEnded { value in
+                    let target = dropTarget(value.location)
+                    let destination = target == pile ? nil : target
+                    // A legal drop is animated by the flight layer; only a refused one snaps back.
+                    if viewModel.canDrop(on: destination) {
+                        viewModel.drop(on: destination)
+                    } else {
+                        withAnimation(Motion.animation(
+                            .easeOut(duration: Self.snapBackDuration),
+                            reduceMotion: reduceMotion
+                        )) {
+                            _ = viewModel.drop(on: destination)
                         }
                     }
+                }
             )
     }
 }
@@ -51,7 +57,13 @@ extension View {
         pileCount: Int,
         dropTarget: @escaping (CGPoint) -> PileID?
     ) -> some View {
-        modifier(CardGestures(viewModel: viewModel, pile: pile, index: index, pileCount: pileCount, dropTarget: dropTarget))
+        modifier(CardGestures(
+            viewModel: viewModel,
+            pile: pile,
+            index: index,
+            pileCount: pileCount,
+            dropTarget: dropTarget
+        ))
     }
 
     /// Shift the card by the drag translation when it is part of the dragged run.

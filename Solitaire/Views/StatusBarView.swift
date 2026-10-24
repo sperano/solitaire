@@ -13,18 +13,22 @@ struct StatusBarView: View {
     var body: some View {
         layout
             .labelStyle(.iconOnly)
-        .font(.title3)
-        .foregroundStyle(.white)
-        .padding(.horizontal, Self.horizontalPadding)
-        .padding(.vertical, Self.verticalPadding)
-        .confirmationDialog("Start a new game?", isPresented: $viewModel.isConfirmingNewGame, titleVisibility: .visible) {
-            Button("New Game", role: .destructive) { viewModel.newGame() }
-                .accessibilityIdentifier("confirmNewGameButton")
-            Button("Replay This Deal") { viewModel.replayDeal() }
-                .accessibilityIdentifier("replayDealButton")
-        } message: {
-            Text("The current game will be lost.")
-        }
+            .font(.title3)
+            .foregroundStyle(.white)
+            .padding(.horizontal, Self.horizontalPadding)
+            .padding(.vertical, Self.verticalPadding)
+            .confirmationDialog(
+                "Start a new game?",
+                isPresented: $viewModel.isConfirmingNewGame,
+                titleVisibility: .visible
+            ) {
+                Button("New Game", role: .destructive) { viewModel.newGame() }
+                    .accessibilityIdentifier("confirmNewGameButton")
+                Button("Replay This Deal") { viewModel.replayDeal() }
+                    .accessibilityIdentifier("replayDealButton")
+            } message: {
+                Text("The current game will be lost.")
+            }
     }
 
     @ViewBuilder private var stats: some View {
@@ -33,7 +37,12 @@ struct StatusBarView: View {
             identifier: "movesLabel", spoken: "\(viewModel.moveCount) moves"
         )
         if viewModel.settings.timed {
-            stat(viewModel.formattedTime, icon: "clock", identifier: "timeLabel", spoken: "Time \(viewModel.formattedTime)")
+            stat(
+                viewModel.formattedTime,
+                icon: "clock",
+                identifier: "timeLabel",
+                spoken: "Time \(viewModel.formattedTime)"
+            )
         }
         if let score = viewModel.formattedScore {
             stat(
@@ -80,10 +89,10 @@ struct StatusBarView: View {
         } icon: {
             Image(systemName: icon)
         }
-            .labelStyle(.titleAndIcon)
-            .accessibilityElement(children: .ignore)
-            .accessibilityIdentifier(identifier)
-            .accessibilityLabel(spoken)
+        .labelStyle(.titleAndIcon)
+        .accessibilityElement(children: .ignore)
+        .accessibilityIdentifier(identifier)
+        .accessibilityLabel(spoken)
     }
 
     @ViewBuilder private var controls: some View {

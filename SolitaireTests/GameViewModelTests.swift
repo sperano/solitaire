@@ -258,14 +258,14 @@ final class GameViewModelTests: XCTestCase {
         XCTAssertEqual(model.moveCount, 0)
     }
 
-    func testCanAutoCompleteOnCompletablePosition() throws {
+    func testCanAutoCompleteOnCompletablePosition() {
         let game = Game.completable()
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: 0))
         XCTAssertTrue(model.canAutoComplete)
         XCTAssertFalse(model.isWon)
     }
 
-    func testAutoCompleteFinishesTheGame() async throws {
+    func testAutoCompleteFinishesTheGame() async {
         let game = Game.completable()
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: 0))
 
@@ -425,7 +425,7 @@ final class GameViewModelTests: XCTestCase {
         XCTAssertEqual(model.score, game.score + bonus)
     }
 
-    func testNoTimeBonusBeforeTheWin() throws {
+    func testNoTimeBonusBeforeTheWin() {
         let game = Game.completable(scoringMode: .standard)
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: Self.longGameSeconds))
         XCTAssertEqual(model.timeBonus, 0)

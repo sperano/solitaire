@@ -106,7 +106,10 @@ final class GameTests: XCTestCase {
     }
 
     func testAutoMoveFromFoundationIsNil() {
-        let game = game(blankState(tableau: [[card(.three, .spades)]], foundations: [[card(.ace, .hearts), card(.two, .hearts)]]))
+        let game = game(blankState(
+            tableau: [[card(.three, .spades)]],
+            foundations: [[card(.ace, .hearts), card(.two, .hearts)]]
+        ))
         XCTAssertNil(game.autoMoveDestination(count: 1, from: .foundation(0)))
     }
 

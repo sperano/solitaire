@@ -15,7 +15,8 @@ struct JSONFileStorage<Value: Codable> {
         do {
             return try JSONDecoder().decode(Value.self, from: data)
         } catch {
-            Self.logger.error("Discarding unreadable \(url.lastPathComponent, privacy: .public): \(error.localizedDescription, privacy: .public)")
+            let name = url.lastPathComponent, reason = error.localizedDescription
+            Self.logger.error("Discarding unreadable \(name, privacy: .public): \(reason, privacy: .public)")
             return nil
         }
     }
@@ -30,10 +31,14 @@ struct JSONFileStorage<Value: Codable> {
                 return
             }
             let data = try JSONEncoder().encode(value)
-            try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+            try FileManager.default.createDirectory(
+                at: url.deletingLastPathComponent(),
+                withIntermediateDirectories: true
+            )
             try data.write(to: url, options: .atomic)
         } catch {
-            Self.logger.error("Could not save \(url.lastPathComponent, privacy: .public): \(error.localizedDescription, privacy: .public)")
+            let reason = error.localizedDescription
+            Self.logger.error("Could not save \(url.lastPathComponent, privacy: .public): \(reason, privacy: .public)")
         }
     }
 }

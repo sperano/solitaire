@@ -40,7 +40,12 @@ final class DealSearchTests: XCTestCase {
 
     func testACancelledSearchReturnsNil() async {
         let task = Task {
-            await DealSearch.winnableDeal(startingWith: Self.rejectedSeed, drawMode: .three, scoringMode: .none, carriedBalance: 0)
+            await DealSearch.winnableDeal(
+                startingWith: Self.rejectedSeed,
+                drawMode: .three,
+                scoringMode: .none,
+                carriedBalance: 0
+            )
         }
         task.cancel()
         let found = await task.value

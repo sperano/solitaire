@@ -61,7 +61,7 @@ public struct GameStatistics: Hashable, Codable, Sendable {
     }
 
     private static func lowest(_ lhs: Int?, _ rhs: Int?) -> Int? {
-        [lhs, rhs].compactMap { $0 }.min()
+        [lhs, rhs].compactMap(\.self).min()
     }
 }
 

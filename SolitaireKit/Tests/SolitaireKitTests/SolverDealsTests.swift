@@ -4,7 +4,11 @@ import XCTest
 final class SolverDealsTests: XCTestCase {
     func testReturnsTheFirstWinnableDealInTheRequestedModes() {
         let seeds = [SolverTests.rejectedSeed, SolverTests.solvableSeed, SolverTests.solvableSeed + 1]
-        let found = Solver().firstWinnableDeal(seeds: seeds, drawMode: SolverTests.rejectedDrawMode, scoringMode: .standard)
+        let found = Solver().firstWinnableDeal(
+            seeds: seeds,
+            drawMode: SolverTests.rejectedDrawMode,
+            scoringMode: .standard
+        )
 
         XCTAssertEqual(found?.seed, SolverTests.solvableSeed)
         XCTAssertEqual(found?.drawMode, SolverTests.rejectedDrawMode)
@@ -21,7 +25,11 @@ final class SolverDealsTests: XCTestCase {
 
     func testNilWhenNoSeedIsWinnableOrNoneIsGiven() {
         let solver = Solver()
-        XCTAssertNil(solver.firstWinnableDeal(seeds: [SolverTests.rejectedSeed], drawMode: SolverTests.rejectedDrawMode, scoringMode: .none))
+        XCTAssertNil(solver.firstWinnableDeal(
+            seeds: [SolverTests.rejectedSeed],
+            drawMode: SolverTests.rejectedDrawMode,
+            scoringMode: .none
+        ))
         XCTAssertNil(solver.firstWinnableDeal(seeds: [UInt64](), drawMode: .one, scoringMode: .none))
     }
 

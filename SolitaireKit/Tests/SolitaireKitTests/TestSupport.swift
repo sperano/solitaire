@@ -24,9 +24,9 @@ private let dealOrder: [TableauSlot] = (0 ..< GameState.tableauColumnCount).flat
 func orderedDeck(tableau: [TableauSlot: Card] = [:], stockTop: [Card] = []) -> [Card] {
     var placed = [Int: Card]()
     for (dealt, slot) in dealOrder.enumerated() {
-        if let c = tableau[slot] { placed[Deck.cardCount - 1 - dealt] = c.faceDown() }
+        if let card = tableau[slot] { placed[Deck.cardCount - 1 - dealt] = card.faceDown() }
     }
-    for (offset, c) in stockTop.enumerated() { placed[stockCardCount - 1 - offset] = c.faceDown() }
+    for (offset, card) in stockTop.enumerated() { placed[stockCardCount - 1 - offset] = card.faceDown() }
     precondition(placed.count == tableau.count + stockTop.count, "slots overlap")
     let used = Set(placed.values.map(\.id))
     precondition(used.count == placed.count, "duplicate card requested")

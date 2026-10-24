@@ -79,7 +79,13 @@ struct WasteView: View {
                     .allowsHitTesting(isTop)
                     // Only the top card can move; VoiceOver skips the rest of the fan.
                     .accessibilityHidden(!isTop)
-                    .modifier(TopCardGestures(enabled: isTop, viewModel: viewModel, pile: .waste, pileCount: cards.count, dropTarget: dropTarget))
+                    .modifier(TopCardGestures(
+                        enabled: isTop,
+                        viewModel: viewModel,
+                        pile: .waste,
+                        pileCount: cards.count,
+                        dropTarget: dropTarget
+                    ))
             }
         }
         .frame(width: metrics.cardWidth, height: metrics.cardHeight, alignment: .leading)
@@ -116,7 +122,13 @@ struct FoundationView: View {
                     .allowsHitTesting(isTop)
                     // Only drawn for drags; the pile's label already names the top card.
                     .accessibilityHidden(!isTop)
-                    .modifier(TopCardGestures(enabled: isTop, viewModel: viewModel, pile: pile, pileCount: cards.count, dropTarget: dropTarget))
+                    .modifier(TopCardGestures(
+                        enabled: isTop,
+                        viewModel: viewModel,
+                        pile: pile,
+                        pileCount: cards.count,
+                        dropTarget: dropTarget
+                    ))
             }
         }
         .reportFrame(as: pile)
@@ -137,7 +149,13 @@ private struct TopCardGestures: ViewModifier {
 
     func body(content: Content) -> some View {
         if enabled {
-            content.cardGestures(viewModel: viewModel, pile: pile, index: pileCount - 1, pileCount: pileCount, dropTarget: dropTarget)
+            content.cardGestures(
+                viewModel: viewModel,
+                pile: pile,
+                index: pileCount - 1,
+                pileCount: pileCount,
+                dropTarget: dropTarget
+            )
         } else {
             content
         }

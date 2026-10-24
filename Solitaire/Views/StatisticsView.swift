@@ -44,7 +44,12 @@ struct StatisticsView: View {
             Section {
                 row("Played", "\(record.played)", id: "statsPlayed")
                 row("Won", "\(record.won)", id: "statsWon")
-                row("Win rate", record.winRate.map { $0.formatted(.percent.precision(.fractionLength(Self.winRateFractionDigits))) }, id: "statsWinRate")
+                row(
+                    "Win rate",
+                    record.winRate
+                        .map { $0.formatted(.percent.precision(.fractionLength(Self.winRateFractionDigits))) },
+                    id: "statsWinRate"
+                )
             } header: {
                 Text("Games").formHeader()
             }
@@ -64,7 +69,7 @@ struct StatisticsView: View {
                 Button(role: .destructive) { isConfirmingReset = true } label: {
                     Text("Reset Statistics").foregroundStyle(Theme.destructiveText)
                 }
-                    .accessibilityIdentifier("resetStatisticsButton")
+                .accessibilityIdentifier("resetStatisticsButton")
             }
         }
         .navigationTitle("Statistics")

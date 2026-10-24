@@ -6,7 +6,7 @@ import XCTest
 /// `Design/render_icons.swift`: a light icon on the felt, and dark and tinted ones that leave
 /// the background to the system. Read from the repository, since the catalog is compiled away.
 final class AppIconTests: XCTestCase {
-    private static let iconSize = 1024
+    private static let iconSize = 1_024
     private static let repository = URL(fileURLWithPath: #filePath)
         .deletingLastPathComponent().deletingLastPathComponent()
     private static let iconSet = repository
@@ -16,12 +16,12 @@ final class AppIconTests: XCTestCase {
     private static let sampleStride = 16
     private static let colourScale: CGFloat = 255
 
-    private struct Entry: Decodable {
-        struct Appearance: Decodable {
-            let appearance: String
-            let value: String
-        }
+    private struct Appearance: Decodable {
+        let appearance: String
+        let value: String
+    }
 
+    private struct Entry: Decodable {
         let filename: String
         let idiom: String
         let platform: String
@@ -67,7 +67,8 @@ final class AppIconTests: XCTestCase {
         let entry = try XCTUnwrap(entries().first { $0.luminosity == nil })
         let pixels = try Pixels(image(entry))
         XCTAssertTrue(pixels.sampled(stride: Self.sampleStride).allSatisfy { $0.alpha == UInt8.max })
-        let felt = UIColor(Theme.felt).rgba.prefix(Pixels.colourChannels).map { UInt8(($0 * Self.colourScale).rounded()) }
+        let felt = UIColor(Theme.felt).rgba.prefix(Pixels.colourChannels)
+            .map { UInt8(($0 * Self.colourScale).rounded()) }
         XCTAssertEqual(pixels.corner.channels, Array(felt))
     }
 
@@ -87,8 +88,8 @@ final class AppIconTests: XCTestCase {
         let svg = try String(contentsOf: Self.artwork, encoding: .utf8)
         let declaration = try XCTUnwrap(svg.range(of: "--felt: #[0-9A-Fa-f]{6};", options: .regularExpression))
         let hex = svg[declaration].dropFirst("--felt: #".count).dropLast()
-        let felt = UIColor(Theme.felt).rgba.prefix(Pixels.colourChannels).map { String(format: "%02X", Int(($0 * Self.colourScale).rounded())) }
-        XCTAssertEqual(String(hex).uppercased(), felt.joined())
+        let felt = UIColor(Theme.felt).rgba.prefix(Pixels.colourChannels).map { Int(($0 * Self.colourScale).rounded()) }
+        XCTAssertEqual(String(hex).uppercased(), felt.map { String(format: "%02X", $0) }.joined())
     }
 }
 

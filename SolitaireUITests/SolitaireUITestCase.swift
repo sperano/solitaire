@@ -23,7 +23,9 @@ class SolitaireUITestCase: XCTestCase {
 
     /// Launches the app with `extraArguments`; `seed` nil leaves the deal random.
     @discardableResult
-    func launchApp(extraArguments: [String] = ["-drawMode", "1"], seed: String? = SolitaireUITestCase.defaultSeed) -> XCUIApplication {
+    func launchApp(extraArguments: [String] = ["-drawMode", "1"],
+                   seed: String? = SolitaireUITestCase.defaultSeed) -> XCUIApplication
+    {
         let application = XCUIApplication()
         application.launchArguments = ["--ui-testing"] + (seed.map { ["-seed", $0] } ?? []) + extraArguments
         application.launch()

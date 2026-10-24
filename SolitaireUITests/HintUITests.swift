@@ -15,7 +15,12 @@ final class HintUITests: SolitaireUITestCase {
         expectSelected(ace, false)
     }
 
-    private func expectSelected(_ element: XCUIElement, _ selected: Bool, file: StaticString = #filePath, line: UInt = #line) {
+    private func expectSelected(
+        _ element: XCUIElement,
+        _ selected: Bool,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
         let predicate = NSPredicate(format: "isSelected == %@", NSNumber(value: selected))
         let expectation = XCTNSPredicateExpectation(predicate: predicate, object: element)
         XCTAssertEqual(XCTWaiter.wait(for: [expectation], timeout: Self.timeout), .completed, file: file, line: line)

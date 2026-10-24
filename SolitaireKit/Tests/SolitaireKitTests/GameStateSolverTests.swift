@@ -10,11 +10,11 @@ final class GameStateSolverTests: XCTestCase {
             // A few draws and foundation moves so there is something on the foundations.
             for _ in 0 ..< 5 { try? state.apply(.draw) }
             for move in state.availableMoves() where move != .draw {
-                if case .move(_, let to, _) = move, to.isFoundation { try? state.apply(move) }
+                if case let .move(_, to, _) = move, to.isFoundation { try? state.apply(move) }
             }
             for move in state.solverCandidates() {
                 XCTAssertTrue(state.canApply(move), "seed \(seed): \(move)")
-                if case .move(let from, _, _) = move { XCTAssertFalse(from.isFoundation, "seed \(seed): \(move)") }
+                if case let .move(from, _, _) = move { XCTAssertFalse(from.isFoundation, "seed \(seed): \(move)") }
             }
         }
     }
@@ -22,7 +22,11 @@ final class GameStateSolverTests: XCTestCase {
     func testAnAceOnTopIsTheOnlyCandidate() {
         // The ace of spades on top of the waste; the stock still has cards to draw.
         let stock = [card(.king, .clubs, up: false), card(.queen, .clubs, up: false)]
-        let state = blankState(tableau: [[card(.five, .hearts)], [card(.six, .spades)]], stock: stock, waste: [card(.ace, .spades)])
+        let state = blankState(
+            tableau: [[card(.five, .hearts)], [card(.six, .spades)]],
+            stock: stock,
+            waste: [card(.ace, .spades)]
+        )
 
         XCTAssertEqual(state.solverCandidates(), [.move(from: .waste, to: .foundation(0), count: 1)])
     }

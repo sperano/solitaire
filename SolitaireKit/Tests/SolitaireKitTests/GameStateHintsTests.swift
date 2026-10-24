@@ -2,7 +2,7 @@ import XCTest
 @testable import SolitaireKit
 
 final class GameStateHintsTests: XCTestCase {
-    private static let seeds: [UInt64] = [1, 7, 42, 1234]
+    private static let seeds: [UInt64] = [1, 7, 42, 1_234]
     private static let playedMoves = 30
     private static let allPiles: [PileID] = [.stock, .waste] + PileID.allFoundations + PileID.allTableau
 
@@ -20,7 +20,11 @@ final class GameStateHintsTests: XCTestCase {
         return moves
     }
 
-    private func assertAvailableMovesAreExactlyTheLegalOnes(_ state: GameState, file: StaticString = #filePath, line: UInt = #line) {
+    private func assertAvailableMovesAreExactlyTheLegalOnes(
+        _ state: GameState,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
         let available = state.availableMoves()
         XCTAssertEqual(Set(available), bruteForceMoves(state), file: file, line: line)
         XCTAssertEqual(available.count, Set(available).count, "no move is listed twice", file: file, line: line)
@@ -72,7 +76,11 @@ final class GameStateHintsTests: XCTestCase {
 
     func testFoundationMoveComesFirst() {
         let state = blankState(
-            tableau: [[card(.nine, .clubs, up: false), card(.seven, .hearts)], [card(.eight, .spades)], [card(.ace, .diamonds)]],
+            tableau: [
+                [card(.nine, .clubs, up: false), card(.seven, .hearts)],
+                [card(.eight, .spades)],
+                [card(.ace, .diamonds)],
+            ],
             stock: [card(.king, .clubs, up: false)],
             waste: [card(.seven, .diamonds)]
         )
@@ -86,7 +94,11 @@ final class GameStateHintsTests: XCTestCase {
 
     func testRunThatUncoversAFaceDownCardComesBeforeTheWaste() {
         let state = blankState(
-            tableau: [[card(.nine, .clubs, up: false), card(.seven, .hearts)], [card(.eight, .spades)], [card(.eight, .clubs)]],
+            tableau: [
+                [card(.nine, .clubs, up: false), card(.seven, .hearts)],
+                [card(.eight, .spades)],
+                [card(.eight, .clubs)],
+            ],
             stock: [card(.king, .clubs, up: false)],
             waste: [card(.seven, .diamonds)]
         )
@@ -94,7 +106,10 @@ final class GameStateHintsTests: XCTestCase {
     }
 
     func testKingMovesIntoAnEmptyColumnToUncoverACard() {
-        let state = blankState(tableau: [[card(.nine, .clubs, up: false), card(.king, .hearts), card(.queen, .spades)], []])
+        let state = blankState(tableau: [
+            [card(.nine, .clubs, up: false), card(.king, .hearts), card(.queen, .spades)],
+            [],
+        ])
         XCTAssertEqual(state.suggestedMove(), .move(from: .tableau(0), to: .tableau(1), count: 2))
     }
 
@@ -145,7 +160,10 @@ final class GameStateHintsTests: XCTestCase {
     }
 
     func testCardsAreNotTakenBackOffAFoundation() {
-        let state = blankState(tableau: [[card(.three, .hearts)]], foundations: [[card(.ace, .spades), card(.two, .spades)]])
+        let state = blankState(
+            tableau: [[card(.three, .hearts)]],
+            foundations: [[card(.ace, .spades), card(.two, .spades)]]
+        )
         XCTAssertTrue(state.availableMoves().contains(.move(from: .foundation(0), to: .tableau(0), count: 1)))
         XCTAssertNil(state.suggestedMove())
     }

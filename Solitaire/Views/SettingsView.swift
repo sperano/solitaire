@@ -65,7 +65,12 @@ struct SettingsView: View {
                         .accessibilityIdentifier("statisticsLink")
                 }
                 // Below Statistics, which UI tests reach without scrolling.
-                DealSection(dealNumber: dealNumber, drawMode: drawMode, isGameStarted: isGameStarted, playDeal: playDeal)
+                DealSection(
+                    dealNumber: dealNumber,
+                    drawMode: drawMode,
+                    isGameStarted: isGameStarted,
+                    playDeal: playDeal
+                )
                 Section {
                     LabeledContent("Version", value: Bundle.main.shortVersion)
                     Text("Free, no ads, no tracking, no account.")
@@ -103,7 +108,10 @@ private extension SettingsView {
             )
         }
         if settings.winnableDealsOnly {
-            sentences.append("New games are dealt until the solver finds a way to win one; a deal number you enter is played as it is.")
+            sentences.append("""
+            New games are dealt until the solver finds a way to win one; \
+            a deal number you enter is played as it is.
+            """)
         }
         sentences.append("Changes take effect on the next game.")
         return sentences.joined(separator: " ")

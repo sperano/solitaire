@@ -39,7 +39,8 @@ class SnapshotTestCase: XCTestCase {
             safeArea: window.safeAreaInsets, size: window.bounds.size,
             traits: UITraitCollection { $0.displayScale = window.traitCollection.displayScale }
         )
-        assertLightAndDark(view, layout: .device(config: config), fileID: fileID, file: file, testName: testName, line: line)
+        let site = SnapshotSite(fileID: fileID, file: file, testName: testName, line: line)
+        assertLightAndDark(view, layout: .device(config: config), at: site)
     }
 
     /// Asserts a view at the size it asks for, in light and in dark mode.
@@ -47,7 +48,8 @@ class SnapshotTestCase: XCTestCase {
         _ view: some View, fileID: StaticString = #fileID, file: StaticString = #filePath,
         testName: String = #function, line: UInt = #line
     ) {
-        assertLightAndDark(view, layout: .sizeThatFits, fileID: fileID, file: file, testName: testName, line: line)
+        let site = SnapshotSite(fileID: fileID, file: file, testName: testName, line: line)
+        assertLightAndDark(view, layout: .sizeThatFits, at: site)
     }
 
     /// Asserts a screen at another device's size and safe area, in light mode, drawn in the
@@ -69,10 +71,7 @@ class SnapshotTestCase: XCTestCase {
         )
     }
 
-    private func assertLightAndDark(
-        _ view: some View, layout: SwiftUISnapshotLayout,
-        fileID: StaticString, file: StaticString, testName: String, line: UInt
-    ) {
+    private func assertLightAndDark(_ view: some View, layout: SwiftUISnapshotLayout, at site: SnapshotSite) {
         for mode in Self.modes {
             assertSnapshot(
                 of: view,
@@ -81,9 +80,18 @@ class SnapshotTestCase: XCTestCase {
                     precision: Self.pixelPrecision,
                     layout: layout, traits: UITraitCollection { $0.userInterfaceStyle = mode.style }
                 ),
-                named: mode.name, fileID: fileID, file: file, testName: testName, line: line
+                named: mode.name, fileID: site.fileID, file: site.file, testName: site.testName, line: site.line
             )
         }
+    }
+
+    /// Where a snapshot assertion was written: the test the image is named after and the line a
+    /// failure points at.
+    private struct SnapshotSite {
+        let fileID: StaticString
+        let file: StaticString
+        let testName: String
+        let line: UInt
     }
 
     private static var hostWindow: UIWindow? {

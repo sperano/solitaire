@@ -117,7 +117,10 @@ struct GameView: View {
     /// Flies the cards a move, draw, undo or auto-complete step carried to their new pile, or deals
     /// a new game from the stock. Nothing flies under Reduce Motion.
     private func startFlights(from old: BoardSnapshot, to new: BoardSnapshot) {
-        let planner = FlightPlanner(geometry: BoardGeometry(metrics: BoardMetrics(boardSize: boardSize), pileFrames: pileFrames))
+        let planner = FlightPlanner(geometry: BoardGeometry(
+            metrics: BoardMetrics(boardSize: boardSize),
+            pileFrames: pileFrames
+        ))
         // Hiding the landed cards must take effect in the frame they appear, never fade.
         withoutAnimation {
             if reduceMotion {

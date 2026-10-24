@@ -105,7 +105,8 @@ extension GameState {
     private func columnEmptyingMoves() -> [Move] {
         guard hasKingWaitingForSpace else { return [] }
         return PileID.allTableau.enumerated().flatMap { index, source -> [Move] in
-            guard faceUpStart(inTableau: index) == 0, let first = tableau[index].first, first.rank != .king else { return [] }
+            guard faceUpStart(inTableau: index) == 0, let first = tableau[index].first,
+                  first.rank != .king else { return [] }
             return tableauDestinations(for: first, from: source)
                 .map { Move.move(from: source, to: $0, count: tableau[index].count) }
         }

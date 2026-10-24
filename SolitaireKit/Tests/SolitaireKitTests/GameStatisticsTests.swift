@@ -55,7 +55,8 @@ final class GameStatisticsTests: XCTestCase {
     func testDecodingRejectsInconsistentStatistics() throws {
         var statistics = GameStatistics()
         statistics.recordWin(gameID: 5, drawMode: .one, seconds: Self.seconds, moves: Self.moves)
-        var object = try XCTUnwrap(JSONSerialization.jsonObject(with: JSONEncoder().encode(statistics)) as? [String: Any])
+        let encoded = try JSONEncoder().encode(statistics)
+        var object = try XCTUnwrap(JSONSerialization.jsonObject(with: encoded) as? [String: Any])
         var drawOne = try XCTUnwrap(object["drawOne"] as? [String: Any])
         drawOne["won"] = 2
         object["drawOne"] = drawOne

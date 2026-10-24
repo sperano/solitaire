@@ -3,7 +3,10 @@ import XCTest
 /// Xcode's accessibility audit on every screen, the VoiceOver labels UI tests and players rely
 /// on, and the toolbar at the largest accessibility text size.
 final class AccessibilityUITests: SolitaireUITestCase {
-    private static let largestTextArguments = ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+    private static let largestTextArguments = [
+        "-UIPreferredContentSizeCategoryName",
+        "UICTContentSizeCategoryAccessibilityXXXL",
+    ]
     private static let controls = ["hintButton", "undoButton", "newGameButton", "settingsButton"]
     private static let stats = ["movesLabel", "timeLabel", "scoreLabel"]
     /// Sheets and pushes animate in; auditing mid-animation reports contrast against the moving backdrop.
@@ -23,7 +26,9 @@ final class AccessibilityUITests: SolitaireUITestCase {
     }
 
     /// A rank or suit drawn on a card face.
-    private static let cardGlyphs: Set<String> = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "♣", "♦", "♥", "♠"]
+    private static let cardGlyphs: Set<String> = [
+        "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "♣", "♦", "♥", "♠",
+    ]
 
     /// Runs the audit and fails once, listing every issue it found. `ignoringDimmedCards` skips the
     /// card glyphs a modal overlay dims on purpose and the cards the win cascade draws;
@@ -43,7 +48,8 @@ final class AccessibilityUITests: SolitaireUITestCase {
                     return true
                 }
                 if issue.auditType == .contrast,
-                   ignoredContrast.contains(label) || (ignoringDimmedCards && Self.cardGlyphs.contains(label)) {
+                   ignoredContrast.contains(label) || (ignoringDimmedCards && Self.cardGlyphs.contains(label))
+                {
                     return true
                 }
                 let element = issue.element.map { "\($0.identifier) '\($0.label)'" } ?? "?"
@@ -56,12 +62,16 @@ final class AccessibilityUITests: SolitaireUITestCase {
 
     /// On a slow CI runner the audit can give up with "Audit failed to complete in time"; that says
     /// nothing about the app, so a timed-out audit runs again. Every other error is thrown at once.
+    /// The audit gave up waiting for the screen, which happens on a loaded CI runner.
+    private static func isAuditTimeout(_ error: NSError) -> Bool {
+        error.domain == auditErrorDomain && error.code == auditTimedOutCode
+    }
+
     private func withAuditRetries(_ run: () throws -> Void) throws {
         for attempt in 1 ... Self.auditAttempts {
             do {
                 return try run()
-            } catch let error as NSError
-                where error.domain == Self.auditErrorDomain && error.code == Self.auditTimedOutCode && attempt < Self.auditAttempts {
+            } catch let error as NSError where Self.isAuditTimeout(error) && attempt < Self.auditAttempts {
                 continue
             }
         }

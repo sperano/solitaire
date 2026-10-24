@@ -51,10 +51,10 @@ final class GameStateValidationTests: XCTestCase {
         XCTAssertFalse(state.isValidPosition)
     }
 
-    func testFaceDownTableauTopIsInvalid() {
+    func testFaceDownTableauTopIsInvalid() throws {
         var state = dealt
         let column = GameState.tableauColumnCount - 1
-        state.tableau[column][state.tableau[column].count - 1] = state.tableau[column].last!.faceDown()
+        state.tableau[column][state.tableau[column].count - 1] = try XCTUnwrap(state.tableau[column].last?.faceDown())
         XCTAssertFalse(state.isValidPosition)
     }
 

@@ -6,7 +6,7 @@ struct CascadePhysics {
     static let launchInterval = 0.15
     static let timeStep = 1.0 / 60
     /// Points per second squared.
-    static let gravity = 1600.0
+    static let gravity = 1_600.0
     /// Share of the vertical speed kept by each bounce.
     static let restitution = 0.75
     static let minimumHorizontalSpeed = 120.0

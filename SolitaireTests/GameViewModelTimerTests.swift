@@ -138,10 +138,11 @@ final class GameViewModelTimerTests: XCTestCase {
         XCTAssertEqual(model.elapsedSeconds, 1, "4 × 0.3 s of play")
     }
 
-    func testTheClockDoesNotRunWhileADealIsSearchedFor() async {
+    func testTheClockDoesNotRunWhileADealIsSearchedFor() {
         settings.winnableDealsOnly = true
         let model = GameViewModel(
-            store: store, settings: settings, statistics: StatisticsModel(store: statisticsStore), fixedSeed: nil, clock: clock
+            store: store, settings: settings, statistics: StatisticsModel(store: statisticsStore), fixedSeed: nil,
+            clock: clock
         )
         XCTAssertTrue(model.isDealing)
         model.setAppActive(true)
@@ -152,7 +153,10 @@ final class GameViewModelTimerTests: XCTestCase {
     // MARK: Relaunch
 
     func testARelaunchContinuesFromTheSavedTime() async {
-        let model = makeModel(resuming: SavedGame(game: Game(seed: Self.fixedSeed, drawMode: .one), elapsedSeconds: Self.savedElapsed))
+        let model = makeModel(resuming: SavedGame(
+            game: Game(seed: Self.fixedSeed, drawMode: .one),
+            elapsedSeconds: Self.savedElapsed
+        ))
         XCTAssertEqual(model.elapsedSeconds, Self.savedElapsed)
         XCTAssertEqual(clock.sleeperCount, 0, "no move yet, the clock waits")
 
@@ -180,7 +184,10 @@ final class GameViewModelTimerTests: XCTestCase {
 
     func testAnUntimedWinRecordsMovesButNoTime() throws {
         settings.timed = false
-        let model = makeModel(resuming: SavedGame(game: try Game.oneMoveFromWinning(), elapsedSeconds: Self.savedElapsed))
+        let model = makeModel(resuming: SavedGame(
+            game: try Game.oneMoveFromWinning(),
+            elapsedSeconds: Self.savedElapsed
+        ))
         let column = try XCTUnwrap(PileID.allTableau.first { !model.state.pile($0).isEmpty })
 
         model.tapCard(in: column, index: model.state.pile(column).count - 1)

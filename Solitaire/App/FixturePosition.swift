@@ -8,7 +8,8 @@ enum FixturePosition: String, CaseIterable {
     /// `completable` with the seven of hearts in the waste: moving it to its foundation makes the
     /// game completable.
     case oneMoveFromCompletable
-    /// No draw and no legal move: the seven columns show the hearts king through seven, one each, over face-down cards, and the stock is empty.
+    /// No draw and no legal move: the seven columns show the hearts king through seven, one each, over face-down cards,
+    /// and the stock is empty.
     case deadlocked
 
     static let argument = "-position"

@@ -6,7 +6,7 @@ import XCTest
 final class BoardMetricsTests: XCTestCase {
     private static let boardWidth: CGFloat = 400
     /// Tall enough that the width, not the height, sets the card size.
-    private static let boardHeight: CGFloat = 2000
+    private static let boardHeight: CGFloat = 2_000
     private static let accuracy: CGFloat = 0.0001
     private let metrics = BoardMetrics(boardSize: CGSize(width: boardWidth, height: boardHeight))
 
@@ -32,17 +32,20 @@ final class BoardMetricsTests: XCTestCase {
         let rows = 330 - BoardMetrics.verticalGapCount * BoardMetrics.rowSpacing
         let expectedHeight = rows / (1 + BoardMetrics.tableauCardHeights)
         XCTAssertEqual(landscape.cardHeight, expectedHeight, accuracy: Self.accuracy)
-        XCTAssertLessThan(landscape.cardWidth, BoardMetrics(boardSize: CGSize(width: 874, height: Self.boardHeight)).cardWidth)
+        XCTAssertLessThan(
+            landscape.cardWidth,
+            BoardMetrics(boardSize: CGSize(width: 874, height: Self.boardHeight)).cardWidth
+        )
     }
 
-    func testTheHeightLimitLeavesTheTableauItsShareOfTheBoard() {
+    func testTheHeightLimitLeavesTheTableauItsShareOfTheBoard() throws {
         let landscape = BoardMetrics(boardSize: CGSize(width: 874, height: 330))
         let tableau = landscape.tableauHeight(boardHeight: 330)
         XCTAssertEqual(tableau, landscape.cardHeight * BoardMetrics.tableauCardHeights, accuracy: Self.accuracy)
         // The deal's longest column fits without compression.
         let deal = cards(faceDown: 6, faceUp: 1)
         let offsets = landscape.columnOffsets(for: deal, availableHeight: tableau)
-        XCTAssertEqual(offsets.last!, 6 * landscape.faceDownOffset, accuracy: Self.accuracy)
+        XCTAssertEqual(try XCTUnwrap(offsets.last), 6 * landscape.faceDownOffset, accuracy: Self.accuracy)
     }
 
     func testATallBoardGivesTheTableauWhatTheTopRowLeaves() {
@@ -61,15 +64,15 @@ final class BoardMetricsTests: XCTestCase {
     }
 
     func testColumnOffsetsForNoCardsIsEmpty() {
-        XCTAssertEqual(metrics.columnOffsets(for: [], availableHeight: 1000), [])
+        XCTAssertEqual(metrics.columnOffsets(for: [], availableHeight: 1_000), [])
     }
 
     func testColumnOffsetsForOneCardIsZero() {
-        XCTAssertEqual(metrics.columnOffsets(for: cards(faceDown: 0, faceUp: 1), availableHeight: 1000), [0])
+        XCTAssertEqual(metrics.columnOffsets(for: cards(faceDown: 0, faceUp: 1), availableHeight: 1_000), [0])
     }
 
     func testColumnOffsetsUseFaceDownAndFaceUpStepsWhenThereIsRoom() {
-        let offsets = metrics.columnOffsets(for: cards(faceDown: 2, faceUp: 2), availableHeight: 10000)
+        let offsets = metrics.columnOffsets(for: cards(faceDown: 2, faceUp: 2), availableHeight: 10_000)
         XCTAssertEqual(offsets.count, 4)
         XCTAssertEqual(offsets[0], 0, accuracy: Self.accuracy)
         XCTAssertEqual(offsets[1], metrics.faceDownOffset, accuracy: Self.accuracy)
@@ -77,17 +80,21 @@ final class BoardMetricsTests: XCTestCase {
         XCTAssertEqual(offsets[3], 2 * metrics.faceDownOffset + metrics.faceUpOffset, accuracy: Self.accuracy)
     }
 
-    func testColumnOffsetsCompressToFitAvailableHeight() {
+    func testColumnOffsetsCompressToFitAvailableHeight() throws {
         let column = cards(faceDown: 3, faceUp: 10)
         let availableHeight = metrics.cardHeight * 3
         let offsets = metrics.columnOffsets(for: column, availableHeight: availableHeight)
 
         XCTAssertEqual(offsets.count, column.count)
-        XCTAssertEqual(offsets.last! + metrics.cardHeight, availableHeight, accuracy: Self.accuracy)
+        XCTAssertEqual(try XCTUnwrap(offsets.last) + metrics.cardHeight, availableHeight, accuracy: Self.accuracy)
         // Proportional: the face-up/face-down step ratio is preserved.
         let downStep = offsets[1] - offsets[0]
         let upStep = offsets[4] - offsets[3]
-        XCTAssertEqual(upStep / downStep, BoardMetrics.faceUpOffsetRatio / BoardMetrics.faceDownOffsetRatio, accuracy: Self.accuracy)
+        XCTAssertEqual(
+            upStep / downStep,
+            BoardMetrics.faceUpOffsetRatio / BoardMetrics.faceDownOffsetRatio,
+            accuracy: Self.accuracy
+        )
     }
 
     func testColumnOffsetsWithNoRoomStackAllCardsOnTop() {

@@ -87,7 +87,11 @@ final class GameStoreTests: XCTestCase {
 
     func testSaveFromBeforeStatisticsGetsFlagsFromTheGame() throws {
         let inProgress = try decodeWithoutFlags(try makeSaved())
-        XCTAssertNotEqual(inProgress.gameID, try decodeWithoutFlags(try makeSaved()).gameID, "each old save gets its own id")
+        XCTAssertNotEqual(
+            inProgress.gameID,
+            try decodeWithoutFlags(try makeSaved()).gameID,
+            "each old save gets its own id"
+        )
         XCTAssertTrue(inProgress.isStarted)
         XCTAssertFalse(inProgress.isResultRecorded)
 
