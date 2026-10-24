@@ -134,12 +134,14 @@ them. Never add a dependency or feature that sends data anywhere.
   iPhone 17 simulator running iOS 26.5, which CI pins, and skip elsewhere.
   After a deliberate visual change, re-record (README, "Snapshot tests"),
   look at the changed images and commit them with the change.
-- Every PR runs: `make lint`, `swift test` in `SolitaireKit`, the `SolitaireTests` unit
+- The checks: `make lint`, `swift test` in `SolitaireKit`, the `SolitaireTests` unit
   tests, the String Catalog check, the `SolitaireSnapshotTests` and the
   `SolitaireUITests` on an iPhone simulator, then `LayoutUITests` (both
   orientations) and `KeyboardUITests` again on an iPad simulator. Run them all
   locally before opening a PR (commands in README.md; `make check-strings` for
-  the catalog).
+  the catalog). CI runs only lint and the engine tests on a PR, for now (the
+  simulator job takes too long), and everything on each push to `main`: check
+  that run after a merge.
 - The app icon is rendered from `Design/AppIcon.svg` by `swift
   Design/render_icons.swift` (CoreSVG: shapes, transforms and CSS variables
   only, no filters) into the three asset-catalog variants, light on the felt,

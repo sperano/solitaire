@@ -37,6 +37,9 @@ jobs:
 
   app:
     name: App unit and UI tests
+    # Off on pull requests for now: the simulator tests take too long there. They still run on
+    # every push to main, and before a PR locally (AGENTS.md).
+    if: github.event_name != 'pull_request'
     runs-on: macos-26
     env:
       # The snapshot images are recorded on this simulator; the tests skip on any other.

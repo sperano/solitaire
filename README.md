@@ -176,7 +176,7 @@ are not committed. The test skips in normal runs.
 | `Scripts/screenshots.sh` | Takes the App Store screenshots (see Releasing). |
 | `project.yml` | xcodegen definition of the Xcode project. |
 | `.swiftformat`, `.swiftlint.yml`, `Makefile` | Formatting and lint rules; `make lint` checks, `make format` rewrites. |
-| `.github/workflows/ci.yml` | Lints, then runs the package tests, the simulator tests and the snapshot tests, and checks the String Catalog, on every PR. |
+| `.github/workflows/ci.yml` | Lints and runs the package tests on every PR and push to `main`; on pushes to `main` only, for now, it also runs the simulator and snapshot tests and checks the String Catalog. |
 | `.github/workflows/release.yml` | On a version tag, archives the app and uploads it to TestFlight. |
 
 ## Testing
