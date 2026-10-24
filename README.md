@@ -112,6 +112,53 @@ Store Connect field (the layout fastlane deliver reads); `AppStoreMetadataTests`
 checks both languages have every field within the store's length limits.
 `LocalizationUITests` launches the app in French.
 
+## Releasing
+
+A release is a tag. Pushing `v<MARKETING_VERSION>` (the version in
+`project.yml`, three numbers, such as `v1.0.0`) on a commit of `main` whose CI
+passed runs `.github/workflows/release.yml`: it archives the app in Release,
+signs it with the App Store Connect API key and uploads it, and the build
+appears in TestFlight. The build number is the workflow's run number, so it
+grows with every upload; upload only through the workflow, or a build made in
+Xcode can take a number the workflow will reach later.
+
+```sh
+# after bumping MARKETING_VERSION in project.yml (xcodegen generate) and merging it
+git tag v1.0.0 origin/main && git push origin v1.0.0
+```
+
+The workflow needs four repository secrets:
+
+| Secret | What it is |
+| --- | --- |
+| `APP_STORE_CONNECT_API_KEY` | The `.p8` key file's contents (App Store Connect, Users and Access, Integrations; role Admin, which cloud-managed signing needs). |
+| `APP_STORE_CONNECT_KEY_ID` | The key's ID. |
+| `APP_STORE_CONNECT_ISSUER_ID` | The issuer ID shown above the keys. |
+| `APPLE_TEAM_ID` | The team ID (Membership details in the developer account). |
+
+Before the first upload, the app record must exist in App Store Connect, with
+the bundle ID `quebec.spe.Solitaire`.
+
+The store listing is under `AppStore/metadata/`: name, subtitle, description,
+keywords, promotional text, privacy policy and support URLs per language, and
+the copyright and category (fastlane deliver reads this layout, or copy the
+fields into App Store Connect). From the second version on, each language gets
+a `release_notes.txt` for the version; the first version takes none.
+`AppStoreMetadataTests` checks the fields and their length limits. The privacy
+policy is `PRIVACY.md` (`PRIVACY.fr-CA.md` in French).
+
+Privacy: `Solitaire/Resources/PrivacyInfo.xcprivacy` declares no tracking and
+no data collected, and the one API Apple asks a reason for, `UserDefaults`
+(settings the app keeps for itself). In App Store Connect the App Privacy
+answer is "Data Not Collected". `PrivacyManifestTests` fails if the code starts
+using another API that needs a reason before the manifest declares it.
+
+Screenshots: `Scripts/screenshots.sh` runs `ScreenshotUITests` on the 6.9-inch
+iPhone and the 13-inch iPad simulators (iOS 26.5), the two sizes App Store
+Connect requires, in English and French, with the status bar at 9:41, and
+writes `AppStore/screenshots/<locale>/`. Run it before a release; the images
+are not committed. The test skips in normal runs.
+
 ## Layout
 
 | Path | What it is |
@@ -122,11 +169,15 @@ checks both languages have every field within the store's length limits.
 | `SolitaireUITests/` | XCUITests that play the game through the accessibility tree. |
 | `SolitaireSnapshotTests/` | Image comparisons of the cards, the board (also at three screen sizes in both orientations), the win panel and Settings against the PNGs in `__Snapshots__`. |
 | `Design/` | The app icon's source artwork (`AppIcon.svg`) and the script that renders the icon variants from it. |
-| `AppStore/metadata/` | App Store name, subtitle, description, keywords and promotional text, in English and French. |
+| `AppStore/metadata/` | App Store name, subtitle, description, keywords, promotional text and URLs, in English and French, plus copyright and category. |
+| `AppStore/ExportOptions.plist` | How the release workflow signs and uploads the archive. |
+| `PRIVACY.md`, `PRIVACY.fr-CA.md` | The privacy policy the App Store listing links to. |
 | `Scripts/string-catalog.sh` | Syncs or checks the String Catalog against the strings the compiler extracted (`make strings`, `make check-strings`). |
+| `Scripts/screenshots.sh` | Takes the App Store screenshots (see Releasing). |
 | `project.yml` | xcodegen definition of the Xcode project. |
 | `.swiftformat`, `.swiftlint.yml`, `Makefile` | Formatting and lint rules; `make lint` checks, `make format` rewrites. |
 | `.github/workflows/ci.yml` | Lints, then runs the package tests, the simulator tests and the snapshot tests, and checks the String Catalog, on every PR. |
+| `.github/workflows/release.yml` | On a version tag, archives the app and uploads it to TestFlight. |
 
 ## Testing
 

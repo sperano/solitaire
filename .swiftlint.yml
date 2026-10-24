@@ -19,6 +19,8 @@ included:
 excluded:
   - Solitaire.xcodeproj
   - SolitaireKit/.build
+  # make strings and the release archive build here, package checkouts included
+  - build
 
 opt_in_rules:
   - closure_spacing
