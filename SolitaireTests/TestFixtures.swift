@@ -32,3 +32,10 @@ extension Game {
         return game
     }
 }
+
+/// Records the haptics a view model plays.
+@MainActor
+final class HapticsSpy: HapticPlayer {
+    private(set) var played: [HapticEvent] = []
+    func play(_ event: HapticEvent) { played.append(event) }
+}

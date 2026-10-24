@@ -2,12 +2,6 @@ import SolitaireKit
 import XCTest
 @testable import Solitaire
 
-@MainActor
-private final class HapticsSpy: HapticPlayer {
-    private(set) var played: [HapticEvent] = []
-    func play(_ event: HapticEvent) { played.append(event) }
-}
-
 /// Haptics and the drop the board animates from. Seed 42's tableau tops: 2♣ 8♣ Q♣ 5♥ 6♠ 5♣ A♥.
 @MainActor
 final class GameViewModelFeedbackTests: XCTestCase {

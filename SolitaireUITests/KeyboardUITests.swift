@@ -1,6 +1,6 @@
 import XCTest
 
-/// Hardware keyboard shortcuts: the space bar draws, ⌘Z undoes and ⌘N asks for a new game.
+/// Hardware keyboard shortcuts: the space bar draws, ⌘Z undoes, ⇧⌘Z redoes and ⌘N asks for a new game.
 final class KeyboardUITests: SolitaireUITestCase {
     private static let spaceKey = " "
     private static let undoKey = "z"
@@ -44,6 +44,16 @@ final class KeyboardUITests: SolitaireUITestCase {
         app.typeKey(Self.undoKey, modifierFlags: .command)
         expectCards(0, in: "waste")
         XCTAssertEqual(moves, "0")
+    }
+
+    func testShiftCommandZRedoes() {
+        tapStock()
+        app.typeKey(Self.undoKey, modifierFlags: .command)
+        expectCards(0, in: "waste")
+
+        app.typeKey(Self.undoKey, modifierFlags: [.command, .shift])
+        expectCards(1, in: "waste")
+        XCTAssertEqual(moves, "1")
     }
 
     func testCommandNAsksBeforeLosingAStartedGame() {

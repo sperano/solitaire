@@ -7,7 +7,7 @@ final class AccessibilityUITests: SolitaireUITestCase {
         "-UIPreferredContentSizeCategoryName",
         "UICTContentSizeCategoryAccessibilityXXXL",
     ]
-    private static let controls = ["hintButton", "undoButton", "newGameButton", "settingsButton"]
+    private static let controls = ["hintButton", "undoButton", "redoButton", "newGameButton", "settingsButton"]
     private static let stats = ["movesLabel", "timeLabel", "scoreLabel"]
     /// Sheets and pushes animate in; auditing mid-animation reports contrast against the moving backdrop.
     private static let settleTime: TimeInterval = 1.5
@@ -153,7 +153,8 @@ final class AccessibilityUITests: SolitaireUITestCase {
 
     func testControlsHaveNames() {
         let expected = [
-            "hintButton": "Hint", "undoButton": "Undo", "newGameButton": "New Game", "settingsButton": "Settings",
+            "hintButton": "Hint", "undoButton": "Undo", "redoButton": "Redo", "newGameButton": "New Game",
+            "settingsButton": "Settings",
         ]
         for (identifier, name) in expected {
             XCTAssertEqual(label(of: identifier), name, identifier)
