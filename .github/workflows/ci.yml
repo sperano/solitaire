@@ -10,6 +10,20 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  lint:
+    name: Lint
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install SwiftLint and SwiftFormat
+        run: brew install swiftlint swiftformat
+      - name: Show versions
+        run: swiftlint version && swiftformat --version
+      - name: SwiftFormat
+        run: swiftformat --lint --reporter github-actions-log .
+      - name: SwiftLint
+        run: swiftlint lint --strict --reporter github-actions-logging
+
   engine:
     name: SolitaireKit tests
     runs-on: macos-26

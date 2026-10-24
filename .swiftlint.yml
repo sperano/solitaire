@@ -1,0 +1,80 @@
+# SwiftLint (https://github.com/realm/SwiftLint). `make lint` runs it in strict mode, as CI does:
+# every warning fails. The limits are the ones AGENTS.md states.
+#
+# Not enabled, on purpose:
+# - no_magic_numbers: of its 47 findings, most were literals inside the definition of a named
+#   constant (`static let red = Color(red: 0.80, …)`, `1.0 / 60`), the rest 2s for halves and
+#   pairs; the rule cannot allow either, so the house rule stays a review rule (AGENTS.md).
+# - implicitly_unwrapped_optional: `var viewModel: GameViewModel!` set in setUp is the XCTest
+#   fixture pattern.
+included:
+  - Solitaire
+  - SolitaireTests
+  - SolitaireSnapshotTests
+  - SolitaireUITests
+  - SolitaireKit/Sources
+  - SolitaireKit/Tests
+  - SolitaireKit/Package.swift
+  - Design
+excluded:
+  - Solitaire.xcodeproj
+  - SolitaireKit/.build
+
+opt_in_rules:
+  - closure_spacing
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - fatal_error_message
+  - first_where
+  - flatmap_over_map_reduce
+  - identical_operands
+  - joined_default_parameter
+  - last_where
+  - legacy_multiple
+  - literal_expression_end_indentation
+  - modifier_order
+  - operator_usage_whitespace
+  - overridden_super_call
+  - prefer_self_type_over_type_of_self
+  - redundant_nil_coalescing
+  - redundant_type_annotation
+  - sorted_first_last
+  - toggle_bool
+  - unneeded_parentheses_in_closure_argument
+  - vertical_whitespace_closing_braces
+  - yoda_condition
+
+file_length:
+  warning: 500
+  error: 600
+function_body_length:
+  warning: 50
+  error: 80
+type_body_length:
+  warning: 400
+  error: 500
+line_length:
+  warning: 120
+  error: 160
+  ignores_urls: true
+  # A line that is a string literal alone (a log message, a sentence shown to the player) stays
+  # whole rather than being split and concatenated.
+  excluded_lines_patterns:
+    - '^\s*"'
+# SwiftFormat puts the brace of a wrapped condition or signature on its own line (its
+# wrapMultilineStatementBraces rule); this rule must agree.
+opening_brace:
+  ignore_multiline_statement_conditions: true
+  ignore_multiline_function_signatures: true
+trailing_comma:
+  mandatory_comma: true
+large_tuple:
+  warning: 3
+  error: 4
+identifier_name:
+  min_length: 2
+  excluded: [i, j, n, x, y, id, dx, dy, to, at, by]
