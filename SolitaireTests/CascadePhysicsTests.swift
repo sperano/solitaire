@@ -16,7 +16,8 @@ final class CascadePhysicsTests: XCTestCase {
             let points = physics.trajectory(launchNumber: number, from: Self.start)
             XCTAssertEqual(points.first, Self.start)
             let last = try XCTUnwrap(points.last)
-            let step = CascadePhysics.timeStep * (CascadePhysics.minimumHorizontalSpeed + Double(CascadePhysics.horizontalSpeedSpread))
+            let fastest = CascadePhysics.minimumHorizontalSpeed + Double(CascadePhysics.horizontalSpeedSpread)
+            let step = CascadePhysics.timeStep * fastest
             let nearEdge = last.x - Self.cardSize.width / 2 <= Self.bounds.minX + step
                 || last.x + Self.cardSize.width / 2 >= Self.bounds.maxX - step
             XCTAssertTrue(nearEdge, "launch \(number) ended at \(last)")
@@ -38,7 +39,10 @@ final class CascadePhysicsTests: XCTestCase {
     }
 
     func testTrajectoriesAreDeterministic() {
-        XCTAssertEqual(physics.trajectory(launchNumber: 7, from: Self.start), physics.trajectory(launchNumber: 7, from: Self.start))
+        XCTAssertEqual(
+            physics.trajectory(launchNumber: 7, from: Self.start),
+            physics.trajectory(launchNumber: 7, from: Self.start)
+        )
     }
 
     func testLaunchesAreSpacedEvenly() {

@@ -50,7 +50,12 @@ final class SolverTests: XCTestCase {
         }
         let partial = Rank.allCases.filter { $0 < .seven }
         let state = try XCTUnwrap(GameState.position(
-            foundations: [fullSuit(.clubs), fullSuit(.diamonds), partial.map { card($0, .hearts) }, partial.map { card($0, .spades) }],
+            foundations: [
+                fullSuit(.clubs),
+                fullSuit(.diamonds),
+                partial.map { card($0, .hearts) },
+                partial.map { card($0, .spades) },
+            ],
             tableau: [run(.spades, .hearts), run(.hearts, .spades)]
         ))
 
@@ -58,7 +63,7 @@ final class SolverTests: XCTestCase {
 
         guard case let .solved(moves) = report.outcome else { return XCTFail("\(report.outcome)") }
         XCTAssertEqual(moves.count, 2 * remaining.count)
-        XCTAssertTrue(moves.allSatisfy { if case .move(_, let to, 1) = $0 { to.isFoundation } else { false } })
+        XCTAssertTrue(moves.allSatisfy { if case let .move(_, to, 1) = $0 { to.isFoundation } else { false } })
     }
 
     // MARK: Deals
@@ -77,7 +82,8 @@ final class SolverTests: XCTestCase {
     func testSolutionRespectsVegasPassLimit() throws {
         let found = Solver().firstWinnableDeal(seeds: Self.measuredSeeds, drawMode: .three, scoringMode: .vegas)
         var state = try XCTUnwrap(found, "some measured seed is winnable within three passes")
-        guard case let .solved(moves) = Solver().solve(state).outcome else { return XCTFail("found but not solved again") }
+        guard case let .solved(moves) = Solver().solve(state).outcome
+        else { return XCTFail("found but not solved again") }
 
         for move in moves { try state.apply(move) }
         XCTAssertTrue(state.isWon)

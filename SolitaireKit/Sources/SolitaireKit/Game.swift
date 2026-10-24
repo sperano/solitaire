@@ -4,7 +4,12 @@ public struct Game: Hashable, Codable, Sendable {
     public private(set) var history: [GameState]
 
     public init(seed: UInt64, drawMode: DrawMode, scoringMode: ScoringMode = .none, carriedBalance: Int = 0) {
-        self.init(state: .deal(seed: seed, drawMode: drawMode, scoringMode: scoringMode, carriedBalance: carriedBalance))
+        self.init(state: .deal(
+            seed: seed,
+            drawMode: drawMode,
+            scoringMode: scoringMode,
+            carriedBalance: carriedBalance
+        ))
     }
 
     public init(state: GameState) {

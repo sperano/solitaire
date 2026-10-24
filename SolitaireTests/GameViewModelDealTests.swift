@@ -71,7 +71,10 @@ final class GameViewModelDealTests: XCTestCase {
 
         XCTAssertEqual(model.dealNumber, Self.otherSeed)
         XCTAssertEqual(model.state.drawMode, .three)
-        XCTAssertEqual(model.state, GameState.deal(seed: Self.otherSeed, drawMode: .three, scoringMode: settings.scoringMode))
+        XCTAssertEqual(
+            model.state,
+            GameState.deal(seed: Self.otherSeed, drawMode: .three, scoringMode: settings.scoringMode)
+        )
         XCTAssertEqual(statistics.statistics.overall.played, 1)
         XCTAssertEqual(statistics.statistics.overall.won, 0)
     }
@@ -86,7 +89,7 @@ final class GameViewModelDealTests: XCTestCase {
 
     // MARK: Winnable deals
 
-    func testNewGameWithWinnableDealsOnlySearchesOffTheBoardThenDealsAWinnableGame() async throws {
+    func testNewGameWithWinnableDealsOnlySearchesOffTheBoardThenDealsAWinnableGame() async {
         settings.winnableDealsOnly = true
         let model = makeModel(fixedSeed: nil)
         await waitForDealing(model)
@@ -140,7 +143,7 @@ final class GameViewModelDealTests: XCTestCase {
         XCTAssertEqual(model.dealNumber, Self.otherSeed)
     }
 
-    func testASavedGameIsResumedWithoutSearching() throws {
+    func testASavedGameIsResumedWithoutSearching() {
         settings.winnableDealsOnly = true
         let game = Game(seed: Self.otherSeed, drawMode: .one)
         let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: 0))

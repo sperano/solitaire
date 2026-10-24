@@ -51,7 +51,7 @@ final class GameStateDealTests: XCTestCase {
     }
 
     func testAllCardsAccountedForOnce() {
-        let all = state.stock + state.tableau.flatMap { $0 }
+        let all = state.stock + state.tableau.flatMap(\.self)
         XCTAssertEqual(Set(all.map(\.id)).count, Deck.cardCount)
     }
 

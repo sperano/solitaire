@@ -52,7 +52,13 @@ private struct FaceUpGestures: ViewModifier {
 
     func body(content: Content) -> some View {
         if enabled {
-            content.cardGestures(viewModel: viewModel, pile: pile, index: index, pileCount: pileCount, dropTarget: dropTarget)
+            content.cardGestures(
+                viewModel: viewModel,
+                pile: pile,
+                index: index,
+                pileCount: pileCount,
+                dropTarget: dropTarget
+            )
         } else {
             content
         }

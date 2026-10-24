@@ -22,7 +22,10 @@ final class DealNumberTests: XCTestCase {
         XCTAssertNil(DealNumber.parse(""))
         XCTAssertNil(DealNumber.parse("abc"))
         XCTAssertNil(DealNumber.parse("0"))
-        XCTAssertEqual(DealNumber.parse(String(GameState.dealNumberRange.upperBound)), GameState.dealNumberRange.upperBound)
+        XCTAssertEqual(
+            DealNumber.parse(String(GameState.dealNumberRange.upperBound)),
+            GameState.dealNumberRange.upperBound
+        )
         XCTAssertNil(DealNumber.parse(String(GameState.dealNumberRange.upperBound + 1)))
         XCTAssertNil(DealNumber.parse("99999999999999999999999"), "longer than any UInt64")
     }

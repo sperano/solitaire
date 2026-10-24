@@ -52,6 +52,9 @@ an iPad to see them.
 - Xcode 26 or later to build
 - [xcodegen](https://github.com/yonaskolb/XcodeGen) to regenerate the project
   (`brew install xcodegen`)
+- [SwiftLint](https://github.com/realm/SwiftLint) and
+  [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) for `make lint`
+  (`brew install swiftlint swiftformat`)
 
 ## Building
 
@@ -94,11 +97,15 @@ board paints, so the game appears without a flash. `AppIconTests` and
 | `SolitaireSnapshotTests/` | Image comparisons of the cards, the board (also at three screen sizes in both orientations), the win panel and Settings against the PNGs in `__Snapshots__`. |
 | `Design/` | The app icon's source artwork (`AppIcon.svg`) and the script that renders the icon variants from it. |
 | `project.yml` | xcodegen definition of the Xcode project. |
-| `.github/workflows/ci.yml` | Runs the package tests, the simulator tests and the snapshot tests on every PR. |
+| `.swiftformat`, `.swiftlint.yml`, `Makefile` | Formatting and lint rules; `make lint` checks, `make format` rewrites. |
+| `.github/workflows/ci.yml` | Lints, then runs the package tests, the simulator tests and the snapshot tests on every PR. |
 
 ## Testing
 
 ```sh
+# Formatting and lint, as CI checks them; `make format` rewrites what SwiftFormat can fix
+make lint
+
 # Engine, fast, no simulator needed
 cd SolitaireKit && swift test
 

@@ -39,9 +39,9 @@ final class DeckTests: XCTestCase {
     func testGeneratorReproducesSequence() {
         var first = SeededRandomNumberGenerator(seed: seedA)
         var second = SeededRandomNumberGenerator(seed: seedA)
-        let a = (0 ..< sampleCount).map { _ in first.next() }
-        let b = (0 ..< sampleCount).map { _ in second.next() }
-        XCTAssertEqual(a, b)
+        let firstSamples = (0 ..< sampleCount).map { _ in first.next() }
+        let secondSamples = (0 ..< sampleCount).map { _ in second.next() }
+        XCTAssertEqual(firstSamples, secondSamples)
     }
 
     func testGeneratorDiffersAcrossSeedsAndAdvances() {

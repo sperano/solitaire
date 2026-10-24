@@ -14,7 +14,7 @@ struct AppEnvironment {
     private static let statisticsFileName = "statistics.json"
     /// UI-test steps can take longer than a hint normally stays up on a slow CI runner, so under
     /// `--ui-testing` a hint lasts until the next move; unit tests cover the timeout.
-    private static let uiTestingHintDuration = Duration.seconds(3600)
+    private static let uiTestingHintDuration = Duration.seconds(3_600)
 
     let store: any GameStore
     /// One instance for the whole app: each `StatisticsModel` saves its full copy of the statistics.
@@ -48,11 +48,14 @@ struct AppEnvironment {
         let defaults = UserDefaults(suiteName: uiTestingDefaultsSuite) ?? .standard
         defaults.removePersistentDomain(forName: uiTestingDefaultsSuite)
         let settings = GameSettings(defaults: defaults)
-        if let raw = value(after: drawModeArgument, in: arguments), let mode = Int(raw).flatMap(DrawMode.init(rawValue:)) {
+        if let raw = value(after: drawModeArgument, in: arguments),
+           let mode = Int(raw).flatMap(DrawMode.init(rawValue:))
+        {
             settings.drawMode = mode
         }
         if let raw = value(after: scoringModeArgument, in: arguments),
-           let mode = Int(raw).flatMap(ScoringMode.init(rawValue:)) {
+           let mode = Int(raw).flatMap(ScoringMode.init(rawValue:))
+        {
             settings.scoringMode = mode
         }
         if value(after: winnableDealsOnlyArgument, in: arguments) == "1" {
@@ -61,7 +64,10 @@ struct AppEnvironment {
         let seed = value(after: seedArgument, in: arguments).flatMap { UInt64($0) }
         let position = value(after: FixturePosition.argument, in: arguments).flatMap(FixturePosition.init(rawValue:))
         let saved = position.map {
-            SavedGame(game: Game(state: $0.state(drawMode: settings.drawMode, scoringMode: settings.scoringMode)), elapsedSeconds: 0)
+            SavedGame(
+                game: Game(state: $0.state(drawMode: settings.drawMode, scoringMode: settings.scoringMode)),
+                elapsedSeconds: 0
+            )
         }
         return AppEnvironment(
             store: InMemoryGameStore(saved: saved),

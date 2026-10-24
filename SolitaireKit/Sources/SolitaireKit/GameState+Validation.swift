@@ -2,7 +2,7 @@ extension GameState {
     /// Every card appears exactly once and the board has the right number of piles.
     public var isStructurallyValid: Bool {
         guard foundations.count == Self.foundationCount, tableau.count == Self.tableauColumnCount else { return false }
-        return Deck.isComplete(stock + waste + foundations.flatMap { $0 } + tableau.flatMap { $0 })
+        return Deck.isComplete(stock + waste + foundations.flatMap(\.self) + tableau.flatMap(\.self))
     }
 
     /// Cards dealt to the stock; nothing ever returns to the stock or waste, so together they never hold more.
@@ -28,7 +28,8 @@ extension GameState {
     /// A Vegas balance may be negative.
     var isValidScoring: Bool {
         guard (0 ... moveCount).contains(recycleCount), Scoring.scoreRange.contains(score) else { return false }
-        if let limit = Scoring.recycleLimit(mode: scoringMode, drawMode: drawMode), recycleCount > limit { return false }
+        if let limit = Scoring.recycleLimit(mode: scoringMode, drawMode: drawMode),
+           recycleCount > limit { return false }
         switch scoringMode {
         case .none: return score == 0
         case .standard: return score >= 0

@@ -1,8 +1,8 @@
-extension GameState {
+public extension GameState {
     /// A position built from explicit piles, for test and UI-test fixtures. Missing foundations and
     /// tableau columns are empty. Returns nil when legal play could not reach the position
     /// (see `isValidPosition`).
-    public static func position(
+    static func position(
         stock: [Card] = [],
         waste: [Card] = [],
         foundations: [[Card]] = [],

@@ -15,10 +15,18 @@ final class FlightPlannerTests: XCTestCase {
             .waste: CGRect(origin: CGPoint(x: 60, y: 10), size: metrics.cardSize),
         ]
         for (index, pile) in PileID.allFoundations.enumerated() {
-            frames[pile] = CGRect(origin: CGPoint(x: 160 + CGFloat(index) * Self.columnStride, y: 10), size: metrics.cardSize)
+            frames[pile] = CGRect(
+                origin: CGPoint(x: 160 + CGFloat(index) * Self.columnStride, y: 10),
+                size: metrics.cardSize
+            )
         }
         for (index, pile) in PileID.allTableau.enumerated() {
-            frames[pile] = CGRect(x: 8 + CGFloat(index) * Self.columnStride, y: 100, width: metrics.cardWidth, height: Self.tableauHeight)
+            frames[pile] = CGRect(
+                x: 8 + CGFloat(index) * Self.columnStride,
+                y: 100,
+                width: metrics.cardWidth,
+                height: Self.tableauHeight
+            )
         }
         return FlightPlanner(geometry: BoardGeometry(metrics: metrics, pileFrames: frames))
     }
@@ -34,7 +42,10 @@ final class FlightPlannerTests: XCTestCase {
         let flight = try XCTUnwrap(flights.first)
         XCTAssertEqual(flights.count, 1)
         XCTAssertEqual(flight.from, planner.geometry.frame(of: CardSlot(pile: .tableau(6), index: 6), in: dealt))
-        XCTAssertEqual(flight.to, planner.geometry.frame(of: CardSlot(pile: .foundation(0), index: 0), in: try moveAce()))
+        XCTAssertEqual(
+            flight.to,
+            planner.geometry.frame(of: CardSlot(pile: .foundation(0), index: 0), in: try moveAce())
+        )
         XCTAssertEqual(flight.delay, 0)
         XCTAssertEqual(flight.duration, FlightPlanner.moveSeconds)
     }
@@ -57,11 +68,22 @@ final class FlightPlannerTests: XCTestCase {
         let flights = planner.deal(dealt)
         let stock = try XCTUnwrap(planner.geometry.frame(of: CardSlot(pile: .stock, index: 0), in: dealt))
         XCTAssertEqual(flights.count, GameState.tableauCardCount)
-        XCTAssertTrue(flights.allSatisfy { $0.from == stock && !$0.before.isFaceUp && $0.duration == FlightPlanner.dealSeconds })
+        for flight in flights {
+            XCTAssertEqual(flight.from, stock)
+            XCTAssertFalse(flight.before.isFaceUp)
+            XCTAssertEqual(flight.duration, FlightPlanner.dealSeconds)
+        }
         // The first row goes across all seven columns before the second row starts.
         XCTAssertEqual(flights.prefix(GameState.tableauColumnCount).map(\.after.id), dealt.tableau.map { $0[0].id })
-        XCTAssertEqual(flights.map(\.delay), (0 ..< flights.count).map { Double($0) * FlightPlanner.dealStaggerSeconds })
-        XCTAssertEqual(flights.filter(\.after.isFaceUp).count, GameState.tableauColumnCount, "the top of each column lands face up")
+        XCTAssertEqual(
+            flights.map(\.delay),
+            (0 ..< flights.count).map { Double($0) * FlightPlanner.dealStaggerSeconds }
+        )
+        XCTAssertEqual(
+            flights.filter(\.after.isFaceUp).count,
+            GameState.tableauColumnCount,
+            "the top of each column lands face up"
+        )
     }
 
     func testNothingFliesBeforeThePilesAreLaidOut() throws {

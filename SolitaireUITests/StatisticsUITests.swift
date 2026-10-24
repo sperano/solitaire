@@ -16,7 +16,12 @@ final class StatisticsUITests: SolitaireUITestCase {
         XCTAssertTrue(element("statsPlayed").waitForExistence(timeout: Self.timeout))
     }
 
-    private func expectStat(_ identifier: String, _ expected: String, file: StaticString = #filePath, line: UInt = #line) {
+    private func expectStat(
+        _ identifier: String,
+        _ expected: String,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
         XCTAssertEqual(value(of: identifier), expected, identifier, file: file, line: line)
     }
 

@@ -97,7 +97,11 @@ final class GameViewModelAccessibilityTests: XCTestCase {
 
     func testMoveCardsPlaysTheChosenMove() {
         let model = makeModel()
-        XCTAssertTrue(model.moveCards(from: Self.fiveOfHeartsColumn, index: top(Self.fiveOfHeartsColumn, model), to: Self.sixOfSpadesColumn))
+        XCTAssertTrue(model.moveCards(
+            from: Self.fiveOfHeartsColumn,
+            index: top(Self.fiveOfHeartsColumn, model),
+            to: Self.sixOfSpadesColumn
+        ))
         XCTAssertEqual(model.state.pile(Self.sixOfSpadesColumn).last?.id, "5♥")
         XCTAssertEqual(model.moveCount, 1)
     }

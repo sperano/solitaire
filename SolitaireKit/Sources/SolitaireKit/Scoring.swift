@@ -46,11 +46,11 @@ public enum Scoring {
     static func score(after move: Move, from before: GameState, to after: GameState) -> Int {
         switch before.scoringMode {
         case .none:
-            return before.score
+            before.score
         case .standard:
-            return clamped(max(0, clamped(before.score) + standardPoints(for: move, from: before, to: after)))
+            clamped(max(0, clamped(before.score) + standardPoints(for: move, from: before, to: after)))
         case .vegas:
-            return clamped(clamped(before.score) + vegasPoints(for: move))
+            clamped(clamped(before.score) + vegasPoints(for: move))
         }
     }
 

@@ -53,7 +53,12 @@ final class LayoutUITests: SolitaireUITestCase {
             let target = element(pile)
             XCTAssertTrue(target.waitForExistence(timeout: Self.timeout), "\(pile) not found", file: file, line: line)
             frames[pile] = target.frame
-            XCTAssertTrue(window.contains(target.frame), "\(pile) at \(target.frame) leaves the window \(window)", file: file, line: line)
+            XCTAssertTrue(
+                window.contains(target.frame),
+                "\(pile) at \(target.frame) leaves the window \(window)",
+                file: file,
+                line: line
+            )
         }
         let topRowBottom = (["stock", "waste"] + (0 ..< Self.foundationCount).map { "foundation-\($0)" })
             .compactMap { frames[$0]?.maxY }.max() ?? 0

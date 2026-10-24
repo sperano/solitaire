@@ -7,7 +7,7 @@
 
 import AppKit
 
-let iconSize = 1024
+let iconSize = 1_024
 let designDirectory = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
 let source = designDirectory.appendingPathComponent("AppIcon.svg")
 let iconSet = designDirectory.deletingLastPathComponent()

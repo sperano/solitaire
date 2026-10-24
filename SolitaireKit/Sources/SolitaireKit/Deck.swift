@@ -12,10 +12,10 @@ public struct SeededRandomNumberGenerator: RandomNumberGenerator, Sendable {
 
     public mutating func next() -> UInt64 {
         state &+= Self.increment
-        var z = state
-        z = (z ^ (z >> 30)) &* Self.multiplierA
-        z = (z ^ (z >> 27)) &* Self.multiplierB
-        return z ^ (z >> 31)
+        var mixed = state
+        mixed = (mixed ^ (mixed >> 30)) &* Self.multiplierA
+        mixed = (mixed ^ (mixed >> 27)) &* Self.multiplierB
+        return mixed ^ (mixed >> 31)
     }
 }
 

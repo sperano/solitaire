@@ -1,8 +1,8 @@
-extension Solver {
+public extension Solver {
     /// The first of `seeds` whose deal, in the given modes, the solver wins. Nil when none does, or
     /// when `isCancelled` stops the search. `carriedBalance` only matters for the Vegas balance the
     /// deal starts from; the solver ignores the score.
-    public func firstWinnableDeal(
+    func firstWinnableDeal(
         seeds: some Sequence<UInt64>, drawMode: DrawMode, scoringMode: ScoringMode, carriedBalance: Int = 0,
         isCancelled: () -> Bool = { false }
     ) -> GameState? {

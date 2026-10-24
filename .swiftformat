@@ -1,0 +1,20 @@
+# SwiftFormat (https://github.com/nicklockwood/SwiftFormat). `make format` rewrites, `make lint`
+# only checks; CI runs the check. The options mirror the style the code already has.
+--swiftversion 6.0
+--exclude Solitaire.xcodeproj,SolitaireKit/.build,**/__Snapshots__
+
+--indent 4
+--maxwidth 120
+--commas always
+--semicolons never
+--decimalgrouping 3,4
+--importgrouping testable-bottom
+--stripunusedargs closure-only
+--wraparguments preserve
+--wrapparameters preserve
+--wrapcollections preserve
+--extensionacl on-extension
+--enable isEmpty
+# The code keeps short bodies on one line (`guard x else { return }`), writes `try` next to the
+# call it belongs to and groups private helpers in `private extension`s.
+--disable wrapIfStatementBodies,wrapIfExpressionBodies,wrapLoopBodies,wrapFunctionBodies,wrapPropertyBodies,hoistTry

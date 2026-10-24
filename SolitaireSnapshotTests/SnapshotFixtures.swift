@@ -36,7 +36,11 @@ enum SnapshotFixtures {
 
     /// The reference deal after `midGameMoveCount` suggested moves.
     static func midGame() -> Game {
-        var game = Game(seed: seed, drawMode: GameSettings.defaultDrawMode, scoringMode: GameSettings.defaultScoringMode)
+        var game = Game(
+            seed: seed,
+            drawMode: GameSettings.defaultDrawMode,
+            scoringMode: GameSettings.defaultScoringMode
+        )
         for _ in 0 ..< midGameMoveCount {
             guard let move = game.suggestedMove() else { break }
             try? game.perform(move)

@@ -17,13 +17,15 @@ final class ScoringTests: XCTestCase {
     }
 
     private func standard(score: Int = startingScore, drawMode: DrawMode = .one, tableau: [[Card]] = [],
-                          stock: [Card] = [], waste: [Card] = [], foundations: [[Card]] = []) -> GameState {
+                          stock: [Card] = [], waste: [Card] = [], foundations: [[Card]] = []) -> GameState
+    {
         blankState(drawMode: drawMode, scoringMode: .standard, score: score,
                    tableau: tableau, stock: stock, waste: waste, foundations: foundations)
     }
 
     private func vegas(drawMode: DrawMode = .one, tableau: [[Card]] = [], stock: [Card] = [],
-                       waste: [Card] = [], foundations: [[Card]] = []) -> GameState {
+                       waste: [Card] = [], foundations: [[Card]] = []) -> GameState
+    {
         blankState(drawMode: drawMode, scoringMode: .vegas,
                    tableau: tableau, stock: stock, waste: waste, foundations: foundations)
     }
@@ -50,7 +52,10 @@ final class ScoringTests: XCTestCase {
 
     func testTableauToFoundationScoresTen() throws {
         let state = standard(tableau: [[card(.ace, .hearts)]])
-        XCTAssertEqual(try points(.move(from: .tableau(0), to: .foundation(0), count: 1), state), Scoring.toFoundationPoints)
+        XCTAssertEqual(
+            try points(.move(from: .tableau(0), to: .foundation(0), count: 1), state),
+            Scoring.toFoundationPoints
+        )
     }
 
     func testMoveThatTurnsOverATableauCardAddsFive() throws {
@@ -59,7 +64,10 @@ final class ScoringTests: XCTestCase {
             try points(.move(from: .tableau(0), to: .foundation(0), count: 1), toFoundation),
             Scoring.toFoundationPoints + Scoring.flipPoints
         )
-        let toTableau = standard(tableau: [[card(.king, .clubs, up: false), card(.seven, .hearts)], [card(.eight, .spades)]])
+        let toTableau = standard(tableau: [
+            [card(.king, .clubs, up: false), card(.seven, .hearts)],
+            [card(.eight, .spades)],
+        ])
         XCTAssertEqual(try points(.move(from: .tableau(0), to: .tableau(1), count: 1), toTableau), Scoring.flipPoints)
     }
 
@@ -69,14 +77,21 @@ final class ScoringTests: XCTestCase {
     }
 
     func testFoundationToTableauCostsFifteen() throws {
-        let state = standard(tableau: [[card(.three, .spades)]], foundations: [[card(.ace, .hearts), card(.two, .hearts)]])
+        let state = standard(
+            tableau: [[card(.three, .spades)]],
+            foundations: [[card(.ace, .hearts), card(.two, .hearts)]]
+        )
         XCTAssertEqual(
             try points(.move(from: .foundation(0), to: .tableau(0), count: 1), state), Scoring.foundationToTableauPoints
         )
     }
 
     func testStandardScoreNeverDropsBelowZero() throws {
-        let state = standard(score: 0, tableau: [[card(.three, .spades)]], foundations: [[card(.ace, .hearts), card(.two, .hearts)]])
+        let state = standard(
+            score: 0,
+            tableau: [[card(.three, .spades)]],
+            foundations: [[card(.ace, .hearts), card(.two, .hearts)]]
+        )
         XCTAssertEqual(try applied(.move(from: .foundation(0), to: .tableau(0), count: 1), to: state).score, 0)
     }
 
@@ -109,7 +124,10 @@ final class ScoringTests: XCTestCase {
     // MARK: No scoring
 
     func testUnscoredGameStaysAtZero() throws {
-        var state = blankState(tableau: [[card(.two, .clubs, up: false), card(.ace, .hearts)]], waste: [card(.five, .clubs)])
+        var state = blankState(
+            tableau: [[card(.two, .clubs, up: false), card(.ace, .hearts)]],
+            waste: [card(.five, .clubs)]
+        )
         try state.apply(.move(from: .tableau(0), to: .foundation(0), count: 1))
         try state.apply(.draw)
         XCTAssertEqual(state.score, 0)
@@ -132,17 +150,24 @@ final class ScoringTests: XCTestCase {
 
     func testVegasPaysFivePerCardOnAFoundation() throws {
         let fromWaste = vegas(waste: [card(.ace, .hearts)])
-        XCTAssertEqual(try points(.move(from: .waste, to: .foundation(0), count: 1), fromWaste), Scoring.vegasPointsPerFoundationCard)
+        XCTAssertEqual(
+            try points(.move(from: .waste, to: .foundation(0), count: 1), fromWaste),
+            Scoring.vegasPointsPerFoundationCard
+        )
         let fromTableau = vegas(tableau: [[card(.two, .clubs, up: false), card(.ace, .hearts)]])
         XCTAssertEqual(
-            try points(.move(from: .tableau(0), to: .foundation(0), count: 1), fromTableau), Scoring.vegasPointsPerFoundationCard,
+            try points(.move(from: .tableau(0), to: .foundation(0), count: 1), fromTableau),
+            Scoring.vegasPointsPerFoundationCard,
             "turning a card over earns nothing in Vegas"
         )
     }
 
     func testVegasTakesFiveBackWhenACardLeavesAFoundation() throws {
         let state = vegas(tableau: [[card(.three, .spades)]], foundations: [[card(.ace, .hearts), card(.two, .hearts)]])
-        XCTAssertEqual(try points(.move(from: .foundation(0), to: .tableau(0), count: 1), state), -Scoring.vegasPointsPerFoundationCard)
+        XCTAssertEqual(
+            try points(.move(from: .foundation(0), to: .tableau(0), count: 1), state),
+            -Scoring.vegasPointsPerFoundationCard
+        )
     }
 
     func testVegasIgnoresMovesThatDoNotTouchAFoundation() throws {
@@ -225,8 +250,14 @@ final class ScoringTests: XCTestCase {
     func testScoreUpdatesStayInsideTheScoreRange() throws {
         var state = vegas(waste: [card(.ace, .hearts)])
         state.score = Scoring.scoreRange.upperBound
-        XCTAssertEqual(try applied(.move(from: .waste, to: .foundation(0), count: 1), to: state).score, Scoring.scoreRange.upperBound)
+        XCTAssertEqual(
+            try applied(.move(from: .waste, to: .foundation(0), count: 1), to: state).score,
+            Scoring.scoreRange.upperBound
+        )
         state.score = .max
-        XCTAssertEqual(try applied(.move(from: .waste, to: .foundation(0), count: 1), to: state).score, Scoring.scoreRange.upperBound)
+        XCTAssertEqual(
+            try applied(.move(from: .waste, to: .foundation(0), count: 1), to: state).score,
+            Scoring.scoreRange.upperBound
+        )
     }
 }

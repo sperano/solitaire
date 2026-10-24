@@ -23,6 +23,7 @@ final class GameViewModel {
     var isShowingSettings = false {
         didSet { syncTimer() }
     }
+
     /// The "Start a new game?" dialog is up; see `requestNewGame()`.
     var isConfirmingNewGame = false
     private(set) var isAutoCompleting = false
@@ -83,6 +84,7 @@ final class GameViewModel {
         let running = runStart.map { clock.now - $0 } ?? .zero
         return Int((bankedTime + running).components.seconds)
     }
+
     var isWon: Bool { game.isWon }
     var canUndo: Bool { game.canUndo && !isAutoCompleting && !isDealing }
     /// Player input is ignored while auto-complete plays the remaining cards or a deal is searched for.
@@ -288,7 +290,11 @@ final class GameViewModel {
     /// and installs it; until then `isDealing` is true. A new game or deal number cancels the search.
     private func searchWinnableDeal(startingWith first: UInt64) {
         isDealing = true
-        let (drawMode, scoringMode, carriedBalance) = (settings.drawMode, settings.scoringMode, settings.carriedVegasBalance)
+        let (drawMode, scoringMode, carriedBalance) = (
+            settings.drawMode,
+            settings.scoringMode,
+            settings.carriedVegasBalance
+        )
         dealTask = Task { [weak self] in
             let found = await DealSearch.winnableDeal(
                 startingWith: first, drawMode: drawMode, scoringMode: scoringMode, carriedBalance: carriedBalance
@@ -349,7 +355,8 @@ final class GameViewModel {
     private func recordWinIfNeeded() {
         guard game.isWon, !isResultRecorded else { return }
         statistics.recordWin(
-            gameID: gameID, drawMode: game.drawMode, seconds: settings.timed ? elapsedSeconds : nil, moves: game.moveCount
+            gameID: gameID, drawMode: game.drawMode, seconds: settings.timed ? elapsedSeconds : nil,
+            moves: game.moveCount
         )
         isResultRecorded = true
     }

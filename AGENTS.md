@@ -60,6 +60,16 @@ them. Never add a dependency or feature that sends data anywhere.
 - Named constants for every size, ratio, count and duration (`BoardMetrics`,
   `GameState.tableauColumnCount`, …). No magic numbers in views either.
 - Files ≤ ~500 lines, functions ≤ ~50 lines; split views into small structs.
+  `make lint` (SwiftFormat in check mode, then SwiftLint in strict mode: every
+  warning fails, as on CI) enforces these limits, a 120-column width, trailing
+  commas in multi-line collections and the rules in `.swiftlint.yml`;
+  `make format` rewrites what SwiftFormat can fix. Run `make lint` before a PR.
+  The magic-number rule is not enabled: it flags the literals that define a
+  named constant, so that rule stays a review rule. A line that is a string
+  literal alone may exceed the width; wrap a long sentence with a multi-line
+  literal and `\` instead of concatenating. Prefer rewriting a line the
+  formatter would wrap awkwardly (name an intermediate value) over a
+  `swiftformat:disable` comment.
 - Pile and card identity for tests: piles expose accessibility identifiers
   `stock`, `waste`, `foundation-N`, `tableau-N` with value `"<n> cards"`;
   cards are `card-<rank><suit letter>` (`card-10D`, `card-KS`). Controls:
@@ -118,10 +128,10 @@ them. Never add a dependency or feature that sends data anywhere.
   iPhone 17 simulator running iOS 26.5, which CI pins, and skip elsewhere.
   After a deliberate visual change, re-record (README, "Snapshot tests"),
   look at the changed images and commit them with the change.
-- Every PR runs: `swift test` in `SolitaireKit`, the `SolitaireTests` unit
+- Every PR runs: `make lint`, `swift test` in `SolitaireKit`, the `SolitaireTests` unit
   tests, the `SolitaireSnapshotTests` and the `SolitaireUITests` on an iPhone
   simulator, then `LayoutUITests` (both orientations) and `KeyboardUITests`
-  again on an iPad simulator. Run all four locally before opening a PR
+  again on an iPad simulator. Run all five locally before opening a PR
   (commands in README.md).
 - The app icon is rendered from `Design/AppIcon.svg` by `swift
   Design/render_icons.swift` (CoreSVG: shapes, transforms and CSS variables

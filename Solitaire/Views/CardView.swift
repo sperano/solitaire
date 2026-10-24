@@ -27,23 +27,26 @@ struct CardView: View {
 
     var body: some View {
         FlipView(isFaceUp: card.isFaceUp) { face } back: { back }
-            .animation(Motion.animation(.easeInOut(duration: Self.flipSeconds), reduceMotion: reduceMotion), value: card.isFaceUp)
-        // The glyphs are sized to the card, not to Dynamic Type; VoiceOver reads the card's name instead.
-        .accessibilityHidden(true)
-        .frame(width: metrics.cardWidth, height: metrics.cardHeight)
-        .overlay {
-            if isHinted {
-                shape.strokeBorder(Theme.hint, lineWidth: Self.hintBorderWidth)
+            .animation(
+                Motion.animation(.easeInOut(duration: Self.flipSeconds), reduceMotion: reduceMotion),
+                value: card.isFaceUp
+            )
+            // The glyphs are sized to the card, not to Dynamic Type; VoiceOver reads the card's name instead.
+            .accessibilityHidden(true)
+            .frame(width: metrics.cardWidth, height: metrics.cardHeight)
+            .overlay {
+                if isHinted {
+                    shape.strokeBorder(Theme.hint, lineWidth: Self.hintBorderWidth)
+                }
             }
-        }
-        // One element the size of the card, not one per rank and suit text inside it.
-        .accessibilityElement(children: .ignore)
-        .accessibilityIdentifier(card.accessibilityIdentifier)
-        .accessibilityLabel(Self.accessibilityLabel(for: card))
-        .accessibilityAddTraits(isHinted ? .isSelected : [])
-        // A copy flies above the board; this one appears, and can be touched, when it lands.
-        .opacity(cardsInFlight.contains(card.id) ? 0 : 1)
-        .allowsHitTesting(!cardsInFlight.contains(card.id))
+            // One element the size of the card, not one per rank and suit text inside it.
+            .accessibilityElement(children: .ignore)
+            .accessibilityIdentifier(card.accessibilityIdentifier)
+            .accessibilityLabel(Self.accessibilityLabel(for: card))
+            .accessibilityAddTraits(isHinted ? .isSelected : [])
+            // A copy flies above the board; this one appears, and can be touched, when it lands.
+            .opacity(cardsInFlight.contains(card.id) ? 0 : 1)
+            .allowsHitTesting(!cardsInFlight.contains(card.id))
     }
 
     private var shape: RoundedRectangle {

@@ -28,7 +28,8 @@ final class TestClock: GameClock, @unchecked Sendable {
         try await withTaskCancellationHandler {
             try Task.checkCancellation()
             try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, any Error>) in
-                lock.withLock { sleepers.append(Sleeper(id: id, deadline: current + duration, continuation: continuation)) }
+                let sleeper = Sleeper(id: id, deadline: current + duration, continuation: continuation)
+                lock.withLock { sleepers.append(sleeper) }
             }
         } onCancel: {
             remove(id)?.continuation.resume(throwing: CancellationError())
