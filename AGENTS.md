@@ -108,6 +108,10 @@ them. Never add a dependency or feature that sends data anywhere.
   use `HitTargetButtonStyle` (44 pt). `AccessibilityUITests` runs Xcode's
   accessibility audit on every screen; fix what it finds rather than adding
   to its ignore lists, which hold only documented false positives.
+- Keyboard UI tests: after a launch, the first ⌘ keystroke XCUITest
+  synthesizes is usually lost (any shortcut, however registered). A test
+  that sends ⌘ keys lives in `KeyboardUITests`, whose `setUp` primes ⌘
+  with an undo it can see; never retry the keystroke under test.
 - UI-test launch arguments: `--ui-testing` gives in-memory game and
   statistics stores and fresh defaults, and keeps a hint up until the next
   move (CI steps can outlast the normal 3 s). Only with it, `-seed <UInt64>` fixes the deal (required for a
