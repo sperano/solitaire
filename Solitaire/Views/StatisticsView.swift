@@ -10,11 +10,11 @@ struct StatisticsView: View {
 
         static var allCases: [Scope] { [.overall] + DrawMode.allCases.map(Scope.draw) }
 
-        var id: String { title }
+        var id: Self { self }
 
         var title: String {
             switch self {
-            case .overall: "All"
+            case .overall: String(localized: "All", comment: "Statistics of every draw mode together")
             case let .draw(mode): mode.title
             }
         }
@@ -82,11 +82,11 @@ struct StatisticsView: View {
     }
 
     /// A labelled value; nil shows a dash. The identifier carries the value for UI tests.
-    private func row(_ title: String, _ value: String?, id: String) -> some View {
+    private func row(_ title: LocalizedStringKey, _ value: String?, id: String) -> some View {
         LabeledContent(title, value: value ?? "—")
             .accessibilityElement(children: .ignore)
-            .accessibilityLabel(title)
-            .accessibilityValue(value ?? "none")
+            .accessibilityLabel(Text(title))
+            .accessibilityValue(value ?? String(localized: "none", comment: "Statistics: no value yet"))
             .accessibilityIdentifier(id)
     }
 }

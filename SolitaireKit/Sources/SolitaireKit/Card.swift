@@ -25,8 +25,6 @@ public enum Suit: String, CaseIterable, Codable, Hashable, Sendable {
         case .spades: "♠"
         }
     }
-
-    public var name: String { rawValue }
 }
 
 public enum Rank: Int, CaseIterable, Codable, Hashable, Comparable, Sendable {
@@ -50,24 +48,6 @@ public enum Rank: Int, CaseIterable, Codable, Hashable, Comparable, Sendable {
         default: String(rawValue)
         }
     }
-
-    public var name: String {
-        switch self {
-        case .ace: "ace"
-        case .two: "two"
-        case .three: "three"
-        case .four: "four"
-        case .five: "five"
-        case .six: "six"
-        case .seven: "seven"
-        case .eight: "eight"
-        case .nine: "nine"
-        case .ten: "ten"
-        case .jack: "jack"
-        case .queen: "queen"
-        case .king: "king"
-        }
-    }
 }
 
 public struct Card: Hashable, Codable, Sendable, Identifiable, CustomStringConvertible {
@@ -87,9 +67,6 @@ public struct Card: Hashable, Codable, Sendable, Identifiable, CustomStringConve
     public var color: CardColor { suit.color }
 
     public var description: String { id }
-
-    /// A human-readable name such as "seven of hearts".
-    public var name: String { "\(rank.name) of \(suit.name)" }
 
     public func faceUp() -> Card { Card(suit: suit, rank: rank, isFaceUp: true) }
 

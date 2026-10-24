@@ -20,9 +20,10 @@ struct CardView: View {
 
     /// "Seven of hearts, face up", or "Face-down card" for a card whose face is hidden.
     static func accessibilityLabel(for card: Card) -> String {
-        guard card.isFaceUp else { return "Face-down card" }
-        let name = card.name
-        return name.prefix(1).uppercased() + name.dropFirst() + ", face up"
+        guard card.isFaceUp else { return String(localized: "Face-down card") }
+        let name = card.spokenName
+        let capitalised = name.prefix(1).uppercased(with: .current) + name.dropFirst()
+        return String(localized: "\(capitalised), face up", comment: "A face-up card, its name capitalised")
     }
 
     var body: some View {

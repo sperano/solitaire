@@ -34,20 +34,20 @@ struct StatusBarView: View {
     @ViewBuilder private var stats: some View {
         stat(
             "\(viewModel.moveCount)", icon: "arrow.left.arrow.right",
-            identifier: "movesLabel", spoken: "\(viewModel.moveCount) moves"
+            identifier: "movesLabel", spoken: CountPhrase.moves(viewModel.moveCount)
         )
         if viewModel.settings.timed {
             stat(
                 viewModel.formattedTime,
                 icon: "clock",
                 identifier: "timeLabel",
-                spoken: "Time \(viewModel.formattedTime)"
+                spoken: String(localized: "Time \(viewModel.formattedTime)", comment: "Spoken time")
             )
         }
         if let score = viewModel.formattedScore {
             stat(
                 score, icon: viewModel.scoringMode == .vegas ? "dollarsign.circle" : "star",
-                identifier: "scoreLabel", spoken: "Score \(score)"
+                identifier: "scoreLabel", spoken: String(localized: "Score \(score)", comment: "The score")
             )
         }
     }

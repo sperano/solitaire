@@ -43,17 +43,27 @@ class SolitaireUITestCase: XCTestCase {
         return target.value as? String ?? ""
     }
 
+    /// The accessibility label of an element, e.g. "Column 1".
+    func label(of identifier: String) -> String {
+        let target = element(identifier)
+        XCTAssertTrue(target.waitForExistence(timeout: Self.timeout), "\(identifier) not found")
+        return target.label
+    }
+
     func cards(_ identifier: String) -> String { "\(value(of: identifier))" }
 
     func expectCards(_ count: Int, in identifier: String, file: StaticString = #filePath, line: UInt = #line) {
-        XCTAssertEqual(value(of: identifier), "\(count) cards", identifier, file: file, line: line)
+        XCTAssertEqual(value(of: identifier), Self.cardCount(count), identifier, file: file, line: line)
     }
 
-    /// The move counter, read from its accessibility label ("<n> moves").
+    /// A pile's accessibility value in English: "24 cards", "1 card".
+    static func cardCount(_ count: Int) -> String { count == 1 ? "1 card" : "\(count) cards" }
+
+    /// The move counter, read from its accessibility label ("<n> moves", "1 move").
     var moves: String {
         let label = element("movesLabel")
         XCTAssertTrue(label.waitForExistence(timeout: Self.timeout))
-        return label.label.replacingOccurrences(of: " moves", with: "")
+        return String(label.label.prefix(while: \.isNumber))
     }
 
     func tap(_ identifier: String) {

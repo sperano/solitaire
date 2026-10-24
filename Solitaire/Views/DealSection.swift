@@ -48,9 +48,11 @@ struct DealSection: View {
     }
 
     private var alertMessage: String {
-        let range = "A number from \(DealNumber.format(GameState.dealNumberRange.lowerBound)) "
-            + "to \(DealNumber.format(GameState.dealNumberRange.upperBound))."
-        return isGameStarted ? "\(range) The current game will be lost." : range
+        let lowest = DealNumber.format(GameState.dealNumberRange.lowerBound)
+        let highest = DealNumber.format(GameState.dealNumberRange.upperBound)
+        let range = String(localized: "A number from \(lowest) to \(highest).", comment: "Deal numbers allowed")
+        guard isGameStarted else { return range }
+        return [range, String(localized: "The current game will be lost.")].joined(separator: " ")
     }
 
     private func play() {

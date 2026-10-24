@@ -41,12 +41,14 @@ struct WinOverlayView: View {
 
     /// The moves, and the time when the game was timed.
     private var summary: String {
-        let moves = "\(viewModel.moveCount) moves"
-        return viewModel.settings.timed ? "\(moves) in \(viewModel.formattedTime)" : moves
+        let moves = CountPhrase.moves(viewModel.moveCount)
+        guard viewModel.settings.timed else { return moves }
+        return String(localized: "\(moves) in \(viewModel.formattedTime)", comment: "Win summary: moves, then time")
     }
 
     private func scoreSummary(_ score: String) -> String {
         let bonus = viewModel.timeBonus
-        return bonus > 0 ? "Score \(score), including a time bonus of \(bonus)" : "Score \(score)"
+        guard bonus > 0 else { return String(localized: "Score \(score)", comment: "The score") }
+        return String(localized: "Score \(score), including a time bonus of \(bonus)", comment: "Win summary")
     }
 }

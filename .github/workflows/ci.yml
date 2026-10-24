@@ -69,6 +69,9 @@ jobs:
           xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
             -destination "$SIMULATOR" -only-testing:SolitaireTests \
             CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions
+      - name: Check the String Catalog matches the code
+        # The unit tests built the app, so its extracted strings are in DerivedData.
+        run: Scripts/string-catalog.sh check ~/Library/Developer/Xcode/DerivedData
       - name: Snapshot tests
         id: snapshots
         env:

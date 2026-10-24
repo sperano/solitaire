@@ -77,12 +77,6 @@ final class AccessibilityUITests: SolitaireUITestCase {
         }
     }
 
-    private func label(of identifier: String) -> String {
-        let target = element(identifier)
-        XCTAssertTrue(target.waitForExistence(timeout: Self.timeout), "\(identifier) not found")
-        return target.label
-    }
-
     // MARK: Audits
 
     func testBoardPassesTheAudit() throws {

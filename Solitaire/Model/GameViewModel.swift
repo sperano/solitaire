@@ -113,7 +113,12 @@ final class GameViewModel {
         switch game.scoringMode {
         case .none: nil
         case .standard: "\(score)"
-        case .vegas: score < 0 ? "-$\(-score)" : "$\(score)"
+        case .vegas:
+            if score < 0 {
+                String(localized: "-$\(-score)", comment: "Vegas: a loss in dollars")
+            } else {
+                String(localized: "$\(score)", comment: "Vegas: dollars won")
+            }
         }
     }
 

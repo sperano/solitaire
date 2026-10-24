@@ -18,6 +18,9 @@ enum DealNumber {
 
     /// What the share sheet sends: the number and the draw mode it was dealt for.
     static func shareText(_ number: UInt64, drawMode: DrawMode) -> String {
-        "Solitaire deal \(format(number)), \(drawMode.title)"
+        String(
+            localized: "Solitaire deal \(format(number)), \(drawMode.title)",
+            comment: "Shared text: the deal number, then the draw mode"
+        )
     }
 }

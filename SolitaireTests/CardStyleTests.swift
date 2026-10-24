@@ -35,7 +35,7 @@ final class CardStyleTests: XCTestCase {
         let standard = CardStyle(isFourColour: true, isHighContrast: false)
         let contrast = CardStyle(isFourColour: true, isHighContrast: true)
         for suit in [Suit.hearts, .diamonds, .clubs] {
-            XCTAssertNotEqual(standard.ink(for: suit), contrast.ink(for: suit), suit.name)
+            XCTAssertNotEqual(standard.ink(for: suit), contrast.ink(for: suit), "\(suit)")
         }
     }
 
