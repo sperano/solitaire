@@ -161,7 +161,21 @@ them. Never add a dependency or feature that sends data anywhere.
   identifiers and persisted values never change with the language.
 - App Store text: `AppStore/metadata/<locale>/<field>.txt` (`en-US`, `fr-CA`;
   fastlane deliver's file names), within the limits `AppStoreMetadataTests`
-  checks.
+  checks; copyright and category sit in `AppStore/metadata/` itself. A
+  version after the first adds `release_notes.txt` in every language. A change
+  to what the app stores or shares updates `PRIVACY.md` and
+  `PRIVACY.fr-CA.md`.
+- Privacy manifest: `Solitaire/Resources/PrivacyInfo.xcprivacy` declares no
+  tracking, no data collected, and a reason for each required-reason API the
+  code uses (today only `UserDefaults`, CA92.1). `PrivacyManifestTests` scans
+  the app and engine sources for those APIs; using a new one means declaring
+  it with Apple's reason code, never silencing the test.
+- Releases: `MARKETING_VERSION` in `project.yml` is the version (three
+  numbers); pushing the tag `v<version>` on `main` runs `release.yml`, which
+  uploads to TestFlight with the run number as the build number. Never set
+  `CURRENT_PROJECT_VERSION` by hand. `Scripts/screenshots.sh` takes the store
+  screenshots through `ScreenshotUITests` (skipped in normal runs); a new
+  screen worth showing gets a shot there.
 
 ## Workflow
 

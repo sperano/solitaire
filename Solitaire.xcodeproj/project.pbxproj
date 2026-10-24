@@ -26,6 +26,7 @@
 		38460804E2B29B64FFC559CC /* GameCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52758A00445E17A5A14FD5E0 /* GameCommands.swift */; };
 		38AB843E0566EBAA6B7C7C01 /* MotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BAFB1C5226D95A0D7E50F5 /* MotionTests.swift */; };
 		38B01E8D8081AB17DD2EF326 /* DealSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D2EADB3DD1BC01219E341 /* DealSection.swift */; };
+		3C25D773A00DE8246084A520 /* AppVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D6E3341641352BE753E96 /* AppVersionTests.swift */; };
 		3EB3D86B022DD1893897B4D7 /* SolitaireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8230985F1F039EE51984B743 /* SolitaireApp.swift */; };
 		40B4A687B7569DD4A193E9E3 /* CardViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC904947FF9B0E2A53AE6B0 /* CardViewTests.swift */; };
 		41D64E1A5E4E00E5B2FA6912 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C1600364471C580C8AFC9 /* Hint.swift */; };
@@ -64,6 +65,7 @@
 		9B5B9122E93BB25C71168D05 /* WinOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD224867BFAD53B911B39CFE /* WinOverlayView.swift */; };
 		9CF7AAE057CB54267E0C30DF /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942057C3D489DB52DBF7854A /* StatisticsView.swift */; };
 		9F7BC3DCD4066751ABB0208E /* GameClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC0A903904492F9E906FD90 /* GameClock.swift */; };
+		A0D8527B5E64E1F01751E552 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D00D8AC9846C5C4A93682AB4 /* PrivacyInfo.xcprivacy */; };
 		A2396CF71287D2227A747069 /* FixturePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D4B6859C83EB913AA5478 /* FixturePosition.swift */; };
 		A29634B91720E5D883E02C56 /* SolitaireKit in Frameworks */ = {isa = PBXBuildFile; productRef = AFCA65B95D2B3B7A8A1F4034 /* SolitaireKit */; };
 		A63FADAFBD5D9F83672178A8 /* WinCascadeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABDB708AD758B0B1F751021 /* WinCascadeView.swift */; };
@@ -71,6 +73,7 @@
 		A85B601EBA0C55144F04E517 /* SolitaireKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2AD32F132760D3F980B3FF78 /* SolitaireKit */; };
 		A8AD1D3700BB1382FFCB8479 /* TimeFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3C2AC1F7EF071160AEF14 /* TimeFormatTests.swift */; };
 		AA81C4200B323DF6B683AD4F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 520B859C5DE834279455A43A /* Localizable.xcstrings */; };
+		AAB7ECB9E1BBC3F253222D0E /* ScreenshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4D2EB25DB72D6ADAB6654 /* ScreenshotUITests.swift */; };
 		AB2014E78153ACEF14E6CE9C /* StatisticsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F21B189AE3E496FAD43D4C /* StatisticsStore.swift */; };
 		ABB15B17161A6E57CB1DAD28 /* CardViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C2687632EB083BC0A75C7 /* CardViewSnapshotTests.swift */; };
 		B002FDD270DDCA9ECC97F0C6 /* SolitaireKit in Frameworks */ = {isa = PBXBuildFile; productRef = E7A25B48F008CD577B5110B6 /* SolitaireKit */; };
@@ -100,6 +103,7 @@
 		DEA4FF861166E068A7FBE34D /* FixturePositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFADFC04F90E520A7289AF43 /* FixturePositionTests.swift */; };
 		DF1E101BAF468C2CE98085E2 /* BoardAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB03A3CE6A7C5D00026264 /* BoardAccessibility.swift */; };
 		E190C276B50A878EAA8FB527 /* GameViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F47DC54139D8BC3BCD28092 /* GameViewSnapshotTests.swift */; };
+		E5A1D0A3C4402B29A8DCA635 /* PrivacyManifestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF8ADD6E59742AF2E73524 /* PrivacyManifestTests.swift */; };
 		E942F3E713E0245C91E2E5BF /* LocalizationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72392D4D8F0C655B928B4556 /* LocalizationUITests.swift */; };
 		EE5B294EC4E4C2A905134111 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88766F0F426DB5C2EA7FCF94 /* AppEnvironment.swift */; };
 		EFFDE84FAF73DA97300C8BD8 /* SolitaireUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6823827B75B372C9252C5178 /* SolitaireUITestCase.swift */; };
@@ -159,9 +163,11 @@
 		27F4F5C846AB56BC8BB68761 /* GameViewModelAccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelAccessibilityTests.swift; sourceTree = "<group>"; };
 		297809B5DAFBE5609BE6A757 /* DragInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragInfo.swift; sourceTree = "<group>"; };
 		2E9FE67FEA57B694C1D03C24 /* SolitaireUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SolitaireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EF4D2EB25DB72D6ADAB6654 /* ScreenshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotUITests.swift; sourceTree = "<group>"; };
 		33B10ABDB682FDB5C88ED4D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		393AD112551FA0E8666D008C /* GameViewModelStatisticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelStatisticsTests.swift; sourceTree = "<group>"; };
 		3B1AC4651384C9303A8D1309 /* LocalizableCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableCatalogTests.swift; sourceTree = "<group>"; };
+		3C4D6E3341641352BE753E96 /* AppVersionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionTests.swift; sourceTree = "<group>"; };
 		3EC904947FF9B0E2A53AE6B0 /* CardViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewTests.swift; sourceTree = "<group>"; };
 		4094C6E1FDC724871DBFB210 /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
 		419E549A994DD21713B1C2FE /* GameSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsTests.swift; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 		9BC2701B9E4C6572F6ECE1DD /* DealNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealNumber.swift; sourceTree = "<group>"; };
 		9CA3C2AC1F7EF071160AEF14 /* TimeFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatTests.swift; sourceTree = "<group>"; };
 		9E72480469AB4779F3DCB26F /* KeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardUITests.swift; sourceTree = "<group>"; };
+		A4CF8ADD6E59742AF2E73524 /* PrivacyManifestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyManifestTests.swift; sourceTree = "<group>"; };
 		A6421F0CD1091F7BD7090B7D /* FlightPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightPlannerTests.swift; sourceTree = "<group>"; };
 		A6935303D39BBF948A7FCF4B /* TopRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRowView.swift; sourceTree = "<group>"; };
 		A91D4B6859C83EB913AA5478 /* FixturePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturePosition.swift; sourceTree = "<group>"; };
@@ -226,6 +233,7 @@
 		C9B3EDA90A714CDCED34E3B2 /* DealUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealUITests.swift; sourceTree = "<group>"; };
 		CA56B0CC8CCA2A834F4C081C /* CardStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyleTests.swift; sourceTree = "<group>"; };
 		CB5D214114FBC3644DA2B0CC /* MoveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveUITests.swift; sourceTree = "<group>"; };
+		D00D8AC9846C5C4A93682AB4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D87A24FE0357FA76D76F03D9 /* AutoCompleteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteUITests.swift; sourceTree = "<group>"; };
 		DF3E92E0AA0BF34654D9FD1A /* FlightPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightPlanner.swift; sourceTree = "<group>"; };
 		DFADFC04F90E520A7289AF43 /* FixturePositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturePositionTests.swift; sourceTree = "<group>"; };
@@ -297,6 +305,7 @@
 				72392D4D8F0C655B928B4556 /* LocalizationUITests.swift */,
 				CB5D214114FBC3644DA2B0CC /* MoveUITests.swift */,
 				21705F50790032AA25E8FFCA /* ScoringUITests.swift */,
+				2EF4D2EB25DB72D6ADAB6654 /* ScreenshotUITests.swift */,
 				C11C43C337B1A4FC08D51F13 /* SettingsUITests.swift */,
 				6823827B75B372C9252C5178 /* SolitaireUITestCase.swift */,
 				7D8FFA1F11245E5DFC9DBE27 /* StatisticsUITests.swift */,
@@ -357,6 +366,7 @@
 			children = (
 				277300B5CAA4BC000529C6DC /* AppIconTests.swift */,
 				06406ADF18B04DCAF30CD1A0 /* AppStoreMetadataTests.swift */,
+				3C4D6E3341641352BE753E96 /* AppVersionTests.swift */,
 				0C3E585F7D0AC19F2F8E546F /* BoardAccessibilityTests.swift */,
 				F6209B6305B1B7C565AA6F27 /* BoardGeometryTests.swift */,
 				56401D3B2BDAC32D62730329 /* BoardMetricsTests.swift */,
@@ -383,6 +393,7 @@
 				C894AAA42C67B1AFC2CD7156 /* LaunchScreenTests.swift */,
 				3B1AC4651384C9303A8D1309 /* LocalizableCatalogTests.swift */,
 				21BAFB1C5226D95A0D7E50F5 /* MotionTests.swift */,
+				A4CF8ADD6E59742AF2E73524 /* PrivacyManifestTests.swift */,
 				941867F983BA26C752B76FD0 /* StatisticsModelTests.swift */,
 				C34371B9257945500E88A16E /* StatisticsStoreTests.swift */,
 				0C950F28864755D303F03118 /* TestClock.swift */,
@@ -434,6 +445,7 @@
 				33B10ABDB682FDB5C88ED4D4 /* Assets.xcassets */,
 				B2E3470629350F650DC87F1C /* Info.plist */,
 				520B859C5DE834279455A43A /* Localizable.xcstrings */,
+				D00D8AC9846C5C4A93682AB4 /* PrivacyInfo.xcprivacy */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -612,6 +624,7 @@
 			files = (
 				784834E1869D01A8907E171C /* Assets.xcassets in Resources */,
 				AA81C4200B323DF6B683AD4F /* Localizable.xcstrings in Resources */,
+				A0D8527B5E64E1F01751E552 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +694,7 @@
 				E942F3E713E0245C91E2E5BF /* LocalizationUITests.swift in Sources */,
 				91A48CAE8FCBBD6B6C4668DA /* MoveUITests.swift in Sources */,
 				29DBF2E362873348E4A9824E /* ScoringUITests.swift in Sources */,
+				AAB7ECB9E1BBC3F253222D0E /* ScreenshotUITests.swift in Sources */,
 				95D4F55C313ED60CB183BD5A /* SettingsUITests.swift in Sources */,
 				EFFDE84FAF73DA97300C8BD8 /* SolitaireUITestCase.swift in Sources */,
 				2BD6DCF7AB70BA4F447CF920 /* StatisticsUITests.swift in Sources */,
@@ -695,6 +709,7 @@
 			files = (
 				C10C78E7D988053BFD98581F /* AppIconTests.swift in Sources */,
 				47643202BB873427EC0358CF /* AppStoreMetadataTests.swift in Sources */,
+				3C25D773A00DE8246084A520 /* AppVersionTests.swift in Sources */,
 				B8B8432EFECFF7EE0C75D8FC /* BoardAccessibilityTests.swift in Sources */,
 				CDE6AF9F82D6562E70F5C8D7 /* BoardGeometryTests.swift in Sources */,
 				60D2732AF994FFB0ED448940 /* BoardMetricsTests.swift in Sources */,
@@ -721,6 +736,7 @@
 				5F5BD1B8DD3863297C47ADFE /* LaunchScreenTests.swift in Sources */,
 				0F3BD792FCD6CDC97F87298E /* LocalizableCatalogTests.swift in Sources */,
 				38AB843E0566EBAA6B7C7C01 /* MotionTests.swift in Sources */,
+				E5A1D0A3C4402B29A8DCA635 /* PrivacyManifestTests.swift in Sources */,
 				065FE93690D81108D276D615 /* StatisticsModelTests.swift in Sources */,
 				57BEBB78747D1EFC64BD3E2C /* StatisticsStoreTests.swift in Sources */,
 				89EDDC15B1068421FD04B16F /* TestClock.swift in Sources */,
@@ -933,7 +949,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -997,7 +1013,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

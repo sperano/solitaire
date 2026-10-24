@@ -1,7 +1,7 @@
 # SwiftFormat (https://github.com/nicklockwood/SwiftFormat). `make format` rewrites, `make lint`
 # only checks; CI runs the check. The options mirror the style the code already has.
 --swiftversion 6.0
---exclude Solitaire.xcodeproj,SolitaireKit/.build,**/__Snapshots__
+--exclude Solitaire.xcodeproj,SolitaireKit/.build,build,**/__Snapshots__
 
 --indent 4
 --maxwidth 120

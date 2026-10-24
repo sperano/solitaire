@@ -12,7 +12,9 @@ settings:
     SWIFT_VERSION: "6.0"
     SWIFT_STRICT_CONCURRENCY: complete
     GENERATE_INFOPLIST_FILE: YES
-    MARKETING_VERSION: "0.1.0"
+    # The version players see; a release is the tag v<MARKETING_VERSION> (see README, Releasing).
+    MARKETING_VERSION: "1.0.0"
+    # Local builds are build 1; the release workflow passes its run number, which only grows.
     CURRENT_PROJECT_VERSION: "1"
     CODE_SIGN_STYLE: Automatic
     # The compiler records every localisable string, so the catalog can be checked against the code.
