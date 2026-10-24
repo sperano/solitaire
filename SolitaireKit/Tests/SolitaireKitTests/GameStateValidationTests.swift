@@ -104,7 +104,7 @@ final class GameStateValidationTests: XCTestCase {
 
     func testScoredDealsAreValidPositions() {
         for mode in ScoringMode.allCases {
-            XCTAssertTrue(GameState.deal(seed: seed, drawMode: .one, scoringMode: mode).isValidPosition, mode.title)
+            XCTAssertTrue(GameState.deal(seed: seed, drawMode: .one, scoringMode: mode).isValidPosition, "\(mode)")
         }
     }
 

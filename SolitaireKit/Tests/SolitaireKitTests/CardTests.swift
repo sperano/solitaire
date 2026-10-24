@@ -72,11 +72,4 @@ final class CardTests: XCTestCase {
         XCTAssertGreaterThan(Rank.king, .queen)
         XCTAssertEqual(Rank.allCases.sorted(), Rank.allCases)
     }
-
-    func testNames() {
-        XCTAssertEqual(card(.seven, .hearts).name, "seven of hearts")
-        XCTAssertEqual(card(.ace, .spades).name, "ace of spades")
-        XCTAssertEqual(Rank.king.name, "king")
-        XCTAssertEqual(Suit.diamonds.name, "diamonds")
-    }
 }

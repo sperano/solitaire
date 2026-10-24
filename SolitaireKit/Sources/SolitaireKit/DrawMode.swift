@@ -6,11 +6,4 @@ public enum DrawMode: Int, Codable, CaseIterable, Sendable, Identifiable {
     public var id: Int { rawValue }
 
     public var cardsPerDraw: Int { rawValue }
-
-    public var title: String {
-        switch self {
-        case .one: "Draw 1"
-        case .three: "Draw 3"
-        }
-    }
 }

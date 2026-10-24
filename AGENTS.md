@@ -9,8 +9,9 @@ them. Never add a dependency or feature that sends data anywhere.
 - Swift 6 language mode with strict concurrency, SwiftUI, iOS 17+.
 - `SolitaireKit/` is a Swift package holding the engine. It must stay free of
   UIKit/SwiftUI and of Apple-only frameworks so `swift test` runs on macOS and
-  on CI without a simulator. Every public engine type is `Sendable`; game data
-  are value types. Decoding a `GameState` checks `isValidPosition` (pile
+  on CI without a simulator. It holds no text players read: card, suit and
+  mode names are in the app (`DisplayNames.swift`) so they can be localised.
+  Every public engine type is `Sendable`; game data are value types. Decoding a `GameState` checks `isValidPosition` (pile
   counts, each card once, face-up flags, foundations by suit from the ace,
   tableau runs, move counter range, score in range and recycle count the scoring mode
   allows) so a corrupt save never reaches the board. Scoring lives in the
@@ -71,7 +72,8 @@ them. Never add a dependency or feature that sends data anywhere.
   formatter would wrap awkwardly (name an intermediate value) over a
   `swiftformat:disable` comment.
 - Pile and card identity for tests: piles expose accessibility identifiers
-  `stock`, `waste`, `foundation-N`, `tableau-N` with value `"<n> cards"`;
+  `stock`, `waste`, `foundation-N`, `tableau-N` with value `"<n> cards"`
+  (`"1 card"`; UI tests run in English, `cardCount` in `SolitaireUITestCase`);
   cards are `card-<rank><suit letter>` (`card-10D`, `card-KS`). Controls:
   `undoButton`, `newGameButton`, `confirmNewGameButton`, `settingsButton`,
   `autoCompleteButton`, `hintButton` (shown instead of Finish),
@@ -129,10 +131,11 @@ them. Never add a dependency or feature that sends data anywhere.
   After a deliberate visual change, re-record (README, "Snapshot tests"),
   look at the changed images and commit them with the change.
 - Every PR runs: `make lint`, `swift test` in `SolitaireKit`, the `SolitaireTests` unit
-  tests, the `SolitaireSnapshotTests` and the `SolitaireUITests` on an iPhone
-  simulator, then `LayoutUITests` (both orientations) and `KeyboardUITests`
-  again on an iPad simulator. Run all five locally before opening a PR
-  (commands in README.md).
+  tests, the String Catalog check, the `SolitaireSnapshotTests` and the
+  `SolitaireUITests` on an iPhone simulator, then `LayoutUITests` (both
+  orientations) and `KeyboardUITests` again on an iPad simulator. Run them all
+  locally before opening a PR (commands in README.md; `make check-strings` for
+  the catalog).
 - The app icon is rendered from `Design/AppIcon.svg` by `swift
   Design/render_icons.swift` (CoreSVG: shapes, transforms and CSS variables
   only, no filters) into the three asset-catalog variants, light on the felt,
@@ -140,8 +143,25 @@ them. Never add a dependency or feature that sends data anywhere.
   the PNGs. The felt is the `Felt` colour asset: `Theme.felt`, the launch
   screen (`UILaunchScreen` in `project.yml`) and the icon's `--felt` variable
   must stay the same green (`LaunchScreenTests`, `AppIconTests`).
-- User-facing text is English for now; keep strings in the views so the
-  localisation task can move them into a String Catalog later.
+- Languages: English (the source) and French (Canada), in
+  `Solitaire/Resources/Localizable.xcstrings`. Never show a `String` the
+  catalog doesn't know: SwiftUI literals are looked up by themselves, text
+  built in code goes through `String(localized:)` with a whole sentence as the
+  key and the variable parts as arguments (never a sentence assembled from
+  fragments, though whole sentences may be joined; no `count == 1 ? "card" :
+  "cards"`: use the catalog's plural forms), and a
+  helper that takes a title takes `LocalizedStringKey`, not `String`. Give a
+  `comment:` when the English alone is ambiguous. After adding or changing a
+  string, build in Xcode or run `make strings`, then write its French; CI fails
+  while the catalog is behind the code, and `LocalizableCatalogTests` while a
+  key lacks French, a plural form or an argument the English has. French
+  follows Québec usage: *piger*, *pointage*, *boni*, a no-break space before a
+  colon and none before `!`, `?` and `;`. A card inside a sentence uses
+  `nameInSentence` (French adds the article: "le sept de cœur"). Accessibility
+  identifiers and persisted values never change with the language.
+- App Store text: `AppStore/metadata/<locale>/<field>.txt` (`en-US`, `fr-CA`;
+  fastlane deliver's file names), within the limits `AppStoreMetadataTests`
+  checks.
 
 ## Workflow
 

@@ -5,12 +5,4 @@ public enum ScoringMode: Int, Codable, CaseIterable, Sendable, Identifiable {
     case vegas = 2
 
     public var id: Int { rawValue }
-
-    public var title: String {
-        switch self {
-        case .none: "None"
-        case .standard: "Standard"
-        case .vegas: "Vegas"
-        }
-    }
 }

@@ -36,6 +36,7 @@ interrupts the game with something.
   same deal over
 - Winnable deals only (Settings → Rules): new games are dealt until a solver
   finds a way to win them
+- English and French (Canada), following the language set on the device
 
 ## Devices
 
@@ -86,6 +87,31 @@ The launch screen is the felt alone, from the same `Felt` colour asset the
 board paints, so the game appears without a flash. `AppIconTests` and
 `LaunchScreenTests` check the icon set and that the three greens agree.
 
+## Languages
+
+The app is in English and French (Canada). Every string the player reads or
+VoiceOver speaks is in the String Catalog `Solitaire/Resources/Localizable.xcstrings`:
+SwiftUI looks up the literals in `Text`, `Button`, `Toggle` and the like by
+themselves, and text built in code goes through `String(localized:)`. The
+compiler records every such string as it builds (`SWIFT_EMIT_LOC_STRINGS`), and
+building in Xcode adds new ones to the catalog. From the command line:
+
+```sh
+make strings          # add the strings the code uses to the catalog, mark unused ones stale
+make check-strings    # fail if the catalog is behind the code, as CI checks it
+```
+
+`LocalizableCatalogTests` fails until every key has a French translation, with
+every plural form and the same arguments as the English, and no key is stale.
+Card, suit and mode names live in the app (`DisplayNames.swift`), not in the
+engine. Ranks have a second form for use inside a sentence, because French
+says "le sept de cœur" where English says "seven of hearts".
+
+The App Store text is under `AppStore/metadata/<locale>/`, one file per App
+Store Connect field (the layout fastlane deliver reads); `AppStoreMetadataTests`
+checks both languages have every field within the store's length limits.
+`LocalizationUITests` launches the app in French.
+
 ## Layout
 
 | Path | What it is |
@@ -96,9 +122,11 @@ board paints, so the game appears without a flash. `AppIconTests` and
 | `SolitaireUITests/` | XCUITests that play the game through the accessibility tree. |
 | `SolitaireSnapshotTests/` | Image comparisons of the cards, the board (also at three screen sizes in both orientations), the win panel and Settings against the PNGs in `__Snapshots__`. |
 | `Design/` | The app icon's source artwork (`AppIcon.svg`) and the script that renders the icon variants from it. |
+| `AppStore/metadata/` | App Store name, subtitle, description, keywords and promotional text, in English and French. |
+| `Scripts/string-catalog.sh` | Syncs or checks the String Catalog against the strings the compiler extracted (`make strings`, `make check-strings`). |
 | `project.yml` | xcodegen definition of the Xcode project. |
 | `.swiftformat`, `.swiftlint.yml`, `Makefile` | Formatting and lint rules; `make lint` checks, `make format` rewrites. |
-| `.github/workflows/ci.yml` | Lints, then runs the package tests, the simulator tests and the snapshot tests on every PR. |
+| `.github/workflows/ci.yml` | Lints, then runs the package tests, the simulator tests and the snapshot tests, and checks the String Catalog, on every PR. |
 
 ## Testing
 

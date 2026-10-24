@@ -9,39 +9,50 @@ enum BoardAccessibility {
         let cards = state.pile(pile)
         switch pile {
         case .stock:
-            return cards.isEmpty ? "Stock, empty" : "Stock"
+            return cards.isEmpty ? String(localized: "Stock, empty") : String(localized: "Stock")
         case .waste:
-            return cards.last.map { "Waste, \($0.name) on top" } ?? "Waste, empty"
+            return cards.last.map { String(localized: "Waste, \($0.spokenName) on top") }
+                ?? String(localized: "Waste, empty")
         case let .foundation(index):
-            let name = "Foundation \(index + 1)"
-            return cards.last.map { "\(name), \($0.name) on top" } ?? "\(name), empty"
+            let number = index + 1
+            return cards.last.map { String(localized: "Foundation \(number), \($0.spokenName) on top") }
+                ?? String(localized: "Foundation \(number), empty")
         case let .tableau(index):
-            let name = "Column \(index + 1)"
-            let hidden = cards.count { !$0.isFaceUp }
-            if cards.isEmpty { return "\(name), empty" }
-            return hidden == 0 ? name : "\(name), \(hidden) face down"
+            return columnLabel(number: index + 1, cards: cards)
         }
+    }
+
+    private static func columnLabel(number: Int, cards: [Card]) -> String {
+        if cards.isEmpty { return String(localized: "Column \(number), empty") }
+        let hidden = cards.count { !$0.isFaceUp }
+        guard hidden > 0 else { return String(localized: "Column \(number)") }
+        let faceDown = String(localized: "\(hidden) face down", comment: "Face-down cards in a column")
+        return String(localized: "Column \(number), \(faceDown)", comment: "A column and its face-down cards")
     }
 
     /// What a double-tap on the stock does.
     static func stockHint(in state: GameState, canDraw: Bool) -> String {
-        if canDraw { return state.stock.isEmpty ? "Double-tap to turn the waste over" : "Double-tap to draw" }
-        return state.waste.isEmpty ? "" : "No passes left"
+        if canDraw {
+            return state.stock.isEmpty
+                ? String(localized: "Double-tap to turn the waste over")
+                : String(localized: "Double-tap to draw")
+        }
+        return state.waste.isEmpty ? "" : String(localized: "No passes left", comment: "Vegas: the stock is spent")
     }
 
     /// What a double-tap on a face-up card does, and where the custom actions are.
     static func cardHint(destinations: [PileID], from pile: PileID) -> String {
-        if destinations.isEmpty { return "No legal move" }
+        if destinations.isEmpty { return String(localized: "No legal move") }
         // A tap never takes a card off a foundation; only the actions do.
-        if pile.isFoundation { return "Swipe up or down to choose where to move it" }
-        return "Double-tap to move it to the best spot, or swipe up or down to choose"
+        if pile.isFoundation { return String(localized: "Swipe up or down to choose where to move it") }
+        return String(localized: "Double-tap to move it to the best spot, or swipe up or down to choose")
     }
 
     /// The custom action that sends a card to `destination`.
     static func actionTitle(for destination: PileID) -> String {
         switch destination {
-        case let .tableau(index): "Move to column \(index + 1)"
-        default: "Move to foundation"
+        case let .tableau(index): String(localized: "Move to column \(index + 1)")
+        default: String(localized: "Move to foundation")
         }
     }
 }

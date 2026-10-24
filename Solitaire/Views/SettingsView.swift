@@ -91,30 +91,41 @@ struct SettingsView: View {
 private extension SettingsView {
     var playFooter: String {
         let timer = settings.timed
-            ? "The clock pauses while the app is in the background or Settings are open."
-            : "Untimed: no clock, no time bonus and no best time."
-        return "\(timer) Finish automatically plays the remaining cards once every one can go to the foundations."
+            ? String(localized: "The clock pauses while the app is in the background or Settings are open.")
+            : String(localized: "Untimed: no clock, no time bonus and no best time.")
+        let finish = String(
+            localized: "Finish automatically plays the remaining cards once every one can go to the foundations."
+        )
+        return [timer, finish].joined(separator: " ")
     }
 
     var rulesFooter: String {
         var sentences: [String] = []
         if settings.scoringMode == .vegas {
             let passes = Scoring.vegasPasses(drawMode: settings.drawMode)
-            sentences.append(
-                "Vegas: each game costs $\(Scoring.vegasBuyIn), each card on a foundation pays "
-                    + "$\(Scoring.vegasPointsPerFoundationCard) (taken back if it leaves), "
-                    + "and \(settings.drawMode.title) allows "
-                    + "\(passes) \(passes == 1 ? "pass" : "passes") through the stock."
-            )
+            sentences.append(vegasRules(passes: passes))
         }
         if settings.winnableDealsOnly {
-            sentences.append("""
+            sentences.append(String(localized: """
             New games are dealt until the solver finds a way to win one; \
             a deal number you enter is played as it is.
-            """)
+            """))
         }
-        sentences.append("Changes take effect on the next game.")
+        sentences.append(String(localized: "Changes take effect on the next game."))
         return sentences.joined(separator: " ")
+    }
+
+    func vegasRules(passes: Int) -> String {
+        let buyIn = Scoring.vegasBuyIn, payout = Scoring.vegasPointsPerFoundationCard
+        let mode = settings.drawMode.title
+        let passCount = String(localized: "\(passes) passes", comment: "Vegas: times the stock can be gone through")
+        return String(
+            localized: """
+            Vegas: each game costs $\(buyIn), each card on a foundation pays $\(payout) \
+            (taken back if it leaves), and \(mode) allows \(passCount) through the stock.
+            """,
+            comment: "Vegas rules: the buy-in, the payout per card, the draw mode, the passes"
+        )
     }
 }
 
