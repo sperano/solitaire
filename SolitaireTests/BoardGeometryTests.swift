@@ -3,10 +3,10 @@ import XCTest
 @testable import Solitaire
 
 final class BoardGeometryTests: XCTestCase {
-    private static let boardWidth: CGFloat = 390
+    private static let boardSize = CGSize(width: 390, height: 844)
     private static let tableauHeight: CGFloat = 500
     private static let tolerance: CGFloat = 0.001
-    private let metrics = BoardMetrics(boardWidth: boardWidth)
+    private let metrics = BoardMetrics(boardSize: boardSize)
 
     private var pileFrames: [PileID: CGRect] {
         let size = metrics.cardSize

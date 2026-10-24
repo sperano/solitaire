@@ -23,6 +23,8 @@ final class GameViewModel {
     var isShowingSettings = false {
         didSet { syncTimer() }
     }
+    /// The "Start a new game?" dialog is up; see `requestNewGame()`.
+    var isConfirmingNewGame = false
     private(set) var isAutoCompleting = false
     /// A winnable deal is being searched for; the board shows the previous game and ignores input.
     private(set) var isDealing = false
@@ -128,6 +130,17 @@ final class GameViewModel {
             searchWinnableDeal(startingWith: UInt64.random(in: GameState.dealNumberRange))
         } else {
             install(Self.deal(seed: nil, settings: settings))
+        }
+    }
+
+    /// What the New Game button and its shortcut do: ask first when a started game would be lost;
+    /// a won game, an untouched deal and a board still waiting for a deal (its game is already
+    /// closed) start over at once.
+    func requestNewGame() {
+        if moveCount == 0 || isWon || isDealing {
+            newGame()
+        } else {
+            isConfirmingNewGame = true
         }
     }
 

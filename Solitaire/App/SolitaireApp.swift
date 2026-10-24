@@ -8,5 +8,8 @@ struct SolitaireApp: App {
         WindowGroup {
             GameView(viewModel: viewModel)
         }
+        .commands {
+            GameCommands(viewModel: viewModel)
+        }
     }
 }

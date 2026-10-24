@@ -2,15 +2,13 @@ import SolitaireKit
 import SwiftUI
 
 struct GameView: View {
-    private static let rowSpacing: CGFloat = 12
-    private static let verticalGapCount: CGFloat = 3
     /// The whole game screen, where the win cascade finds the foundations.
     private static let screenSpace = "game"
     private static let noHintPadding: CGFloat = 12
 
     @Bindable var viewModel: GameViewModel
     @State private var pileFrames: [PileID: CGRect] = [:]
-    @State private var boardWidth: CGFloat = 0
+    @State private var boardSize: CGSize = .zero
     /// Where the board starts on the game screen, below the status bar.
     @State private var boardOrigin: CGPoint = .zero
     @State private var flights: [ActiveFlight] = []
@@ -59,10 +57,9 @@ struct GameView: View {
 
     private var board: some View {
         GeometryReader { geometry in
-            let metrics = BoardMetrics(boardWidth: geometry.size.width)
-            // Vertical padding above and below, plus the gap between the two rows.
-            let tableauHeight = geometry.size.height - metrics.cardHeight - Self.verticalGapCount * Self.rowSpacing
-            VStack(spacing: Self.rowSpacing) {
+            let metrics = BoardMetrics(boardSize: geometry.size)
+            let tableauHeight = metrics.tableauHeight(boardHeight: geometry.size.height)
+            VStack(spacing: BoardMetrics.rowSpacing) {
                 TopRowView(viewModel: viewModel, metrics: metrics, dropTarget: dropTarget)
                     .zIndex(viewModel.drag?.source.isTableau == false ? 1 : 0)
                 HStack(alignment: .top, spacing: BoardMetrics.columnSpacing) {
@@ -71,7 +68,7 @@ struct GameView: View {
                             viewModel: viewModel,
                             metrics: metrics,
                             index: index,
-                            availableHeight: max(metrics.cardHeight, tableauHeight),
+                            availableHeight: tableauHeight,
                             dropTarget: dropTarget
                         )
                         .zIndex(viewModel.drag?.source == .tableau(index) ? 1 : 0)
@@ -79,7 +76,9 @@ struct GameView: View {
                 }
             }
             .padding(.horizontal, BoardMetrics.horizontalPadding)
-            .padding(.vertical, Self.rowSpacing)
+            .padding(.vertical, BoardMetrics.rowSpacing)
+            // Centred when the height, not the width, sets the card size (landscape, short windows).
+            .frame(maxWidth: .infinity)
             .environment(\.cardsInFlight, Set(flights.map(\.cardID)))
             .overlay(alignment: .topLeading) {
                 FlightLayer(flights: flights, metrics: metrics) { landed in
@@ -118,7 +117,7 @@ struct GameView: View {
     /// Flies the cards a move, draw, undo or auto-complete step carried to their new pile, or deals
     /// a new game from the stock. Nothing flies under Reduce Motion.
     private func startFlights(from old: BoardSnapshot, to new: BoardSnapshot) {
-        let planner = FlightPlanner(geometry: BoardGeometry(metrics: BoardMetrics(boardWidth: boardWidth), pileFrames: pileFrames))
+        let planner = FlightPlanner(geometry: BoardGeometry(metrics: BoardMetrics(boardSize: boardSize), pileFrames: pileFrames))
         // Hiding the landed cards must take effect in the frame they appear, never fade.
         withoutAnimation {
             if reduceMotion {
@@ -140,7 +139,7 @@ struct GameView: View {
     }
 
     private func measure(_ geometry: GeometryProxy) {
-        boardWidth = geometry.size.width
+        boardSize = geometry.size
         boardOrigin = geometry.frame(in: .named(Self.screenSpace)).origin
     }
 
@@ -153,7 +152,7 @@ struct GameView: View {
         // Starts once the winning card has landed, so it isn't on screen twice.
         return WinCascadeView(
             foundations: foundations, bounds: CGRect(origin: .zero, size: size),
-            metrics: BoardMetrics(boardWidth: boardWidth), delay: FlightPlanner.moveSeconds
+            metrics: BoardMetrics(boardSize: boardSize), delay: FlightPlanner.moveSeconds
         )
     }
 

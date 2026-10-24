@@ -26,12 +26,13 @@ final class CardViewSnapshotTests: SnapshotTestCase {
 /// the size the board draws cards on the snapshot device.
 private struct DeckSheet: View {
     /// The snapshot device's screen width, so the cards are the size the board draws them.
-    private static let boardWidth: CGFloat = 402
+    /// The iPhone 17 screen, so the cards are the size the board snapshots show.
+    private static let boardSize = CGSize(width: 402, height: 874)
 
     let style: CardStyle
 
     var body: some View {
-        let metrics = BoardMetrics(boardWidth: Self.boardWidth)
+        let metrics = BoardMetrics(boardSize: Self.boardSize)
         VStack(alignment: .leading, spacing: BoardMetrics.columnSpacing) {
             ForEach(Suit.allCases, id: \.self) { suit in
                 HStack(spacing: BoardMetrics.columnSpacing) {
