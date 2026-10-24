@@ -23,7 +23,7 @@
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>
-		<string>AccentColor</string>
+		<string>Felt</string>
 	</dict>
 	<key>UIRequiresFullScreen</key>
 	<false/>

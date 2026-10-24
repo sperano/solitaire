@@ -30,8 +30,9 @@ targets:
     info:
       path: Solitaire/Resources/Info.plist
       properties:
+        # The launch screen is the felt alone, so the board appears without a flash.
         UILaunchScreen:
-          UIColorName: AccentColor
+          UIColorName: Felt
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
           - UIInterfaceOrientationLandscapeLeft
