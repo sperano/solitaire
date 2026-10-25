@@ -21,6 +21,8 @@ interrupts the game with something.
 - Cards fly between piles, turn over and are dealt from the stock; a bouncing
   cascade celebrates the win; haptic feedback on moves, refused moves and the
   win (Settings → Play → Haptics)
+- Left-handed layout: stock and waste on the right of the top row, under the
+  left thumb (Settings → Play)
 - Accessibility: full VoiceOver play (every card and pile is described, and
   each card offers its legal moves as actions, so no drag is needed), Dynamic
   Type on the toolbar and settings, Reduce Motion, a high-contrast card style
@@ -220,8 +222,8 @@ launch ignores them all.
 [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing)
 and compares them pixel for pixel (within a small tolerance) with the PNGs
 committed under `SolitaireSnapshotTests/__Snapshots__`: every card face and
-the back in each card style, the board at the deal and mid-game with a lifted
-run, the win panel and the Settings screen, in light and dark mode, and the
+the back in each card style, the board at the deal, mid-game with a lifted
+run and left-handed with a fanned waste, the win panel and the Settings screen, in light and dark mode, and the
 board at the iPhone SE, iPhone Pro Max and iPad Pro sizes in both
 orientations (`LayoutSnapshotTests`, light mode, drawn at those sizes on the
 same simulator). The images are recorded on the iPhone 17 simulator running

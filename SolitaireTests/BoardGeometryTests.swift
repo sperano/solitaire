@@ -61,6 +61,21 @@ final class BoardGeometryTests: XCTestCase {
         XCTAssertEqual(BoardGeometry.visibleWasteCount(in: state), DrawMode.three.cardsPerDraw)
     }
 
+    func testLeftHandedWasteFansToTheLeft() throws {
+        var state = GameState.deal(seed: 42, drawMode: .three)
+        try state.apply(.draw)
+        let mirrored = BoardGeometry(metrics: metrics, pileFrames: pileFrames, topRow: TopRowLayout(isLeftHanded: true))
+        let wasteX = try XCTUnwrap(pileFrames[.waste]?.minX)
+        let xs = try (0 ..< state.waste.count).map {
+            try XCTUnwrap(mirrored.frame(of: CardSlot(pile: .waste, index: $0), in: state)).minX - wasteX
+        }
+        let expected = [0, -metrics.wasteFanOffset, -2 * metrics.wasteFanOffset]
+        XCTAssertEqual(xs.count, expected.count)
+        for (actual, wanted) in zip(xs, expected) {
+            XCTAssertEqual(actual, wanted, accuracy: Self.tolerance)
+        }
+    }
+
     func testNoFrameBeforeThePileIsLaidOut() {
         let geometry = BoardGeometry(metrics: metrics, pileFrames: [:])
         XCTAssertNil(geometry.frame(of: CardSlot(pile: .stock, index: 0), in: GameState.deal(seed: 1, drawMode: .one)))

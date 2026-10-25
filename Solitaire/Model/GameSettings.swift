@@ -14,6 +14,7 @@ final class GameSettings {
     static let hapticsKey = "haptics"
     static let winnableDealsOnlyKey = "winnableDealsOnly"
     static let timedKey = "timed"
+    static let leftHandedKey = "leftHanded"
     static let defaultDrawMode = DrawMode.one
     static let defaultScoringMode = ScoringMode.standard
 
@@ -66,6 +67,11 @@ final class GameSettings {
         didSet { defaults.set(timed, forKey: Self.timedKey) }
     }
 
+    /// Stock and waste on the right of the top row, under the left thumb. Takes effect at once.
+    var leftHanded: Bool {
+        didSet { defaults.set(leftHanded, forKey: Self.leftHandedKey) }
+    }
+
     init(defaults: UserDefaults) {
         self.defaults = defaults
         drawMode = DrawMode(rawValue: defaults.integer(forKey: Self.drawModeKey)) ?? Self.defaultDrawMode
@@ -79,6 +85,7 @@ final class GameSettings {
         haptics = defaults.object(forKey: Self.hapticsKey) as? Bool ?? true
         winnableDealsOnly = defaults.bool(forKey: Self.winnableDealsOnlyKey)
         timed = defaults.object(forKey: Self.timedKey) as? Bool ?? true
+        leftHanded = defaults.bool(forKey: Self.leftHandedKey)
     }
 
     /// The balance a new Vegas game starts from before the buy-in.

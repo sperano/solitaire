@@ -651,6 +651,26 @@
         }
       }
     },
+    "Left-handed layout" : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disposition pour gaucher"
+          }
+        }
+      }
+    },
+    "Left-handed layout puts the stock and the waste on the right." : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La disposition pour gaucher place la pioche et la défausse à droite."
+          }
+        }
+      }
+    },
     "Longest" : {
       "localizations" : {
         "fr-CA" : {

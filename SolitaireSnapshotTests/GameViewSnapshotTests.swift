@@ -15,4 +15,13 @@ final class GameViewSnapshotTests: SnapshotTestCase {
         model.drag = try XCTUnwrap(SnapshotFixtures.liftedRun(in: model.state), "no column holds a run to lift")
         try assertScreen(GameView(viewModel: model))
     }
+
+    /// Left-handed: stock and waste on the right, three drawn cards fanning left into the gap.
+    func testLeftHandedBoardWithAFannedWaste() throws {
+        var game = Game(seed: SnapshotFixtures.seed, drawMode: .three, scoringMode: GameSettings.defaultScoringMode)
+        try game.perform(.draw)
+        let model = SnapshotFixtures.viewModel(resuming: game)
+        model.settings.leftHanded = true
+        try assertScreen(GameView(viewModel: model))
+    }
 }

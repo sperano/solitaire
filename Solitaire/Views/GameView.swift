@@ -20,6 +20,8 @@ struct GameView: View {
         CardStyle(isFourColour: viewModel.settings.fourColorDeck, isHighContrast: contrast == .increased)
     }
 
+    private var topRow: TopRowLayout { TopRowLayout(isLeftHanded: viewModel.settings.leftHanded) }
+
     var body: some View {
         VStack(spacing: 0) {
             StatusBarView(viewModel: viewModel)
@@ -60,7 +62,7 @@ struct GameView: View {
             let metrics = BoardMetrics(boardSize: geometry.size)
             let tableauHeight = metrics.tableauHeight(boardHeight: geometry.size.height)
             VStack(spacing: BoardMetrics.rowSpacing) {
-                TopRowView(viewModel: viewModel, metrics: metrics, dropTarget: dropTarget)
+                TopRowView(viewModel: viewModel, metrics: metrics, layout: topRow, dropTarget: dropTarget)
                     .zIndex(viewModel.drag?.source.isTableau == false ? 1 : 0)
                 HStack(alignment: .top, spacing: BoardMetrics.columnSpacing) {
                     ForEach(0 ..< GameState.tableauColumnCount, id: \.self) { index in
@@ -119,7 +121,8 @@ struct GameView: View {
     private func startFlights(from old: BoardSnapshot, to new: BoardSnapshot) {
         let planner = FlightPlanner(geometry: BoardGeometry(
             metrics: BoardMetrics(boardSize: boardSize),
-            pileFrames: pileFrames
+            pileFrames: pileFrames,
+            topRow: topRow
         ))
         // Hiding the landed cards must take effect in the frame they appear, never fade.
         withoutAnimation {

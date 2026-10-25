@@ -7,6 +7,8 @@ struct BoardGeometry {
     let metrics: BoardMetrics
     /// Pile frames as the pile views report them (see `PileFramePreferenceKey`).
     let pileFrames: [PileID: CGRect]
+    /// Which way the waste fans, as `WasteView` draws it.
+    var topRow = TopRowLayout(isLeftHanded: false)
 
     /// The card's frame in `state`, or nil before the pile has been laid out.
     func frame(of slot: CardSlot, in state: GameState) -> CGRect? {
@@ -21,7 +23,8 @@ struct BoardGeometry {
             return pileFrame.origin
         case .waste:
             let fanIndex = max(0, slot.index - (cards.count - Self.visibleWasteCount(in: state)))
-            return CGPoint(x: pileFrame.minX + CGFloat(fanIndex) * metrics.wasteFanOffset, y: pileFrame.minY)
+            let fan = topRow.wasteFanDirection * CGFloat(fanIndex) * metrics.wasteFanOffset
+            return CGPoint(x: pileFrame.minX + fan, y: pileFrame.minY)
         case .tableau:
             let offsets = metrics.columnOffsets(for: cards, availableHeight: pileFrame.height)
             let offset = offsets.indices.contains(slot.index) ? offsets[slot.index] : 0

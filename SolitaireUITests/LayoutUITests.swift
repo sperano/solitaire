@@ -35,6 +35,28 @@ final class LayoutUITests: SolitaireUITestCase {
         XCTAssertEqual(moves, "2")
     }
 
+    func testLeftHandedLayoutPutsTheStockOnTheRight() {
+        tap("settingsButton")
+        let toggle = app.switches["leftHandedToggle"]
+        XCTAssertTrue(toggle.waitForExistence(timeout: Self.timeout))
+        XCTAssertEqual(toggle.value as? String, "0")
+        toggle.switches.firstMatch.tap()
+        tap("settingsDoneButton")
+
+        let window = app.frame
+        XCTAssertTrue(element("stock").waitForExistence(timeout: Self.timeout))
+        XCTAssertGreaterThan(element("stock").frame.minX, window.midX, "the stock is not on the right half")
+        let lastFoundation = element("foundation-\(Self.foundationCount - 1)").frame
+        XCTAssertGreaterThan(
+            element("waste").frame.minX,
+            lastFoundation.maxX,
+            "the waste is not right of the foundations"
+        )
+        expectBoardFits()
+        tapStock()
+        expectCards(1, in: "waste")
+    }
+
     private func rotate(to orientation: UIDeviceOrientation) {
         XCUIDevice.shared.orientation = orientation
         let window = app.frame

@@ -50,7 +50,10 @@ them. Never add a dependency or feature that sends data anywhere.
 - Layout: `BoardMetrics(boardSize:)` sizes the cards from the board's width
   and, when that is the tighter limit (landscape, a short Stage Manager
   window), from its height, with `tableauCardHeights` card heights kept for
-  the tableau; `GameView` centres the board. iPhone supports portrait and
+  the tableau; `GameView` centres the board. `TopRowLayout` orders the top
+  row: the left-handed setting puts the stock and waste on the right and fans
+  the waste left, and `BoardGeometry` takes the same layout so flights land
+  on the fanned cards. iPhone supports portrait and
   landscape, iPad every orientation plus Split View and Stage Manager
   (`UIRequiresFullScreen` is off in `project.yml`). Keyboard shortcuts live
   in `GameCommands` (scene commands, so the iPad's ⌘ overlay lists them):
@@ -83,7 +86,7 @@ them. Never add a dependency or feature that sends data anywhere.
   `winnableDealsOnlyToggle`, `dealNumberLabel` (value: the number),
   `shareDealButton`, `playDealButton`, `confirmPlayDealButton` (the alert's text
   field carries no identifier: alerts drop them; use `app.alerts.textFields`),
-  `timerToggle`, `autoFinishToggle`, `hapticsToggle`, `fourColorDeckToggle`, `settingsDoneButton`, `winNewGameButton`,
+  `timerToggle`, `autoFinishToggle`, `hapticsToggle`, `leftHandedToggle`, `fourColorDeckToggle`, `settingsDoneButton`, `winNewGameButton`,
   `statisticsLink`, `statisticsScopePicker`, `resetStatisticsButton`,
   `confirmResetStatisticsButton`; statistics rows `statsPlayed`, `statsWon`,
   `statsWinRate`, `statsBestTime`, `statsFewestMoves`, `statsCurrentStreak`,
