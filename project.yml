@@ -100,6 +100,10 @@ schemes:
     test:
       config: Debug
       gatherCoverageData: true
+      # The app only: not the test bundles or SnapshotTesting. The engine is measured by its own
+      # tests in CI (Scripts/coverage.sh engine).
+      coverageTargets:
+        - Solitaire
       targets:
         - SolitaireTests
         - SolitaireSnapshotTests

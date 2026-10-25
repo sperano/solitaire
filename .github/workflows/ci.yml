@@ -33,7 +33,10 @@ jobs:
         run: xcodebuild -version && swift --version
       - name: Run package tests
         working-directory: SolitaireKit
-        run: swift test --parallel
+        run: swift test --parallel --enable-code-coverage
+      - name: Coverage
+        # Fails when the engine's own tests cover less than the minimum in Scripts/coverage.sh.
+        run: Scripts/coverage.sh engine "$(cd SolitaireKit && swift test --show-codecov-path)"
 
   app:
     name: App unit and UI tests
@@ -71,6 +74,7 @@ jobs:
           set -o pipefail
           xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
             -destination "$SIMULATOR" -only-testing:SolitaireTests \
+            -resultBundlePath "$RUNNER_TEMP/unit.xcresult" \
             CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions
       - name: Check the String Catalog matches the code
         # The unit tests built the app, so its extracted strings are in DerivedData.
@@ -83,6 +87,7 @@ jobs:
           set -o pipefail
           xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
             -destination "$SNAPSHOT_SIMULATOR" -only-testing:SolitaireSnapshotTests \
+            -resultBundlePath "$RUNNER_TEMP/snapshots.xcresult" \
             CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions
       - name: Upload the failed snapshots and their diffs
         if: failure() && steps.snapshots.outcome == 'failure'
@@ -96,6 +101,7 @@ jobs:
           set -o pipefail
           xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
             -destination "$SIMULATOR" -only-testing:SolitaireUITests \
+            -resultBundlePath "$RUNNER_TEMP/ui.xcresult" \
             CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions
       - name: Pick an iPad simulator
         run: |
@@ -112,3 +118,9 @@ jobs:
             -destination "$IPAD_SIMULATOR" \
             -only-testing:SolitaireUITests/LayoutUITests -only-testing:SolitaireUITests/KeyboardUITests \
             CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions
+      - name: Coverage
+        # The app's lines run by the iPhone unit, snapshot and UI tests together; a report, no minimum.
+        run: |
+          xcrun xcresulttool merge "$RUNNER_TEMP"/unit.xcresult "$RUNNER_TEMP"/snapshots.xcresult \
+            "$RUNNER_TEMP"/ui.xcresult --output-path "$RUNNER_TEMP/iphone.xcresult"
+          Scripts/coverage.sh app "$RUNNER_TEMP/iphone.xcresult"
