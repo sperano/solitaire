@@ -1,20 +1,35 @@
 import SolitaireKit
 import SwiftUI
 
-/// Stock, waste, a gap, then the four foundations.
+/// Stock, waste, a gap, then the four foundations, or mirrored for the left hand (`TopRowLayout`).
 struct TopRowView: View {
     let viewModel: GameViewModel
     let metrics: BoardMetrics
+    let layout: TopRowLayout
     let dropTarget: (CGPoint) -> PileID?
 
     var body: some View {
         HStack(spacing: BoardMetrics.columnSpacing) {
-            StockView(viewModel: viewModel, metrics: metrics)
-            WasteView(viewModel: viewModel, metrics: metrics, dropTarget: dropTarget)
-            Color.clear.frame(width: metrics.cardWidth, height: metrics.cardHeight)
-            ForEach(0 ..< GameState.foundationCount, id: \.self) { index in
-                FoundationView(viewModel: viewModel, metrics: metrics, index: index, dropTarget: dropTarget)
+            ForEach(layout.slots, id: \.self) { slot in
+                view(for: slot)
             }
+        }
+    }
+
+    @ViewBuilder
+    private func view(for slot: TopRowLayout.Slot) -> some View {
+        switch slot {
+        case .stock:
+            StockView(viewModel: viewModel, metrics: metrics)
+        case .waste:
+            WasteView(
+                viewModel: viewModel, metrics: metrics,
+                fanDirection: layout.wasteFanDirection, dropTarget: dropTarget
+            )
+        case .gap:
+            Color.clear.frame(width: metrics.cardWidth, height: metrics.cardHeight)
+        case let .foundation(index):
+            FoundationView(viewModel: viewModel, metrics: metrics, index: index, dropTarget: dropTarget)
         }
     }
 }
@@ -57,11 +72,13 @@ struct StockView: View {
 struct WasteView: View {
     let viewModel: GameViewModel
     let metrics: BoardMetrics
+    /// +1 fans the visible cards to the right, −1 to the left (`TopRowLayout.wasteFanDirection`).
+    let fanDirection: CGFloat
     let dropTarget: (CGPoint) -> PileID?
 
     private var cards: [Card] { viewModel.state.waste }
 
-    /// Only the last few cards are visible, fanned to the right, and only the top one moves.
+    /// Only the last few cards are visible, fanned towards the gap, and only the top one moves.
     private var visible: [(index: Int, card: Card)] {
         cards.indices.suffix(BoardGeometry.visibleWasteCount(in: viewModel.state)).map { ($0, cards[$0]) }
     }
@@ -72,7 +89,7 @@ struct WasteView: View {
             ForEach(Array(visible.enumerated()), id: \.element.card.id) { fanIndex, entry in
                 let isTop = entry.index == cards.count - 1
                 CardView(card: entry.card, metrics: metrics, isHinted: viewModel.isHinted(.waste, index: entry.index))
-                    .offset(x: CGFloat(fanIndex) * metrics.wasteFanOffset)
+                    .offset(x: fanDirection * CGFloat(fanIndex) * metrics.wasteFanOffset)
                     .dragOffset(viewModel.drag, pile: .waste, index: entry.index, pileCount: cards.count)
                     .zIndex(Double(fanIndex))
                     .transition(.identity)

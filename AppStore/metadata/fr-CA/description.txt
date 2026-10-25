@@ -6,7 +6,7 @@ Le solitaire Klondike, sans rien qui dérange. Pas de publicité, pas d’achats
 • Chaque donne a un numéro à partager ou à rejouer
 • Annuler et rétablir sans limite, indices et fin automatique dès que toutes les cartes peuvent monter
 • Statistiques pour chaque mode de pige : parties gagnées, meilleur temps, moins de coups, séries
-• Un mode sans chronomètre pour jouer en toute détente
+• Un mode sans chronomètre pour jouer en toute détente, et une disposition pour gaucher
 • Prise en charge complète de VoiceOver : chaque carte se déplace sans glisser
 • Jeu à quatre couleurs, Augmenter le contraste, Réduire les animations et grand texte
 • iPhone et iPad, portrait et paysage, Split View et Stage Manager, raccourcis clavier

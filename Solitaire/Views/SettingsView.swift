@@ -47,6 +47,8 @@ struct SettingsView: View {
                         .accessibilityIdentifier("autoFinishToggle")
                     Toggle("Haptics", isOn: $settings.haptics)
                         .accessibilityIdentifier("hapticsToggle")
+                    Toggle("Left-handed layout", isOn: $settings.leftHanded)
+                        .accessibilityIdentifier("leftHandedToggle")
                 } header: {
                     Text("Play").formHeader()
                 } footer: {
@@ -96,7 +98,8 @@ private extension SettingsView {
         let finish = String(
             localized: "Finish automatically plays the remaining cards once every one can go to the foundations."
         )
-        return [timer, finish].joined(separator: " ")
+        let leftHanded = String(localized: "Left-handed layout puts the stock and the waste on the right.")
+        return [timer, finish, leftHanded].joined(separator: " ")
     }
 
     var rulesFooter: String {

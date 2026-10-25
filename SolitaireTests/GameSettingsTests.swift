@@ -120,4 +120,12 @@ final class GameSettingsTests: XCTestCase {
         XCTAssertEqual(defaults.object(forKey: GameSettings.timedKey) as? Bool, false)
         XCTAssertFalse(GameSettings(defaults: defaults).timed)
     }
+
+    func testLeftHandedLayoutIsOffByDefaultAndPersists() {
+        let settings = GameSettings(defaults: defaults)
+        XCTAssertFalse(settings.leftHanded)
+        settings.leftHanded = true
+        XCTAssertTrue(defaults.bool(forKey: GameSettings.leftHandedKey))
+        XCTAssertTrue(GameSettings(defaults: defaults).leftHanded)
+    }
 }
