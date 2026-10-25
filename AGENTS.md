@@ -54,7 +54,7 @@ them. Never add a dependency or feature that sends data anywhere.
   landscape, iPad every orientation plus Split View and Stage Manager
   (`UIRequiresFullScreen` is off in `project.yml`). Keyboard shortcuts live
   in `GameCommands` (scene commands, so the iPad's ⌘ overlay lists them):
-  ⌘Z, ⌘N and space, all inert while Settings is open. The New Game
+  ⌘Z, ⇧⌘Z, ⌘N and space, all inert while Settings is open. The New Game
   confirmation is `GameViewModel.requestNewGame()` / `isConfirmingNewGame`, shared
   by the button and ⌘N.
 - Engine first: a rule change goes in `SolitaireKit` with a test, then the UI.
@@ -75,7 +75,7 @@ them. Never add a dependency or feature that sends data anywhere.
   `stock`, `waste`, `foundation-N`, `tableau-N` with value `"<n> cards"`
   (`"1 card"`; UI tests run in English, `cardCount` in `SolitaireUITestCase`);
   cards are `card-<rank><suit letter>` (`card-10D`, `card-KS`). Controls:
-  `undoButton`, `newGameButton`, `confirmNewGameButton`, `settingsButton`,
+  `undoButton`, `redoButton`, `newGameButton`, `confirmNewGameButton`, `settingsButton`,
   `autoCompleteButton`, `hintButton` (shown instead of Finish),
   `replayDealButton` (in the new-game dialog), `dealingLabel` (while a
   winnable deal is searched for),

@@ -8,7 +8,7 @@ interrupts the game with something.
 
 - Klondike with draw 1 or draw 3 (Settings)
 - Tap a card to send it to the best legal spot, or drag it where you want
-- Unlimited undo
+- Unlimited undo, and redo of what was undone until the next move
 - Move counter and timer; the clock pauses in the background and while
   Settings are open, and can be turned off for untimed games (no time bonus,
   no best time)
@@ -43,9 +43,9 @@ interrupts the game with something.
 iPhone in portrait and landscape, iPad in every orientation, including Split
 View and Stage Manager windows: the cards take the width of the board unless
 its height is the tighter limit, as in landscape, and then the board is
-centred. With a hardware keyboard, ⌘Z undoes, ⌘N starts a new game (asking
-first when a started game would be lost) and the space bar draws; hold ⌘ on
-an iPad to see them.
+centred. With a hardware keyboard, ⌘Z undoes, ⇧⌘Z redoes, ⌘N starts a new
+game (asking first when a started game would be lost) and the space bar
+draws; hold ⌘ on an iPad to see them.
 
 ## Requirements
 

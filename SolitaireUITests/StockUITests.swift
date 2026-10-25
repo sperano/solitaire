@@ -18,6 +18,18 @@ final class StockUITests: SolitaireUITestCase {
         expectCards(0, in: "waste")
     }
 
+    func testRedoDrawsTheUndoneCardAgain() {
+        XCTAssertFalse(element("redoButton").isEnabled)
+        tapStock()
+        XCTAssertFalse(element("redoButton").isEnabled)
+        tap("undoButton")
+        tap("redoButton")
+        expectCards(1, in: "waste")
+        expectCards(Self.stockSize - 1, in: "stock")
+        XCTAssertEqual(moves, "1")
+        XCTAssertFalse(element("redoButton").isEnabled)
+    }
+
     func testDrawThreeMovesThreeCards() {
         app = launchApp(extraArguments: ["-drawMode", "3"])
         tapStock()

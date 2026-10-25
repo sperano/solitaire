@@ -42,6 +42,28 @@ final class CodableTests: XCTestCase {
         XCTAssertEqual(decoded.state, start)
     }
 
+    func testWhatCanBeRedoneSurvivesASave() throws {
+        var game = Game(seed: seed, drawMode: .one)
+        try game.perform(.draw)
+        try game.perform(.draw)
+        XCTAssertTrue(game.undo())
+        var decoded = try roundTrip(game)
+        XCTAssertEqual(decoded, game)
+        XCTAssertTrue(decoded.redo())
+        XCTAssertEqual(decoded.moveCount, 2)
+    }
+
+    func testSaveFromBeforeRedoLoadsWithNothingToRedo() throws {
+        var game = Game(seed: seed, drawMode: .one)
+        try game.perform(.draw)
+        var object = try XCTUnwrap(JSONSerialization.jsonObject(with: JSONEncoder().encode(game)) as? [String: Any])
+        XCTAssertNotNil(object.removeValue(forKey: "undone"))
+        let decoded = try JSONDecoder().decode(Game.self, from: JSONSerialization.data(withJSONObject: object))
+        XCTAssertEqual(decoded.state, game.state)
+        XCTAssertEqual(decoded.history, game.history)
+        XCTAssertFalse(decoded.canRedo)
+    }
+
     func testMovesAndPilesRoundTrip() throws {
         let moves: [Move] = [.draw, .move(from: .waste, to: .tableau(3), count: 1)]
         for move in moves { XCTAssertEqual(try roundTrip(move), move) }

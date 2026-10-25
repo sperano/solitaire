@@ -87,6 +87,7 @@ final class GameViewModel {
 
     var isWon: Bool { game.isWon }
     var canUndo: Bool { game.canUndo && !isAutoCompleting && !isDealing }
+    var canRedo: Bool { game.canRedo && !isAutoCompleting && !isDealing }
     /// Player input is ignored while auto-complete plays the remaining cards or a deal is searched for.
     var acceptsInput: Bool { !isAutoCompleting && !game.isWon && !isDealing }
     var canAutoComplete: Bool { game.canAutoComplete && !isAutoCompleting }
@@ -211,6 +212,14 @@ final class GameViewModel {
         persist()
     }
 
+    /// Plays again the move the last undo took back, as if it were made anew: it can win the
+    /// game (counted once) and start the automatic finish.
+    func redo() {
+        guard canRedo, game.redo() else { return }
+        lastDrop = nil
+        didMove()
+    }
+
     func autoComplete() {
         guard canAutoComplete else { return }
         isAutoCompleting = true
@@ -326,6 +335,13 @@ final class GameViewModel {
             return false
         }
         isStarted = true
+        didMove()
+        return true
+    }
+
+    /// What follows a move or a redo: the hint goes, the clock and the result catch up, the
+    /// game is saved and the move is felt.
+    private func didMove() {
         clearHint()
         syncTimer()
         recordWinIfNeeded()
@@ -337,7 +353,6 @@ final class GameViewModel {
             feedback(.move)
         }
         finishIfAutomatic()
-        return true
     }
 
     private func feedback(_ event: HapticEvent) {
