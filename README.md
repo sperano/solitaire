@@ -175,10 +175,11 @@ are not committed. The test skips in normal runs.
 | `AppStore/ExportOptions.plist` | How the release workflow signs and uploads the archive. |
 | `PRIVACY.md`, `PRIVACY.fr-CA.md` | The privacy policy the App Store listing links to. |
 | `Scripts/string-catalog.sh` | Syncs or checks the String Catalog against the strings the compiler extracted (`make strings`, `make check-strings`). |
+| `Scripts/coverage.sh` | Line coverage as a table: the engine's, with its minimum (`make coverage`), or the app's from a test result bundle. CI puts both in the job summary. |
 | `Scripts/screenshots.sh` | Takes the App Store screenshots (see Releasing). |
 | `project.yml` | xcodegen definition of the Xcode project. |
 | `.swiftformat`, `.swiftlint.yml`, `Makefile` | Formatting and lint rules; `make lint` checks, `make format` rewrites. |
-| `.github/workflows/ci.yml` | Lints and runs the package tests on every PR and push to `main`; on pushes to `main` only, for now, it also runs the simulator and snapshot tests and checks the String Catalog. |
+| `.github/workflows/ci.yml` | Lints and runs the package tests, with their coverage minimum, on every PR and push to `main`; on pushes to `main` only, for now, it also runs the simulator and snapshot tests, checks the String Catalog and reports the app's coverage. |
 | `.github/workflows/release.yml` | On a version tag, archives the app and uploads it to TestFlight. |
 
 ## Testing
@@ -189,6 +190,9 @@ make lint
 
 # Engine, fast, no simulator needed
 cd SolitaireKit && swift test
+
+# Engine line coverage per file; fails below the minimum CI enforces (Scripts/coverage.sh)
+make coverage
 
 # App unit tests
 xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \

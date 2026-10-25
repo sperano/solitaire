@@ -1,5 +1,5 @@
 # Lint and format, as CI runs them (brew install swiftlint swiftformat), and the String Catalog.
-.PHONY: lint format strings check-strings
+.PHONY: lint format strings check-strings coverage
 
 STRINGS_DERIVED_DATA = build/strings
 STRINGS_BUILD = xcodebuild build -project Solitaire.xcodeproj -scheme Solitaire \
@@ -26,3 +26,8 @@ strings:
 check-strings:
 	$(STRINGS_BUILD)
 	Scripts/string-catalog.sh check $(STRINGS_DERIVED_DATA)
+
+# Runs the engine tests with coverage and fails below the minimum CI enforces (Scripts/coverage.sh).
+coverage:
+	cd SolitaireKit && swift test --parallel --enable-code-coverage
+	Scripts/coverage.sh engine "$$(cd SolitaireKit && swift test --show-codecov-path)"

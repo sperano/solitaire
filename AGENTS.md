@@ -137,7 +137,9 @@ them. Never add a dependency or feature that sends data anywhere.
   iPhone 17 simulator running iOS 26.5, which CI pins, and skip elsewhere.
   After a deliberate visual change, re-record (README, "Snapshot tests"),
   look at the changed images and commit them with the change.
-- The checks: `make lint`, `swift test` in `SolitaireKit`, the `SolitaireTests` unit
+- The checks: `make lint`, `swift test` in `SolitaireKit` with its coverage
+  minimum (`make coverage`: the engine's own tests must run 90% of its lines,
+  set in `Scripts/coverage.sh`; add tests rather than lower it), the `SolitaireTests` unit
   tests, the String Catalog check, the `SolitaireSnapshotTests` and the
   `SolitaireUITests` on an iPhone simulator, then `LayoutUITests` (both
   orientations) and `KeyboardUITests` again on an iPad simulator. Run them all
