@@ -15,6 +15,9 @@ final class GameSettings {
     static let winnableDealsOnlyKey = "winnableDealsOnly"
     static let timedKey = "timed"
     static let leftHandedKey = "leftHanded"
+    static let largePrintKey = "largePrint"
+    static let cardBackKey = "cardBack"
+    static let feltKey = "felt"
     static let defaultDrawMode = DrawMode.one
     static let defaultScoringMode = ScoringMode.standard
 
@@ -72,6 +75,20 @@ final class GameSettings {
         didSet { defaults.set(leftHanded, forKey: Self.leftHandedKey) }
     }
 
+    /// Bigger ranks and suits on the card faces.
+    var largePrint: Bool {
+        didSet { defaults.set(largePrint, forKey: Self.largePrintKey) }
+    }
+
+    var cardBack: CardBack {
+        didSet { defaults.set(cardBack.rawValue, forKey: Self.cardBackKey) }
+    }
+
+    /// The table's colour.
+    var felt: TableFelt {
+        didSet { defaults.set(felt.rawValue, forKey: Self.feltKey) }
+    }
+
     init(defaults: UserDefaults) {
         self.defaults = defaults
         drawMode = DrawMode(rawValue: defaults.integer(forKey: Self.drawModeKey)) ?? Self.defaultDrawMode
@@ -86,6 +103,9 @@ final class GameSettings {
         winnableDealsOnly = defaults.bool(forKey: Self.winnableDealsOnlyKey)
         timed = defaults.object(forKey: Self.timedKey) as? Bool ?? true
         leftHanded = defaults.bool(forKey: Self.leftHandedKey)
+        largePrint = defaults.bool(forKey: Self.largePrintKey)
+        cardBack = defaults.string(forKey: Self.cardBackKey).flatMap(CardBack.init(rawValue:)) ?? .defaultValue
+        felt = defaults.string(forKey: Self.feltKey).flatMap(TableFelt.init(rawValue:)) ?? .defaultValue
     }
 
     /// The balance a new Vegas game starts from before the buy-in.

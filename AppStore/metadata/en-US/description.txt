@@ -8,6 +8,7 @@ Klondike solitaire with nothing in the way. No ads, no in-app purchases, no acco
 • Statistics for each draw mode: games won, best time, fewest moves, streaks
 • An untimed mode for a relaxed game, and a left-handed layout
 • Full VoiceOver support: every card can be moved without dragging
-• Four-colour deck, Increase Contrast, Reduce Motion and large text
+• Four-colour deck, large print, Increase Contrast, Reduce Motion and large text
+• A choice of card backs and table colours
 • iPhone and iPad, portrait and landscape, Split View and Stage Manager, keyboard shortcuts
 • In English and French

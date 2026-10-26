@@ -86,7 +86,9 @@ them. Never add a dependency or feature that sends data anywhere.
   `winnableDealsOnlyToggle`, `dealNumberLabel` (value: the number),
   `shareDealButton`, `playDealButton`, `confirmPlayDealButton` (the alert's text
   field carries no identifier: alerts drop them; use `app.alerts.textFields`),
-  `timerToggle`, `autoFinishToggle`, `hapticsToggle`, `leftHandedToggle`, `fourColorDeckToggle`, `settingsDoneButton`, `winNewGameButton`,
+  `timerToggle`, `autoFinishToggle`, `hapticsToggle`, `leftHandedToggle`, `fourColorDeckToggle`, `largePrintToggle`,
+  `cardBackPicker`, `feltPicker` (menu pickers: no value, the choice is a
+  text inside the button), `settingsDoneButton`, `winNewGameButton`,
   `statisticsLink`, `statisticsScopePicker`, `resetStatisticsButton`,
   `confirmResetStatisticsButton`; statistics rows `statsPlayed`, `statsWon`,
   `statsWinRate`, `statsBestTime`, `statsFewestMoves`, `statsCurrentStreak`,
@@ -107,7 +109,11 @@ them. Never add a dependency or feature that sends data anywhere.
   move works without dragging. VoiceOver strings live in
   `BoardAccessibility`. Every animation goes through `Motion.animation` so
   Reduce Motion drops it (card flights, flips, the deal and the win cascade too); card colours come from the `cardStyle`
-  environment value (Increase Contrast, four-colour deck). Toolbar buttons
+  environment value (Increase Contrast, four-colour deck, large print, the
+  card back). The felt and back designs are `TableFelt` and `CardBack`
+  (`TableColours` for their colours); every felt keeps white text at 4.5:1
+  (`TableColoursTests`). The launch screen stays the default green whatever
+  felt is chosen: a plain colour asset cannot follow a setting. Toolbar buttons
   use `HitTargetButtonStyle` (44 pt). `AccessibilityUITests` runs Xcode's
   accessibility audit on every screen; fix what it finds rather than adding
   to its ignore lists, which hold only documented false positives.

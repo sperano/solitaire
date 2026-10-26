@@ -8,20 +8,11 @@ final class DealUITests: SolitaireUITestCase {
     /// Finding a winnable deal in a debug build can take a while on a loaded runner.
     private static let dealingTimeout: TimeInterval = 90
 
-    /// Swipes needed to bring the Deal section, below Statistics, on screen at most.
-    private static let maxSwipes = 4
-
     /// Opens Settings and scrolls until the whole Deal section is on screen.
     private func openDealSection() {
         tap("settingsButton")
         XCTAssertTrue(element("drawModePicker").waitForExistence(timeout: Self.timeout))
-        let lastRow = element("playDealButton")
-        var swipes = 0
-        while !(lastRow.exists && lastRow.isHittable), swipes < Self.maxSwipes {
-            app.swipeUp()
-            swipes += 1
-        }
-        XCTAssertTrue(lastRow.isHittable, "Deal section not reached")
+        scrollTo("playDealButton")
     }
 
     /// The alert's text field; SwiftUI alerts do not pass identifiers on to their fields.

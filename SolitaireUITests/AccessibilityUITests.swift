@@ -96,7 +96,7 @@ final class AccessibilityUITests: SolitaireUITestCase {
 
     func testStatisticsPassTheAudit() throws {
         tap("settingsButton")
-        tap("statisticsLink")
+        scrollTo("statisticsLink").tap()
         XCTAssertTrue(element("statsPlayed").waitForExistence(timeout: Self.timeout))
         try audit()
     }

@@ -16,6 +16,13 @@ final class GameViewSnapshotTests: SnapshotTestCase {
         try assertScreen(GameView(viewModel: model))
     }
 
+    /// Large print, a few moves in: the bigger corners must still read in the overlapped columns.
+    func testMidGameBoardInLargePrint() throws {
+        let model = SnapshotFixtures.viewModel(resuming: SnapshotFixtures.midGame())
+        model.settings.largePrint = true
+        try assertScreen(GameView(viewModel: model))
+    }
+
     /// Left-handed: stock and waste on the right, three drawn cards fanning left into the gap.
     func testLeftHandedBoardWithAFannedWaste() throws {
         var game = Game(seed: SnapshotFixtures.seed, drawMode: .three, scoringMode: GameSettings.defaultScoringMode)

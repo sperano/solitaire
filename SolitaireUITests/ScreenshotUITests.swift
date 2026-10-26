@@ -53,7 +53,7 @@ final class ScreenshotUITests: SolitaireUITestCase {
         tap("settingsButton")
         XCTAssertTrue(element("settingsDoneButton").waitForExistence(timeout: Self.timeout))
         snap("04-settings")
-        tap("statisticsLink")
+        scrollTo("statisticsLink").tap()
         XCTAssertTrue(element("statsPlayed").waitForExistence(timeout: Self.timeout))
         snap("05-statistics")
     }

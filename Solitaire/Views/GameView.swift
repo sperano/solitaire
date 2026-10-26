@@ -17,7 +17,11 @@ struct GameView: View {
     @Environment(\.scenePhase) private var scenePhase
 
     private var cardStyle: CardStyle {
-        CardStyle(isFourColour: viewModel.settings.fourColorDeck, isHighContrast: contrast == .increased)
+        let settings = viewModel.settings
+        return CardStyle(
+            isFourColour: settings.fourColorDeck, isHighContrast: contrast == .increased,
+            isLargePrint: settings.largePrint, back: settings.cardBack
+        )
     }
 
     private var topRow: TopRowLayout { TopRowLayout(isLeftHanded: viewModel.settings.leftHanded) }
@@ -35,7 +39,7 @@ struct GameView: View {
         .onChange(of: scenePhase, initial: true) { _, phase in
             viewModel.setAppActive(phase == .active)
         }
-        .background(Theme.felt.ignoresSafeArea())
+        .background(viewModel.settings.felt.color.ignoresSafeArea())
         .overlay(alignment: .bottom) {
             if viewModel.isDealing {
                 dealingBanner
