@@ -52,5 +52,7 @@ final class CardStyleTests: XCTestCase {
     func testStandardIsTheDefault() {
         XCTAssertEqual(EnvironmentValues().cardStyle, .standard)
         XCTAssertFalse(CardStyle.standard.isFourColour || CardStyle.standard.isHighContrast)
+        XCTAssertFalse(CardStyle.standard.isLargePrint)
+        XCTAssertEqual(CardStyle.standard.back, .blue)
     }
 }

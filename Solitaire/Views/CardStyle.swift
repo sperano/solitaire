@@ -2,7 +2,8 @@ import SolitaireKit
 import SwiftUI
 
 /// How cards and empty slots are drawn: the standard look, a high-contrast one when the system's
-/// Increase Contrast is on, and a four-colour deck for players who tell suits apart by colour.
+/// Increase Contrast is on, a four-colour deck for players who tell suits apart by colour, large
+/// print, and the back design chosen in Settings.
 struct CardStyle: Equatable {
     private static let standardBorderWidth: CGFloat = 1
     private static let highContrastBorderWidth: CGFloat = 2
@@ -11,6 +12,8 @@ struct CardStyle: Equatable {
 
     let isFourColour: Bool
     let isHighContrast: Bool
+    var isLargePrint = false
+    var back = CardBack.defaultValue
 
     static let standard = CardStyle(isFourColour: false, isHighContrast: false)
 

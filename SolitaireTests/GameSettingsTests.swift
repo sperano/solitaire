@@ -128,4 +128,33 @@ final class GameSettingsTests: XCTestCase {
         XCTAssertTrue(defaults.bool(forKey: GameSettings.leftHandedKey))
         XCTAssertTrue(GameSettings(defaults: defaults).leftHanded)
     }
+
+    func testLargePrintIsOffByDefaultAndPersists() {
+        let settings = GameSettings(defaults: defaults)
+        XCTAssertFalse(settings.largePrint)
+        settings.largePrint = true
+        XCTAssertTrue(defaults.bool(forKey: GameSettings.largePrintKey))
+        XCTAssertTrue(GameSettings(defaults: defaults).largePrint)
+    }
+
+    func testCardBackAndFeltStartAtTheDefaultsAndPersist() {
+        let settings = GameSettings(defaults: defaults)
+        XCTAssertEqual(settings.cardBack, .blue)
+        XCTAssertEqual(settings.felt, .green)
+        settings.cardBack = .red
+        settings.felt = .charcoal
+        XCTAssertEqual(defaults.string(forKey: GameSettings.cardBackKey), "red")
+        XCTAssertEqual(defaults.string(forKey: GameSettings.feltKey), "charcoal")
+        let reloaded = GameSettings(defaults: defaults)
+        XCTAssertEqual(reloaded.cardBack, .red)
+        XCTAssertEqual(reloaded.felt, .charcoal)
+    }
+
+    func testUnknownStoredCardBackAndFeltFallBackToTheDefaults() {
+        defaults.set("tartan", forKey: GameSettings.cardBackKey)
+        defaults.set("plaid", forKey: GameSettings.feltKey)
+        let settings = GameSettings(defaults: defaults)
+        XCTAssertEqual(settings.cardBack, CardBack.defaultValue)
+        XCTAssertEqual(settings.felt, TableFelt.defaultValue)
+    }
 }

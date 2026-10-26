@@ -5,8 +5,14 @@ struct CardView: View {
     private static let cornerFontRatio: CGFloat = 0.28
     private static let centerFontRatio: CGFloat = 0.55
     private static let cornerInsetRatio: CGFloat = 0.07
-    private static let backInsetRatio: CGFloat = 0.1
-    private static let backInnerBorderWidth: CGFloat = 1.5
+    /// Large print: rank and suit on one line, sized to the strip a covered card shows in a column
+    /// (`BoardMetrics.faceUpOffsetRatio`), and a smaller suit low in the middle, clear of them.
+    private static let largeCornerFontRatio: CGFloat = 0.38
+    private static let largeCornerInsetRatio: CGFloat = 0.04
+    private static let largeCenterFontRatio: CGFloat = 0.5
+    private static let largeCenterBottomInsetRatio: CGFloat = 0.1
+    /// "10♥" shrinks this far rather than run past the card's edge.
+    private static let largeMinimumScale: CGFloat = 0.7
     static let hintBorderWidth: CGFloat = 3
     static let flipSeconds = 0.3
 
@@ -27,7 +33,7 @@ struct CardView: View {
     }
 
     var body: some View {
-        FlipView(isFaceUp: card.isFaceUp) { face } back: { back }
+        FlipView(isFaceUp: card.isFaceUp) { face } back: { CardBackView(metrics: metrics) }
             .animation(
                 Motion.animation(.easeInOut(duration: Self.flipSeconds), reduceMotion: reduceMotion),
                 value: card.isFaceUp
@@ -60,27 +66,36 @@ struct CardView: View {
         ZStack(alignment: .topLeading) {
             shape.fill(Theme.cardFace)
             shape.strokeBorder(style.border, lineWidth: style.borderWidth)
-            Text(card.suit.symbol)
-                .font(.system(size: metrics.cardWidth * Self.centerFontRatio))
-                .frame(width: metrics.cardWidth, height: metrics.cardHeight)
-            VStack(alignment: .leading, spacing: 0) {
-                Text(card.rank.symbol)
-                Text(card.suit.symbol)
-            }
-            .font(.system(size: metrics.cardWidth * Self.cornerFontRatio, weight: .semibold, design: .rounded))
-            .padding(metrics.cardWidth * Self.cornerInsetRatio)
+            if style.isLargePrint { largePrint } else { standardPrint }
         }
         .foregroundStyle(inkColor)
     }
 
-    private var back: some View {
-        ZStack {
-            shape.fill(Theme.cardBack)
-            shape.strokeBorder(style.border, lineWidth: style.borderWidth)
-            shape
-                .inset(by: metrics.cardWidth * Self.backInsetRatio)
-                .strokeBorder(style.backInner, lineWidth: Self.backInnerBorderWidth)
+    @ViewBuilder
+    private var standardPrint: some View {
+        Text(card.suit.symbol)
+            .font(.system(size: metrics.cardWidth * Self.centerFontRatio))
+            .frame(width: metrics.cardWidth, height: metrics.cardHeight)
+        VStack(alignment: .leading, spacing: 0) {
+            Text(card.rank.symbol)
+            Text(card.suit.symbol)
         }
+        .font(.system(size: metrics.cardWidth * Self.cornerFontRatio, weight: .semibold, design: .rounded))
+        .padding(metrics.cardWidth * Self.cornerInsetRatio)
+    }
+
+    @ViewBuilder
+    private var largePrint: some View {
+        Text(card.suit.symbol)
+            .font(.system(size: metrics.cardWidth * Self.largeCenterFontRatio))
+            .padding(.bottom, metrics.cardWidth * Self.largeCenterBottomInsetRatio)
+            .frame(width: metrics.cardWidth, height: metrics.cardHeight, alignment: .bottom)
+        Text(card.rank.symbol + card.suit.symbol)
+            .font(.system(size: metrics.cardWidth * Self.largeCornerFontRatio, weight: .bold, design: .rounded))
+            .minimumScaleFactor(Self.largeMinimumScale)
+            .lineLimit(1)
+            .padding(.horizontal, metrics.cardWidth * Self.largeCornerInsetRatio)
+            .frame(width: metrics.cardWidth, alignment: .leading)
     }
 }
 

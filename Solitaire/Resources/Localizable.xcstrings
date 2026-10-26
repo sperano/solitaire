@@ -306,6 +306,16 @@
         }
       }
     },
+    "Card back" : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dos des cartes"
+          }
+        }
+      }
+    },
     "Cards" : {
       "localizations" : {
         "fr-CA" : {
@@ -647,6 +657,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Indice"
+          }
+        }
+      }
+    },
+    "Large print" : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gros caractères"
+          }
+        }
+      }
+    },
+    "Large print puts a bigger rank and suit in the corner of each card." : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les gros caractères agrandissent la valeur et la couleur dans le coin de chaque carte."
           }
         }
       }
@@ -1049,6 +1079,16 @@
         }
       }
     },
+    "Table" : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tapis"
+          }
+        }
+      }
+    },
     "The clock pauses while the app is in the background or Settings are open." : {
       "localizations" : {
         "fr-CA" : {
@@ -1225,6 +1265,132 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vous avez gagné!"
+          }
+        }
+      }
+    },
+    "cardBack.blue" : {
+      "comment" : "Card back design",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Blue"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bleu"
+          }
+        }
+      }
+    },
+    "cardBack.purple" : {
+      "comment" : "Card back design",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Purple frames"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cadres violets"
+          }
+        }
+      }
+    },
+    "cardBack.red" : {
+      "comment" : "Card back design",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Red lattice"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Treillis rouge"
+          }
+        }
+      }
+    },
+    "felt.blue" : {
+      "comment" : "Table colour",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Blue"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bleu"
+          }
+        }
+      }
+    },
+    "felt.burgundy" : {
+      "comment" : "Table colour",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Burgundy"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bordeaux"
+          }
+        }
+      }
+    },
+    "felt.charcoal" : {
+      "comment" : "Table colour",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Charcoal"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anthracite"
+          }
+        }
+      }
+    },
+    "felt.green" : {
+      "comment" : "Table colour",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Green"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vert"
           }
         }
       }

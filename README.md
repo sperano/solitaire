@@ -26,7 +26,8 @@ interrupts the game with something.
 - Accessibility: full VoiceOver play (every card and pile is described, and
   each card offers its legal moves as actions, so no drag is needed), Dynamic
   Type on the toolbar and settings, Reduce Motion, a high-contrast card style
-  with Increase Contrast, and a four-colour deck (Settings → Cards)
+  with Increase Contrast, a four-colour deck and large print (Settings → Cards)
+- Three card-back designs and four table colours (Settings → Cards)
 - The current game resumes when you reopen the app
 - "Finish" button once every card is face up, or finish automatically
   (Settings → Finish automatically)
@@ -226,9 +227,10 @@ launch ignores them all.
 [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing)
 and compares them pixel for pixel (within a small tolerance) with the PNGs
 committed under `SolitaireSnapshotTests/__Snapshots__`: every card face and
-the back in each card style, the board at the deal, mid-game with a lifted
-run and left-handed with a fanned waste, the win panel and the Settings screen, in light and dark mode, and the
-board at the iPhone SE, iPhone Pro Max and iPad Pro sizes in both
+the back in each card style (large print too), every card back on every
+table colour, the board at the deal, mid-game with a lifted run, mid-game in
+large print and left-handed with a fanned waste, the win panel and the
+Settings screen, in light and dark mode, and the board at the iPhone SE, iPhone Pro Max and iPad Pro sizes in both
 orientations (`LayoutSnapshotTests`, light mode, drawn at those sizes on the
 same simulator). The images are recorded on the iPhone 17 simulator running
 iOS 26.5, the one CI uses; on any other simulator the tests skip, since the

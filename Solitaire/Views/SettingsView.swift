@@ -57,10 +57,20 @@ struct SettingsView: View {
                 Section {
                     Toggle("Four-colour deck", isOn: $settings.fourColorDeck)
                         .accessibilityIdentifier("fourColorDeckToggle")
+                    Toggle("Large print", isOn: $settings.largePrint)
+                        .accessibilityIdentifier("largePrintToggle")
+                    Picker("Card back", selection: $settings.cardBack) {
+                        ForEach(CardBack.allCases) { Text($0.title).tag($0) }
+                    }
+                    .accessibilityIdentifier("cardBackPicker")
+                    Picker("Table", selection: $settings.felt) {
+                        ForEach(TableFelt.allCases) { Text($0.title).tag($0) }
+                    }
+                    .accessibilityIdentifier("feltPicker")
                 } header: {
                     Text("Cards").formHeader()
                 } footer: {
-                    Text("Diamonds blue and clubs green, so no two suits share a colour.").formFooter()
+                    Text(cardsFooter).formFooter()
                 }
                 Section {
                     NavigationLink("Statistics") { StatisticsView(statistics: statistics) }
@@ -100,6 +110,13 @@ private extension SettingsView {
         )
         let leftHanded = String(localized: "Left-handed layout puts the stock and the waste on the right.")
         return [timer, finish, leftHanded].joined(separator: " ")
+    }
+
+    var cardsFooter: String {
+        [
+            String(localized: "Diamonds blue and clubs green, so no two suits share a colour."),
+            String(localized: "Large print puts a bigger rank and suit in the corner of each card."),
+        ].joined(separator: " ")
     }
 
     var rulesFooter: String {

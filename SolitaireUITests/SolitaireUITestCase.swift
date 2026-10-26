@@ -13,6 +13,8 @@ class SolitaireUITestCase: XCTestCase {
     /// How long to wait before concluding that something did not appear.
     static let absenceTimeout: TimeInterval = 1
     static let dragHold: TimeInterval = 0.3
+    /// Swipes `scrollTo` tries before giving up: enough for the whole Settings form.
+    static let maxSwipes = 6
 
     var app: XCUIApplication!
 
@@ -70,6 +72,20 @@ class SolitaireUITestCase: XCTestCase {
         let target = element(identifier)
         XCTAssertTrue(target.waitForExistence(timeout: Self.timeout), "\(identifier) not found")
         target.tap()
+    }
+
+    /// Swipes up until the element is on screen and can be tapped. Settings is a lazily built form:
+    /// its lower rows (Statistics, the Deal section) do not exist until scrolled to.
+    @discardableResult
+    func scrollTo(_ identifier: String, file: StaticString = #filePath, line: UInt = #line) -> XCUIElement {
+        let target = element(identifier)
+        var swipes = 0
+        while !(target.exists && target.isHittable), swipes < Self.maxSwipes {
+            app.swipeUp()
+            swipes += 1
+        }
+        XCTAssertTrue(target.isHittable, "\(identifier) not reached", file: file, line: line)
+        return target
     }
 
     func tapStock(times: Int = 1) {
