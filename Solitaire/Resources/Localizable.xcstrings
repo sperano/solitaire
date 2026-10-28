@@ -1008,6 +1008,26 @@
         }
       }
     },
+    "Sound effects" : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effets sonores"
+          }
+        }
+      }
+    },
+    "Sound effects are muted in silent mode and never stop your music." : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les effets sonores se taisent en mode silencieux et n’interrompent jamais votre musique."
+          }
+        }
+      }
+    },
     "Standard" : {
       "comment" : "Scoring mode",
       "localizations" : {

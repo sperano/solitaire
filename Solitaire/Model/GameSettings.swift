@@ -12,6 +12,7 @@ final class GameSettings {
     static let autoFinishKey = "autoFinish"
     static let fourColorDeckKey = "fourColorDeck"
     static let hapticsKey = "haptics"
+    static let soundEffectsKey = "soundEffects"
     static let winnableDealsOnlyKey = "winnableDealsOnly"
     static let timedKey = "timed"
     static let leftHandedKey = "leftHanded"
@@ -59,6 +60,11 @@ final class GameSettings {
         didSet { defaults.set(haptics, forKey: Self.hapticsKey) }
     }
 
+    /// Short sounds for a draw, a card put down or turned over, an undo and the win. Off unless turned on.
+    var soundEffects: Bool {
+        didSet { defaults.set(soundEffects, forKey: Self.soundEffectsKey) }
+    }
+
     /// Deal only games the solver can win; a deal number asked for is dealt as it is.
     var winnableDealsOnly: Bool {
         didSet { defaults.set(winnableDealsOnly, forKey: Self.winnableDealsOnlyKey) }
@@ -100,6 +106,7 @@ final class GameSettings {
         autoFinish = defaults.bool(forKey: Self.autoFinishKey)
         fourColorDeck = defaults.bool(forKey: Self.fourColorDeckKey)
         haptics = defaults.object(forKey: Self.hapticsKey) as? Bool ?? true
+        soundEffects = defaults.bool(forKey: Self.soundEffectsKey)
         winnableDealsOnly = defaults.bool(forKey: Self.winnableDealsOnlyKey)
         timed = defaults.object(forKey: Self.timedKey) as? Bool ?? true
         leftHanded = defaults.bool(forKey: Self.leftHandedKey)
