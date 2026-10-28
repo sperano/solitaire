@@ -41,6 +41,7 @@ final class GameViewModel {
     let statistics: StatisticsModel
     private let store: any GameStore
     private let haptics: any HapticPlayer
+    private let sounds: any SoundPlayer
     private let fixedSeed: UInt64?
     private let clock: any GameClock
     /// Time the clock ran before its current run; the whole elapsed time while it is stopped.
@@ -55,10 +56,12 @@ final class GameViewModel {
 
     init(
         store: any GameStore, settings: GameSettings, statistics: StatisticsModel,
-        haptics: any HapticPlayer = SilentHaptics(), fixedSeed: UInt64? = nil, clock: any GameClock = SystemGameClock()
+        haptics: any HapticPlayer = SilentHaptics(), sounds: any SoundPlayer = SilentSounds(),
+        fixedSeed: UInt64? = nil, clock: any GameClock = SystemGameClock()
     ) {
         self.store = store
         self.haptics = haptics
+        self.sounds = sounds
         self.settings = settings
         self.statistics = statistics
         self.fixedSeed = fixedSeed
@@ -207,6 +210,7 @@ final class GameViewModel {
     func undo() {
         guard canUndo, game.undo() else { return }
         lastDrop = nil
+        play([.undo])
         clearHint()
         syncTimer()
         persist()
@@ -215,9 +219,10 @@ final class GameViewModel {
     /// Plays again the move the last undo took back, as if it were made anew: it can win the
     /// game (counted once) and start the automatic finish.
     func redo() {
+        let old = state
         guard canRedo, game.redo() else { return }
         lastDrop = nil
-        didMove()
+        didMove(from: old)
     }
 
     func autoComplete() {
@@ -329,23 +334,25 @@ final class GameViewModel {
     @discardableResult
     private func perform(_ move: Move) -> Bool {
         lastDrop = nil
+        let old = state
         do {
             try game.perform(move)
         } catch {
             return false
         }
         isStarted = true
-        didMove()
+        didMove(from: old)
         return true
     }
 
-    /// What follows a move or a redo: the hint goes, the clock and the result catch up, the
-    /// game is saved and the move is felt.
-    private func didMove() {
+    /// What follows a move or a redo from `old`: the hint goes, the clock and the result catch up,
+    /// the game is saved and the move is heard and felt.
+    private func didMove(from old: GameState) {
         clearHint()
         syncTimer()
         recordWinIfNeeded()
         persist()
+        play(SoundEffect.effects(from: old, to: state))
         // Auto-complete plays many moves in a row; only its last one, the win, is felt.
         if game.isWon {
             feedback(.win)
@@ -357,6 +364,11 @@ final class GameViewModel {
 
     private func feedback(_ event: HapticEvent) {
         if settings.haptics { haptics.play(event) }
+    }
+
+    private func play(_ effects: [SoundEffect]) {
+        guard settings.soundEffects else { return }
+        effects.forEach(sounds.play)
     }
 
     /// Starts auto-complete when the setting asks for it and the position allows it; it does

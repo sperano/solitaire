@@ -105,6 +105,14 @@ final class GameSettingsTests: XCTestCase {
         XCTAssertFalse(GameSettings(defaults: defaults).haptics)
     }
 
+    func testSoundEffectsAreOffByDefaultAndPersist() {
+        let settings = GameSettings(defaults: defaults)
+        XCTAssertFalse(settings.soundEffects)
+        settings.soundEffects = true
+        XCTAssertTrue(defaults.bool(forKey: GameSettings.soundEffectsKey))
+        XCTAssertTrue(GameSettings(defaults: defaults).soundEffects)
+    }
+
     func testWinnableDealsOnlyIsOffByDefaultAndPersists() {
         let settings = GameSettings(defaults: defaults)
         XCTAssertFalse(settings.winnableDealsOnly)

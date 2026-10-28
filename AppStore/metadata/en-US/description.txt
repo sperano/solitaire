@@ -7,6 +7,7 @@ Klondike solitaire with nothing in the way. No ads, no in-app purchases, no acco
 • Unlimited undo and redo, hints, and an automatic finish once every card can go up
 • Statistics for each draw mode: games won, best time, fewest moves, streaks
 • An untimed mode for a relaxed game, and a left-handed layout
+• Sound effects if you want them: off until you turn them on, muted in silent mode, never in the way of your music
 • Full VoiceOver support: every card can be moved without dragging
 • Four-colour deck, large print, Increase Contrast, Reduce Motion and large text
 • A choice of card backs and table colours

@@ -2,7 +2,7 @@ import SolitaireKit
 import XCTest
 @testable import Solitaire
 
-/// Haptics and the drop the board animates from. Seed 42's tableau tops: 2♣ 8♣ Q♣ 5♥ 6♠ 5♣ A♥.
+/// Haptics, sounds and the drop the board animates from. Seed 42's tableau tops: 2♣ 8♣ Q♣ 5♥ 6♠ 5♣ A♥.
 @MainActor
 final class GameViewModelFeedbackTests: XCTestCase {
     private static let seed: UInt64 = 42
@@ -14,6 +14,7 @@ final class GameViewModelFeedbackTests: XCTestCase {
     private var defaults: UserDefaults!
     private var settings: GameSettings!
     private var spy: HapticsSpy!
+    private var sounds: SoundsSpy!
 
     override func setUp() async throws {
         suiteName = "quebec.spe.SolitaireTests.\(UUID().uuidString)"
@@ -21,6 +22,7 @@ final class GameViewModelFeedbackTests: XCTestCase {
         defaults.removePersistentDomain(forName: suiteName)
         settings = GameSettings(defaults: defaults)
         spy = HapticsSpy()
+        sounds = SoundsSpy()
     }
 
     override func tearDown() async throws {
@@ -31,7 +33,7 @@ final class GameViewModelFeedbackTests: XCTestCase {
         GameViewModel(
             store: InMemoryGameStore(saved: game.map { SavedGame(game: $0, elapsedSeconds: 0) }),
             settings: settings, statistics: StatisticsModel(store: InMemoryStatisticsStore()),
-            haptics: spy, fixedSeed: Self.seed
+            haptics: spy, sounds: sounds, fixedSeed: Self.seed
         )
     }
 
@@ -98,6 +100,44 @@ final class GameViewModelFeedbackTests: XCTestCase {
         model.tapCard(in: Self.aceColumn, index: top(Self.aceColumn, model))
         model.tapCard(in: .tableau(0), index: 0)
         XCTAssertEqual(spy.played, [])
+    }
+
+    // MARK: Sounds
+
+    func testNothingIsHeardUntilSoundEffectsAreOn() {
+        let model = makeModel()
+        model.draw()
+        model.undo()
+        XCTAssertEqual(sounds.played, [])
+    }
+
+    func testMovesDrawsUndoAndRedoAreHeard() {
+        settings.soundEffects = true
+        let model = makeModel()
+        model.tapCard(in: Self.aceColumn, index: top(Self.aceColumn, model))
+        model.draw()
+        model.undo()
+        model.redo()
+        XCTAssertEqual(sounds.played, [.place, .flip, .draw, .undo, .draw])
+    }
+
+    func testARefusedMoveIsNotHeard() {
+        settings.soundEffects = true
+        let model = makeModel()
+        model.tapCard(in: .tableau(0), index: 0)
+        XCTAssertEqual(sounds.played, [])
+    }
+
+    func testEveryAutoCompleteStepIsHeardAndTheWinAfterTheLast() async {
+        settings.soundEffects = true
+        let model = makeModel(resuming: Game.completable())
+        model.autoComplete()
+        let deadline = ContinuousClock.now + Self.waitLimit
+        while model.isAutoCompleting, ContinuousClock.now < deadline {
+            try? await Task.sleep(for: Self.pollInterval)
+        }
+        let places = [SoundEffect](repeating: .place, count: Game.completableRemainingCardCount)
+        XCTAssertEqual(sounds.played, places + [.win])
     }
 
     // MARK: Last drop

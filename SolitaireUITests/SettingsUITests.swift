@@ -50,6 +50,17 @@ final class SettingsUITests: SolitaireUITestCase {
         XCTAssertEqual(app.switches["hapticsToggle"].value as? String, "0")
     }
 
+    func testSoundEffectsAreOffUntilTurnedOn() {
+        _ = openSettings()
+        let toggle = scrollTo("soundEffectsToggle")
+        XCTAssertEqual(toggle.value as? String, "0")
+        toggle.switches.firstMatch.tap()
+        tap("settingsDoneButton")
+
+        _ = openSettings()
+        XCTAssertEqual(scrollTo("soundEffectsToggle").value as? String, "1")
+    }
+
     func testWinnableDealsOnlyIsOffUntilTurnedOn() {
         _ = openSettings()
         let toggle = app.switches["winnableDealsOnlyToggle"]
@@ -82,8 +93,7 @@ final class SettingsUITests: SolitaireUITestCase {
 
     func testCardChoicesAreKeptWhenSettingsReopens() {
         _ = openSettings()
-        let largePrint = app.switches["largePrintToggle"]
-        XCTAssertTrue(largePrint.waitForExistence(timeout: Self.timeout))
+        let largePrint = scrollTo("largePrintToggle")
         XCTAssertEqual(largePrint.value as? String, "0")
         largePrint.switches.firstMatch.tap()
         choose("Red lattice", in: "cardBackPicker")
@@ -91,7 +101,7 @@ final class SettingsUITests: SolitaireUITestCase {
         tap("settingsDoneButton")
 
         _ = openSettings()
-        XCTAssertEqual(app.switches["largePrintToggle"].value as? String, "1")
+        XCTAssertEqual(scrollTo("largePrintToggle").value as? String, "1")
         expectChoice("Red lattice", in: "cardBackPicker")
         expectChoice("Charcoal", in: "feltPicker")
     }

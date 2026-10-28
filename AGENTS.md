@@ -45,7 +45,14 @@ them. Never add a dependency or feature that sends data anywhere.
   flies the cards that changed pile in `FlightLayer`, from frames worked out
   by `BoardGeometry`; the piles hide those cards (`cardsInFlight`) until they
   land. So a new kind of move needs no animation code. Haptics go through
-  `HapticPlayer` from the view model (`SilentHaptics` in tests).
+  `HapticPlayer` from the view model (`SilentHaptics` in tests), sounds
+  through `SoundPlayer` (`SilentSounds`): `SoundEffect.effects(from:to:)`
+  names the sounds of a change from the board before and after it, and
+  `SystemSounds` plays them in the ambient audio session (silent mode mutes
+  them, other apps' music keeps playing), only with *Sound effects* on (off
+  by default). The recordings are CC0 (Kenney's Casino Audio): the originals
+  and their licence are in `Design/Sounds`, whose `convert_sounds.sh` writes
+  the `.m4a` files in `Solitaire/Resources/Sounds`; commit both.
 
 - Layout: `BoardMetrics(boardSize:)` sizes the cards from the board's width
   and, when that is the tighter limit (landscape, a short Stage Manager
@@ -86,7 +93,7 @@ them. Never add a dependency or feature that sends data anywhere.
   `winnableDealsOnlyToggle`, `dealNumberLabel` (value: the number),
   `shareDealButton`, `playDealButton`, `confirmPlayDealButton` (the alert's text
   field carries no identifier: alerts drop them; use `app.alerts.textFields`),
-  `timerToggle`, `autoFinishToggle`, `hapticsToggle`, `leftHandedToggle`, `fourColorDeckToggle`, `largePrintToggle`,
+  `timerToggle`, `autoFinishToggle`, `hapticsToggle`, `soundEffectsToggle`, `leftHandedToggle`, `fourColorDeckToggle`, `largePrintToggle`,
   `cardBackPicker`, `feltPicker` (menu pickers: no value, the choice is a
   text inside the button), `settingsDoneButton`, `winNewGameButton`,
   `statisticsLink`, `statisticsScopePicker`, `resetStatisticsButton`,

@@ -47,6 +47,8 @@ struct SettingsView: View {
                         .accessibilityIdentifier("autoFinishToggle")
                     Toggle("Haptics", isOn: $settings.haptics)
                         .accessibilityIdentifier("hapticsToggle")
+                    Toggle("Sound effects", isOn: $settings.soundEffects)
+                        .accessibilityIdentifier("soundEffectsToggle")
                     Toggle("Left-handed layout", isOn: $settings.leftHanded)
                         .accessibilityIdentifier("leftHandedToggle")
                 } header: {
@@ -108,8 +110,9 @@ private extension SettingsView {
         let finish = String(
             localized: "Finish automatically plays the remaining cards once every one can go to the foundations."
         )
+        let sounds = String(localized: "Sound effects are muted in silent mode and never stop your music.")
         let leftHanded = String(localized: "Left-handed layout puts the stock and the waste on the right.")
-        return [timer, finish, leftHanded].joined(separator: " ")
+        return [timer, finish, sounds, leftHanded].joined(separator: " ")
     }
 
     var cardsFooter: String {

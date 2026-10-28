@@ -20,7 +20,9 @@ interrupts the game with something.
   abandoning a started game counts as a loss
 - Cards fly between piles, turn over and are dealt from the stock; a bouncing
   cascade celebrates the win; haptic feedback on moves, refused moves and the
-  win (Settings → Play → Haptics)
+  win (Settings → Play → Haptics); sound effects for a draw, a card put down
+  or turned over, an undo and the win, off by default, muted in silent mode
+  and mixed with other apps' music (Settings → Play → Sound effects)
 - Left-handed layout: stock and waste on the right of the top row, under the
   left thumb (Settings → Play)
 - Accessibility: full VoiceOver play (every card and pile is described, and
@@ -89,6 +91,17 @@ swift Design/render_icons.swift     # after editing Design/AppIcon.svg; commit t
 The launch screen is the felt alone, from the same `Felt` colour asset the
 board paints, so the game appears without a flash. `AppIconTests` and
 `LaunchScreenTests` check the icon set and that the three greens agree.
+
+## Sound effects
+
+The five recordings are from Kenney's [Casino Audio](https://kenney.nl/assets/casino-audio)
+(CC0, `Design/Sounds/License.txt`). The originals stay unchanged in
+`Design/Sounds`; iOS cannot play Ogg, so a script converts them to AAC in the
+app's resources, named after their `SoundEffect` case (needs ffmpeg):
+
+```sh
+Design/Sounds/convert_sounds.sh     # after changing a sound; commit the .m4a files
+```
 
 ## Languages
 
@@ -252,4 +265,5 @@ snapshot fails on CI, the failed image and a diff are uploaded as the
 
 ## Licence
 
-GPL-3.0, see `LICENSE`.
+GPL-3.0, see `LICENSE`. The sound effects are Kenney's, under CC0 (see Sound
+effects).

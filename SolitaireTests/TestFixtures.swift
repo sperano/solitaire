@@ -39,3 +39,10 @@ final class HapticsSpy: HapticPlayer {
     private(set) var played: [HapticEvent] = []
     func play(_ event: HapticEvent) { played.append(event) }
 }
+
+/// Records the sounds a view model plays.
+@MainActor
+final class SoundsSpy: SoundPlayer {
+    private(set) var played: [SoundEffect] = []
+    func play(_ effect: SoundEffect) { played.append(effect) }
+}
