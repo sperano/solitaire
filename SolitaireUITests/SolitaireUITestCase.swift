@@ -10,7 +10,9 @@ class SolitaireUITestCase: XCTestCase {
     static let cardsPerDrawThree = 3
     static let defaultSeed = "42"
     static let timeout: TimeInterval = 5
-    /// How long to wait before concluding that something did not appear.
+    /// How long to wait before concluding that something did not appear. Something that goes away (a
+    /// closing sheet or alert) is waited for with `waitForNonExistence(timeout: timeout)` instead:
+    /// `waitForExistence` returns at once while it is still on screen.
     static let absenceTimeout: TimeInterval = 1
     static let dragHold: TimeInterval = 0.3
     /// Swipes `scrollTo` tries before giving up: enough for the whole Settings form.
