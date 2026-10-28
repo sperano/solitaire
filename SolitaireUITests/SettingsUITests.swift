@@ -73,7 +73,7 @@ final class SettingsUITests: SolitaireUITestCase {
         toggle.switches.firstMatch.tap()
         tap("settingsDoneButton")
 
-        XCTAssertFalse(element("timeLabel").waitForExistence(timeout: Self.absenceTimeout))
+        XCTAssertTrue(element("timeLabel").waitForNonExistence(timeout: Self.timeout))
         tap("autoCompleteButton")
         let summary = element("winSummary")
         XCTAssertTrue(summary.waitForExistence(timeout: Self.timeout))

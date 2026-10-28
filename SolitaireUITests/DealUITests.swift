@@ -51,7 +51,7 @@ final class DealUITests: SolitaireUITestCase {
         XCTAssertTrue(dealNumberField.waitForExistence(timeout: Self.timeout))
         tap("confirmPlayDealButton")
 
-        XCTAssertFalse(dealNumberField.waitForExistence(timeout: Self.absenceTimeout), "the alert closed")
+        XCTAssertTrue(dealNumberField.waitForNonExistence(timeout: Self.timeout), "the alert closed")
         XCTAssertTrue(element("dealNumberLabel").exists, "Settings stay open")
         XCTAssertEqual(dealNumber, Self.defaultSeed)
         tap("settingsDoneButton")
