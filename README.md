@@ -175,6 +175,55 @@ Connect requires, in English and French, with the status bar at 9:41, and
 writes `AppStore/screenshots/<locale>/`. Run it before a release; the images
 are not committed. The test skips in normal runs.
 
+### Submitting to the App Store
+
+The workflow stops at TestFlight; the listing and the submission for review
+are done in App Store Connect. Once, before the first release:
+
+1. In Certificates, Identifiers & Profiles, register the explicit App ID
+   `quebec.spe.Solitaire` under the team the project signs with
+   (`DEVELOPMENT_TEAM` in `project.yml`); no capabilities.
+2. In App Store Connect, Apps, +, New App: iOS, the name in
+   `AppStore/metadata/en-US/name.txt`, primary language English (U.S.), that
+   bundle ID, any SKU (`solitaire`). Names are unique across the store: if it
+   is taken, choose another and change `name.txt` in both languages.
+3. Create the API key (role Admin) and set the four secrets above, for example
+   `gh secret set APP_STORE_CONNECT_API_KEY < AuthKey_<id>.p8`. The `.p8` can
+   be downloaded only once.
+4. App Information: add the French (Canada) localization, and fill in name,
+   subtitle and privacy policy URL from `AppStore/metadata/<locale>/` for both
+   languages; category from `primary_category.txt` and
+   `primary_first_sub_category.txt` (Games, Card). Content rights: the app
+   contains third-party content (the CC0 sounds) and has the rights to it.
+5. Age rating: every answer is None or No; Vegas scoring has no wagering and
+   no money, so it is not simulated gambling. That gives 4+.
+6. App Privacy: the privacy policy URL, then "Data Not Collected".
+7. Pricing and Availability: free, in every territory. In Business, the EU
+   Digital Services Act trader status: an individual who sells nothing
+   declares themselves a non-trader.
+
+Each release:
+
+1. Bump `MARKETING_VERSION`, run `xcodegen generate`, and from the second
+   version add `release_notes.txt` in both languages; merge, and wait for CI
+   on `main`.
+2. Tag and push (above). The build appears in TestFlight after processing.
+   Export compliance is answered by `ITSAppUsesNonExemptEncryption` in
+   `project.yml`, so no question is asked. Install it from TestFlight on a
+   device and play a game.
+3. Run `Scripts/screenshots.sh` and upload `AppStore/screenshots/<locale>/` to
+   the 6.9-inch iPhone and 13-inch iPad slots of each language.
+4. On the version page, for each language: promotional text, description,
+   keywords, support URL and, from version 2, What's New, all from
+   `AppStore/metadata/<locale>/`. Copyright from `copyright.txt`.
+5. Choose the TestFlight build. App Review Information: contact details, no
+   sign-in required. Choose whether the version is released automatically or
+   by hand after approval.
+6. Add for Review, then Submit to App Review. A rejection comes back in
+   App Store Connect with the guideline it cites. A listing fix is resubmitted
+   as it is; a fix to the app needs a new version (`1.0.1`), since its tag
+   is what uploads a build and the rejected version's tag already exists.
+
 ## Layout
 
 | Path | What it is |
