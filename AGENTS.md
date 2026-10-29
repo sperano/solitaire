@@ -26,7 +26,9 @@ them. Never add a dependency or feature that sends data anywhere.
   `GameClock`, paused in the background, while Settings is open and in untimed
   mode), the drag state and
   persistence through the `GameStore` protocol, and reports results to
-  `StatisticsModel` (`StatisticsStore` protocol; the counting rules are
+  `StatisticsModel` (`StatisticsStore` and `BestScoresStore` protocols, two
+  files so each table resets alone; standard-scored wins are ranked in
+  `BestScores`; the counting rules are
   `GameStatistics` in the engine). The settings sheet is the one exception: it
   binds directly to `GameSettings`, shows the statistics screen and gets the
   deal number and a play-this-deal action as plain values. With *Winnable deals
@@ -97,7 +99,9 @@ them. Never add a dependency or feature that sends data anywhere.
   `cardBackPicker`, `feltPicker` (menu pickers: no value, the choice is a
   text inside the button), `settingsDoneButton`, `winNewGameButton`,
   `statisticsLink`, `statisticsScopePicker`, `resetStatisticsButton`,
-  `confirmResetStatisticsButton`; statistics rows `statsPlayed`, `statsWon`,
+  `confirmResetStatisticsButton`, `bestScoresLink`, `resetBestScoresButton`,
+  `confirmResetBestScoresButton`, `bestScoresEmptyLabel`, best-score rows
+  `bestScore-<rank>` (from 1); statistics rows `statsPlayed`, `statsWon`,
   `statsWinRate`, `statsBestTime`, `statsFewestMoves`, `statsCurrentStreak`,
   `statsLongestStreak` with the value as accessibility value (`none` when
   empty); labels

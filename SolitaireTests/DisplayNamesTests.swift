@@ -35,4 +35,9 @@ final class DisplayNamesTests: XCTestCase {
         XCTAssertEqual(CountPhrase.moves(1), "1 move")
         XCTAssertEqual(CountPhrase.moves(Self.manyMoves), "12 moves")
     }
+
+    func testPointsArePlural() {
+        XCTAssertEqual(CountPhrase.points(1), "1 point")
+        XCTAssertEqual(CountPhrase.points(Self.manyMoves), "12 points")
+    }
 }

@@ -237,6 +237,53 @@
         }
       }
     },
+    "%lld points" : {
+      "comment" : "A standard score",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld point"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld points"
+                }
+              }
+            }
+          }
+        },
+        "fr-CA" : {
+          "variations" : {
+            "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld points"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld point"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld points"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "-$%lld" : {
       "comment" : "Vegas: a loss in dollars",
       "localizations" : {
@@ -292,6 +339,27 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Records"
+          }
+        }
+      }
+    },
+    "Best Scores" : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meilleurs pointages"
+          }
+        }
+      }
+    },
+    "Best Scores, %@" : {
+      "comment" : "Best scores of one draw mode",
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meilleurs pointages, %@"
           }
         }
       }
@@ -399,6 +467,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Donne"
+          }
+        }
+      }
+    },
+    "Deal %@" : {
+      "comment" : "Best scores: the deal number",
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donne %@"
           }
         }
       }
@@ -521,6 +600,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chaque mode de pige repart de zéro. Cette action est irréversible."
+          }
+        }
+      }
+    },
+    "Every draw mode’s table is emptied. Statistics are kept. This cannot be undone." : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le tableau de chaque mode de pige est vidé. Les statistiques sont conservées. Cette action est irréversible."
           }
         }
       }
@@ -811,6 +900,16 @@
         }
       }
     },
+    "No standard-scored wins yet." : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune victoire avec pointage standard pour l’instant."
+          }
+        }
+      }
+    },
     "No useful moves" : {
       "comment" : "Hint found nothing",
       "localizations" : {
@@ -829,6 +928,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun"
+          }
+        }
+      }
+    },
+    "Only wins with standard scoring are ranked: every Vegas win pays the same." : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seules les victoires avec pointage standard sont classées : toute victoire à Vegas rapporte la même somme."
           }
         }
       }
@@ -903,12 +1012,32 @@
         }
       }
     },
+    "Reset Best Scores" : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réinitialiser les meilleurs pointages"
+          }
+        }
+      }
+    },
     "Reset Statistics" : {
       "localizations" : {
         "fr-CA" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réinitialiser les statistiques"
+          }
+        }
+      }
+    },
+    "Reset all best scores?" : {
+      "localizations" : {
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réinitialiser tous les meilleurs pointages?"
           }
         }
       }

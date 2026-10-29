@@ -17,8 +17,8 @@ extension Game {
     }
 
     /// `completable()` played until a single card is left to move, which wins the game.
-    static func oneMoveFromWinning(drawMode: DrawMode = .one) throws -> Game {
-        var game = completable(drawMode: drawMode)
+    static func oneMoveFromWinning(scoringMode: ScoringMode = .none, drawMode: DrawMode = .one) throws -> Game {
+        var game = completable(scoringMode: scoringMode, drawMode: drawMode)
         for _ in 1 ..< completableRemainingCardCount {
             try game.perform(XCTUnwrap(game.nextAutoCompleteMove()))
         }

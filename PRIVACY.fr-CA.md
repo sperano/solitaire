@@ -7,7 +7,7 @@ analytique, ni rapport de plantage, ni pistage, et elle ne se connecte
 jamais à Internet.
 
 Ce qu’elle conserve reste sur votre appareil : vos réglages, la partie en
-cours et vos statistiques. Supprimer l’app les supprime. Partager un numéro
+cours, vos statistiques et vos meilleurs pointages. Supprimer l’app les supprime. Partager un numéro
 de donne l’envoie seulement là où vous choisissez de le partager, par la
 feuille de partage du système.
 

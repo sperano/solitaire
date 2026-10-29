@@ -56,6 +56,8 @@ struct StatisticsView: View {
             Section {
                 row("Time", record.bestTimeSeconds.map(TimeFormat.minutesAndSeconds), id: "statsBestTime")
                 row("Fewest moves", record.fewestMoves.map(String.init), id: "statsFewestMoves")
+                NavigationLink("Best Scores") { BestScoresView(statistics: statistics, scope: scope) }
+                    .accessibilityIdentifier("bestScoresLink")
             } header: {
                 Text("Best").formHeader()
             }
