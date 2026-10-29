@@ -72,6 +72,13 @@ final class AppIconTests: XCTestCase {
         XCTAssertEqual(pixels.corner.channels, Array(felt))
     }
 
+    /// App Store Connect rejects an App Store icon with an alpha channel, even a fully opaque one.
+    func testTheLightIconHasNoAlphaChannel() throws {
+        let entry = try XCTUnwrap(entries().first { $0.luminosity == nil })
+        let opaque: Set<CGImageAlphaInfo> = [.none, .noneSkipFirst, .noneSkipLast]
+        XCTAssertTrue(try opaque.contains(image(entry).alphaInfo))
+    }
+
     func testTheDarkAndTintedIconsLeaveTheBackgroundToTheSystem() throws {
         for entry in try entries() where entry.luminosity != nil {
             XCTAssertEqual(try Pixels(image(entry)).corner.alpha, 0, entry.filename)

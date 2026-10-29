@@ -3,9 +3,12 @@
 //     swift Design/render_icons.swift
 // Each variant swaps the CSS variables at the top of the SVG, then AppKit (CoreSVG, macOS 11+)
 // draws it at 1024 x 1024 with real transparency; QuickLook and sips would flatten it on white.
-// Commit the PNGs it writes.
+// The light icon is written without an alpha channel: App Store Connect rejects an App Store icon
+// that has one, even when every pixel is opaque (ITMS-90717). Commit the PNGs it writes.
 
 import AppKit
+import ImageIO
+import UniformTypeIdentifiers
 
 let iconSize = 1_024
 let designDirectory = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
@@ -17,10 +20,10 @@ let iconSet = designDirectory.deletingLastPathComponent()
 /// under them; the tinted one is grey so the system's colour reads evenly. Everything else keeps
 /// the light palette. `none` is the SVG keyword CoreSVG honours; `transparent` paints black.
 let noFill = "none"
-let variants: [(name: String, palette: [String: String])] = [
-    ("AppIcon", [:]),
-    ("AppIcon-Dark", ["felt": noFill]),
-    ("AppIcon-Tinted", [
+let variants: [(name: String, isOpaque: Bool, palette: [String: String])] = [
+    ("AppIcon", true, [:]),
+    ("AppIcon-Dark", false, ["felt": noFill]),
+    ("AppIcon-Tinted", false, [
         "felt": noFill,
         "face": "#E8E8E8",
         "back": "#7A7A7A",
@@ -48,27 +51,41 @@ func withPalette(_ svg: String, _ palette: [String: String]) -> String {
     return svg
 }
 
-func render(_ svg: String) -> Data {
+let bitsPerComponent = 8
+let bytesPerPixel = 4
+
+/// Draws the SVG into an 8-bit RGB bitmap, with alpha or with the fourth byte skipped, so the
+/// PNG keeps or drops its alpha channel.
+func render(_ svg: String, isOpaque: Bool) -> Data {
     guard let image = NSImage(data: Data(svg.utf8)) else { fail("CoreSVG cannot read the SVG") }
-    guard let bitmap = NSBitmapImageRep(
-        bitmapDataPlanes: nil, pixelsWide: iconSize, pixelsHigh: iconSize, bitsPerSample: 8,
-        samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB,
-        bytesPerRow: 0, bitsPerPixel: 0
+    let alpha: CGImageAlphaInfo = isOpaque ? .noneSkipLast : .premultipliedLast
+    guard let space = CGColorSpace(name: CGColorSpace.sRGB), let context = CGContext(
+        data: nil, width: iconSize, height: iconSize, bitsPerComponent: bitsPerComponent,
+        bytesPerRow: iconSize * bytesPerPixel, space: space, bitmapInfo: alpha.rawValue
     ) else { fail("cannot allocate the bitmap") }
     NSGraphicsContext.saveGraphicsState()
-    NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: bitmap)
+    NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)
     let frame = NSRect(x: 0, y: 0, width: iconSize, height: iconSize)
     image.draw(in: frame, from: .zero, operation: .sourceOver, fraction: 1)
     NSGraphicsContext.restoreGraphicsState()
-    guard let png = bitmap.representation(using: .png, properties: [:]) else { fail("cannot encode the PNG") }
-    return png
+    guard let bitmap = context.makeImage() else { fail("cannot read the bitmap") }
+    return png(bitmap)
+}
+
+func png(_ image: CGImage) -> Data {
+    let data = NSMutableData()
+    guard let destination = CGImageDestinationCreateWithData(data, UTType.png.identifier as CFString, 1, nil)
+    else { fail("cannot create the PNG encoder") }
+    CGImageDestinationAddImage(destination, image, nil)
+    guard CGImageDestinationFinalize(destination) else { fail("cannot encode the PNG") }
+    return data as Data
 }
 
 guard let svg = try? String(contentsOf: source, encoding: .utf8) else { fail("cannot read \(source.path)") }
 for variant in variants {
     let destination = iconSet.appendingPathComponent("\(variant.name).png")
     do {
-        try render(withPalette(svg, variant.palette)).write(to: destination)
+        try render(withPalette(svg, variant.palette), isOpaque: variant.isOpaque).write(to: destination)
     } catch {
         fail("cannot write \(destination.path): \(error)")
     }
