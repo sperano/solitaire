@@ -13,4 +13,4 @@ Le solitaire Klondike, sans rien qui dérange. Pas de publicité, pas d’achats
 • Jeu à quatre couleurs, gros caractères, Augmenter le contraste, Réduire les animations et grand texte
 • Un choix de dos de cartes et de couleurs de tapis
 • iPhone et iPad, portrait et paysage, Split View et Stage Manager, raccourcis clavier
-• En français et en anglais
+• En français, en anglais et en espagnol

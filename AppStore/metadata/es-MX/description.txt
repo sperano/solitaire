@@ -1,0 +1,16 @@
+El solitario Klondike sin nada que estorbe. Sin anuncios, sin compras dentro de la app, sin cuenta, sin rastreo y sin analíticas: el juego nunca envía nada a ningún sitio.
+
+• Robar 1 o Robar 3
+• Puntuación estándar, Vegas o ninguna, con el saldo de Vegas conservado entre partidas si quieres
+• Solo repartos con solución: un solucionador comprueba cada reparto nuevo antes de que lo juegues
+• Cada reparto tiene un número para compartirlo o volver a jugarlo
+• Deshacer y rehacer sin límite, pistas y final automático en cuanto todas las cartas pueden subir
+• Estadísticas para cada modo de robo: partidas ganadas, mejor tiempo, menos movimientos, rachas
+• Tus diez mejores puntuaciones, con el número de reparto para volver a jugar cada una
+• Un modo sin cronómetro para jugar con calma, y una disposición para zurdos
+• Efectos de sonido si los quieres: apagados hasta que los actives, silenciados en modo silencio, nunca por encima de tu música
+• Compatibilidad total con VoiceOver: cada carta se mueve sin arrastrar
+• Baraja de cuatro colores, letra grande, Aumentar contraste, Reducir movimiento y texto grande
+• Varios reversos de cartas y colores de tapete
+• iPhone y iPad, vertical y horizontal, Split View y Stage Manager, atajos de teclado
+• En español, inglés y francés
