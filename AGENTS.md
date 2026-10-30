@@ -181,15 +181,17 @@ them. Never add a dependency or feature that sends data anywhere.
   "cards"`: use the catalog's plural forms), and a
   helper that takes a title takes `LocalizedStringKey`, not `String`. Give a
   `comment:` when the English alone is ambiguous. After adding or changing a
-  string, build in Xcode or run `make strings`, then write its French; CI fails
-  while the catalog is behind the code, and `LocalizableCatalogTests` while a
-  key lacks French, a plural form or an argument the English has. French
+  string, build in Xcode or run `make strings`, then translate it into every
+  language; CI fails while the catalog is behind the code, and
+  `LocalizableCatalogTests` while a key lacks a language, a plural form or an
+  argument the English has. Adding a language: README, "Adding a language". French
   follows Québec usage: *piger*, *pointage*, *boni*, a no-break space before a
   colon and none before `!`, `?` and `;`. A card inside a sentence uses
   `nameInSentence` (French adds the article: "le sept de cœur"). Accessibility
   identifiers and persisted values never change with the language.
 - App Store text: `AppStore/metadata/<locale>/<field>.txt` (`en-US`, `fr-CA`;
-  fastlane deliver's file names), within the limits `AppStoreMetadataTests`
+  fastlane deliver's file names; the tests and `Scripts/screenshots.sh` take
+  the locales from the folders), within the limits `AppStoreMetadataTests`
   checks; copyright and category sit in `AppStore/metadata/` itself. A
   version after the first adds `release_notes.txt` in every language. A change
   to what the app stores or shares updates `PRIVACY.md` and

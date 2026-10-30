@@ -1,18 +1,34 @@
 import XCTest
 @testable import Solitaire
 
-/// `Localizable.xcstrings`, read from the repository: every string the app shows has a French
-/// (Canada) translation, and every translation takes the same arguments as the English. A
-/// missing argument would print garbage; a wrong type would crash the formatting.
+/// `Localizable.xcstrings`, read from the repository: every string the app shows has a translation
+/// in every language of the catalog, and every translation takes the same arguments as the
+/// English. A missing argument would print garbage; a wrong type would crash the formatting. A
+/// language is in the catalog as soon as one key has it, so adding one needs no change here.
 final class LocalizableCatalogTests: XCTestCase {
     private static let catalogURL = URL(fileURLWithPath: #filePath)
         .deletingLastPathComponent().deletingLastPathComponent()
         .appendingPathComponent("Solitaire/Resources/Localizable.xcstrings")
     private static let sourceLanguage = "en"
+    /// The plural categories each language needs, by language code (Unicode CLDR, the forms
+    /// Xcode's catalog editor offers): French "one" covers 0 and 1, "many" exact millions; Chinese,
+    /// Japanese and Korean have one form. A new language not listed here fails until it is added.
+    private static let pluralCategories = [
+        "de": ["one", "other"],
+        "en": ["one", "other"],
+        "es": ["one", "many", "other"],
+        "fr": ["one", "many", "other"],
+        "it": ["one", "many", "other"],
+        "ja": ["other"],
+        "ko": ["other"],
+        "nl": ["one", "other"],
+        "pt": ["one", "many", "other"],
+        "zh": ["other"],
+    ]
+    private static let regionSeparator: Character = "-"
+    /// The one French the app has, and the preferences of French speakers elsewhere that must get it.
     private static let french = "fr-CA"
-    /// The plural categories each language needs (Unicode CLDR): French "one" covers 0 and 1,
-    /// "many" exact millions.
-    private static let pluralCategories = [sourceLanguage: ["one", "other"], french: ["one", "many", "other"]]
+    private static let otherFrenchPreferences = ["fr-FR", "fr-BE", "fr-CH", "fr"]
     private static let translated = "translated"
     private static let stale = "stale"
     /// `%@`, `%lld`, `%1$@`, `%2$lld`, `%%`, `%#@name@`: what a format string can take.
@@ -56,17 +72,36 @@ final class LocalizableCatalogTests: XCTestCase {
         XCTAssertEqual(try catalog().sourceLanguage, Self.sourceLanguage)
     }
 
-    func testTheAppShipsEnglishAndFrench() {
+    func testTheAppShipsEveryLanguageOfTheCatalog() throws {
         // Without the catalog in the build, every key would pass here and the app stay in English.
-        XCTAssertEqual(Bundle(for: GameViewModel.self).localizations.sorted(), [Self.sourceLanguage, Self.french])
+        let expected = try [Self.sourceLanguage] + translatedLanguages()
+        XCTAssertEqual(Bundle(for: GameViewModel.self).localizations.sorted(), expected.sorted())
     }
 
-    func testEveryKeyHasAFrenchTranslation() throws {
+    func testTheCatalogHasATranslation() throws {
+        XCTAssertFalse(try translatedLanguages().isEmpty)
+    }
+
+    func testFrenchFromAnotherRegionGetsTheCatalogsFrench() {
+        // Checked on simulators set to French (France): iOS falls back to fr-CA, not to English,
+        // so there is no separate `fr`. This is the same lookup the system makes at launch.
+        let bundle = Bundle(for: GameViewModel.self)
+        for preference in Self.otherFrenchPreferences {
+            XCTAssertEqual(Bundle.preferredLocalizations(from: bundle.localizations, forPreferences: [preference]),
+                           [Self.french], preference)
+        }
+    }
+
+    func testEveryKeyIsTranslatedInEveryLanguage() throws {
+        let languages = try translatedLanguages()
         for (key, entry) in try catalog().strings {
-            let french = try XCTUnwrap(entry.localizations?[Self.french], "no French for \"\(key)\"")
-            for (category, unit) in try units(of: french, language: Self.french, key: key) {
-                XCTAssertEqual(unit.state, Self.translated, "\"\(key)\" \(category) is not translated")
-                XCTAssertFalse(unit.value.trimmingCharacters(in: .whitespaces).isEmpty, "\"\(key)\" \(category)")
+            for language in languages {
+                let localization = try XCTUnwrap(entry.localizations?[language], "no \(language) for \"\(key)\"")
+                for (category, unit) in try units(of: localization, language: language, key: key) {
+                    let place = "\"\(key)\" in \(language) \(category)"
+                    XCTAssertEqual(unit.state, Self.translated, "\(place) is not translated")
+                    XCTAssertFalse(unit.value.trimmingCharacters(in: .whitespaces).isEmpty, place)
+                }
             }
         }
     }
@@ -107,11 +142,18 @@ final class LocalizableCatalogTests: XCTestCase {
 
     // MARK: Helpers
 
+    /// Every language some key is translated into, the source language aside.
+    private func translatedLanguages() throws -> [String] {
+        let languages = try catalog().strings.values.flatMap { ($0.localizations ?? [:]).keys }
+        return Set(languages).subtracting([Self.sourceLanguage]).sorted()
+    }
+
     /// The string units of a localisation: one, or one per plural form, which must all be there.
     private func units(of localization: Localization, language: String, key: String) throws -> [(String, StringUnit)] {
         if let unit = localization.stringUnit { return [("", unit)] }
         let forms = try XCTUnwrap(localization.variations?.plural, "\"\(key)\" in \(language): no string")
-        let needed = try XCTUnwrap(Self.pluralCategories[language], "unexpected language \(language)")
+        let code = String(language.prefix { $0 != Self.regionSeparator })
+        let needed = try XCTUnwrap(Self.pluralCategories[code], "no plural categories for \(language)")
         XCTAssertEqual(Set(forms.keys), Set(needed), "\"\(key)\" in \(language): plural forms")
         return forms.sorted { $0.key < $1.key }.map { ($0.key, $0.value.stringUnit) }
     }
