@@ -120,16 +120,46 @@ make strings          # add the strings the code uses to the catalog, mark unuse
 make check-strings    # fail if the catalog is behind the code, as CI checks it
 ```
 
-`LocalizableCatalogTests` fails until every key has a French translation, with
-every plural form and the same arguments as the English, and no key is stale.
-Card, suit and mode names live in the app (`DisplayNames.swift`), not in the
-engine. Ranks have a second form for use inside a sentence, because French
-says "le sept de cœur" where English says "seven of hearts".
+`LocalizableCatalogTests` fails until every key is translated into every
+language of the catalog, with every plural form and the same arguments as the
+English, and no key is stale. Card, suit and mode names live in the app
+(`DisplayNames.swift`), not in the engine. Ranks have a second form for use
+inside a sentence, because French says "le sept de cœur" where English says
+"seven of hearts".
 
 The App Store text is under `AppStore/metadata/<locale>/`, one file per App
 Store Connect field (the layout fastlane deliver reads); `AppStoreMetadataTests`
-checks both languages have every field within the store's length limits.
-`LocalizationUITests` launches the app in French.
+checks every locale there has every field within the store's length limits, and
+that the store and the app have the same languages. `LocalizationUITests`
+launches the app in French; one language is enough there, since the catalog
+tests check the content of all of them.
+
+One localisation per language serves every region: iOS gives a player in
+France, Belgium or Switzerland the `fr-CA` strings, not English. Add a regional
+variant only when the wording has to differ.
+
+### Adding a language
+
+1. Look up the language's plural categories (Unicode CLDR) in
+   `pluralCategories` in `SolitaireTests/LocalizableCatalogTests.swift`; add
+   them if the language is not there.
+2. In Xcode, open `Localizable.xcstrings`, add the language (+ under the
+   language list) and translate every key, every plural form included. Keep
+   the arguments: `%1$@` may move in the sentence but not change type.
+3. Run `xcodegen generate` (it reads the languages from the catalog into
+   `knownRegions`) and commit the project with the catalog.
+4. Add `AppStore/metadata/<locale>/` with every field the `en-US` folder has,
+   translated, under App Store Connect's locale code (`de-DE`, `es-ES`, `ja`,
+   `zh-Hans`, …; `AppStoreMetadataTests` lists them). Translate the privacy
+   policy as `PRIVACY.<locale>.md`, point `privacy_url` at it and link it from
+   `PRIVACY.md`. From the second version on, add `release_notes.txt` too.
+5. Run the unit tests (`LocalizableCatalogTests`, `AppStoreMetadataTests`),
+   then look at the app in the language (scheme option *App Language*, or
+   `-AppleLanguages "(<language>)"`): the board, Settings, Statistics and the
+   win panel, at a large text size too, since some languages run longer.
+   `Scripts/screenshots.sh` takes the new locale's screenshots by itself.
+6. Record the terms chosen (stock, waste, foundation, draw, score) in the
+   wiki's Languages notes, as for French, so later strings stay consistent.
 
 ## Releasing
 

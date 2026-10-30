@@ -8,8 +8,9 @@ set -eu
 os=26.5
 devices="iPhone 17 Pro Max
 iPad Pro 13-inch (M5)"
-locales="en-US fr-CA"
 root=$(cd "$(dirname "$0")/.." && pwd)
+# Every App Store locale with text: the folders of AppStore/metadata (its loose files are shared).
+locales=$(find "$root/AppStore/metadata" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort)
 output=$root/AppStore/screenshots
 work=$(mktemp -d)
 trap 'rm -rf "$work"' EXIT
