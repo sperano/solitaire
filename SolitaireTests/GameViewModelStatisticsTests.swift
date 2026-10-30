@@ -14,6 +14,7 @@ final class GameViewModelStatisticsTests: XCTestCase {
     private var settings: GameSettings!
     private var store: InMemoryGameStore!
     private var statisticsStore: InMemoryStatisticsStore!
+    private var bestScoresStore: InMemoryBestScoresStore!
 
     override func setUp() async throws {
         suiteName = "quebec.spe.SolitaireTests.\(UUID().uuidString)"
@@ -22,6 +23,7 @@ final class GameViewModelStatisticsTests: XCTestCase {
         settings = GameSettings(defaults: defaults)
         store = InMemoryGameStore()
         statisticsStore = InMemoryStatisticsStore()
+        bestScoresStore = InMemoryBestScoresStore()
     }
 
     override func tearDown() async throws {
@@ -30,7 +32,10 @@ final class GameViewModelStatisticsTests: XCTestCase {
 
     private func makeModel() -> GameViewModel {
         GameViewModel(
-            store: store, settings: settings, statistics: StatisticsModel(store: statisticsStore),
+            store: store, settings: settings, statistics: StatisticsModel(
+                store: statisticsStore,
+                bestScoresStore: bestScoresStore
+            ),
             fixedSeed: Self.fixedSeed
         )
     }
@@ -47,6 +52,7 @@ final class GameViewModelStatisticsTests: XCTestCase {
     }
 
     private var recorded: GameStatistics { statisticsStore.saved ?? GameStatistics() }
+    private var bestScores: BestScores { bestScoresStore.saved ?? BestScores() }
 
     // MARK: Losses
 
@@ -166,5 +172,45 @@ final class GameViewModelStatisticsTests: XCTestCase {
         }
         XCTAssertTrue(model.isWon)
         XCTAssertEqual(recorded.overall.won, 1)
+    }
+
+    // MARK: Best scores
+
+    func testAStandardWinIsRankedWithItsTimeBonus() throws {
+        let game = try Game.oneMoveFromWinning(scoringMode: .standard, drawMode: .three)
+        let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: Self.winningSeconds))
+
+        try playLastMove(model)
+
+        let best = try XCTUnwrap(bestScores[.three].first)
+        XCTAssertGreaterThan(model.timeBonus, 0)
+        XCTAssertEqual(best.score, model.score, "the score shown on the win screen, bonus included")
+        XCTAssertEqual(best.seconds, Self.winningSeconds)
+        XCTAssertEqual(best.moves, model.moveCount)
+        XCTAssertEqual(best.dealNumber, model.dealNumber)
+        XCTAssertTrue(bestScores[.one].isEmpty)
+    }
+
+    func testAnUntimedWinIsRankedWithoutATime() throws {
+        settings.timed = false
+        let game = try Game.oneMoveFromWinning(scoringMode: .standard)
+        let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: Self.winningSeconds))
+
+        try playLastMove(model)
+
+        let best = try XCTUnwrap(bestScores[.one].first)
+        XCTAssertNil(best.seconds)
+        XCTAssertEqual(best.score, model.score)
+    }
+
+    func testVegasAndUnscoredWinsAreNotRanked() throws {
+        for scoringMode in [ScoringMode.vegas, .none] {
+            let game = try Game.oneMoveFromWinning(scoringMode: scoringMode)
+            let model = makeModel(resuming: SavedGame(game: game, elapsedSeconds: Self.winningSeconds))
+            try playLastMove(model)
+            XCTAssertTrue(model.isWon)
+        }
+        XCTAssertEqual(recorded.overall.won, 2)
+        XCTAssertNil(bestScoresStore.saved)
     }
 }

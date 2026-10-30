@@ -18,6 +18,9 @@ interrupts the game with something.
 - Statistics per draw mode and overall: games played and won, win rate, best
   time, fewest moves, current and longest win streak (Settings → Statistics);
   abandoning a started game counts as a loss
+- Best scores: the ten highest standard-scored wins per draw mode and overall,
+  each with its date, time, moves and deal number (Settings → Statistics →
+  Best Scores); Vegas wins are not ranked, since every one pays $208
 - Cards fly between piles, turn over and are dealt from the stock; a bouncing
   cascade celebrates the win; haptic feedback on moves, refused moves and the
   win (Settings → Play → Haptics); sound effects for a draw, a card put down

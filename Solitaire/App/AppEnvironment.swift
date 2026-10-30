@@ -12,6 +12,7 @@ struct AppEnvironment {
     private static let uiTestingDefaultsSuite = "quebec.spe.Solitaire.ui-testing"
     private static let savedGameFileName = "current-game.json"
     private static let statisticsFileName = "statistics.json"
+    private static let bestScoresFileName = "best-scores.json"
     /// UI-test steps can take longer than a hint normally stays up on a slow CI runner, so under
     /// `--ui-testing` a hint lasts until the next move; unit tests cover the timeout.
     private static let uiTestingHintDuration = Duration.seconds(3_600)
@@ -30,7 +31,10 @@ struct AppEnvironment {
         }
         return AppEnvironment(
             store: FileGameStore(url: applicationSupportURL(savedGameFileName)),
-            statistics: StatisticsModel(store: FileStatisticsStore(url: applicationSupportURL(statisticsFileName))),
+            statistics: StatisticsModel(
+                store: FileStatisticsStore(url: applicationSupportURL(statisticsFileName)),
+                bestScoresStore: FileBestScoresStore(url: applicationSupportURL(bestScoresFileName))
+            ),
             settings: GameSettings(defaults: .standard),
             fixedSeed: nil
         )
@@ -72,7 +76,7 @@ struct AppEnvironment {
         }
         return AppEnvironment(
             store: InMemoryGameStore(saved: saved),
-            statistics: StatisticsModel(store: InMemoryStatisticsStore()),
+            statistics: StatisticsModel(store: InMemoryStatisticsStore(), bestScoresStore: InMemoryBestScoresStore()),
             settings: settings,
             fixedSeed: seed,
             hintDuration: uiTestingHintDuration

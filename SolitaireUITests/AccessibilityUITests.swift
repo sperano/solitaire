@@ -101,6 +101,18 @@ final class AccessibilityUITests: SolitaireUITestCase {
         try audit()
     }
 
+    func testBestScoresPassTheAudit() throws {
+        app.terminate()
+        app = launchApp(extraArguments: ["-drawMode", "1", "-position", "completable"])
+        tap("autoCompleteButton")
+        tap("winNewGameButton")
+        tap("settingsButton")
+        scrollTo("statisticsLink").tap()
+        scrollTo("bestScoresLink").tap()
+        XCTAssertTrue(element("bestScore-1").waitForExistence(timeout: Self.timeout))
+        try audit()
+    }
+
     func testWinScreenPassesTheAudit() throws {
         app.terminate()
         app = launchApp(extraArguments: ["-drawMode", "1", "-position", "completable"])

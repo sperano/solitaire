@@ -6,6 +6,7 @@ Le solitaire Klondike, sans rien qui dérange. Pas de publicité, pas d’achats
 • Chaque donne a un numéro à partager ou à rejouer
 • Annuler et rétablir sans limite, indices et fin automatique dès que toutes les cartes peuvent monter
 • Statistiques pour chaque mode de pige : parties gagnées, meilleur temps, moins de coups, séries
+• Vos dix meilleurs pointages, avec le numéro de donne pour rejouer chacun
 • Un mode sans chronomètre pour jouer en toute détente, et une disposition pour gaucher
 • Des effets sonores si vous le voulez : désactivés tant que vous ne les activez pas, muets en mode silencieux, jamais par-dessus votre musique
 • Prise en charge complète de VoiceOver : chaque carte se déplace sans glisser

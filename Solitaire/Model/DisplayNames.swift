@@ -92,4 +92,9 @@ enum CountPhrase {
     static func moves(_ count: Int) -> String {
         String(localized: "\(count) moves", comment: "Number of moves made in the game")
     }
+
+    /// "12 points", "1 point": a standard score on the best-scores table.
+    static func points(_ count: Int) -> String {
+        String(localized: "\(count) points", comment: "A standard score")
+    }
 }

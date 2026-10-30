@@ -383,13 +383,15 @@ final class GameViewModel {
         hint = nil
     }
 
-    /// Counts a win once, with the moves it took and, in timed mode, the time.
+    /// Counts a win once, with the moves it took and, in timed mode, the time; a standard-scored
+    /// win is also ranked among the best scores.
     private func recordWinIfNeeded() {
         guard game.isWon, !isResultRecorded else { return }
-        statistics.recordWin(
-            gameID: gameID, drawMode: game.drawMode, seconds: settings.timed ? elapsedSeconds : nil,
-            moves: game.moveCount
-        )
+        let seconds = settings.timed ? elapsedSeconds : nil
+        statistics.recordWin(gameID: gameID, drawMode: game.drawMode, seconds: seconds, moves: game.moveCount)
+        if game.scoringMode == .standard {
+            statistics.recordBestScore(of: game, gameID: gameID, score: score, seconds: seconds)
+        }
         isResultRecorded = true
     }
 
