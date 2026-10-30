@@ -162,9 +162,10 @@ them. Never add a dependency or feature that sends data anywhere.
   that run after a merge.
 - The app icon is rendered from `Design/AppIcon.svg` by `swift
   Design/render_icons.swift` (CoreSVG: shapes, transforms and CSS variables
-  only, no filters) into the three asset-catalog variants, light on the felt,
-  dark and tinted with a clear background; edit the SVG, re-render and commit
-  the PNGs. The felt is the `Felt` colour asset: `Theme.felt`, the launch
+  only, no filters) into the three asset-catalog variants, light on the felt
+  with no alpha channel (App Store Connect rejects one, opaque or not), dark
+  and tinted with a clear background; edit the SVG, re-render and commit the
+  PNGs. The felt is the `Felt` colour asset: `Theme.felt`, the launch
   screen (`UILaunchScreen` in `project.yml`) and the icon's `--felt` variable
   must stay the same green (`LaunchScreenTests`, `AppIconTests`).
 - Languages: English (the source) and French (Canada), in
