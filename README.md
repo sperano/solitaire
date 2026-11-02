@@ -290,22 +290,18 @@ cd SolitaireKit && swift test
 # Engine line coverage per file; fails below the minimum CI enforces (Scripts/coverage.sh)
 make coverage
 
-# App unit tests
-xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
-  -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing:SolitaireTests
+# Generated project up to date with project.yml (brew install xcodegen)
+make check-project
 
-# UI tests
-xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
-  -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing:SolitaireUITests
-
-# Layout and keyboard UI tests on an iPad (CI runs these on an iPad as well as an iPhone)
-xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
-  -destination 'platform=iOS Simulator,name=iPad Pro 13-inch (M5)' \
-  -only-testing:SolitaireUITests/LayoutUITests -only-testing:SolitaireUITests/KeyboardUITests
-
-# Snapshot tests, on the simulator the images were recorded on
-xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
-  -destination 'platform=iOS Simulator,name=iPhone 17,OS=26.5' -only-testing:SolitaireSnapshotTests
+# The app on the simulators, as CI runs it on main. Each target overrides its destination with
+# SIMULATOR, IPAD_SIMULATOR or SNAPSHOT_SIMULATOR (make ui SIMULATOR='platform=iOS Simulator,name=iPhone 17 Pro')
+make build          # the app and its test targets, no test run
+make unit           # SolitaireTests on an iPhone
+make check-strings  # the String Catalog matches the code
+make snapshot       # SolitaireSnapshotTests, on the simulator the images were recorded on
+make ui             # SolitaireUITests on an iPhone
+make ipad           # LayoutUITests and KeyboardUITests again on an iPad
+make app-coverage   # the app's coverage from the unit, snapshot and UI runs
 ```
 
 For deterministic runs, launch with `--ui-testing` (in-memory storage, fresh
@@ -335,13 +331,13 @@ After a deliberate change to how something looks, re-record and commit the
 new images:
 
 ```sh
-TEST_RUNNER_SNAPSHOT_TESTING_RECORD=all xcodebuild test \
-  -project Solitaire.xcodeproj -scheme Solitaire \
-  -destination 'platform=iOS Simulator,name=iPhone 17,OS=26.5' -only-testing:SolitaireSnapshotTests
+make record-snapshots
 ```
 
-A recording run reports every snapshot test as failed ("Record mode is on");
-that is expected. Review the changed PNGs before committing them. When a
+It rewrites the PNGs in place, then runs the snapshot tests against them.
+Review the changed PNGs before committing them. Each target leaves its result
+bundle in `build/results/` and the failed snapshots with their diffs in
+`build/snapshot-failures/`. When a
 snapshot fails on CI, the failed image and a diff are uploaded as the
 `snapshot-failures` artifact of the run.
 

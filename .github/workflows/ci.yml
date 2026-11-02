@@ -45,8 +45,8 @@ jobs:
     if: github.event_name != 'pull_request'
     runs-on: macos-26
     env:
-      # The snapshot images are recorded on this simulator; the tests skip on any other.
-      SNAPSHOT_SIMULATOR: platform=iOS Simulator,name=iPhone 17,OS=26.5
+      # The steps run the Makefile's targets; its result bundles and failed snapshots are in build/.
+      XCBEAUTIFY: xcbeautify --renderer github-actions
     steps:
       - uses: actions/checkout@v5
       - name: Show toolchain
@@ -54,13 +54,7 @@ jobs:
       - name: Check the generated project is up to date
         run: |
           brew install xcodegen
-          xcodegen generate
-          changes=$(git status --porcelain --untracked-files=all -- Solitaire.xcodeproj)
-          if [ -n "$changes" ]; then
-            echo "Solitaire.xcodeproj is out of date; run xcodegen generate and commit:"
-            echo "$changes"
-            exit 1
-          fi
+          make check-project
       - name: Pick an iPhone simulator
         run: |
           udid=$(xcrun simctl list devices available -j | python3 -c '
@@ -70,39 +64,22 @@ jobs:
           print(next(d["udid"] for k in ios for d in devices[k] if d["name"].startswith("iPhone")))')
           echo "SIMULATOR=id=$udid" >> "$GITHUB_ENV"
       - name: Unit tests
-        run: |
-          set -o pipefail
-          xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
-            -destination "$SIMULATOR" -only-testing:SolitaireTests \
-            -resultBundlePath "$RUNNER_TEMP/unit.xcresult" \
-            CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions
+        run: make unit
       - name: Check the String Catalog matches the code
-        # The unit tests built the app, so its extracted strings are in DerivedData.
-        run: Scripts/string-catalog.sh check ~/Library/Developer/Xcode/DerivedData
+        # The unit tests built the app in the same DerivedData, so this build is incremental.
+        run: make check-strings
       - name: Snapshot tests
         id: snapshots
-        env:
-          TEST_RUNNER_SNAPSHOT_ARTIFACTS: ${{ runner.temp }}/snapshot-failures
-        run: |
-          set -o pipefail
-          xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
-            -destination "$SNAPSHOT_SIMULATOR" -only-testing:SolitaireSnapshotTests \
-            -resultBundlePath "$RUNNER_TEMP/snapshots.xcresult" \
-            CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions
+        run: make snapshot
       - name: Upload the failed snapshots and their diffs
         if: failure() && steps.snapshots.outcome == 'failure'
         uses: actions/upload-artifact@v4
         with:
           name: snapshot-failures
-          path: ${{ runner.temp }}/snapshot-failures
+          path: build/snapshot-failures
           if-no-files-found: ignore
       - name: UI tests
-        run: |
-          set -o pipefail
-          xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
-            -destination "$SIMULATOR" -only-testing:SolitaireUITests \
-            -resultBundlePath "$RUNNER_TEMP/ui.xcresult" \
-            CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions
+        run: make ui
       - name: Pick an iPad simulator
         run: |
           udid=$(xcrun simctl list devices available -j | python3 -c '
@@ -112,15 +89,7 @@ jobs:
           print(next(d["udid"] for k in ios for d in devices[k] if d["name"].startswith("iPad")))')
           echo "IPAD_SIMULATOR=id=$udid" >> "$GITHUB_ENV"
       - name: Layout and keyboard UI tests on iPad
-        run: |
-          set -o pipefail
-          xcodebuild test -project Solitaire.xcodeproj -scheme Solitaire \
-            -destination "$IPAD_SIMULATOR" \
-            -only-testing:SolitaireUITests/LayoutUITests -only-testing:SolitaireUITests/KeyboardUITests \
-            CODE_SIGNING_ALLOWED=NO | xcbeautify --renderer github-actions
+        run: make ipad
       - name: Coverage
         # The app's lines run by the iPhone unit, snapshot and UI tests together; a report, no minimum.
-        run: |
-          xcrun xcresulttool merge "$RUNNER_TEMP"/unit.xcresult "$RUNNER_TEMP"/snapshots.xcresult \
-            "$RUNNER_TEMP"/ui.xcresult --output-path "$RUNNER_TEMP/iphone.xcresult"
-          Scripts/coverage.sh app "$RUNNER_TEMP/iphone.xcresult"
+        run: make app-coverage
