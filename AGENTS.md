@@ -172,7 +172,7 @@ them. Never add a dependency or feature that sends data anywhere.
   PNGs. The felt is the `Felt` colour asset: `Theme.felt`, the launch
   screen (`UILaunchScreen` in `project.yml`) and the icon's `--felt` variable
   must stay the same green (`LaunchScreenTests`, `AppIconTests`).
-- Languages: English (the source) and French (Canada), in
+- Languages: English (the source), French (Canada) and Spanish (`es`), in
   `Solitaire/Resources/Localizable.xcstrings`. Never show a `String` the
   catalog doesn't know: SwiftUI literals are looked up by themselves, text
   built in code goes through `String(localized:)` with a whole sentence as the
@@ -186,16 +186,20 @@ them. Never add a dependency or feature that sends data anywhere.
   `LocalizableCatalogTests` while a key lacks a language, a plural form or an
   argument the English has. Adding a language: README, "Adding a language". French
   follows Québec usage: *piger*, *pointage*, *boni*, a no-break space before a
-  colon and none before `!`, `?` and `;`. A card inside a sentence uses
-  `nameInSentence` (French adds the article: "le sept de cœur"). Accessibility
+  colon and none before `!`, `?` and `;`. Spanish is neutral Latin American
+  with *tú*: *robar*, *mazo*, *descarte*, *base*, *reparto*. A card inside a
+  sentence uses `nameInSentence` (French and Spanish add the article: "le sept
+  de cœur", "el siete de corazones"; Spanish hints say *sobre* so no article
+  meets *a* and needs *al*). Accessibility
   identifiers and persisted values never change with the language.
-- App Store text: `AppStore/metadata/<locale>/<field>.txt` (`en-US`, `fr-CA`;
+- App Store text: `AppStore/metadata/<locale>/<field>.txt` (`en-US`, `fr-CA`,
+  `es-MX`, `es-ES`;
   fastlane deliver's file names; the tests and `Scripts/screenshots.sh` take
   the locales from the folders), within the limits `AppStoreMetadataTests`
   checks; copyright and category sit in `AppStore/metadata/` itself. A
   version after the first adds `release_notes.txt` in every language. A change
-  to what the app stores or shares updates `PRIVACY.md` and
-  `PRIVACY.fr-CA.md`.
+  to what the app stores or shares updates `PRIVACY.md`,
+  `PRIVACY.fr-CA.md` and `PRIVACY.es.md`.
 - Privacy manifest: `Solitaire/Resources/PrivacyInfo.xcprivacy` declares no
   tracking, no data collected, and a reason for each required-reason API the
   code uses (today only `UserDefaults`, CA92.1). `PrivacyManifestTests` scans

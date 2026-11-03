@@ -4,7 +4,7 @@ options:
   deploymentTarget:
     iOS: "17.0"
   createIntermediateGroups: true
-  # English is the source language of Localizable.xcstrings; French (Canada) is the translation.
+  # English is the source language of Localizable.xcstrings; the catalog holds the translations.
   developmentLanguage: en
   generateEmptyDirectories: true
   # The Xcode version whose recommended settings the project has taken (LastUpgradeCheck).

@@ -44,7 +44,7 @@ interrupts the game with something.
   same deal over
 - Winnable deals only (Settings → Rules): new games are dealt until a solver
   finds a way to win them
-- English and French (Canada), following the language set on the device
+- English, French (Canada) and Spanish, following the language set on the device
 
 ## Devices
 
@@ -108,7 +108,8 @@ Design/Sounds/convert_sounds.sh     # after changing a sound; commit the .m4a fi
 
 ## Languages
 
-The app is in English and French (Canada). Every string the player reads or
+The app is in English, French (Canada) and Spanish (`es`, Latin American, which
+Spain reads too). Every string the player reads or
 VoiceOver speaks is in the String Catalog `Solitaire/Resources/Localizable.xcstrings`:
 SwiftUI looks up the literals in `Text`, `Button`, `Toggle` and the like by
 themselves, and text built in code goes through `String(localized:)`. The
@@ -194,7 +195,8 @@ the copyright and category (fastlane deliver reads this layout, or copy the
 fields into App Store Connect). From the second version on, each language gets
 a `release_notes.txt` for the version; the first version takes none.
 `AppStoreMetadataTests` checks the fields and their length limits. The privacy
-policy is `PRIVACY.md` (`PRIVACY.fr-CA.md` in French).
+policy is `PRIVACY.md` (`PRIVACY.fr-CA.md` in French, `PRIVACY.es.md` in
+Spanish).
 
 Privacy: `Solitaire/Resources/PrivacyInfo.xcprivacy` declares no tracking and
 no data collected, and the one API Apple asks a reason for, `UserDefaults`
@@ -204,7 +206,7 @@ using another API that needs a reason before the manifest declares it.
 
 Screenshots: `Scripts/screenshots.sh` runs `ScreenshotUITests` on the 6.9-inch
 iPhone and the 13-inch iPad simulators (iOS 26.5), the two sizes App Store
-Connect requires, in English and French, with the status bar at 9:41, and
+Connect requires, in every store language, with the status bar at 9:41, and
 writes `AppStore/screenshots/<locale>/`. Run it before a release; the images
 are not committed. The test skips in normal runs.
 
@@ -219,15 +221,16 @@ are done in App Store Connect. Once, before the first release:
 2. In App Store Connect, Apps, +, New App: iOS, the name in
    `AppStore/metadata/en-US/name.txt`, primary language English (U.S.), that
    bundle ID, any SKU (`solitaire`). Names are unique across the store: if it
-   is taken, choose another and change `name.txt` in both languages.
+   is taken, choose another and change `name.txt` in every locale.
 3. Create the API key (role Admin) and set the four secrets above, for example
    `gh secret set APP_STORE_CONNECT_API_KEY < AuthKey_<id>.p8`. The `.p8` can
    be downloaded only once.
-4. App Information: add the French (Canada) localization, and fill in name,
-   subtitle and privacy policy URL from `AppStore/metadata/<locale>/` for both
-   languages; category from `primary_category.txt` and
-   `primary_first_sub_category.txt` (Games, Card). Content rights: the app
-   contains third-party content (the CC0 sounds) and has the rights to it.
+4. App Information: add the French (Canada), Spanish (Mexico) and Spanish
+   (Spain) localizations, and fill in name, subtitle and privacy policy URL
+   from `AppStore/metadata/<locale>/` for every locale; category from
+   `primary_category.txt` and `primary_first_sub_category.txt` (Games, Card).
+   Content rights: the app contains third-party content (the CC0 sounds) and
+   has the rights to it.
 5. Age rating: every answer is None or No; Vegas scoring has no wagering and
    no money, so it is not simulated gambling. That gives 4+.
 6. App Privacy: the privacy policy URL, then "Data Not Collected".
@@ -267,9 +270,9 @@ Each release:
 | `SolitaireUITests/` | XCUITests that play the game through the accessibility tree. |
 | `SolitaireSnapshotTests/` | Image comparisons of the cards, the board (also at three screen sizes in both orientations), the win panel and Settings against the PNGs in `__Snapshots__`. |
 | `Design/` | The app icon's source artwork (`AppIcon.svg`) and the script that renders the icon variants from it. |
-| `AppStore/metadata/` | App Store name, subtitle, description, keywords, promotional text and URLs, in English and French, plus copyright and category. |
+| `AppStore/metadata/` | App Store name, subtitle, description, keywords, promotional text and URLs, per store language, plus copyright and category. |
 | `AppStore/ExportOptions.plist` | How the release workflow signs and uploads the archive. |
-| `PRIVACY.md`, `PRIVACY.fr-CA.md` | The privacy policy the App Store listing links to. |
+| `PRIVACY.md`, `PRIVACY.fr-CA.md`, `PRIVACY.es.md` | The privacy policy the App Store listing links to. |
 | `Scripts/string-catalog.sh` | Syncs or checks the String Catalog against the strings the compiler extracted (`make strings`, `make check-strings`). |
 | `Scripts/coverage.sh` | Line coverage as a table: the engine's, with its minimum (`make coverage`), or the app's from a test result bundle. CI puts both in the job summary. |
 | `Scripts/screenshots.sh` | Takes the App Store screenshots (see Releasing). |
