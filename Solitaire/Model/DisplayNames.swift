@@ -2,8 +2,9 @@ import Foundation
 import SolitaireKit
 
 // The names players read and VoiceOver speaks for the engine's types. They live in the app, not
-// in SolitaireKit, so they can come from the String Catalog. Ranks and suits use descriptive keys:
-// English says "seven" both alone and in a sentence, French says "sept" and "le sept".
+// in SolitaireKit, so they can come from the String Catalog. Ranks, suits and cards in a sentence
+// use descriptive keys: English says "seven of hearts" both alone and in a sentence, French says
+// "sept de cœur" and "le sept de cœur", German "Herz-Sieben" and "die Herz-Sieben".
 
 extension Rank {
     /// The rank alone, lower case: "seven" ("Waste, seven of hearts on top").
@@ -24,25 +25,6 @@ extension Rank {
         case .king: String(localized: "rank.king", defaultValue: "king", comment: "Card rank, alone")
         }
     }
-
-    /// The rank as the object of a sentence ("Move seven of hearts to…"); French adds the article.
-    var nameInSentence: String {
-        switch self {
-        case .ace: String(localized: "rank.ace.inSentence", defaultValue: "ace", comment: "Rank, with article")
-        case .two: String(localized: "rank.two.inSentence", defaultValue: "two", comment: "Rank, with article")
-        case .three: String(localized: "rank.three.inSentence", defaultValue: "three", comment: "Rank, with article")
-        case .four: String(localized: "rank.four.inSentence", defaultValue: "four", comment: "Rank, with article")
-        case .five: String(localized: "rank.five.inSentence", defaultValue: "five", comment: "Rank, with article")
-        case .six: String(localized: "rank.six.inSentence", defaultValue: "six", comment: "Rank, with article")
-        case .seven: String(localized: "rank.seven.inSentence", defaultValue: "seven", comment: "Rank, with article")
-        case .eight: String(localized: "rank.eight.inSentence", defaultValue: "eight", comment: "Rank, with article")
-        case .nine: String(localized: "rank.nine.inSentence", defaultValue: "nine", comment: "Rank, with article")
-        case .ten: String(localized: "rank.ten.inSentence", defaultValue: "ten", comment: "Rank, with article")
-        case .jack: String(localized: "rank.jack.inSentence", defaultValue: "jack", comment: "Rank, with article")
-        case .queen: String(localized: "rank.queen.inSentence", defaultValue: "queen", comment: "Rank, with article")
-        case .king: String(localized: "rank.king.inSentence", defaultValue: "king", comment: "Rank, with article")
-        }
-    }
 }
 
 extension Suit {
@@ -59,13 +41,43 @@ extension Suit {
 
 extension Card {
     /// "seven of hearts", lower case, for a label that names the card.
-    var spokenName: String { Self.name(rank: rank.spokenName, suit: suit.spokenName) }
+    var spokenName: String {
+        String(localized: "\(rank.spokenName) of \(suit.spokenName)", comment: "A card: its rank, then its suit")
+    }
 
-    /// The card as the object of a sentence: "seven of hearts", in French "le sept de cœur".
-    var nameInSentence: String { Self.name(rank: rank.nameInSentence, suit: suit.spokenName) }
-
-    private static func name(rank: String, suit: String) -> String {
-        String(localized: "\(rank) of \(suit)", comment: "A card: its rank, then its suit")
+    /// The card as the object of a hint ("Move seven of hearts to…"): in French "le sept de cœur",
+    /// in German the accusative "den Herz-Buben". The article agrees with the rank and German puts
+    /// it before the suit, so each rank has its own key, with the suit as an argument.
+    var nameInSentence: String {
+        let suit = suit.spokenName
+        return switch rank {
+        case .ace:
+            String(localized: "card.ace.inSentence", defaultValue: "ace of \(suit)", comment: "Card, with article")
+        case .two:
+            String(localized: "card.two.inSentence", defaultValue: "two of \(suit)", comment: "Card, with article")
+        case .three:
+            String(localized: "card.three.inSentence", defaultValue: "three of \(suit)", comment: "Card, with article")
+        case .four:
+            String(localized: "card.four.inSentence", defaultValue: "four of \(suit)", comment: "Card, with article")
+        case .five:
+            String(localized: "card.five.inSentence", defaultValue: "five of \(suit)", comment: "Card, with article")
+        case .six:
+            String(localized: "card.six.inSentence", defaultValue: "six of \(suit)", comment: "Card, with article")
+        case .seven:
+            String(localized: "card.seven.inSentence", defaultValue: "seven of \(suit)", comment: "Card, with article")
+        case .eight:
+            String(localized: "card.eight.inSentence", defaultValue: "eight of \(suit)", comment: "Card, with article")
+        case .nine:
+            String(localized: "card.nine.inSentence", defaultValue: "nine of \(suit)", comment: "Card, with article")
+        case .ten:
+            String(localized: "card.ten.inSentence", defaultValue: "ten of \(suit)", comment: "Card, with article")
+        case .jack:
+            String(localized: "card.jack.inSentence", defaultValue: "jack of \(suit)", comment: "Card, with article")
+        case .queen:
+            String(localized: "card.queen.inSentence", defaultValue: "queen of \(suit)", comment: "Card, with article")
+        case .king:
+            String(localized: "card.king.inSentence", defaultValue: "king of \(suit)", comment: "Card, with article")
+        }
     }
 }
 
