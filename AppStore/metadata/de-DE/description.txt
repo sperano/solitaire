@@ -1,0 +1,16 @@
+Klondike-Solitär, ohne dass etwas stört. Keine Werbung, keine In-App-Käufe, kein Konto, kein Tracking und keine Analyse: Das Spiel sendet nie etwas irgendwohin.
+
+• 1 oder 3 Karten ziehen
+• Standard- oder Vegas-Wertung oder gar keine, auf Wunsch mit dem Vegas-Kontostand von Spiel zu Spiel
+• Nur lösbare Spiele: Ein Löser prüft jedes neue Spiel, bevor du es spielst
+• Jedes Spiel hat eine Nummer zum Teilen oder Wiederholen
+• Unbegrenztes Widerrufen und Wiederholen, Tipps und automatisches Abschließen, sobald alle Karten auf die Zielstapel können
+• Statistik für jeden Modus: gewonnene Spiele, Bestzeit, wenigste Züge, Serien
+• Deine zehn besten Ergebnisse, mit der Spielnummer, um jedes noch einmal zu spielen
+• Ein Modus ohne Zeitmessung für ein entspanntes Spiel und ein Linkshänder-Layout
+• Soundeffekte, wenn du sie möchtest: aus, bis du sie einschaltest, stumm im Stummmodus, nie über deiner Musik
+• Volle VoiceOver-Unterstützung: Jede Karte lässt sich ohne Ziehen bewegen
+• Vierfarbiges Blatt, Großdruck, Kontrast erhöhen, Bewegung reduzieren und große Schrift
+• Verschiedene Kartenrückseiten und Tischfarben
+• iPhone und iPad, Hoch- und Querformat, Split View und Stage Manager, Tastaturkurzbefehle
+• Auf Deutsch, Englisch, Französisch und Spanisch

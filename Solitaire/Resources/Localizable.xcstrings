@@ -4,6 +4,12 @@
     "$%lld" : {
       "comment" : "Vegas: dollars won",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld $"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21,6 +27,12 @@
     "%@ and the cards on it" : {
       "comment" : "Hint: a card and the run above it",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ und die Karten darauf"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -38,6 +50,12 @@
     "%@ in %@" : {
       "comment" : "Win summary: moves, then time",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ in %2$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -61,6 +79,12 @@
     "%@ of %@" : {
       "comment" : "A card: its rank, then its suit",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@-%1$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -84,6 +108,12 @@
     "%@, face up" : {
       "comment" : "A face-up card, its name capitalised",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, aufgedeckt"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -100,6 +130,24 @@
     },
     "%lld cards" : {
       "localizations" : {
+        "de" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Karte"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Karten"
+                }
+              }
+            }
+          }
+        },
         "en" : {
           "variations" : {
             "plural" : {
@@ -171,6 +219,24 @@
     "%lld face down" : {
       "comment" : "Face-down cards in a column",
       "localizations" : {
+        "de" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld verdeckte Karte"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld verdeckte Karten"
+                }
+              }
+            }
+          }
+        },
         "es" : {
           "variations" : {
             "plural" : {
@@ -224,6 +290,24 @@
     "%lld moves" : {
       "comment" : "Number of moves made in the game",
       "localizations" : {
+        "de" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Zug"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Züge"
+                }
+              }
+            }
+          }
+        },
         "en" : {
           "variations" : {
             "plural" : {
@@ -295,6 +379,24 @@
     "%lld passes" : {
       "comment" : "Vegas: times the stock can be gone through",
       "localizations" : {
+        "de" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Durchgang"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Durchgänge"
+                }
+              }
+            }
+          }
+        },
         "en" : {
           "variations" : {
             "plural" : {
@@ -366,6 +468,24 @@
     "%lld points" : {
       "comment" : "A standard score",
       "localizations" : {
+        "de" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Punkt"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Punkte"
+                }
+              }
+            }
+          }
+        },
         "en" : {
           "variations" : {
             "plural" : {
@@ -437,6 +557,12 @@
     "-$%lld" : {
       "comment" : "Vegas: a loss in dollars",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-%lld $"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -454,6 +580,12 @@
     "A number from %@ to %@." : {
       "comment" : "Deal numbers allowed",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eine Zahl von %1$@ bis %2$@."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -476,6 +608,12 @@
     },
     "About" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Info"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -493,6 +631,12 @@
     "All" : {
       "comment" : "Statistics of every draw mode together",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -509,6 +653,12 @@
     },
     "Best" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bestwerte"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -525,6 +675,12 @@
     },
     "Best Scores" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bestenliste"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -542,6 +698,12 @@
     "Best Scores, %@" : {
       "comment" : "Best scores of one draw mode",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bestenliste, %@"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -558,6 +720,12 @@
     },
     "Cancel" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -574,6 +742,12 @@
     },
     "Card back" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartenrückseite"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -590,6 +764,12 @@
     },
     "Cards" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Karten"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -606,6 +786,12 @@
     },
     "Carry balance between games" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontostand ins nächste Spiel übernehmen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -622,6 +808,12 @@
     },
     "Changes take effect on the next game." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Änderungen gelten ab dem nächsten Spiel."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -638,6 +830,12 @@
     },
     "Column %lld" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spalte %lld"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -655,6 +853,12 @@
     "Column %lld, %@" : {
       "comment" : "A column and its face-down cards",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spalte %1$lld, %2$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -677,6 +881,12 @@
     },
     "Column %lld, empty" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spalte %lld, leer"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -693,6 +903,12 @@
     },
     "Current" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktuell"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -709,6 +925,12 @@
     },
     "Deal" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spiel"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -726,6 +948,12 @@
     "Deal %@" : {
       "comment" : "Best scores: the deal number",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spiel %@"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -742,6 +970,12 @@
     },
     "Deal number" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spielnummer"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -758,6 +992,12 @@
     },
     "Dealing…" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wird ausgeteilt …"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -774,6 +1014,12 @@
     },
     "Diamonds blue and clubs green, so no two suits share a colour." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Karo in Blau und Kreuz in Grün, damit keine zwei Farben gleich gefärbt sind."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -790,6 +1036,12 @@
     },
     "Done" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertig"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -806,6 +1058,12 @@
     },
     "Double-tap to draw" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zum Ziehen doppeltippen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -822,6 +1080,12 @@
     },
     "Double-tap to move it to the best spot, or swipe up or down to choose" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doppeltippen, um sie an die beste Stelle zu legen, oder zum Auswählen nach oben oder unten streichen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -838,6 +1102,12 @@
     },
     "Double-tap to turn the waste over" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zum Umdrehen des Abwurfstapels doppeltippen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -854,6 +1124,12 @@
     },
     "Draw" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ziehen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -871,6 +1147,24 @@
     "Draw %lld" : {
       "comment" : "Draw mode: how many cards a draw turns over",
       "localizations" : {
+        "de" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Karte"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Karten"
+                }
+              }
+            }
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -888,6 +1182,12 @@
     "Draw from the stock" : {
       "comment" : "Hint",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ziehe vom Talon"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -904,6 +1204,12 @@
     },
     "Every deal has a number. Share it, or enter one to play that deal again." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jedes Spiel hat eine Nummer. Teile sie oder gib eine ein, um dieses Spiel noch einmal zu spielen."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -920,6 +1226,12 @@
     },
     "Every draw mode goes back to zero. This cannot be undone." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Modi beginnen wieder bei null. Das lässt sich nicht widerrufen."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -936,6 +1248,12 @@
     },
     "Every draw mode’s table is emptied. Statistics are kept. This cannot be undone." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Bestenliste jedes Modus wird geleert. Die Statistik bleibt erhalten. Das lässt sich nicht widerrufen."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -952,6 +1270,12 @@
     },
     "Face-down card" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verdeckte Karte"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -968,6 +1292,12 @@
     },
     "Fewest moves" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenigste Züge"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -984,6 +1314,12 @@
     },
     "Finish" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abschließen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1000,6 +1336,12 @@
     },
     "Finish automatically" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisch abschließen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1016,6 +1358,12 @@
     },
     "Finish automatically plays the remaining cards once every one can go to the foundations." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„Automatisch abschließen“ spielt die restlichen Karten aus, sobald alle auf die Zielstapel können."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1032,6 +1380,12 @@
     },
     "Foundation %lld, %@ on top" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zielstapel %1$lld, %2$@ obenauf"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -1054,6 +1408,12 @@
     },
     "Foundation %lld, empty" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zielstapel %lld, leer"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1070,6 +1430,12 @@
     },
     "Four-colour deck" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vierfarbiges Blatt"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1086,6 +1452,12 @@
     },
     "Free, no ads, no tracking, no account." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kostenlos, ohne Werbung, ohne Tracking, ohne Konto."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1102,6 +1474,12 @@
     },
     "Game" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spiel"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1118,6 +1496,12 @@
     },
     "Games" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spiele"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1134,6 +1518,12 @@
     },
     "Haptics" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptik"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1150,6 +1540,12 @@
     },
     "Hint" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipp"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1166,6 +1562,12 @@
     },
     "Large print" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Großdruck"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1182,6 +1584,12 @@
     },
     "Large print puts a bigger rank and suit in the corner of each card." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Großdruck zeigt Wert und Farbe größer in der Ecke jeder Karte."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1198,6 +1606,12 @@
     },
     "Left-handed layout" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linkshänder-Layout"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1214,6 +1628,12 @@
     },
     "Left-handed layout puts the stock and the waste on the right." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Linkshänder-Layout legt Talon und Abwurfstapel nach rechts."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1230,6 +1650,12 @@
     },
     "Longest" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Längste"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1247,6 +1673,12 @@
     "Move %@ to %@" : {
       "comment" : "Hint: the card, then its target",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lege %1$@ auf %2$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -1270,6 +1702,12 @@
     "Move %@ to a foundation" : {
       "comment" : "Hint",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lege %@ auf einen Zielstapel"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1287,6 +1725,12 @@
     "Move %@ to the empty column" : {
       "comment" : "Hint",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lege %@ in die leere Spalte"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1303,6 +1747,12 @@
     },
     "Move to column %lld" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Spalte %lld legen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1319,6 +1769,12 @@
     },
     "Move to foundation" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf einen Zielstapel legen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1335,6 +1791,12 @@
     },
     "New Game" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neues Spiel"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1351,6 +1813,12 @@
     },
     "New games are dealt until the solver finds a way to win one; a deal number you enter is played as it is." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Spiele werden ausgeteilt, bis der Löser einen Weg zum Sieg findet; eine eingegebene Spielnummer wird gespielt, wie sie ist."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1367,6 +1835,12 @@
     },
     "No legal move" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein gültiger Zug"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1384,6 +1858,12 @@
     "No passes left" : {
       "comment" : "Vegas: the stock is spent",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Durchgänge mehr"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1400,6 +1880,12 @@
     },
     "No standard-scored wins yet." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch keine Siege mit Standardwertung."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1417,6 +1903,12 @@
     "No useful moves" : {
       "comment" : "Hint found nothing",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine sinnvollen Züge"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1434,6 +1926,12 @@
     "None" : {
       "comment" : "Scoring mode: no score",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1450,6 +1948,12 @@
     },
     "Only wins with standard scoring are ranked: every Vegas win pays the same." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nur Siege mit Standardwertung kommen in die Bestenliste: Jeder Vegas-Sieg bringt gleich viel."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1466,6 +1970,12 @@
     },
     "Play" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spielen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1482,6 +1992,12 @@
     },
     "Play a deal number" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spielnummer eingeben"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1498,6 +2014,12 @@
     },
     "Play a deal number…" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spielnummer eingeben …"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1514,6 +2036,12 @@
     },
     "Played" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gespielt"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1530,6 +2058,12 @@
     },
     "Redo" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiederholen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1546,6 +2080,12 @@
     },
     "Replay This Deal" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieses Spiel neu starten"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1562,6 +2102,12 @@
     },
     "Reset" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zurücksetzen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1578,6 +2124,12 @@
     },
     "Reset Best Scores" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bestenliste zurücksetzen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1594,6 +2146,12 @@
     },
     "Reset Statistics" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistik zurücksetzen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1610,6 +2168,12 @@
     },
     "Reset all best scores?" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Bestenlisten zurücksetzen?"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1626,6 +2190,12 @@
     },
     "Reset all statistics?" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die gesamte Statistik zurücksetzen?"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1642,6 +2212,12 @@
     },
     "Rules" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regeln"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1659,6 +2235,12 @@
     "Score %@" : {
       "comment" : "The score",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punkte: %@"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1676,6 +2258,12 @@
     "Score %@, including a time bonus of %lld" : {
       "comment" : "Win summary",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punkte: %1$@, davon %2$lld Zeitbonus"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -1698,6 +2286,12 @@
     },
     "Scoring" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wertung"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1714,6 +2308,12 @@
     },
     "Settings" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1730,6 +2330,12 @@
     },
     "Share this deal" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieses Spiel teilen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1747,6 +2353,12 @@
     "Solitaire deal %@, %@" : {
       "comment" : "Shared text: the deal number, then the draw mode",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solitär, Spiel Nr. %1$@, %2$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -1769,6 +2381,12 @@
     },
     "Sound effects" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soundeffekte"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1785,6 +2403,12 @@
     },
     "Sound effects are muted in silent mode and never stop your music." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soundeffekte sind im Stummmodus aus und unterbrechen nie deine Musik."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1802,6 +2426,12 @@
     "Standard" : {
       "comment" : "Scoring mode",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standard"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1818,6 +2448,12 @@
     },
     "Start a new game?" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ein neues Spiel beginnen?"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1834,6 +2470,12 @@
     },
     "Statistics" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistik"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1850,6 +2492,12 @@
     },
     "Stock" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talon"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1866,6 +2514,12 @@
     },
     "Stock, empty" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talon, leer"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1882,6 +2536,12 @@
     },
     "Streaks" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serien"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1898,6 +2558,12 @@
     },
     "Swipe up or down to choose where to move it" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zum Auswählen des Ziels nach oben oder unten streichen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1914,6 +2580,12 @@
     },
     "Table" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tisch"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1930,6 +2602,12 @@
     },
     "The clock pauses while the app is in the background or Settings are open." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Uhr hält an, solange die App im Hintergrund ist oder die Einstellungen geöffnet sind."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1946,6 +2624,12 @@
     },
     "The current game will be lost." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das laufende Spiel geht verloren."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1962,6 +2646,12 @@
     },
     "Time" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeit"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1979,6 +2669,12 @@
     "Time %@" : {
       "comment" : "Spoken time",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeit %@"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1995,6 +2691,12 @@
     },
     "Timer" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeitmessung"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2012,6 +2714,12 @@
     "Turn the waste back over" : {
       "comment" : "Hint: recycle the waste into the stock",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dreh den Abwurfstapel wieder um"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2028,6 +2736,12 @@
     },
     "Undo" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widerrufen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2044,6 +2758,12 @@
     },
     "Untimed: no clock, no time bonus and no best time." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ohne Zeitmessung: keine Uhr, kein Zeitbonus und keine Bestzeit."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2061,6 +2781,12 @@
     "Vegas" : {
       "comment" : "Scoring mode",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegas"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2078,6 +2804,12 @@
     "Vegas: each game costs $%lld, each card on a foundation pays $%lld (taken back if it leaves), and %@ allows %@ through the stock." : {
       "comment" : "Vegas rules: the buy-in, the payout per card, the draw mode, the passes",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegas: Jedes Spiel kostet %1$lld $, jede Karte auf einem Zielstapel bringt %2$lld $ (zurückgebucht, wenn sie ihn verlässt), und bei %3$@ gibt es %4$@ durch den Talon."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2100,6 +2832,12 @@
     },
     "Version" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2116,6 +2854,12 @@
     },
     "Waste, %@ on top" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abwurfstapel, %@ obenauf"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2132,6 +2876,12 @@
     },
     "Waste, empty" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abwurfstapel, leer"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2148,6 +2898,12 @@
     },
     "Win rate" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gewinnquote"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2164,6 +2920,12 @@
     },
     "Winnable deals only" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nur lösbare Spiele"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2180,6 +2942,12 @@
     },
     "Won" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gewonnen"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2196,6 +2964,12 @@
     },
     "You won!" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gewonnen!"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2210,10 +2984,406 @@
         }
       }
     },
+    "card.ace.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "das %@-Ass"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ace of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el as de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l’as de %@"
+          }
+        }
+      }
+    },
+    "card.eight.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "die %@-Acht"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "eight of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el ocho de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le huit de %@"
+          }
+        }
+      }
+    },
+    "card.five.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "die %@-Fünf"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "five of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el cinco de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le cinq de %@"
+          }
+        }
+      }
+    },
+    "card.four.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "die %@-Vier"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "four of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el cuatro de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le quatre de %@"
+          }
+        }
+      }
+    },
+    "card.jack.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "den %@-Buben"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "jack of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "la jota de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le valet de %@"
+          }
+        }
+      }
+    },
+    "card.king.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "den %@-König"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "king of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el rey de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le roi de %@"
+          }
+        }
+      }
+    },
+    "card.nine.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "die %@-Neun"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "nine of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el nueve de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le neuf de %@"
+          }
+        }
+      }
+    },
+    "card.queen.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "die %@-Dame"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "queen of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "la reina de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "la dame de %@"
+          }
+        }
+      }
+    },
+    "card.seven.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "die %@-Sieben"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "seven of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el siete de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le sept de %@"
+          }
+        }
+      }
+    },
+    "card.six.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "die %@-Sechs"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "six of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el seis de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le six de %@"
+          }
+        }
+      }
+    },
+    "card.ten.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "die %@-Zehn"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ten of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el diez de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le dix de %@"
+          }
+        }
+      }
+    },
+    "card.three.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "die %@-Drei"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "three of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el tres de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le trois de %@"
+          }
+        }
+      }
+    },
+    "card.two.inSentence" : {
+      "comment" : "Card, with article",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "die %@-Zwei"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "two of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el dos de %@"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "le deux de %@"
+          }
+        }
+      }
+    },
     "cardBack.blue" : {
       "comment" : "Card back design",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blau"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2238,6 +3408,12 @@
       "comment" : "Card back design",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Violette Rahmen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2262,6 +3438,12 @@
       "comment" : "Card back design",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rotes Gitter"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2286,6 +3468,12 @@
       "comment" : "Table colour",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blau"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2310,6 +3498,12 @@
       "comment" : "Table colour",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bordeaux"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2334,6 +3528,12 @@
       "comment" : "Table colour",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anthrazit"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2358,6 +3558,12 @@
       "comment" : "Table colour",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grün"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2381,6 +3587,12 @@
     "none" : {
       "comment" : "Statistics: no value yet",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "keine"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2399,6 +3611,12 @@
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ass"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2415,30 +3633,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "as"
-          }
-        }
-      }
-    },
-    "rank.ace.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "ace"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "el as"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "l’as"
           }
         }
       }
@@ -2447,6 +3641,12 @@
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acht"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2467,34 +3667,16 @@
         }
       }
     },
-    "rank.eight.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "eight"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "el ocho"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "le huit"
-          }
-        }
-      }
-    },
     "rank.five" : {
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fünf"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2515,34 +3697,16 @@
         }
       }
     },
-    "rank.five.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "five"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "el cinco"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "le cinq"
-          }
-        }
-      }
-    },
     "rank.four" : {
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vier"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2563,34 +3727,16 @@
         }
       }
     },
-    "rank.four.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "four"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "el cuatro"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "le quatre"
-          }
-        }
-      }
-    },
     "rank.jack" : {
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bube"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2611,34 +3757,16 @@
         }
       }
     },
-    "rank.jack.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "jack"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "la jota"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "le valet"
-          }
-        }
-      }
-    },
     "rank.king" : {
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "König"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2659,34 +3787,16 @@
         }
       }
     },
-    "rank.king.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "king"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "el rey"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "le roi"
-          }
-        }
-      }
-    },
     "rank.nine" : {
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neun"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2707,34 +3817,16 @@
         }
       }
     },
-    "rank.nine.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "nine"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "el nueve"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "le neuf"
-          }
-        }
-      }
-    },
     "rank.queen" : {
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dame"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2755,34 +3847,16 @@
         }
       }
     },
-    "rank.queen.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "queen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "la reina"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "la dame"
-          }
-        }
-      }
-    },
     "rank.seven" : {
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sieben"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2803,34 +3877,16 @@
         }
       }
     },
-    "rank.seven.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "seven"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "el siete"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "le sept"
-          }
-        }
-      }
-    },
     "rank.six" : {
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sechs"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2851,34 +3907,16 @@
         }
       }
     },
-    "rank.six.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "six"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "el seis"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "le six"
-          }
-        }
-      }
-    },
     "rank.ten" : {
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zehn"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2899,34 +3937,16 @@
         }
       }
     },
-    "rank.ten.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "ten"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "el diez"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "le dix"
-          }
-        }
-      }
-    },
     "rank.three" : {
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drei"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2947,34 +3967,16 @@
         }
       }
     },
-    "rank.three.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "three"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "el tres"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "le trois"
-          }
-        }
-      }
-    },
     "rank.two" : {
       "comment" : "Card rank, alone",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zwei"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2995,34 +3997,16 @@
         }
       }
     },
-    "rank.two.inSentence" : {
-      "comment" : "Rank, with article",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "two"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "el dos"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "le deux"
-          }
-        }
-      }
-    },
     "suit.clubs" : {
       "comment" : "Card suit",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kreuz"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -3047,6 +4031,12 @@
       "comment" : "Card suit",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Karo"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -3071,6 +4061,12 @@
       "comment" : "Card suit",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Herz"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -3095,6 +4091,12 @@
       "comment" : "Card suit",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pik"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",

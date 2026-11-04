@@ -2,7 +2,7 @@ import SolitaireKit
 import XCTest
 @testable import Solitaire
 
-/// The English names; `LocalizableCatalogTests` checks every one has its French.
+/// The English names; `LocalizableCatalogTests` checks every one is translated.
 final class DisplayNamesTests: XCTestCase {
     private static let manyMoves = 12
 
@@ -14,8 +14,11 @@ final class DisplayNamesTests: XCTestCase {
     }
 
     func testEnglishSentencesNameTheCardWithoutAnArticle() {
-        for rank in Rank.allCases {
-            XCTAssertEqual(rank.nameInSentence, rank.spokenName)
+        for suit in Suit.allCases {
+            for rank in Rank.allCases {
+                let card = Card(suit: suit, rank: rank)
+                XCTAssertEqual(card.nameInSentence, card.spokenName)
+            }
         }
         XCTAssertEqual(Card(suit: .clubs, rank: .queen).nameInSentence, "queen of clubs")
     }
