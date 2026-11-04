@@ -4,7 +4,8 @@ import XCTest
 /// The App Store text under `AppStore/metadata/<locale>/`, one file per App Store Connect field
 /// (the layout fastlane deliver reads): every locale has every field, within the store's limits.
 /// The fields that are not translated (copyright, category) sit in `AppStore/metadata/` itself.
-/// The locales are the folders there, so adding a language adds a folder and nothing here.
+/// The locales are the folders there, so adding a language adds a folder and, here, only the
+/// privacy policy its listing links to.
 final class AppStoreMetadataTests: XCTestCase {
     private static let repository = URL(fileURLWithPath: #filePath)
         .deletingLastPathComponent().deletingLastPathComponent()
@@ -42,6 +43,14 @@ final class AppStoreMetadataTests: XCTestCase {
     private static let sharedFields = ["copyright", "primary_category", "primary_first_sub_category"]
     /// Where `privacy_url` points: a file in this repository, as GitHub shows it on main.
     private static let repositoryFilePrefix = "https://github.com/sperano/solitaire/blob/main/"
+    /// The privacy policy each listing links to, in its own language.
+    private static let privacyPolicies = [
+        "de-DE": "PRIVACY.de.md",
+        "en-US": "PRIVACY.md",
+        "es-ES": "PRIVACY.es.md",
+        "es-MX": "PRIVACY.es.md",
+        "fr-CA": "PRIVACY.fr-CA.md",
+    ]
     private static let keywordSeparator: Character = ","
     private static let textExtension = ".txt"
 
@@ -125,6 +134,13 @@ final class AppStoreMetadataTests: XCTestCase {
             let path = String(policy.dropFirst(Self.repositoryFilePrefix.count))
             XCTAssertTrue(FileManager.default.fileExists(atPath: Self.repository.appendingPathComponent(path).path),
                           "\(locale): \(path) is not in the repository")
+        }
+    }
+
+    func testEachLocaleLinksToThePrivacyPolicyInItsLanguage() throws {
+        XCTAssertEqual(Set(Self.privacyPolicies.keys), Set(try Self.locales))
+        for (locale, policy) in Self.privacyPolicies {
+            XCTAssertEqual(try field("privacy_url", in: locale), Self.repositoryFilePrefix + policy, locale)
         }
     }
 

@@ -124,9 +124,10 @@ make check-strings    # fail if the catalog is behind the code, as CI checks it
 `LocalizableCatalogTests` fails until every key is translated into every
 language of the catalog, with every plural form and the same arguments as the
 English, and no key is stale. Card, suit and mode names live in the app
-(`DisplayNames.swift`), not in the engine. Ranks have a second form for use
-inside a sentence, because French says "le sept de cœur" where English says
-"seven of hearts".
+(`DisplayNames.swift`), not in the engine. A card has a second form for use
+inside a sentence, one key per rank with the suit as argument
+(`card.<rank>.inSentence`), because French says "le sept de cœur" where English
+says "seven of hearts".
 
 The App Store text is under `AppStore/metadata/<locale>/`, one file per App
 Store Connect field (the layout fastlane deliver reads); `AppStoreMetadataTests`
@@ -152,8 +153,9 @@ variant only when the wording has to differ.
 4. Add `AppStore/metadata/<locale>/` with every field the `en-US` folder has,
    translated, under App Store Connect's locale code (`de-DE`, `es-ES`, `ja`,
    `zh-Hans`, …; `AppStoreMetadataTests` lists them). Translate the privacy
-   policy as `PRIVACY.<locale>.md`, point `privacy_url` at it and link it from
-   `PRIVACY.md`. From the second version on, add `release_notes.txt` too.
+   policy as `PRIVACY.<locale>.md`, point `privacy_url` at it, add it to
+   `privacyPolicies` in `AppStoreMetadataTests` and link it from `PRIVACY.md`.
+   From the second version on, add `release_notes.txt` too.
 5. Run the unit tests (`LocalizableCatalogTests`, `AppStoreMetadataTests`),
    then look at the app in the language (scheme option *App Language*, or
    `-AppleLanguages "(<language>)"`): the board, Settings, Statistics and the

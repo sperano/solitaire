@@ -2807,7 +2807,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vegas: Jedes Spiel kostet %1$lld $, jede Karte auf einem Zielstapel bringt %2$lld $ (zurückgebucht, wenn sie ihn verlässt), und bei %3$@ sind %4$@ durch den Talon erlaubt."
+            "value" : "Vegas: Jedes Spiel kostet %1$lld $, jede Karte auf einem Zielstapel bringt %2$lld $ (zurückgebucht, wenn sie ihn verlässt), und bei %3$@ gibt es %4$@ durch den Talon."
           }
         },
         "en" : {
