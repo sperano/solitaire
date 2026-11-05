@@ -18,18 +18,20 @@ permissions:
 jobs:
   testflight:
     name: Archive and upload to TestFlight
-    runs-on: macos-26
+    runs-on: xcode-27
     env:
       API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
       API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
       TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
       BUILD_NUMBER: ${{ github.run_number }}
+      # The Xcode CI builds and tests with (ci.yml).
+      XCODE_VERSION: "27.2"
     steps:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - name: Show toolchain
-        run: xcodebuild -version
+      - name: Select Xcode
+        run: Scripts/select-xcode.sh "$XCODE_VERSION"
       - name: Set the work paths
         run: |
           echo "ARCHIVE=$RUNNER_TEMP/Solitaire.xcarchive" >> "$GITHUB_ENV"
