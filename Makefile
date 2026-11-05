@@ -11,7 +11,7 @@ SHELL := /bin/bash
 # snapshot tests skip on any other.
 SIMULATOR ?= platform=iOS Simulator,name=iPhone 17
 IPAD_SIMULATOR ?= platform=iOS Simulator,name=iPad Pro 13-inch (M5)
-SNAPSHOT_SIMULATOR ?= platform=iOS Simulator,name=iPhone 17,OS=26.5
+SNAPSHOT_SIMULATOR ?= platform=iOS Simulator,name=iPhone 17,OS=27.2
 
 # Fixed artifact paths: one result bundle per target, and the failed snapshots with their diffs.
 # Everything is under build/, which git ignores. One DerivedData for every target, so a target run

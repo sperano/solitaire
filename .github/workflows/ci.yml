@@ -9,12 +9,19 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  # Every job runs on this Xcode, the one the mactest Mac has, so lint, the engine's Swift and the
+  # simulator tests match what an agent checks there (Scripts/select-xcode.sh).
+  XCODE_VERSION: "27.2"
+
 jobs:
   lint:
     name: Lint
-    runs-on: macos-26
+    runs-on: xcode-27
     steps:
       - uses: actions/checkout@v5
+      - name: Select Xcode
+        run: Scripts/select-xcode.sh "$XCODE_VERSION"
       - name: Install SwiftLint and SwiftFormat
         run: brew install swiftlint swiftformat
       - name: Show versions
@@ -26,11 +33,11 @@ jobs:
 
   engine:
     name: SolitaireKit tests
-    runs-on: macos-26
+    runs-on: xcode-27
     steps:
       - uses: actions/checkout@v5
-      - name: Show toolchain
-        run: xcodebuild -version && swift --version
+      - name: Select Xcode
+        run: Scripts/select-xcode.sh "$XCODE_VERSION"
       - name: Run package tests
         working-directory: SolitaireKit
         run: swift test --parallel --enable-code-coverage
@@ -43,26 +50,23 @@ jobs:
     # Off on pull requests for now: the simulator tests take too long there. They still run on
     # every push to main, and before a PR locally (AGENTS.md).
     if: github.event_name != 'pull_request'
-    runs-on: macos-26
+    runs-on: xcode-27
     env:
       # The steps run the Makefile's targets; its result bundles and failed snapshots are in build/.
       XCBEAUTIFY: xcbeautify --renderer github-actions
+      # The simulators' iOS version: the one SNAPSHOT_SIMULATOR in the Makefile names.
+      SIMULATOR_OS: "27.2"
     steps:
       - uses: actions/checkout@v5
-      - name: Show toolchain
-        run: xcodebuild -version
+      - name: Select Xcode
+        run: Scripts/select-xcode.sh "$XCODE_VERSION"
       - name: Check the generated project is up to date
         run: |
           brew install xcodegen
           make check-project
-      - name: Pick an iPhone simulator
-        run: |
-          udid=$(xcrun simctl list devices available -j | python3 -c '
-          import json, sys
-          devices = json.load(sys.stdin)["devices"]
-          ios = sorted((k for k in devices if ".iOS-" in k), reverse=True)
-          print(next(d["udid"] for k in ios for d in devices[k] if d["name"].startswith("iPhone")))')
-          echo "SIMULATOR=id=$udid" >> "$GITHUB_ENV"
+      - name: Set up the simulators
+        # Downloads the iOS runtime when the image lacks it; sets SIMULATOR and IPAD_SIMULATOR.
+        run: Scripts/ci-simulators.sh "$SIMULATOR_OS" "iPhone 17" "iPad Pro 13-inch (M5)"
       - name: Unit tests
         run: make unit
       - name: Check the String Catalog matches the code
@@ -80,14 +84,6 @@ jobs:
           if-no-files-found: ignore
       - name: UI tests
         run: make ui
-      - name: Pick an iPad simulator
-        run: |
-          udid=$(xcrun simctl list devices available -j | python3 -c '
-          import json, sys
-          devices = json.load(sys.stdin)["devices"]
-          ios = sorted((k for k in devices if ".iOS-" in k), reverse=True)
-          print(next(d["udid"] for k in ios for d in devices[k] if d["name"].startswith("iPad")))')
-          echo "IPAD_SIMULATOR=id=$udid" >> "$GITHUB_ENV"
       - name: Layout and keyboard UI tests on iPad
         run: make ipad
       - name: Coverage

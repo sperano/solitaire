@@ -58,7 +58,7 @@ draws; hold ⌘ on an iPad to see them.
 ## Requirements
 
 - iOS 17 or later
-- Xcode 26 or later to build
+- Xcode 27 or later to build (CI and the snapshot images use Xcode 27.2)
 - [xcodegen](https://github.com/yonaskolb/XcodeGen) to regenerate the project
   (`brew install xcodegen`)
 - [SwiftLint](https://github.com/realm/SwiftLint) and
@@ -329,8 +329,8 @@ large print and left-handed with a fanned waste, the win panel and the
 Settings screen, in light and dark mode, and the board at the iPhone SE, iPhone Pro Max and iPad Pro sizes in both
 orientations (`LayoutSnapshotTests`, light mode, drawn at those sizes on the
 same simulator). The images are recorded on the iPhone 17 simulator running
-iOS 26.5, the one CI uses; on any other simulator the tests skip, since the
-screen size would not match.
+iOS 27.2 with Xcode 27.2, the ones CI uses; on any other simulator the tests
+skip, since the screen size would not match.
 
 After a deliberate change to how something looks, re-record and commit the
 new images:

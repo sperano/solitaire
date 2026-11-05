@@ -151,9 +151,12 @@ them. Never add a dependency or feature that sends data anywhere.
 - `SolitaireSnapshotTests` (swift-snapshot-testing) compares the cards, the
   board, the win panel and Settings with the PNGs in its `__Snapshots__`, in
   light and dark mode, one test file per view. They are recorded on the
-  iPhone 17 simulator running iOS 26.5, which CI pins, and skip elsewhere.
-  After a deliberate visual change, re-record (README, "Snapshot tests"),
-  look at the changed images and commit them with the change.
+  iPhone 17 simulator running iOS 27.2 with Xcode 27.2, which CI pins
+  (`XCODE_VERSION` in the workflows, `SNAPSHOT_SIMULATOR` in the Makefile),
+  and skip elsewhere. The mactest Mac is the reference: an agent re-records
+  with `mactest run record-snapshots`. After a deliberate visual change,
+  re-record (README, "Snapshot tests"), look at the changed images and commit
+  them with the change.
 - The checks: `make lint`, `swift test` in `SolitaireKit` with its coverage
   minimum (`make coverage`: the engine's own tests must run 90% of its lines,
   set in `Scripts/coverage.sh`; add tests rather than lower it), the `SolitaireTests` unit
