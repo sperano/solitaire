@@ -11,7 +11,6 @@ final class LocalizationUITests: SolitaireUITestCase {
         "-AppleLanguages", "(pt-BR)", "-AppleLocale", "pt_BR",
         "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL",
     ]
-    private static let layoutSettle: TimeInterval = 1.5
 
     override func setUp() async throws {
         continueAfterFailure = false
@@ -48,11 +47,14 @@ final class LocalizationUITests: SolitaireUITestCase {
         tap("settingsButton")
         XCTAssertTrue(app.navigationBars["Ajustes"].waitForExistence(timeout: Self.timeout))
         XCTAssertEqual(label(of: "winnableDealsOnlyToggle"), "Apenas distribuições solucionáveis")
-        Thread.sleep(forTimeInterval: Self.layoutSettle)
-        try app.performAccessibilityAudit(for: [.dynamicType, .textClipped])
+        try runAccessibilityAudit {
+            try app.performAccessibilityAudit(for: [.dynamicType, .textClipped])
+        }
 
         scrollTo("largePrintToggle")
         XCTAssertEqual(label(of: "largePrintToggle"), "Caracteres grandes")
-        try app.performAccessibilityAudit(for: [.dynamicType, .textClipped])
+        try runAccessibilityAudit {
+            try app.performAccessibilityAudit(for: [.dynamicType, .textClipped])
+        }
     }
 }

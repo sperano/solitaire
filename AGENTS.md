@@ -196,10 +196,10 @@ them. Never add a dependency or feature that sends data anywhere.
   Brazilian Portuguese uses *comprar*, *monte*, *descarte*, *base*, *coluna*,
   *pontuação*, *distribuição* and *partida*. A card
   inside a sentence uses `nameInSentence`, one key per rank with the suit as
-  argument (French and Spanish add the article: "le sept de cœur", "el siete
-  de corazones"; German puts it before the suit, in the accusative: "den
-  Herz-Buben"; Spanish hints say *sobre* so no article meets *a* and needs
-  *al*). Accessibility
+  argument (French, Spanish and Brazilian Portuguese add the article: "le
+  sept de cœur", "el siete de corazones", "o sete de copas"; German puts it
+  before the suit, in the accusative: "den Herz-Buben"; Spanish hints say
+  *sobre* so no article meets *a* and needs *al*). Accessibility
   identifiers and persisted values never change with the language.
 - App Store text: `AppStore/metadata/<locale>/<field>.txt` (`en-US`, `fr-CA`,
   `es-MX`, `es-ES`, `de-DE`, `pt-BR`;

@@ -244,7 +244,7 @@ are done in App Store Connect. Once, before the first release:
 Each release:
 
 1. Bump `MARKETING_VERSION`, run `xcodegen generate`, and from the second
-   version add `release_notes.txt` in both languages; merge, and wait for CI
+   version add `release_notes.txt` in every language; merge, and wait for CI
    on `main`.
 2. Tag and push (above). The build appears in TestFlight after processing.
    Export compliance is answered by `ITSAppUsesNonExemptEncryption` in
