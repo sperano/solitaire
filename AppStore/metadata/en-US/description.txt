@@ -13,4 +13,4 @@ Klondike solitaire with nothing in the way. No ads, no in-app purchases, no acco
 • Four-colour deck, large print, Increase Contrast, Reduce Motion and large text
 • A choice of card backs and table colours
 • iPhone and iPad, portrait and landscape, Split View and Stage Manager, keyboard shortcuts
-• In English, French, German and Spanish
+• In English, French, German, Portuguese (Brazil) and Spanish

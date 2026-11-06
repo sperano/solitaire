@@ -1,0 +1,16 @@
+Paciência Klondike sem nada para atrapalhar. Sem anúncios, compras no app, conta, rastreamento ou análises: o jogo nunca envia nada a lugar nenhum.
+
+• Comprar 1 ou 3 cartas
+• Pontuação padrão, Vegas ou nenhuma, com opção de manter o saldo Vegas entre partidas
+• Apenas distribuições solucionáveis: um solucionador verifica cada nova distribuição antes de você jogar
+• Cada distribuição tem um número para compartilhar ou jogar novamente
+• Desfazer e refazer sem limite, dicas e finalização automática quando todas as cartas puderem subir
+• Estatísticas para cada modo de compra: partidas vencidas, melhor tempo, menos jogadas e sequências
+• Suas dez melhores pontuações, com o número da distribuição para jogar cada uma novamente
+• Um modo sem tempo para uma partida tranquila e um layout para canhotos
+• Efeitos sonoros opcionais: desligados até você ativá-los, sem som no modo silencioso e sem interromper sua música
+• Suporte completo ao VoiceOver: todas as cartas podem ser movidas sem arrastar
+• Baralho de quatro cores, caracteres grandes, Aumentar Contraste, Reduzir Movimento e texto grande
+• Opções de versos das cartas e cores da mesa
+• iPhone e iPad, retrato e paisagem, Split View e Stage Manager, atalhos de teclado
+• Em português do Brasil, alemão, espanhol, francês e inglês

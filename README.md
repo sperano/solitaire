@@ -44,7 +44,7 @@ interrupts the game with something.
   same deal over
 - Winnable deals only (Settings → Rules): new games are dealt until a solver
   finds a way to win them
-- English, French (Canada), Spanish and German, following the language set on the device
+- English, French (Canada), German, Portuguese (Brazil) and Spanish, following the language set on the device
 
 ## Devices
 
@@ -108,8 +108,8 @@ Design/Sounds/convert_sounds.sh     # after changing a sound; commit the .m4a fi
 
 ## Languages
 
-The app is in English, French (Canada), Spanish (`es`, Latin American, which
-Spain reads too) and German (`de`). Every string the player reads or
+The app is in English, French (Canada), German (`de`), Portuguese (Brazil)
+(`pt-BR`) and Spanish (`es`, Latin American, which Spain reads too). Every string the player reads or
 VoiceOver speaks is in the String Catalog `Solitaire/Resources/Localizable.xcstrings`:
 SwiftUI looks up the literals in `Text`, `Button`, `Toggle` and the like by
 themselves, and text built in code goes through `String(localized:)`. The
@@ -133,8 +133,9 @@ The App Store text is under `AppStore/metadata/<locale>/`, one file per App
 Store Connect field (the layout fastlane deliver reads); `AppStoreMetadataTests`
 checks every locale there has every field within the store's length limits, and
 that the store and the app have the same languages. `LocalizationUITests`
-launches the app in French; one language is enough there, since the catalog
-tests check the content of all of them.
+launches the app in French to prove the lookup path; the catalog tests check
+the content of every language. Portuguese also has a targeted AX XXXL layout
+check because of its longer settings labels.
 
 One localisation per language serves every region: iOS gives a player in
 France, Belgium or Switzerland the `fr-CA` strings, not English. Add a regional
@@ -198,7 +199,7 @@ fields into App Store Connect). From the second version on, each language gets
 a `release_notes.txt` for the version; the first version takes none.
 `AppStoreMetadataTests` checks the fields and their length limits. The privacy
 policy is `PRIVACY.md` (`PRIVACY.fr-CA.md` in French, `PRIVACY.es.md` in
-Spanish, `PRIVACY.de.md` in German).
+Spanish, `PRIVACY.de.md` in German and `PRIVACY.pt-BR.md` in Portuguese).
 
 Privacy: `Solitaire/Resources/PrivacyInfo.xcprivacy` declares no tracking and
 no data collected, and the one API Apple asks a reason for, `UserDefaults`
@@ -227,8 +228,8 @@ are done in App Store Connect. Once, before the first release:
 3. Create the API key (role Admin) and set the four secrets above, for example
    `gh secret set APP_STORE_CONNECT_API_KEY < AuthKey_<id>.p8`. The `.p8` can
    be downloaded only once.
-4. App Information: add the French (Canada), Spanish (Mexico), Spanish
-   (Spain) and German localizations, and fill in name, subtitle and privacy policy URL
+4. App Information: add the French (Canada), German, Portuguese (Brazil),
+   Spanish (Mexico) and Spanish (Spain) localizations, and fill in name, subtitle and privacy policy URL
    from `AppStore/metadata/<locale>/` for every locale; category from
    `primary_category.txt` and `primary_first_sub_category.txt` (Games, Card).
    Content rights: the app contains third-party content (the CC0 sounds) and
@@ -274,7 +275,7 @@ Each release:
 | `Design/` | The app icon's source artwork (`AppIcon.svg`) and the script that renders the icon variants from it. |
 | `AppStore/metadata/` | App Store name, subtitle, description, keywords, promotional text and URLs, per store language, plus copyright and category. |
 | `AppStore/ExportOptions.plist` | How the release workflow signs and uploads the archive. |
-| `PRIVACY.md`, `PRIVACY.fr-CA.md`, `PRIVACY.es.md`, `PRIVACY.de.md` | The privacy policy the App Store listing links to. |
+| `PRIVACY.md`, `PRIVACY.fr-CA.md`, `PRIVACY.es.md`, `PRIVACY.de.md`, `PRIVACY.pt-BR.md` | The privacy policy the App Store listing links to. |
 | `Scripts/string-catalog.sh` | Syncs or checks the String Catalog against the strings the compiler extracted (`make strings`, `make check-strings`). |
 | `Scripts/coverage.sh` | Line coverage as a table: the engine's, with its minimum (`make coverage`), or the app's from a test result bundle. CI puts both in the job summary. |
 | `Scripts/screenshots.sh` | Takes the App Store screenshots (see Releasing). |
