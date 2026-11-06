@@ -1,6 +1,6 @@
 # Politique de confidentialité
 
-*Solitaire Klondike pour iPhone et iPad. [English version](PRIVACY.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md).*
+*Solitaire Klondike pour iPhone et iPad. [English version](PRIVACY.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versão em português](PRIVACY.pt-BR.md).*
 
 L’app ne recueille aucune donnée. Elle n’a ni compte, ni publicité, ni
 analytique, ni rapport de plantage, ni pistage, et elle ne se connecte
