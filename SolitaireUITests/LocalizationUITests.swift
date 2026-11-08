@@ -47,14 +47,16 @@ final class LocalizationUITests: SolitaireUITestCase {
         tap("settingsButton")
         XCTAssertTrue(app.navigationBars["Ajustes"].waitForExistence(timeout: Self.timeout))
         XCTAssertEqual(label(of: "winnableDealsOnlyToggle"), "Apenas distribuições solucionáveis")
-        try runAccessibilityAudit {
-            try app.performAccessibilityAudit(for: [.dynamicType, .textClipped])
-        }
+        try auditForClippedText()
 
         scrollTo("largePrintToggle")
         XCTAssertEqual(label(of: "largePrintToggle"), "Caracteres grandes")
+        try auditForClippedText()
+    }
+
+    private func auditForClippedText() throws {
         try runAccessibilityAudit {
-            try app.performAccessibilityAudit(for: [.dynamicType, .textClipped])
+            try app.performAccessibilityAudit(for: .textClipped)
         }
     }
 }

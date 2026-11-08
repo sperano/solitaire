@@ -55,7 +55,7 @@ final class StatisticsUITests: SolitaireUITestCase {
     func testResetAsksThenClears() {
         abandonStartedGame()
         openStatistics()
-        tap("resetStatisticsButton")
+        scrollTo("resetStatisticsButton").tap()
         tap("confirmResetStatisticsButton")
         expectStat("statsPlayed", "0")
     }
