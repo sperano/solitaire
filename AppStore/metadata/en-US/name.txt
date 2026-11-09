@@ -1,1 +1,1 @@
-Klondike Solitaire
+Minimal Solitaire

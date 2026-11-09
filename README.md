@@ -195,8 +195,10 @@ the bundle ID `quebec.spe.Solitaire`.
 
 The store listing is under `AppStore/metadata/`: name, subtitle, description,
 keywords, promotional text, privacy policy and support URLs per language, and
-the copyright and category (fastlane deliver reads this layout, or copy the
-fields into App Store Connect). From the second version on, each language gets
+the copyright and category, in fastlane deliver's layout. `Scripts/upload-listing.sh`
+uploads it with the age rating (`AppStore/age_rating.json`), the review
+information and the screenshots (`AppStore/Deliverfile`; see "Submitting to
+the App Store"). From the second version on, each language gets
 a `release_notes.txt` for the version; the first version takes none.
 `AppStoreMetadataTests` checks the fields and their length limits. The privacy
 policy is `PRIVACY.md` (`PRIVACY.fr-CA.md` in French, `PRIVACY.es.md` in
@@ -217,29 +219,27 @@ are not committed. The test skips in normal runs.
 
 ### Submitting to the App Store
 
-The workflow stops at TestFlight; the listing and the submission for review
-are done in App Store Connect. Once, before the first release:
+The workflow stops at TestFlight. `Scripts/upload-listing.sh` uploads the
+listing and can submit it for review; what the App Store Connect API cannot
+set is done in App Store Connect. Once, before the first release:
 
 1. In Certificates, Identifiers & Profiles, register the explicit App ID
    `quebec.spe.Solitaire` under the team the project signs with
    (`DEVELOPMENT_TEAM` in `project.yml`); no capabilities.
 2. In App Store Connect, Apps, +, New App: iOS, the name in
    `AppStore/metadata/en-US/name.txt`, primary language English (U.S.), that
-   bundle ID, any SKU (`solitaire`). Names are unique across the store: if it
-   is taken, choose another and change `name.txt` in every locale.
+   bundle ID, any SKU (`solitaire`). Names are unique across the store, the
+   other languages' names too: if one is taken, choose another and change
+   that `name.txt` (and the privacy policy that names the app). In Business,
+   accept any pending agreement; a free app needs no paid-apps agreement.
 3. Create the API key (role Admin) and set the four secrets above, for example
    `gh secret set APP_STORE_CONNECT_API_KEY < AuthKey_<id>.p8`. The `.p8` can
-   be downloaded only once.
-4. App Information: add the French (Canada), German, Portuguese (Brazil),
-   Simplified Chinese, Spanish (Mexico) and Spanish (Spain) localizations, and fill in name, subtitle and privacy policy URL
-   from `AppStore/metadata/<locale>/` for every locale; category from
-   `primary_category.txt` and `primary_first_sub_category.txt` (Games, Card).
-   Content rights: the app contains third-party content (the CC0 sounds) and
-   has the rights to it.
-5. Age rating: every answer is None or No; Vegas scoring has no wagering and
-   no money, so it is not simulated gambling. That gives 4+.
-6. App Privacy: the privacy policy URL, then "Data Not Collected".
-7. Pricing and Availability: free, in every territory except China mainland. Apple requires games there
+   be downloaded only once: keep it, the listing upload needs it too.
+4. App Information: content rights, the app contains third-party content (the
+   CC0 sounds) and has the rights to it.
+5. App Privacy: the privacy policy URL (`privacy_url.txt`; the field is on this
+   page, per language), then "Data Not Collected", and Publish.
+6. Pricing and Availability: free, in every territory except China mainland. Apple requires games there
    to have a Chinese game approval number and supporting documents, which this app does not have. In Business, the EU
    Digital Services Act trader status: an individual who sells nothing
    declares themselves a non-trader.
@@ -253,18 +253,29 @@ Each release:
    Export compliance is answered by `ITSAppUsesNonExemptEncryption` in
    `project.yml`, so no question is asked. Install it from TestFlight on a
    device and play a game.
-3. Run `Scripts/screenshots.sh` and upload `AppStore/screenshots/<locale>/` to
-   the 6.9-inch iPhone and 13-inch iPad slots of each language.
-4. On the version page, for each language: promotional text, description,
-   keywords, support URL and, from version 2, What's New, all from
-   `AppStore/metadata/<locale>/`. Copyright from `copyright.txt`.
-5. Choose the TestFlight build. App Review Information: contact details, no
-   sign-in required. Choose whether the version is released automatically or
-   by hand after approval.
-6. Add for Review, then Submit to App Review. A rejection comes back in
-   App Store Connect with the guideline it cites. A listing fix is resubmitted
-   as it is; a fix to the app needs a new version (`1.0.1`), since its tag
-   is what uploads a build and the rejected version's tag already exists.
+3. Run `Scripts/screenshots.sh`, then upload the listing:
+
+   ```sh
+   Scripts/upload-listing.sh ~/path/to/AuthKey_<KEYID>.p8 <issuer id>
+   ```
+
+   It installs fastlane under `build/bundle` (Ruby and Bundler from Homebrew;
+   fastlane's usage reporting is off), creates or edits the version
+   `MARKETING_VERSION`, and uploads, for every language, the name, subtitle,
+   privacy policy URL, promotional text, description, keywords, support URL,
+   What's New and the screenshots, plus category, copyright, age rating (4+:
+   every answer None or No; Vegas scoring has no wagering and no money, so it
+   is not simulated gambling) and the review notes. deliver shows a preview
+   and asks before uploading. The review contact details stay out of the
+   repository: enter them once on the version page, or set `REVIEW_FIRST_NAME`,
+   `REVIEW_LAST_NAME`, `REVIEW_PHONE` and `REVIEW_EMAIL`.
+4. On the version page, choose the TestFlight build.
+5. Run the upload again with `--submit` (or Add for Review, then Submit to App
+   Review). The version is released by hand after approval. A rejection comes
+   back in App Store Connect with the guideline it cites. A listing fix is
+   resubmitted as it is; a fix to the app needs a new version (`1.0.1`), since
+   its tag is what uploads a build and the rejected version's tag already
+   exists.
 
 ## Layout
 
@@ -282,6 +293,7 @@ Each release:
 | `Scripts/string-catalog.sh` | Syncs or checks the String Catalog against the strings the compiler extracted (`make strings`, `make check-strings`). |
 | `Scripts/coverage.sh` | Line coverage as a table: the engine's, with its minimum (`make coverage`), or the app's from a test result bundle. CI puts both in the job summary. |
 | `Scripts/screenshots.sh` | Takes the App Store screenshots (see Releasing). |
+| `Scripts/upload-listing.sh`, `AppStore/Deliverfile` | Uploads the App Store listing with fastlane deliver (see Releasing). |
 | `project.yml` | xcodegen definition of the Xcode project. |
 | `.swiftformat`, `.swiftlint.yml`, `Makefile` | Formatting and lint rules; `make lint` checks, `make format` rewrites. |
 | `.github/workflows/ci.yml` | Lints and runs the package tests, with their coverage minimum, on every PR and push to `main`; on pushes to `main` only, for now, it also runs the simulator and snapshot tests, checks the String Catalog and reports the app's coverage. |

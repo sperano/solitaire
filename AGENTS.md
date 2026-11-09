@@ -221,7 +221,9 @@ them. Never add a dependency or feature that sends data anywhere.
   uploads to TestFlight with the run number as the build number. Never set
   `CURRENT_PROJECT_VERSION` by hand. `Scripts/screenshots.sh` takes the store
   screenshots through `ScreenshotUITests` (skipped in normal runs); a new
-  screen worth showing gets a shot there.
+  screen worth showing gets a shot there. `Scripts/upload-listing.sh` uploads
+  the listing with fastlane deliver (`AppStore/Deliverfile`, Gemfile pinned,
+  usage reporting off); Eric runs it with the API key, agents never do.
 
 ## Workflow
 

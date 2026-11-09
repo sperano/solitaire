@@ -1,6 +1,6 @@
 # Datenschutzerklärung
 
-*Solitär Klondike für iPhone und iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md).*
+*Minimalistisches Solitär für iPhone und iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md).*
 
 Die App erhebt keine Daten. Sie hat kein Konto, keine Werbung, keine Analyse,
 keine Absturzberichte und kein Tracking, und sie verbindet sich nie mit dem
