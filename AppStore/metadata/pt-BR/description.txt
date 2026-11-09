@@ -13,4 +13,4 @@ Paciência Klondike sem nada para atrapalhar. Sem anúncios, compras no app, con
 • Baralho de quatro cores, caracteres grandes, Aumentar Contraste, Reduzir Movimento e texto grande
 • Opções de versos das cartas e cores da mesa
 • iPhone e iPad, retrato e paisagem, Split View e Stage Manager, atalhos de teclado
-• Em português do Brasil, alemão, espanhol, francês e inglês
+• Em português do Brasil, alemão, chinês simplificado, espanhol, francês e inglês

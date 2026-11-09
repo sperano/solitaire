@@ -1,6 +1,6 @@
 # Política de privacidad
 
-*Solitario Klondike para iPhone y iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versão em português](PRIVACY.pt-BR.md).*
+*Solitario Klondike para iPhone y iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md).*
 
 La app no recopila ningún dato. No tiene cuenta, ni anuncios, ni analíticas,
 ni informes de fallos, ni rastreo, y nunca se conecta a internet.

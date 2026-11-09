@@ -175,8 +175,8 @@ them. Never add a dependency or feature that sends data anywhere.
   PNGs. The felt is the `Felt` colour asset: `Theme.felt`, the launch
   screen (`UILaunchScreen` in `project.yml`) and the icon's `--felt` variable
   must stay the same green (`LaunchScreenTests`, `AppIconTests`).
-- Languages: English (the source), French (Canada), German (`de`), Portuguese (Brazil) (`pt-BR`) and
-  Spanish (`es`), in
+- Languages: English (the source), French (Canada), German (`de`), Portuguese (Brazil) (`pt-BR`),
+  Simplified Chinese (`zh-Hans`) and Spanish (`es`), in
   `Solitaire/Resources/Localizable.xcstrings`. Never show a `String` the
   catalog doesn't know: SwiftUI literals are looked up by themselves, text
   built in code goes through `String(localized:)` with a whole sentence as the
@@ -194,7 +194,8 @@ them. Never add a dependency or feature that sends data anywhere.
   with *tú*: *robar*, *mazo*, *descarte*, *base*, *reparto*. German uses *du*:
   *ziehen*, *Talon*, *Abwurfstapel*, *Zielstapel*, *Spalte*, *Spiel*.
   Brazilian Portuguese uses *comprar*, *monte*, *descarte*, *base*, *coluna*,
-  *pontuação*, *distribuição* and *partida*. A card
+  *pontuação*, *distribuição* and *partida*. Simplified Chinese uses 牌库,
+  废牌堆, 收牌区, 牌列, 翻牌 and 拉斯维加斯计分. A card
   inside a sentence uses `nameInSentence`, one key per rank with the suit as
   argument (French, Spanish and Brazilian Portuguese add the article: "le
   sept de cœur", "el siete de corazones", "o sete de copas"; German puts it
@@ -202,13 +203,14 @@ them. Never add a dependency or feature that sends data anywhere.
   *sobre* so no article meets *a* and needs *al*). Accessibility
   identifiers and persisted values never change with the language.
 - App Store text: `AppStore/metadata/<locale>/<field>.txt` (`en-US`, `fr-CA`,
-  `es-MX`, `es-ES`, `de-DE`, `pt-BR`;
+  `es-MX`, `es-ES`, `de-DE`, `pt-BR`, `zh-Hans`;
   fastlane deliver's file names; the tests and `Scripts/screenshots.sh` take
   the locales from the folders), within the limits `AppStoreMetadataTests`
   checks; copyright and category sit in `AppStore/metadata/` itself. A
   version after the first adds `release_notes.txt` in every language. A change
   to what the app stores or shares updates `PRIVACY.md`,
-  `PRIVACY.fr-CA.md`, `PRIVACY.es.md`, `PRIVACY.de.md` and `PRIVACY.pt-BR.md`.
+  `PRIVACY.fr-CA.md`, `PRIVACY.es.md`, `PRIVACY.de.md`, `PRIVACY.pt-BR.md` and
+  `PRIVACY.zh-Hans.md`.
 - Privacy manifest: `Solitaire/Resources/PrivacyInfo.xcprivacy` declares no
   tracking, no data collected, and a reason for each required-reason API the
   code uses (today only `UserDefaults`, CA92.1). `PrivacyManifestTests` scans

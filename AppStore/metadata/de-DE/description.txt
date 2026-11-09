@@ -13,4 +13,4 @@ Klondike-Solitär, ohne dass etwas stört. Keine Werbung, keine In-App-Käufe, k
 • Vierfarbiges Blatt, Großdruck, Kontrast erhöhen, Bewegung reduzieren und große Schrift
 • Verschiedene Kartenrückseiten und Tischfarben
 • iPhone und iPad, Hoch- und Querformat, Split View und Stage Manager, Tastaturkurzbefehle
-• Auf Deutsch, Englisch, Französisch, Portugiesisch (Brasilien) und Spanisch
+• Auf Deutsch, Englisch, Französisch, Portugiesisch (Brasilien), Spanisch und vereinfachtem Chinesisch

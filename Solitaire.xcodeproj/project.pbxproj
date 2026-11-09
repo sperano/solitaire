@@ -663,6 +663,7 @@
 				es,
 				"fr-CA",
 				"pt-BR",
+				"zh-Hans",
 			);
 			mainGroup = AB22EE3BDEFE79884A341E7D;
 			minimizedProjectReferenceProxies = 1;
