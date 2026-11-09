@@ -44,7 +44,8 @@ interrupts the game with something.
   same deal over
 - Winnable deals only (Settings → Rules): new games are dealt until a solver
   finds a way to win them
-- English, French (Canada), German, Portuguese (Brazil) and Spanish, following the language set on the device
+- English, French (Canada), German, Portuguese (Brazil), Simplified Chinese and Spanish, following the
+  language set on the device
 
 ## Devices
 
@@ -199,7 +200,8 @@ fields into App Store Connect). From the second version on, each language gets
 a `release_notes.txt` for the version; the first version takes none.
 `AppStoreMetadataTests` checks the fields and their length limits. The privacy
 policy is `PRIVACY.md` (`PRIVACY.fr-CA.md` in French, `PRIVACY.es.md` in
-Spanish, `PRIVACY.de.md` in German and `PRIVACY.pt-BR.md` in Portuguese).
+Spanish, `PRIVACY.de.md` in German, `PRIVACY.pt-BR.md` in Portuguese and
+`PRIVACY.zh-Hans.md` in Simplified Chinese).
 
 Privacy: `Solitaire/Resources/PrivacyInfo.xcprivacy` declares no tracking and
 no data collected, and the one API Apple asks a reason for, `UserDefaults`

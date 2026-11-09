@@ -13,4 +13,4 @@ El solitario Klondike sin nada que estorbe. Sin anuncios, sin compras dentro de 
 • Baraja de cuatro colores, letra grande, Aumentar contraste, Reducir movimiento y texto grande
 • Varios reversos de cartas y colores de tapete
 • iPhone y iPad, vertical y horizontal, Split View y Stage Manager, atajos de teclado
-• En español, alemán, francés, inglés y portugués (Brasil)
+• En español, alemán, chino simplificado, francés, inglés y portugués (Brasil)
