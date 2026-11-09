@@ -1,0 +1,4 @@
+# The tools the listing upload runs (Scripts/upload-listing.sh); nothing here goes into the app.
+source "https://rubygems.org"
+
+gem "fastlane", "2.241.2"

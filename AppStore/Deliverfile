@@ -1,0 +1,34 @@
+# The App Store listing that Scripts/upload-listing.sh uploads with fastlane deliver: the text under
+# metadata/ (every locale, the category and the copyright), the screenshots Scripts/screenshots.sh
+# writes, the age rating and the review information. The build comes from the release workflow,
+# so no binary goes up from here. The script passes the API key, the version and --submit.
+
+app_identifier "quebec.spe.Solitaire"
+metadata_path "./metadata"
+screenshots_path "./screenshots"
+skip_binary_upload true
+overwrite_screenshots true
+
+# Every answer None or No: Vegas scoring keeps points, never money, so it is not simulated gambling.
+app_rating_config_path "./age_rating.json"
+
+# Released by hand after approval.
+automatic_release false
+
+# precheck cannot read in-app purchases with an API key and fails on them; the app has none.
+run_precheck_before_submit false
+submission_information({
+  add_id_info_uses_idfa: false,
+  export_compliance_uses_encryption: false,
+})
+
+# The contact details stay out of the public repository: they come from the environment, and an
+# empty one leaves what App Store Connect already has.
+app_review_information(
+  first_name: ENV.fetch("REVIEW_FIRST_NAME", ""),
+  last_name: ENV.fetch("REVIEW_LAST_NAME", ""),
+  phone_number: ENV.fetch("REVIEW_PHONE", ""),
+  email_address: ENV.fetch("REVIEW_EMAIL", ""),
+  notes: "An offline game: no account, no sign-in, no network access. Vegas scoring is a " \
+    "points-only way of scoring; there is no money and nothing to buy."
+)
