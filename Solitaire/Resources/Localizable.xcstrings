@@ -27,6 +27,12 @@
             "state" : "translated",
             "value" : "US$ %lld"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$%lld"
+          }
         }
       }
     },
@@ -55,6 +61,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ e as cartas sobre ela"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@及其上方的牌"
           }
         }
       }
@@ -91,6 +103,12 @@
             "state" : "translated",
             "value" : "%1$@ em %2$@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@，用时%2$@"
+          }
         }
       }
     },
@@ -126,6 +144,12 @@
             "state" : "translated",
             "value" : "%1$@ de %2$@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@%1$@"
+          }
         }
       }
     },
@@ -154,6 +178,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@, virada para cima"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@，正面朝上"
           }
         }
       }
@@ -267,6 +297,18 @@
               }
             }
           }
+        },
+        "zh-Hans" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld张牌"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -361,6 +403,12 @@
                 }
               }
             }
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld张牌面朝下"
           }
         }
       }
@@ -471,6 +519,18 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld jogadas"
+                }
+              }
+            }
+          }
+        },
+        "zh-Hans" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld步"
                 }
               }
             }
@@ -588,6 +648,18 @@
               }
             }
           }
+        },
+        "zh-Hans" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld轮"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -701,6 +773,18 @@
               }
             }
           }
+        },
+        "zh-Hans" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld分"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -729,6 +813,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "-US$ %lld"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-$%lld"
           }
         }
       }
@@ -765,6 +855,12 @@
             "state" : "translated",
             "value" : "Um número de %1$@ a %2$@."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请输入%1$@到%2$@之间的数字。"
+          }
         }
       }
     },
@@ -792,6 +888,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sobre"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关于"
           }
         }
       }
@@ -822,6 +924,12 @@
             "state" : "translated",
             "value" : "Todas"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
+          }
         }
       }
     },
@@ -850,6 +958,12 @@
             "state" : "translated",
             "value" : "Melhores"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最佳"
+          }
         }
       }
     },
@@ -877,6 +991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Melhores pontuações"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最佳成绩"
           }
         }
       }
@@ -907,6 +1027,12 @@
             "state" : "translated",
             "value" : "Melhores pontuações, %@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最佳成绩，%@"
+          }
         }
       }
     },
@@ -934,6 +1060,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancelar"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
           }
         }
       }
@@ -963,6 +1095,12 @@
             "state" : "translated",
             "value" : "Verso da carta"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "牌背"
+          }
         }
       }
     },
@@ -990,6 +1128,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cartas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "纸牌"
           }
         }
       }
@@ -1019,6 +1163,12 @@
             "state" : "translated",
             "value" : "Manter saldo entre partidas"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "跨局累计余额"
+          }
         }
       }
     },
@@ -1047,6 +1197,12 @@
             "state" : "translated",
             "value" : "As alterações entram em vigor na próxima partida."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改将在下一局生效。"
+          }
         }
       }
     },
@@ -1074,6 +1230,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Coluna %lld"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "第%lld列"
           }
         }
       }
@@ -1110,6 +1272,12 @@
             "state" : "translated",
             "value" : "Coluna %1$lld, %2$@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "第%1$lld列，%2$@"
+          }
         }
       }
     },
@@ -1137,6 +1305,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Coluna %lld, vazia"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "第%lld列，空"
           }
         }
       }
@@ -1166,6 +1340,12 @@
             "state" : "translated",
             "value" : "Atual"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当前"
+          }
         }
       }
     },
@@ -1193,6 +1373,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Distribuição"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "牌局"
           }
         }
       }
@@ -1223,6 +1409,12 @@
             "state" : "translated",
             "value" : "Distribuição %@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "牌局%@"
+          }
         }
       }
     },
@@ -1250,6 +1442,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Número da distribuição"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "牌局编号"
           }
         }
       }
@@ -1279,6 +1477,12 @@
             "state" : "translated",
             "value" : "Distribuindo…"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在发牌…"
+          }
         }
       }
     },
@@ -1306,6 +1510,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ouros em azul e paus em verde, para que nenhum naipe tenha a mesma cor."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "方块显示为蓝色，梅花显示为绿色，让四种花色各有不同颜色。"
           }
         }
       }
@@ -1335,6 +1545,12 @@
             "state" : "translated",
             "value" : "OK"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
+          }
         }
       }
     },
@@ -1362,6 +1578,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toque duas vezes para comprar"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轻点两下即可翻牌"
           }
         }
       }
@@ -1391,6 +1613,12 @@
             "state" : "translated",
             "value" : "Toque duas vezes para movê-la ao melhor lugar ou deslize para cima ou para baixo para escolher"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轻点两下即可移到最佳位置，或上下轻扫进行选择"
+          }
         }
       }
     },
@@ -1419,6 +1647,12 @@
             "state" : "translated",
             "value" : "Toque duas vezes para virar o descarte"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轻点两下即可将废牌堆翻回牌库"
+          }
         }
       }
     },
@@ -1446,6 +1680,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comprar"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "翻牌"
           }
         }
       }
@@ -1488,6 +1728,12 @@
             "state" : "translated",
             "value" : "Comprar %lld"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "翻%lld张"
+          }
         }
       }
     },
@@ -1517,6 +1763,12 @@
             "state" : "translated",
             "value" : "Compre do monte"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "从牌库翻牌"
+          }
         }
       }
     },
@@ -1544,6 +1796,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cada distribuição tem um número. Compartilhe-o ou digite um número para jogar essa distribuição novamente."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每个牌局都有编号。你可以分享编号，或输入编号再次游玩同一牌局。"
           }
         }
       }
@@ -1573,6 +1831,12 @@
             "state" : "translated",
             "value" : "Todos os modos de compra voltarão a zero. Isso não pode ser desfeito."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每种翻牌模式的数据都会归零。此操作无法撤销。"
+          }
         }
       }
     },
@@ -1600,6 +1864,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "A tabela de cada modo de compra será esvaziada. As estatísticas serão mantidas. Isso não pode ser desfeito."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每种翻牌模式的排行榜都会清空。统计数据将保留。此操作无法撤销。"
           }
         }
       }
@@ -1629,6 +1899,12 @@
             "state" : "translated",
             "value" : "Carta virada para baixo"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "牌面朝下"
+          }
         }
       }
     },
@@ -1656,6 +1932,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Menos jogadas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最少步数"
           }
         }
       }
@@ -1685,6 +1967,12 @@
             "state" : "translated",
             "value" : "Finalizar"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
+          }
         }
       }
     },
@@ -1713,6 +2001,12 @@
             "state" : "translated",
             "value" : "Finalizar automaticamente"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动收牌"
+          }
         }
       }
     },
@@ -1740,6 +2034,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "A finalização automática joga as cartas restantes quando todas puderem ir para as bases."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当所有剩余纸牌都能移入收牌区时，自动收牌功能会替你移牌。"
           }
         }
       }
@@ -1775,6 +2075,12 @@
             "state" : "translated",
             "value" : "Base %1$lld, %2$@ no topo"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收牌区%1$lld，最上面是%2$@"
+          }
         }
       }
     },
@@ -1802,6 +2108,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Base %lld, vazia"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收牌区%lld，空"
           }
         }
       }
@@ -1831,6 +2143,12 @@
             "state" : "translated",
             "value" : "Baralho de quatro cores"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "四色牌面"
+          }
         }
       }
     },
@@ -1858,6 +2176,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Grátis, sem anúncios, sem rastreamento, sem conta."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "免费、无广告、不跟踪、无需账户。"
           }
         }
       }
@@ -1887,6 +2211,12 @@
             "state" : "translated",
             "value" : "Partida"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "游戏"
+          }
         }
       }
     },
@@ -1914,6 +2244,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Partidas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "牌局"
           }
         }
       }
@@ -1943,6 +2279,12 @@
             "state" : "translated",
             "value" : "Resposta tátil"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "触感反馈"
+          }
         }
       }
     },
@@ -1970,6 +2312,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dica"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提示"
           }
         }
       }
@@ -1999,6 +2347,12 @@
             "state" : "translated",
             "value" : "Caracteres grandes"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大号牌面"
+          }
         }
       }
     },
@@ -2026,6 +2380,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Caracteres grandes mostram o valor e o naipe em tamanho maior no canto de cada carta."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大号牌面会在每张牌的角落显示更大的点数和花色。"
           }
         }
       }
@@ -2055,6 +2415,12 @@
             "state" : "translated",
             "value" : "Layout para canhotos"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "左手布局"
+          }
         }
       }
     },
@@ -2083,6 +2449,12 @@
             "state" : "translated",
             "value" : "O layout para canhotos coloca o monte e o descarte à direita."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "左手布局会将牌库和废牌堆放在右侧。"
+          }
         }
       }
     },
@@ -2110,6 +2482,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mais longa"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最长"
           }
         }
       }
@@ -2146,6 +2524,12 @@
             "state" : "translated",
             "value" : "Mova %1$@ para %2$@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将%1$@移到%2$@"
+          }
         }
       }
     },
@@ -2174,6 +2558,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mova %@ para uma base"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将%@移到收牌区"
           }
         }
       }
@@ -2204,6 +2594,12 @@
             "state" : "translated",
             "value" : "Mova %@ para a coluna vazia"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将%@移到空牌列"
+          }
         }
       }
     },
@@ -2231,6 +2627,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mover para a coluna %lld"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移到第%lld列"
           }
         }
       }
@@ -2260,6 +2662,12 @@
             "state" : "translated",
             "value" : "Mover para uma base"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移到收牌区"
+          }
         }
       }
     },
@@ -2287,6 +2695,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nova partida"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新游戏"
           }
         }
       }
@@ -2316,6 +2730,12 @@
             "state" : "translated",
             "value" : "Novas partidas são distribuídas até o solucionador encontrar uma que possa ser vencida; uma distribuição cujo número você digitar será jogada como está."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开始新游戏时会不断重新发牌，直到求解器找到可解的牌局；你输入编号的牌局则会直接开始。"
+          }
         }
       }
     },
@@ -2343,6 +2763,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nenhuma jogada permitida"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无合法移动"
           }
         }
       }
@@ -2373,6 +2799,12 @@
             "state" : "translated",
             "value" : "Não há mais passagens"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无剩余轮次"
+          }
         }
       }
     },
@@ -2400,6 +2832,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ainda não há vitórias com pontuação padrão."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "还没有使用标准计分获胜的记录。"
           }
         }
       }
@@ -2430,6 +2868,12 @@
             "state" : "translated",
             "value" : "Nenhuma jogada útil"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有有用的移动"
+          }
         }
       }
     },
@@ -2459,6 +2903,12 @@
             "state" : "translated",
             "value" : "Nenhuma"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不计分"
+          }
         }
       }
     },
@@ -2486,6 +2936,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apenas vitórias com pontuação padrão entram no ranking: toda vitória no modo Vegas vale o mesmo."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "排行榜只记录标准计分模式的胜局：拉斯维加斯模式的每场胜局奖金相同。"
           }
         }
       }
@@ -2515,6 +2971,12 @@
             "state" : "translated",
             "value" : "Jogar"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开始"
+          }
         }
       }
     },
@@ -2542,6 +3004,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jogar uma distribuição pelo número"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按编号玩牌局"
           }
         }
       }
@@ -2571,6 +3039,12 @@
             "state" : "translated",
             "value" : "Jogar uma distribuição pelo número…"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "输入牌局编号…"
+          }
         }
       }
     },
@@ -2598,6 +3072,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Partidas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已玩"
           }
         }
       }
@@ -2627,6 +3107,12 @@
             "state" : "translated",
             "value" : "Refazer"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重做"
+          }
         }
       }
     },
@@ -2654,6 +3140,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repetir esta distribuição"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重玩本局"
           }
         }
       }
@@ -2683,6 +3175,12 @@
             "state" : "translated",
             "value" : "Redefinir"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重置"
+          }
         }
       }
     },
@@ -2710,6 +3208,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Redefinir melhores pontuações"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重置最佳成绩"
           }
         }
       }
@@ -2739,6 +3243,12 @@
             "state" : "translated",
             "value" : "Redefinir estatísticas"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重置统计数据"
+          }
         }
       }
     },
@@ -2766,6 +3276,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Redefinir todas as melhores pontuações?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重置所有最佳成绩？"
           }
         }
       }
@@ -2795,6 +3311,12 @@
             "state" : "translated",
             "value" : "Redefinir todas as estatísticas?"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重置所有统计数据？"
+          }
         }
       }
     },
@@ -2822,6 +3344,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Regras"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "规则"
           }
         }
       }
@@ -2851,6 +3379,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pontuação %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "得分：%@"
           }
         }
       }
@@ -2887,6 +3421,12 @@
             "state" : "translated",
             "value" : "Pontuação %1$@, incluindo bônus de tempo de %2$lld"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "得分：%1$@，其中时间奖励为%2$lld分"
+          }
         }
       }
     },
@@ -2914,6 +3454,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pontuação"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "计分"
           }
         }
       }
@@ -2943,6 +3489,12 @@
             "state" : "translated",
             "value" : "Ajustes"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置"
+          }
         }
       }
     },
@@ -2970,6 +3522,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compartilhar esta distribuição"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "分享此牌局"
           }
         }
       }
@@ -3006,6 +3564,12 @@
             "state" : "translated",
             "value" : "Distribuição de Paciência %1$@, %2$@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "纸牌接龙牌局%1$@，%2$@"
+          }
         }
       }
     },
@@ -3034,6 +3598,12 @@
             "state" : "translated",
             "value" : "Efeitos sonoros"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "音效"
+          }
         }
       }
     },
@@ -3061,6 +3631,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Os efeitos sonoros ficam sem som no modo silencioso e nunca interrompem sua música."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "静音模式下音效会静音，且绝不会中断你正在播放的音乐。"
           }
         }
       }
@@ -3091,6 +3667,12 @@
             "state" : "translated",
             "value" : "Padrão"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "标准"
+          }
         }
       }
     },
@@ -3118,6 +3700,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Iniciar uma nova partida?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开始新游戏？"
           }
         }
       }
@@ -3147,6 +3735,12 @@
             "state" : "translated",
             "value" : "Estatísticas"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "统计数据"
+          }
         }
       }
     },
@@ -3174,6 +3768,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Monte"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "牌库"
           }
         }
       }
@@ -3203,6 +3803,12 @@
             "state" : "translated",
             "value" : "Monte, vazio"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "牌库，空"
+          }
         }
       }
     },
@@ -3230,6 +3836,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sequências"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "连胜"
           }
         }
       }
@@ -3259,6 +3871,12 @@
             "state" : "translated",
             "value" : "Deslize para cima ou para baixo para escolher para onde movê-la"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上下轻扫以选择移动位置"
+          }
         }
       }
     },
@@ -3286,6 +3904,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mesa"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "牌桌"
           }
         }
       }
@@ -3315,6 +3939,12 @@
             "state" : "translated",
             "value" : "O cronômetro pausa quando o app está em segundo plano ou os Ajustes estão abertos."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "应用在后台运行或“设置”打开时，计时会暂停。"
+          }
         }
       }
     },
@@ -3343,6 +3973,12 @@
             "state" : "translated",
             "value" : "A partida atual será perdida."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当前游戏进度将丢失。"
+          }
         }
       }
     },
@@ -3370,6 +4006,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tempo"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "时间"
           }
         }
       }
@@ -3400,6 +4042,12 @@
             "state" : "translated",
             "value" : "Tempo %@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用时%@"
+          }
         }
       }
     },
@@ -3427,6 +4075,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cronômetro"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "计时器"
           }
         }
       }
@@ -3457,6 +4111,12 @@
             "state" : "translated",
             "value" : "Vire o descarte para formar o monte"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将废牌堆翻回牌库"
+          }
         }
       }
     },
@@ -3484,6 +4144,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Desfazer"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "撤销"
           }
         }
       }
@@ -3513,6 +4179,12 @@
             "state" : "translated",
             "value" : "Sem tempo: sem cronômetro, bônus de tempo ou melhor tempo."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不计时：无计时器、时间奖励和最快时间记录。"
+          }
         }
       }
     },
@@ -3541,6 +4213,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vegas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拉斯维加斯"
           }
         }
       }
@@ -3577,6 +4255,12 @@
             "state" : "translated",
             "value" : "Vegas: cada partida custa US$ %1$lld, cada carta em uma base paga US$ %2$lld (o valor é retirado se ela sair), e %3$@ permite %4$@ pelo monte."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拉斯维加斯计分：每局花费$%1$lld；每有一张牌移到收牌区可得$%2$lld（移出时扣回）；%3$@可将牌库翻%4$@。"
+          }
         }
       }
     },
@@ -3604,6 +4288,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Versão"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本"
           }
         }
       }
@@ -3633,6 +4323,12 @@
             "state" : "translated",
             "value" : "Descarte, %1$@ no topo"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "废牌堆，最上面是%@"
+          }
         }
       }
     },
@@ -3660,6 +4356,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Descarte, vazio"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "废牌堆，空"
           }
         }
       }
@@ -3689,6 +4391,12 @@
             "state" : "translated",
             "value" : "Taxa de vitórias"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "胜率"
+          }
         }
       }
     },
@@ -3716,6 +4424,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apenas distribuições solucionáveis"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仅限可解牌局"
           }
         }
       }
@@ -3745,6 +4459,12 @@
             "state" : "translated",
             "value" : "Vencidas"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已胜"
+          }
         }
       }
     },
@@ -3772,6 +4492,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Você venceu!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你赢了！"
           }
         }
       }
@@ -3809,6 +4535,12 @@
             "state" : "translated",
             "value" : "o ás de %@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@A"
+          }
         }
       }
     },
@@ -3844,6 +4576,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "o oito de %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@8"
           }
         }
       }
@@ -3881,6 +4619,12 @@
             "state" : "translated",
             "value" : "o cinco de %@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@5"
+          }
         }
       }
     },
@@ -3916,6 +4660,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "o quatro de %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@4"
           }
         }
       }
@@ -3953,6 +4703,12 @@
             "state" : "translated",
             "value" : "o valete de %@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@J"
+          }
         }
       }
     },
@@ -3988,6 +4744,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "o rei de %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@K"
           }
         }
       }
@@ -4025,6 +4787,12 @@
             "state" : "translated",
             "value" : "o nove de %@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@9"
+          }
         }
       }
     },
@@ -4060,6 +4828,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "a dama de %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@Q"
           }
         }
       }
@@ -4097,6 +4871,12 @@
             "state" : "translated",
             "value" : "o sete de %@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@7"
+          }
         }
       }
     },
@@ -4132,6 +4912,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "o seis de %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@6"
           }
         }
       }
@@ -4169,6 +4955,12 @@
             "state" : "translated",
             "value" : "o dez de %@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@10"
+          }
         }
       }
     },
@@ -4204,6 +4996,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "o três de %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@3"
           }
         }
       }
@@ -4241,6 +5039,12 @@
             "state" : "translated",
             "value" : "o dois de %@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@2"
+          }
         }
       }
     },
@@ -4276,6 +5080,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Azul"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "蓝色"
           }
         }
       }
@@ -4313,6 +5123,12 @@
             "state" : "translated",
             "value" : "Molduras roxas"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紫色边框"
+          }
         }
       }
     },
@@ -4348,6 +5164,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Treliça vermelha"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "红色网格"
           }
         }
       }
@@ -4385,6 +5207,12 @@
             "state" : "translated",
             "value" : "Azul"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "蓝色"
+          }
         }
       }
     },
@@ -4420,6 +5248,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bordô"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "酒红色"
           }
         }
       }
@@ -4457,6 +5291,12 @@
             "state" : "translated",
             "value" : "Carvão"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "炭灰色"
+          }
         }
       }
     },
@@ -4493,6 +5333,12 @@
             "state" : "translated",
             "value" : "Verde"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "绿色"
+          }
         }
       }
     },
@@ -4521,6 +5367,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "nenhum"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暂无"
           }
         }
       }
@@ -4558,6 +5410,12 @@
             "state" : "translated",
             "value" : "ás"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A"
+          }
         }
       }
     },
@@ -4593,6 +5451,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "oito"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "8"
           }
         }
       }
@@ -4630,6 +5494,12 @@
             "state" : "translated",
             "value" : "cinco"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5"
+          }
         }
       }
     },
@@ -4665,6 +5535,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "quatro"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4"
           }
         }
       }
@@ -4702,6 +5578,12 @@
             "state" : "translated",
             "value" : "valete"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "J"
+          }
         }
       }
     },
@@ -4737,6 +5619,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "rei"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "K"
           }
         }
       }
@@ -4774,6 +5662,12 @@
             "state" : "translated",
             "value" : "nove"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "9"
+          }
         }
       }
     },
@@ -4809,6 +5703,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "dama"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Q"
           }
         }
       }
@@ -4846,6 +5746,12 @@
             "state" : "translated",
             "value" : "sete"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7"
+          }
         }
       }
     },
@@ -4881,6 +5787,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "seis"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6"
           }
         }
       }
@@ -4918,6 +5830,12 @@
             "state" : "translated",
             "value" : "dez"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10"
+          }
         }
       }
     },
@@ -4953,6 +5871,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "três"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3"
           }
         }
       }
@@ -4990,6 +5914,12 @@
             "state" : "translated",
             "value" : "dois"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2"
+          }
         }
       }
     },
@@ -5025,6 +5955,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "paus"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "梅花"
           }
         }
       }
@@ -5062,6 +5998,12 @@
             "state" : "translated",
             "value" : "ouros"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "方块"
+          }
         }
       }
     },
@@ -5098,6 +6040,12 @@
             "state" : "translated",
             "value" : "copas"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "红桃"
+          }
         }
       }
     },
@@ -5133,6 +6081,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "espadas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑桃"
           }
         }
       }

@@ -1,6 +1,6 @@
 # Privacy policy
 
-*Klondike Solitaire for iPhone and iPad. [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versão em português](PRIVACY.pt-BR.md).*
+*Klondike Solitaire for iPhone and iPad. [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md).*
 
 The app collects no data. It has no account, no ads, no analytics, no crash
 reporting and no tracking, and it never connects to the internet.

@@ -1,6 +1,6 @@
 # Política de privacidade
 
-*Paciência Klondike para iPhone e iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md).*
+*Paciência Klondike para iPhone e iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [简体中文](PRIVACY.zh-Hans.md).*
 
 O app não coleta nenhum dado. Não tem conta, anúncios, análises, relatórios de
 falhas ou rastreamento e nunca se conecta à internet.

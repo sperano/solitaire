@@ -3,10 +3,14 @@ import XCTest
 /// The app in French (Canada): the String Catalog is in the build and both kinds of string reach
 /// the screen, SwiftUI's literal keys and the `String(localized:)` VoiceOver labels.
 ///
-/// French proves the localisation plumbing. Portuguese also gets a targeted large-text check
-/// because its longer settings labels were added with that requirement.
+/// French proves the localisation plumbing. Portuguese and Chinese also get targeted large-text
+/// checks because their translations were added with that requirement.
 final class LocalizationUITests: SolitaireUITestCase {
     private static let frenchArguments = ["-AppleLanguages", "(fr-CA)", "-AppleLocale", "fr_CA"]
+    private static let chineseLargestTextArguments = [
+        "-AppleLanguages", "(zh-Hans)", "-AppleLocale", "zh_CN",
+        "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL",
+    ]
     private static let portugueseLargestTextArguments = [
         "-AppleLanguages", "(pt-BR)", "-AppleLocale", "pt_BR",
         "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL",
@@ -51,6 +55,25 @@ final class LocalizationUITests: SolitaireUITestCase {
 
         scrollTo("largePrintToggle")
         XCTAssertEqual(label(of: "largePrintToggle"), "Caracteres grandes")
+        try auditForClippedText()
+    }
+
+    func testChineseFitsAtTheLargestTextSize() throws {
+        app.terminate()
+        app = launchApp(extraArguments: ["-drawMode", "1"] + Self.chineseLargestTextArguments)
+
+        XCTAssertEqual(label(of: "stock"), "牌库")
+        XCTAssertEqual(label(of: "card-QC"), "梅花Q，正面朝上")
+        XCTAssertEqual(label(of: "movesLabel"), "0步")
+        XCTAssertTrue(app.windows.firstMatch.frame.contains(element("movesLabel").frame))
+
+        tap("settingsButton")
+        XCTAssertTrue(app.navigationBars["设置"].waitForExistence(timeout: Self.timeout))
+        XCTAssertEqual(label(of: "winnableDealsOnlyToggle"), "仅限可解牌局")
+        try auditForClippedText()
+
+        scrollTo("largePrintToggle")
+        XCTAssertEqual(label(of: "largePrintToggle"), "大号牌面")
         try auditForClippedText()
     }
 

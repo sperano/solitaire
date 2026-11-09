@@ -109,7 +109,7 @@ Design/Sounds/convert_sounds.sh     # after changing a sound; commit the .m4a fi
 ## Languages
 
 The app is in English, French (Canada), German (`de`), Portuguese (Brazil)
-(`pt-BR`) and Spanish (`es`, Latin American, which Spain reads too). Every string the player reads or
+(`pt-BR`), Simplified Chinese (`zh-Hans`) and Spanish (`es`, Latin American, which Spain reads too). Every string the player reads or
 VoiceOver speaks is in the String Catalog `Solitaire/Resources/Localizable.xcstrings`:
 SwiftUI looks up the literals in `Text`, `Button`, `Toggle` and the like by
 themselves, and text built in code goes through `String(localized:)`. The
@@ -134,8 +134,8 @@ Store Connect field (the layout fastlane deliver reads); `AppStoreMetadataTests`
 checks every locale there has every field within the store's length limits, and
 that the store and the app have the same languages. `LocalizationUITests`
 launches the app in French to prove the lookup path; the catalog tests check
-the content of every language. Portuguese also has a targeted AX XXXL layout
-check because of its longer settings labels.
+the content of every language. Portuguese and Simplified Chinese also have
+targeted AX XXXL layout checks.
 
 One localisation per language serves every region: iOS gives a player in
 France, Belgium or Switzerland the `fr-CA` strings, not English. Add a regional
@@ -229,7 +229,7 @@ are done in App Store Connect. Once, before the first release:
    `gh secret set APP_STORE_CONNECT_API_KEY < AuthKey_<id>.p8`. The `.p8` can
    be downloaded only once.
 4. App Information: add the French (Canada), German, Portuguese (Brazil),
-   Spanish (Mexico) and Spanish (Spain) localizations, and fill in name, subtitle and privacy policy URL
+   Simplified Chinese, Spanish (Mexico) and Spanish (Spain) localizations, and fill in name, subtitle and privacy policy URL
    from `AppStore/metadata/<locale>/` for every locale; category from
    `primary_category.txt` and `primary_first_sub_category.txt` (Games, Card).
    Content rights: the app contains third-party content (the CC0 sounds) and
@@ -237,7 +237,8 @@ are done in App Store Connect. Once, before the first release:
 5. Age rating: every answer is None or No; Vegas scoring has no wagering and
    no money, so it is not simulated gambling. That gives 4+.
 6. App Privacy: the privacy policy URL, then "Data Not Collected".
-7. Pricing and Availability: free, in every territory. In Business, the EU
+7. Pricing and Availability: free, in every territory except China mainland. Apple requires games there
+   to have a Chinese game approval number and supporting documents, which this app does not have. In Business, the EU
    Digital Services Act trader status: an individual who sells nothing
    declares themselves a non-trader.
 
@@ -275,7 +276,7 @@ Each release:
 | `Design/` | The app icon's source artwork (`AppIcon.svg`) and the script that renders the icon variants from it. |
 | `AppStore/metadata/` | App Store name, subtitle, description, keywords, promotional text and URLs, per store language, plus copyright and category. |
 | `AppStore/ExportOptions.plist` | How the release workflow signs and uploads the archive. |
-| `PRIVACY.md`, `PRIVACY.fr-CA.md`, `PRIVACY.es.md`, `PRIVACY.de.md`, `PRIVACY.pt-BR.md` | The privacy policy the App Store listing links to. |
+| `PRIVACY.md`, `PRIVACY.fr-CA.md`, `PRIVACY.es.md`, `PRIVACY.de.md`, `PRIVACY.pt-BR.md`, `PRIVACY.zh-Hans.md` | The privacy policy the App Store listing links to. |
 | `Scripts/string-catalog.sh` | Syncs or checks the String Catalog against the strings the compiler extracted (`make strings`, `make check-strings`). |
 | `Scripts/coverage.sh` | Line coverage as a table: the engine's, with its minimum (`make coverage`), or the app's from a test result bundle. CI puts both in the job summary. |
 | `Scripts/screenshots.sh` | Takes the App Store screenshots (see Releasing). |
