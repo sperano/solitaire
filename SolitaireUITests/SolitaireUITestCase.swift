@@ -17,6 +17,12 @@ class SolitaireUITestCase: XCTestCase {
     static let dragHold: TimeInterval = 0.3
     /// Swipes `scrollTo` tries before giving up: enough for the whole Settings form.
     static let maxSwipes = 6
+    private static let auditAttempts = 3
+    private static let auditErrorDomain = "com.apple.xcode.xctest.accessibilityAudit"
+    /// "Audit failed to complete in time".
+    private static let auditTimedOutCode = -56
+    /// Sheets and pushes animate in; auditing mid-animation can report the moving backdrop.
+    private static let auditSettleTime: TimeInterval = 1.5
 
     var app: XCUIApplication!
 
@@ -92,5 +98,29 @@ class SolitaireUITestCase: XCTestCase {
 
     func tapStock(times: Int = 1) {
         for _ in 0 ..< times { tap("stock") }
+    }
+
+    func settleAnimations() {
+        _ = XCTWaiter.wait(
+            for: [XCTestExpectation(description: "animations settle")],
+            timeout: Self.auditSettleTime
+        )
+    }
+
+    /// Runs an accessibility audit after animations settle. A loaded CI runner can time out with
+    /// no result about the app, so only that infrastructure error is retried.
+    func runAccessibilityAudit(_ audit: () throws -> Void) throws {
+        settleAnimations()
+        for attempt in 1 ... Self.auditAttempts {
+            do {
+                return try audit()
+            } catch let error as NSError where Self.isAuditTimeout(error) && attempt < Self.auditAttempts {
+                continue
+            }
+        }
+    }
+
+    private static func isAuditTimeout(_ error: NSError) -> Bool {
+        error.domain == auditErrorDomain && error.code == auditTimedOutCode
     }
 }

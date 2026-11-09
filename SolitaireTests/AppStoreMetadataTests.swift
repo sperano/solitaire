@@ -50,6 +50,7 @@ final class AppStoreMetadataTests: XCTestCase {
         "es-ES": "PRIVACY.es.md",
         "es-MX": "PRIVACY.es.md",
         "fr-CA": "PRIVACY.fr-CA.md",
+        "pt-BR": "PRIVACY.pt-BR.md",
     ]
     private static let keywordSeparator: Character = ","
     private static let textExtension = ".txt"

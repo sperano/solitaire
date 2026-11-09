@@ -9,21 +9,11 @@ final class AccessibilityUITests: SolitaireUITestCase {
     ]
     private static let controls = ["hintButton", "undoButton", "redoButton", "newGameButton", "settingsButton"]
     private static let stats = ["movesLabel", "timeLabel", "scoreLabel"]
-    /// Sheets and pushes animate in; auditing mid-animation reports contrast against the moving backdrop.
-    private static let settleTime: TimeInterval = 1.5
     /// The audit's Dynamic Type and clipping checks predict trouble from the default size: they flag
     /// the card glyphs, which are sized to the card on purpose, and the toolbar's stats, which
     /// reflow instead (see `StatusBarView.layout`). The largest-text tests below check what
     /// really renders at that size instead.
-    private static let auditAttempts = 3
-    private static let auditErrorDomain = "com.apple.xcode.xctest.accessibilityAudit"
-    /// "Audit failed to complete in time".
-    private static let auditTimedOutCode = -56
     private static let auditedTypes = XCUIAccessibilityAuditType.all.subtracting([.dynamicType, .textClipped])
-
-    private func settle() {
-        _ = XCTWaiter.wait(for: [XCTestExpectation(description: "animations settle")], timeout: Self.settleTime)
-    }
 
     /// A rank or suit drawn on a card face.
     private static let cardGlyphs: Set<String> = [
@@ -37,9 +27,8 @@ final class AccessibilityUITests: SolitaireUITestCase {
         ignoringDimmedCards: Bool = false, ignoredContrast: Set<String> = [],
         file: StaticString = #filePath, line: UInt = #line
     ) throws {
-        settle()
         var issues: [String] = []
-        try withAuditRetries {
+        try runAccessibilityAudit {
             issues = []
             try app.performAccessibilityAudit(for: Self.auditedTypes) { issue in
                 let label = issue.element?.label ?? ""
@@ -60,23 +49,6 @@ final class AccessibilityUITests: SolitaireUITestCase {
         XCTAssertEqual(issues, [], file: file, line: line)
     }
 
-    /// On a slow CI runner the audit can give up with "Audit failed to complete in time"; that says
-    /// nothing about the app, so a timed-out audit runs again. Every other error is thrown at once.
-    /// The audit gave up waiting for the screen, which happens on a loaded CI runner.
-    private static func isAuditTimeout(_ error: NSError) -> Bool {
-        error.domain == auditErrorDomain && error.code == auditTimedOutCode
-    }
-
-    private func withAuditRetries(_ run: () throws -> Void) throws {
-        for attempt in 1 ... Self.auditAttempts {
-            do {
-                return try run()
-            } catch let error as NSError where Self.isAuditTimeout(error) && attempt < Self.auditAttempts {
-                continue
-            }
-        }
-    }
-
     // MARK: Audits
 
     func testBoardPassesTheAudit() throws {
@@ -86,7 +58,7 @@ final class AccessibilityUITests: SolitaireUITestCase {
 
     func testSettingsPassTheAudit() throws {
         tap("settingsButton")
-        XCTAssertTrue(element("fourColorDeckToggle").waitForExistence(timeout: Self.timeout))
+        XCTAssertTrue(element("settingsDoneButton").waitForExistence(timeout: Self.timeout))
         // "Rules" renders in black on the grouped background (about 18:1), like the other headers,
         // which pass; the audit reports the first header of the sheet as failing anyway (Xcode 27.1).
         // "Done" is black on the toolbar's light glass capsule; since the sheet scrolls, the audit
@@ -144,7 +116,7 @@ final class AccessibilityUITests: SolitaireUITestCase {
         }
         tap("settingsButton")
         XCTAssertTrue(element("settingsDoneButton").waitForExistence(timeout: Self.timeout))
-        settle()
+        settleAnimations()
         XCTAssertTrue(element("settingsDoneButton").isHittable)
     }
 
