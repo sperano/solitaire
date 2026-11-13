@@ -15,3 +15,6 @@ Package.resolved
 # macOS
 .DS_Store
 AppStore/screenshots/
+
+# fastlane deliver's preview, written by Scripts/upload-listing.sh
+AppStore/Preview.html

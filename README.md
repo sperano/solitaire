@@ -267,8 +267,12 @@ Each release:
    every answer None or No; Vegas scoring has no wagering and no money, so it
    is not simulated gambling) and the review notes. deliver shows a preview
    and asks before uploading. The review contact details stay out of the
-   repository: enter them once on the version page, or set `REVIEW_FIRST_NAME`,
-   `REVIEW_LAST_NAME`, `REVIEW_PHONE` and `REVIEW_EMAIL`.
+   repository: set `REVIEW_FIRST_NAME`, `REVIEW_LAST_NAME`, `REVIEW_PHONE`
+   (`+` and the country code first) and `REVIEW_EMAIL`. App Store Connect
+   refuses a version's first upload without all four; later, an unset one is
+   not sent, so the stored value stays. A new question in Apple's age-rating
+   questionnaire also fails the upload until `AppStore/age_rating.json`
+   answers it (the error names the attribute).
 4. On the version page, choose the TestFlight build.
 5. Run the upload again with `--submit` (or Add for Review, then Submit to App
    Review). The version is released by hand after approval. A rejection comes

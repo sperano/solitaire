@@ -8,9 +8,10 @@
 #   Scripts/upload-listing.sh <AuthKey_<KEYID>.p8> <issuer id> [--submit]
 #
 # deliver shows an HTML preview and asks before uploading. --submit then submits the version for
-# review; that needs a build chosen (the release workflow's upload) and the review contact details,
-# entered once in App Store Connect or passed as REVIEW_FIRST_NAME, REVIEW_LAST_NAME, REVIEW_PHONE
-# and REVIEW_EMAIL. fastlane's usage reporting and update check are turned off.
+# review; that needs a build chosen (the release workflow's upload). The review contact details
+# come from REVIEW_FIRST_NAME, REVIEW_LAST_NAME, REVIEW_PHONE (+<country code> <number>) and
+# REVIEW_EMAIL: a version's first upload needs all four, later an unset one keeps what App Store
+# Connect has. fastlane's usage reporting and update check are turned off.
 set -eu
 
 usage() { echo "usage: $0 <AuthKey_<KEYID>.p8> <issuer id> [--submit]" >&2; exit 2; }
