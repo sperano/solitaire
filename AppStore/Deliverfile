@@ -22,13 +22,18 @@ submission_information({
   export_compliance_uses_encryption: false,
 })
 
-# The contact details stay out of the public repository: they come from the environment, and an
-# empty one leaves what App Store Connect already has.
+# The contact details stay out of the public repository: they come from the environment. One left
+# unset is not sent, so App Store Connect keeps what it has; an empty value would be sent and
+# refused. The first upload of a version needs all four (the phone as +<country code> <number>).
+review_contact = {
+  first_name: ENV["REVIEW_FIRST_NAME"],
+  last_name: ENV["REVIEW_LAST_NAME"],
+  phone_number: ENV["REVIEW_PHONE"],
+  email_address: ENV["REVIEW_EMAIL"],
+}.reject { |_, value| value.to_s.strip.empty? }
 app_review_information(
-  first_name: ENV.fetch("REVIEW_FIRST_NAME", ""),
-  last_name: ENV.fetch("REVIEW_LAST_NAME", ""),
-  phone_number: ENV.fetch("REVIEW_PHONE", ""),
-  email_address: ENV.fetch("REVIEW_EMAIL", ""),
-  notes: "An offline game: no account, no sign-in, no network access. Vegas scoring is a " \
-    "points-only way of scoring; there is no money and nothing to buy."
+  review_contact.merge(
+    notes: "An offline game: no account, no sign-in, no network access. Vegas scoring is a " \
+      "points-only way of scoring; there is no money and nothing to buy."
+  )
 )
