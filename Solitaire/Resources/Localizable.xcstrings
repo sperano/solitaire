@@ -28,6 +28,12 @@
             "value" : "$%lld"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$%lld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -67,6 +73,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ e le carte sopra"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@와(과) 그 위에 놓인 카드"
           }
         },
         "pt-BR" : {
@@ -116,6 +128,12 @@
             "value" : "%1$@ in %2$@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@ 동안 %1$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -163,6 +181,12 @@
             "value" : "%1$@ di %2$@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@ %1$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -202,6 +226,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@, scoperta"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, 앞면"
           }
         },
         "pt-BR" : {
@@ -323,6 +353,18 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld carte"
+                }
+              }
+            }
+          }
+        },
+        "ko" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "카드 %lld장"
                 }
               }
             }
@@ -454,6 +496,18 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld carte coperte"
+                }
+              }
+            }
+          }
+        },
+        "ko" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "뒷면 %lld장"
                 }
               }
             }
@@ -597,6 +651,18 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld mosse"
+                }
+              }
+            }
+          }
+        },
+        "ko" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "이동 %lld회"
                 }
               }
             }
@@ -751,6 +817,18 @@
             }
           }
         },
+        "ko" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "패스 %lld회"
+                }
+              }
+            }
+          }
+        },
         "pt-BR" : {
           "variations" : {
             "plural" : {
@@ -900,6 +978,18 @@
             }
           }
         },
+        "ko" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld점"
+                }
+              }
+            }
+          }
+        },
         "pt-BR" : {
           "variations" : {
             "plural" : {
@@ -965,6 +1055,12 @@
             "value" : "-$%lld"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-$%lld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1012,6 +1108,12 @@
             "value" : "Un numero da %1$@ a %2$@."
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@부터 %2$@까지의 숫자입니다."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1050,6 +1152,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Informazioni"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "정보"
           }
         },
         "pt-BR" : {
@@ -1093,6 +1201,12 @@
             "value" : "Tutte"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전체"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1133,6 +1247,12 @@
             "value" : "Record"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "최고"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1171,6 +1291,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punteggi migliori"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "최고 점수"
           }
         },
         "pt-BR" : {
@@ -1214,6 +1340,12 @@
             "value" : "Punteggi migliori, %@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "최고 점수, %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1252,6 +1384,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annulla"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "취소"
           }
         },
         "pt-BR" : {
@@ -1294,6 +1432,12 @@
             "value" : "Dorso delle carte"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카드 뒷면"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1332,6 +1476,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carte"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카드"
           }
         },
         "pt-BR" : {
@@ -1374,6 +1524,12 @@
             "value" : "Riporta il saldo da una partita all’altra"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "게임 간 잔액 이어가기"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1414,6 +1570,12 @@
             "value" : "Le modifiche hanno effetto dalla prossima partita."
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "변경 사항은 다음 게임부터 적용됩니다."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1452,6 +1614,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colonna %lld"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld번 열"
           }
         },
         "pt-BR" : {
@@ -1501,6 +1669,12 @@
             "value" : "Colonna %1$lld, %2$@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld번 열, %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1539,6 +1713,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colonna %lld, vuota"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld번 열, 비어 있음"
           }
         },
         "pt-BR" : {
@@ -1581,6 +1761,12 @@
             "value" : "Attuale"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "현재"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1619,6 +1805,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mano"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "배열"
           }
         },
         "pt-BR" : {
@@ -1662,6 +1854,12 @@
             "value" : "Mano %@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "배열 %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1700,6 +1898,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Numero di mano"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "배열 번호"
           }
         },
         "pt-BR" : {
@@ -1742,6 +1946,12 @@
             "value" : "Distribuzione…"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "배열 중…"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1780,6 +1990,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quadri blu e fiori verdi, così nessun seme condivide il colore con un altro."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다이아몬드는 파란색, 클럽은 초록색으로 표시되어 두 무늬가 같은 색을 공유하지 않습니다."
           }
         },
         "pt-BR" : {
@@ -1822,6 +2038,12 @@
             "value" : "Fine"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "완료"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1860,6 +2082,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tocca due volte per pescare"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "두 번 탭하여 뽑기"
           }
         },
         "pt-BR" : {
@@ -1902,6 +2130,12 @@
             "value" : "Tocca due volte per spostarla nel posto migliore, oppure scorri su o giù per scegliere"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "두 번 탭하면 최적의 위치로 이동하거나, 위아래로 스와이프하여 선택하세요"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1942,6 +2176,12 @@
             "value" : "Tocca due volte per rigirare gli scarti"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "두 번 탭하여 웨이스트 뒤집기"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1980,6 +2220,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pesca"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "뽑기"
           }
         },
         "pt-BR" : {
@@ -2035,6 +2281,12 @@
             "value" : "Pesca %lld"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld장 뽑기"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2074,6 +2326,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pesca dal tallone"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스톡에서 뽑기"
           }
         },
         "pt-BR" : {
@@ -2116,6 +2374,12 @@
             "value" : "Ogni mano ha un numero. Condividilo, oppure inseriscine uno per rigiocare quella mano."
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모든 카드 배열에는 번호가 있습니다. 번호를 공유하거나 입력하여 같은 배열을 다시 플레이하세요."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2154,6 +2418,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ogni modalità di pesca riparte da zero. L’azione non si può annullare."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모든 뽑기 모드가 0으로 초기화됩니다. 이 작업은 취소할 수 없습니다."
           }
         },
         "pt-BR" : {
@@ -2196,6 +2466,12 @@
             "value" : "Il tavolo di ogni modalità di pesca viene svuotato. Le statistiche restano. L’azione non si può annullare."
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모든 뽑기 모드의 순위표가 비워집니다. 통계는 유지됩니다. 이 작업은 취소할 수 없습니다."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2234,6 +2510,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carta coperta"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "뒷면 카드"
           }
         },
         "pt-BR" : {
@@ -2276,6 +2558,12 @@
             "value" : "Meno mosse"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "최소 이동 수"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2314,6 +2602,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Termina"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "마무리"
           }
         },
         "pt-BR" : {
@@ -2356,6 +2650,12 @@
             "value" : "Termina automaticamente"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "자동 마무리"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2394,6 +2694,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Termina automaticamente gioca le carte rimanenti non appena possono tutte andare sulle fondazioni."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "자동 마무리를 켜면 남은 카드가 모두 파운데이션으로 이동할 수 있게 되었을 때 나머지 카드를 대신 이동합니다."
           }
         },
         "pt-BR" : {
@@ -2442,6 +2748,12 @@
             "value" : "Fondazione %1$lld, %2$@ in cima"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "파운데이션 %1$lld, 맨 위에 %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2480,6 +2792,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fondazione %lld, vuota"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "파운데이션 %lld, 비어 있음"
           }
         },
         "pt-BR" : {
@@ -2522,6 +2840,12 @@
             "value" : "Mazzo a quattro colori"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4색 카드"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2560,6 +2884,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gratis, senza pubblicità, senza tracciamento, senza account."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "무료, 광고 없음, 추적 없음, 계정 필요 없음."
           }
         },
         "pt-BR" : {
@@ -2602,6 +2932,12 @@
             "value" : "Partita"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "게임"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2640,6 +2976,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Partite"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "게임"
           }
         },
         "pt-BR" : {
@@ -2682,6 +3024,12 @@
             "value" : "Feedback aptico"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "햅틱"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2720,6 +3068,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suggerimento"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "힌트"
           }
         },
         "pt-BR" : {
@@ -2762,6 +3116,12 @@
             "value" : "Caratteri grandi"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "큰 글씨"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2800,6 +3160,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "I caratteri grandi ingrandiscono il valore e il seme nell’angolo di ogni carta."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "큰 글씨는 각 카드 모서리의 값과 무늬를 더 크게 표시합니다."
           }
         },
         "pt-BR" : {
@@ -2842,6 +3208,12 @@
             "value" : "Disposizione per mancini"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "왼손잡이 레이아웃"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2882,6 +3254,12 @@
             "value" : "La disposizione per mancini mette il tallone e gli scarti a destra."
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "왼손잡이 레이아웃은 스톡과 웨이스트를 오른쪽에 배치합니다."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2920,6 +3298,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Più lunga"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "최장"
           }
         },
         "pt-BR" : {
@@ -2969,6 +3353,12 @@
             "value" : "Sposta %1$@ verso %2$@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@을(를) %2$@(으)로 이동"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3008,6 +3398,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sposta %@ su una fondazione"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@을(를) 파운데이션으로 이동"
           }
         },
         "pt-BR" : {
@@ -3051,6 +3447,12 @@
             "value" : "Sposta %@ sulla colonna vuota"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@을(를) 빈 열로 이동"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3089,6 +3491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sposta sulla colonna %lld"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld번 열로 이동"
           }
         },
         "pt-BR" : {
@@ -3131,6 +3539,12 @@
             "value" : "Sposta su una fondazione"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "파운데이션으로 이동"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3169,6 +3583,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nuova partita"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새 게임"
           }
         },
         "pt-BR" : {
@@ -3211,6 +3631,12 @@
             "value" : "Si distribuiscono nuove partite finché il risolutore non trova il modo di vincerne una; un numero di mano inserito viene giocato tale e quale."
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "해결 가능한 배열을 찾을 때까지 새 게임이 계속 배분되며, 입력한 배열 번호는 그대로 플레이됩니다."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3249,6 +3675,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nessuna mossa consentita"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "가능한 수 없음"
           }
         },
         "pt-BR" : {
@@ -3292,6 +3724,12 @@
             "value" : "Nessun passaggio rimasto"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "남은 패스 없음"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3330,6 +3768,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ancora nessuna vittoria con punteggio standard."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아직 표준 점수로 승리한 기록이 없습니다."
           }
         },
         "pt-BR" : {
@@ -3373,6 +3817,12 @@
             "value" : "Nessuna mossa utile"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "유용한 수 없음"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3412,6 +3862,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nessuno"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "없음"
           }
         },
         "pt-BR" : {
@@ -3454,6 +3910,12 @@
             "value" : "Solo le vittorie con punteggio standard sono classificate: a Vegas ogni vittoria paga lo stesso importo."
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "표준 점수로 거둔 승리만 순위에 오릅니다. 베가스 모드는 승리할 때마다 같은 금액을 지급하기 때문입니다."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3492,6 +3954,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gioca"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "플레이"
           }
         },
         "pt-BR" : {
@@ -3534,6 +4002,12 @@
             "value" : "Gioca un numero di mano"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "번호로 배열 플레이"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3572,6 +4046,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gioca un numero di mano…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "번호로 배열 플레이…"
           }
         },
         "pt-BR" : {
@@ -3614,6 +4094,12 @@
             "value" : "Giocate"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "플레이"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3652,6 +4138,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ripeti"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다시 실행"
           }
         },
         "pt-BR" : {
@@ -3694,6 +4186,12 @@
             "value" : "Rigioca questa mano"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 배열 다시 하기"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3732,6 +4230,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Azzera"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "초기화"
           }
         },
         "pt-BR" : {
@@ -3774,6 +4278,12 @@
             "value" : "Azzera i punteggi migliori"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "최고 점수 초기화"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3812,6 +4322,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Azzera le statistiche"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "통계 초기화"
           }
         },
         "pt-BR" : {
@@ -3854,6 +4370,12 @@
             "value" : "Azzerare tutti i punteggi migliori?"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모든 최고 점수를 초기화할까요?"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3892,6 +4414,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Azzerare tutte le statistiche?"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모든 통계를 초기화할까요?"
           }
         },
         "pt-BR" : {
@@ -3934,6 +4462,12 @@
             "value" : "Regole"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "규칙"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3973,6 +4507,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punteggio: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "점수: %@"
           }
         },
         "pt-BR" : {
@@ -4022,6 +4562,12 @@
             "value" : "Punteggio: %1$@, con un bonus di tempo di %2$lld"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "점수: %1$@ (시간 보너스 %2$lld점 포함)"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4060,6 +4606,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punteggio"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "점수 방식"
           }
         },
         "pt-BR" : {
@@ -4102,6 +4654,12 @@
             "value" : "Impostazioni"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "설정"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4140,6 +4698,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Condividi questa mano"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 배열 공유"
           }
         },
         "pt-BR" : {
@@ -4189,6 +4753,12 @@
             "value" : "Solitario, mano n. %1$@, %2$@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "솔리테어 배열 %1$@, %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4229,6 +4799,12 @@
             "value" : "Effetti sonori"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "음향 효과"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4267,6 +4843,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gli effetti sonori sono silenziati in modalità silenziosa e non interrompono mai la tua musica."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "음향 효과는 무음 모드에서 꺼지며, 재생 중인 음악을 멈추지 않습니다."
           }
         },
         "pt-BR" : {
@@ -4310,6 +4892,12 @@
             "value" : "Standard"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "표준"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4348,6 +4936,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Iniziare una nuova partita?"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새 게임을 시작할까요?"
           }
         },
         "pt-BR" : {
@@ -4390,6 +4984,12 @@
             "value" : "Statistiche"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "통계"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4428,6 +5028,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tallone"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스톡"
           }
         },
         "pt-BR" : {
@@ -4470,6 +5076,12 @@
             "value" : "Tallone, vuoto"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스톡, 비어 있음"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4508,6 +5120,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Serie"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "연승"
           }
         },
         "pt-BR" : {
@@ -4550,6 +5168,12 @@
             "value" : "Scorri su o giù per scegliere dove spostarla"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "위아래로 스와이프하여 이동할 위치를 선택하세요"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4588,6 +5212,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tavolo"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "테이블"
           }
         },
         "pt-BR" : {
@@ -4630,6 +5260,12 @@
             "value" : "Il cronometro si ferma quando l’app è in background o le impostazioni sono aperte."
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱이 백그라운드에 있거나 설정이 열려 있는 동안에는 시계가 멈춥니다."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4670,6 +5306,12 @@
             "value" : "La partita in corso andrà persa."
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "현재 게임이 사라집니다."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4708,6 +5350,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tempo"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "시간"
           }
         },
         "pt-BR" : {
@@ -4751,6 +5399,12 @@
             "value" : "Tempo %@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "시간 %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4789,6 +5443,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cronometro"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "타이머"
           }
         },
         "pt-BR" : {
@@ -4832,6 +5492,12 @@
             "value" : "Rigira gli scarti"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "웨이스트를 스톡으로 뒤집기"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4870,6 +5536,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annulla"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "실행 취소"
           }
         },
         "pt-BR" : {
@@ -4912,6 +5584,12 @@
             "value" : "Senza cronometro: nessun tempo, nessun bonus di tempo e nessun miglior tempo."
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "시간 제한 없음: 시계, 시간 보너스, 최고 시간 기록이 없습니다."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4951,6 +5629,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vegas"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "베가스"
           }
         },
         "pt-BR" : {
@@ -5000,6 +5684,12 @@
             "value" : "Vegas: ogni partita costa %1$lld $, ogni carta sulla fondazione paga %2$lld $ (ritirati se la lascia), e la modalità %3$@ permette %4$@ nel tallone."
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "베가스: 게임마다 $%1$lld가 들고, 파운데이션에 올린 카드마다 $%2$lld를 받으며(카드가 빠지면 다시 차감됨), %3$@ 모드에서는 스톡을 %4$@까지 통과할 수 있습니다."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5038,6 +5728,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Versione"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버전"
           }
         },
         "pt-BR" : {
@@ -5080,6 +5776,12 @@
             "value" : "Scarti, %@ in cima"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "웨이스트, 맨 위에 %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5118,6 +5820,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scarti, vuoti"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "웨이스트, 비어 있음"
           }
         },
         "pt-BR" : {
@@ -5160,6 +5868,12 @@
             "value" : "Percentuale di vittorie"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "승률"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5198,6 +5912,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Solo mani risolvibili"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "풀 수 있는 배열만"
           }
         },
         "pt-BR" : {
@@ -5240,6 +5960,12 @@
             "value" : "Vinte"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "승리"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5278,6 +6004,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hai vinto!"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "승리했습니다!"
           }
         },
         "pt-BR" : {
@@ -5328,6 +6060,12 @@
             "value" : "l’asso di %@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 에이스"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5374,6 +6112,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "l’otto di %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 8"
           }
         },
         "pt-BR" : {
@@ -5424,6 +6168,12 @@
             "value" : "il cinque di %@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 5"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5470,6 +6220,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "il quattro di %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 4"
           }
         },
         "pt-BR" : {
@@ -5520,6 +6276,12 @@
             "value" : "il fante di %@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 잭"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5566,6 +6328,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "il re di %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 킹"
           }
         },
         "pt-BR" : {
@@ -5616,6 +6384,12 @@
             "value" : "il nove di %@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 9"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5662,6 +6436,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "la regina di %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 퀸"
           }
         },
         "pt-BR" : {
@@ -5712,6 +6492,12 @@
             "value" : "il sette di %@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 7"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5758,6 +6544,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "il sei di %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 6"
           }
         },
         "pt-BR" : {
@@ -5808,6 +6600,12 @@
             "value" : "il dieci di %@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 10"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5854,6 +6652,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "il tre di %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 3"
           }
         },
         "pt-BR" : {
@@ -5904,6 +6708,12 @@
             "value" : "il due di %@"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 2"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5950,6 +6760,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Blu"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "파란색"
           }
         },
         "pt-BR" : {
@@ -6000,6 +6816,12 @@
             "value" : "Cornici viola"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "보라색 테두리"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6046,6 +6868,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reticolo rosso"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "빨간색 격자"
           }
         },
         "pt-BR" : {
@@ -6096,6 +6924,12 @@
             "value" : "Blu"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "파란색"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6142,6 +6976,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bordeaux"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버건디"
           }
         },
         "pt-BR" : {
@@ -6192,6 +7032,12 @@
             "value" : "Antracite"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "차콜"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6240,6 +7086,12 @@
             "value" : "Verde"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "초록색"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6279,6 +7131,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "nessuno"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "없음"
           }
         },
         "pt-BR" : {
@@ -6329,6 +7187,12 @@
             "value" : "asso"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "에이스"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6375,6 +7239,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "otto"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "8"
           }
         },
         "pt-BR" : {
@@ -6425,6 +7295,12 @@
             "value" : "cinque"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6471,6 +7347,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "quattro"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4"
           }
         },
         "pt-BR" : {
@@ -6521,6 +7403,12 @@
             "value" : "fante"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "잭"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6567,6 +7455,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "re"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "킹"
           }
         },
         "pt-BR" : {
@@ -6617,6 +7511,12 @@
             "value" : "nove"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "9"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6663,6 +7563,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "regina"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "퀸"
           }
         },
         "pt-BR" : {
@@ -6713,6 +7619,12 @@
             "value" : "sette"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6759,6 +7671,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "sei"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6"
           }
         },
         "pt-BR" : {
@@ -6809,6 +7727,12 @@
             "value" : "dieci"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6855,6 +7779,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "tre"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3"
           }
         },
         "pt-BR" : {
@@ -6905,6 +7835,12 @@
             "value" : "due"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6951,6 +7887,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "fiori"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "클럽"
           }
         },
         "pt-BR" : {
@@ -7001,6 +7943,12 @@
             "value" : "quadri"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다이아몬드"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7049,6 +7997,12 @@
             "value" : "cuori"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "하트"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7095,6 +8049,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "picche"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스페이드"
           }
         },
         "pt-BR" : {
