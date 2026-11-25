@@ -22,6 +22,12 @@
             "value" : "%lld $"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$%lld"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -61,6 +67,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ et les cartes par-dessus"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ e le carte sopra"
           }
         },
         "ko" : {
@@ -110,6 +122,12 @@
             "value" : "%1$@ en %2$@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ in %2$@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -157,6 +175,12 @@
             "value" : "%1$@ de %2$@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ di %2$@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -196,6 +220,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@, face visible"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, scoperta"
           }
         },
         "ko" : {
@@ -299,6 +329,30 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld cartes"
+                }
+              }
+            }
+          }
+        },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld di carte"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld carta"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld carte"
                 }
               }
             }
@@ -418,6 +472,30 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld cartes cachées"
+                }
+              }
+            }
+          }
+        },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld di carte coperte"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld carta coperta"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld carte coperte"
                 }
               }
             }
@@ -549,6 +627,30 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld coups"
+                }
+              }
+            }
+          }
+        },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld di mosse"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld mossa"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld mosse"
                 }
               }
             }
@@ -691,6 +793,30 @@
             }
           }
         },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld di passaggi"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld passaggio"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld passaggi"
+                }
+              }
+            }
+          }
+        },
         "ko" : {
           "variations" : {
             "plural" : {
@@ -828,6 +954,30 @@
             }
           }
         },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld di punti"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld punto"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld punti"
+                }
+              }
+            }
+          }
+        },
         "ko" : {
           "variations" : {
             "plural" : {
@@ -899,6 +1049,12 @@
             "value" : "-%lld $"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-$%lld"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -946,6 +1102,12 @@
             "value" : "Un nombre de %1$@ à %2$@."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un numero da %1$@ a %2$@."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -984,6 +1146,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "À propos"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informazioni"
           }
         },
         "ko" : {
@@ -1027,6 +1195,12 @@
             "value" : "Toutes"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutte"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1067,6 +1241,12 @@
             "value" : "Records"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1105,6 +1285,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meilleurs pointages"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punteggi migliori"
           }
         },
         "ko" : {
@@ -1148,6 +1334,12 @@
             "value" : "Meilleurs pointages, %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punteggi migliori, %@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1186,6 +1378,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
           }
         },
         "ko" : {
@@ -1228,6 +1426,12 @@
             "value" : "Dos des cartes"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dorso delle carte"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1266,6 +1470,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cartes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte"
           }
         },
         "ko" : {
@@ -1308,6 +1518,12 @@
             "value" : "Reporter le solde d’une partie à l’autre"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riporta il saldo da una partita all’altra"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1348,6 +1564,12 @@
             "value" : "Les changements s’appliquent à la prochaine partie."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le modifiche hanno effetto dalla prossima partita."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1386,6 +1608,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colonne %lld"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colonna %lld"
           }
         },
         "ko" : {
@@ -1435,6 +1663,12 @@
             "value" : "Colonne %1$lld, %2$@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colonna %1$lld, %2$@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1473,6 +1707,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colonne %lld, vide"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colonna %lld, vuota"
           }
         },
         "ko" : {
@@ -1515,6 +1755,12 @@
             "value" : "En cours"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attuale"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1553,6 +1799,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Donne"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mano"
           }
         },
         "ko" : {
@@ -1596,6 +1848,12 @@
             "value" : "Donne %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mano %@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1634,6 +1892,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Numéro de donne"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numero di mano"
           }
         },
         "ko" : {
@@ -1676,6 +1940,12 @@
             "value" : "Distribution…"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distribuzione…"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1714,6 +1984,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les carreaux en bleu et les trèfles en vert, pour que chaque enseigne ait sa couleur."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quadri blu e fiori verdi, così nessun seme condivide il colore con un altro."
           }
         },
         "ko" : {
@@ -1756,6 +2032,12 @@
             "value" : "OK"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fine"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1794,6 +2076,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Touchez deux fois pour piger"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tocca due volte per pescare"
           }
         },
         "ko" : {
@@ -1836,6 +2124,12 @@
             "value" : "Touchez deux fois pour la déplacer au meilleur endroit, ou balayez vers le haut ou le bas pour choisir"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tocca due volte per spostarla nel posto migliore, oppure scorri su o giù per scegliere"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1876,6 +2170,12 @@
             "value" : "Touchez deux fois pour retourner la défausse"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tocca due volte per rigirare gli scarti"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1914,6 +2214,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Piger"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pesca"
           }
         },
         "ko" : {
@@ -1969,6 +2275,12 @@
             "value" : "Piger %lld"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pesca %lld"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2008,6 +2320,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pigez dans la pioche"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pesca dal tallone"
           }
         },
         "ko" : {
@@ -2050,6 +2368,12 @@
             "value" : "Chaque donne a un numéro. Partagez-le, ou entrez-en un pour rejouer cette donne."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ogni mano ha un numero. Condividilo, oppure inseriscine uno per rigiocare quella mano."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2088,6 +2412,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chaque mode de pige repart de zéro. Cette action est irréversible."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ogni modalità di pesca riparte da zero. L’azione non si può annullare."
           }
         },
         "ko" : {
@@ -2130,6 +2460,12 @@
             "value" : "Le tableau de chaque mode de pige est vidé. Les statistiques sont conservées. Cette action est irréversible."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il tavolo di ogni modalità di pesca viene svuotato. Le statistiche restano. L’azione non si può annullare."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2168,6 +2504,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carte face cachée"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carta coperta"
           }
         },
         "ko" : {
@@ -2210,6 +2552,12 @@
             "value" : "Moins de coups"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meno mosse"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2248,6 +2596,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terminer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termina"
           }
         },
         "ko" : {
@@ -2290,6 +2644,12 @@
             "value" : "Terminer automatiquement"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termina automaticamente"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2328,6 +2688,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terminer automatiquement joue les cartes restantes dès qu’elles peuvent toutes aller sur les fondations."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termina automaticamente gioca le carte rimanenti non appena possono tutte andare sulle fondazioni."
           }
         },
         "ko" : {
@@ -2376,6 +2742,12 @@
             "value" : "Fondation %1$lld, %2$@ sur le dessus"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fondazione %1$lld, %2$@ in cima"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2414,6 +2786,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fondation %lld, vide"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fondazione %lld, vuota"
           }
         },
         "ko" : {
@@ -2456,6 +2834,12 @@
             "value" : "Jeu à quatre couleurs"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mazzo a quattro colori"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2494,6 +2878,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gratuit, sans publicité, sans pistage, sans compte."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratis, senza pubblicità, senza tracciamento, senza account."
           }
         },
         "ko" : {
@@ -2536,6 +2926,12 @@
             "value" : "Partie"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partita"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2574,6 +2970,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parties"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partite"
           }
         },
         "ko" : {
@@ -2616,6 +3018,12 @@
             "value" : "Retour haptique"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback aptico"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2654,6 +3062,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Indice"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggerimento"
           }
         },
         "ko" : {
@@ -2696,6 +3110,12 @@
             "value" : "Gros caractères"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caratteri grandi"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2734,6 +3154,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les gros caractères agrandissent la valeur et la couleur dans le coin de chaque carte."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I caratteri grandi ingrandiscono il valore e il seme nell’angolo di ogni carta."
           }
         },
         "ko" : {
@@ -2776,6 +3202,12 @@
             "value" : "Disposition pour gaucher"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disposizione per mancini"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2816,6 +3248,12 @@
             "value" : "La disposition pour gaucher place la pioche et la défausse à droite."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La disposizione per mancini mette il tallone e gli scarti a destra."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2854,6 +3292,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La plus longue"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Più lunga"
           }
         },
         "ko" : {
@@ -2903,6 +3347,12 @@
             "value" : "Déplacez %1$@ sur %2$@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta %1$@ verso %2$@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2942,6 +3392,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Déplacez %@ vers une fondation"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta %@ su una fondazione"
           }
         },
         "ko" : {
@@ -2985,6 +3441,12 @@
             "value" : "Déplacez %@ vers la colonne vide"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta %@ sulla colonna vuota"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3023,6 +3485,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Déplacer vers la colonne %lld"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta sulla colonna %lld"
           }
         },
         "ko" : {
@@ -3065,6 +3533,12 @@
             "value" : "Déplacer vers une fondation"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta su una fondazione"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3103,6 +3577,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nouvelle partie"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuova partita"
           }
         },
         "ko" : {
@@ -3145,6 +3625,12 @@
             "value" : "Les nouvelles parties sont distribuées jusqu’à ce que le solveur trouve comment en gagner une; un numéro de donne entré est joué tel quel."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si distribuiscono nuove partite finché il risolutore non trova il modo di vincerne una; un numero di mano inserito viene giocato tale e quale."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3183,6 +3669,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun coup permis"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna mossa consentita"
           }
         },
         "ko" : {
@@ -3226,6 +3718,12 @@
             "value" : "Plus aucun passage"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessun passaggio rimasto"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3264,6 +3762,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucune victoire avec pointage standard pour l’instant."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ancora nessuna vittoria con punteggio standard."
           }
         },
         "ko" : {
@@ -3307,6 +3811,12 @@
             "value" : "Aucun coup utile"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna mossa utile"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3346,6 +3856,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuno"
           }
         },
         "ko" : {
@@ -3388,6 +3904,12 @@
             "value" : "Seules les victoires avec pointage standard sont classées : toute victoire à Vegas rapporte la même somme."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo le vittorie con punteggio standard sono classificate: a Vegas ogni vittoria paga lo stesso importo."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3426,6 +3948,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jouer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gioca"
           }
         },
         "ko" : {
@@ -3468,6 +3996,12 @@
             "value" : "Jouer un numéro de donne"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gioca un numero di mano"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3506,6 +4040,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jouer un numéro de donne…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gioca un numero di mano…"
           }
         },
         "ko" : {
@@ -3548,6 +4088,12 @@
             "value" : "Jouées"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giocate"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3586,6 +4132,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rétablir"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ripeti"
           }
         },
         "ko" : {
@@ -3628,6 +4180,12 @@
             "value" : "Rejouer cette donne"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rigioca questa mano"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3666,6 +4224,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réinitialiser"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azzera"
           }
         },
         "ko" : {
@@ -3708,6 +4272,12 @@
             "value" : "Réinitialiser les meilleurs pointages"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azzera i punteggi migliori"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3746,6 +4316,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réinitialiser les statistiques"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azzera le statistiche"
           }
         },
         "ko" : {
@@ -3788,6 +4364,12 @@
             "value" : "Réinitialiser tous les meilleurs pointages?"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azzerare tutti i punteggi migliori?"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3826,6 +4408,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réinitialiser toutes les statistiques?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azzerare tutte le statistiche?"
           }
         },
         "ko" : {
@@ -3868,6 +4456,12 @@
             "value" : "Règles"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regole"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3907,6 +4501,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pointage : %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punteggio: %@"
           }
         },
         "ko" : {
@@ -3956,6 +4556,12 @@
             "value" : "Pointage : %1$@, dont un boni de temps de %2$lld"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punteggio: %1$@, con un bonus di tempo di %2$lld"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3994,6 +4600,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pointage"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punteggio"
           }
         },
         "ko" : {
@@ -4036,6 +4648,12 @@
             "value" : "Réglages"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4074,6 +4692,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Partager cette donne"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condividi questa mano"
           }
         },
         "ko" : {
@@ -4123,6 +4747,12 @@
             "value" : "Solitaire, donne n° %1$@, %2$@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solitario, mano n. %1$@, %2$@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4161,6 +4791,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Effets sonores"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effetti sonori"
           }
         },
         "ko" : {
@@ -4203,6 +4839,12 @@
             "value" : "Les effets sonores se taisent en mode silencieux et n’interrompent jamais votre musique."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gli effetti sonori sono silenziati in modalità silenziosa e non interrompono mai la tua musica."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4239,6 +4881,12 @@
           }
         },
         "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standard"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Standard"
@@ -4284,6 +4932,12 @@
             "value" : "Commencer une nouvelle partie?"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniziare una nuova partita?"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4322,6 +4976,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Statistiques"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistiche"
           }
         },
         "ko" : {
@@ -4364,6 +5024,12 @@
             "value" : "Pioche"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tallone"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4402,6 +5068,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pioche, vide"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tallone, vuoto"
           }
         },
         "ko" : {
@@ -4444,6 +5116,12 @@
             "value" : "Séries"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serie"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4482,6 +5160,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Balayez vers le haut ou le bas pour choisir où la déplacer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scorri su o giù per scegliere dove spostarla"
           }
         },
         "ko" : {
@@ -4524,6 +5208,12 @@
             "value" : "Tapis"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tavolo"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4562,6 +5252,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le chronomètre s’arrête quand l’app est en arrière-plan ou que les réglages sont ouverts."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il cronometro si ferma quando l’app è in background o le impostazioni sono aperte."
           }
         },
         "ko" : {
@@ -4604,6 +5300,12 @@
             "value" : "La partie en cours sera perdue."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La partita in corso andrà persa."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4642,6 +5344,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Temps"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempo"
           }
         },
         "ko" : {
@@ -4685,6 +5393,12 @@
             "value" : "Temps %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempo %@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4723,6 +5437,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chronomètre"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cronometro"
           }
         },
         "ko" : {
@@ -4766,6 +5486,12 @@
             "value" : "Retournez la défausse"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rigira gli scarti"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4804,6 +5530,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
           }
         },
         "ko" : {
@@ -4846,6 +5578,12 @@
             "value" : "Sans chronomètre : pas de temps, ni boni de temps ni meilleur temps."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Senza cronometro: nessun tempo, nessun bonus di tempo e nessun miglior tempo."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4882,6 +5620,12 @@
           }
         },
         "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegas"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vegas"
@@ -4934,6 +5678,12 @@
             "value" : "Vegas : chaque partie coûte %1$lld $, chaque carte sur une fondation rapporte %2$lld $ (repris si elle en sort), et le mode %3$@ permet %4$@ dans la pioche."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegas: ogni partita costa %1$lld $, ogni carta sulla fondazione paga %2$lld $ (ritirati se la lascia), e la modalità %3$@ permette %4$@ nel tallone."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4972,6 +5722,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versione"
           }
         },
         "ko" : {
@@ -5014,6 +5770,12 @@
             "value" : "Défausse, %@ sur le dessus"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scarti, %@ in cima"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5052,6 +5814,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Défausse, vide"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scarti, vuoti"
           }
         },
         "ko" : {
@@ -5094,6 +5862,12 @@
             "value" : "Taux de victoire"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Percentuale di vittorie"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5132,6 +5906,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Donnes gagnables seulement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo mani risolvibili"
           }
         },
         "ko" : {
@@ -5174,6 +5954,12 @@
             "value" : "Gagnées"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vinte"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5212,6 +5998,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vous avez gagné!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hai vinto!"
           }
         },
         "ko" : {
@@ -5262,6 +6054,12 @@
             "value" : "l’as de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l’asso di %@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5308,6 +6106,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le huit de %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l’otto di %@"
           }
         },
         "ko" : {
@@ -5358,6 +6162,12 @@
             "value" : "le cinq de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il cinque di %@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5404,6 +6214,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le quatre de %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il quattro di %@"
           }
         },
         "ko" : {
@@ -5454,6 +6270,12 @@
             "value" : "le valet de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il fante di %@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5500,6 +6322,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le roi de %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il re di %@"
           }
         },
         "ko" : {
@@ -5550,6 +6378,12 @@
             "value" : "le neuf de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il nove di %@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5596,6 +6430,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "la dame de %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "la regina di %@"
           }
         },
         "ko" : {
@@ -5646,6 +6486,12 @@
             "value" : "le sept de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il sette di %@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5692,6 +6538,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le six de %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il sei di %@"
           }
         },
         "ko" : {
@@ -5742,6 +6594,12 @@
             "value" : "le dix de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il dieci di %@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5788,6 +6646,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le trois de %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il tre di %@"
           }
         },
         "ko" : {
@@ -5838,6 +6702,12 @@
             "value" : "le deux de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il due di %@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5884,6 +6754,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bleu"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blu"
           }
         },
         "ko" : {
@@ -5934,6 +6810,12 @@
             "value" : "Cadres violets"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornici viola"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5980,6 +6862,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Treillis rouge"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reticolo rosso"
           }
         },
         "ko" : {
@@ -6030,6 +6918,12 @@
             "value" : "Bleu"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blu"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6073,6 +6967,12 @@
           }
         },
         "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bordeaux"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bordeaux"
@@ -6126,6 +7026,12 @@
             "value" : "Anthracite"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antracite"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6174,6 +7080,12 @@
             "value" : "Vert"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verde"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6213,6 +7125,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "aucun"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nessuno"
           }
         },
         "ko" : {
@@ -6263,6 +7181,12 @@
             "value" : "as"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "asso"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6309,6 +7233,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "huit"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "otto"
           }
         },
         "ko" : {
@@ -6359,6 +7289,12 @@
             "value" : "cinq"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cinque"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6405,6 +7341,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "quatre"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "quattro"
           }
         },
         "ko" : {
@@ -6455,6 +7397,12 @@
             "value" : "valet"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fante"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6501,6 +7449,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "roi"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "re"
           }
         },
         "ko" : {
@@ -6551,6 +7505,12 @@
             "value" : "neuf"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nove"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6597,6 +7557,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "dame"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "regina"
           }
         },
         "ko" : {
@@ -6647,6 +7613,12 @@
             "value" : "sept"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sette"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6693,6 +7665,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "six"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sei"
           }
         },
         "ko" : {
@@ -6743,6 +7721,12 @@
             "value" : "dix"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dieci"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6789,6 +7773,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "trois"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tre"
           }
         },
         "ko" : {
@@ -6839,6 +7829,12 @@
             "value" : "deux"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "due"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6885,6 +7881,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "trèfle"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fiori"
           }
         },
         "ko" : {
@@ -6935,6 +7937,12 @@
             "value" : "carreau"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "quadri"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6983,6 +7991,12 @@
             "value" : "cœur"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cuori"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7029,6 +8043,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "pique"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "picche"
           }
         },
         "ko" : {
