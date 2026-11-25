@@ -28,6 +28,12 @@
             "value" : "$%lld"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$%lld"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -73,6 +79,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ e le carte sopra"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@とその上のカード"
           }
         },
         "ko" : {
@@ -128,6 +140,12 @@
             "value" : "%1$@ in %2$@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@で%1$@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -181,6 +199,12 @@
             "value" : "%1$@ di %2$@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@の%1$@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -226,6 +250,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@, scoperta"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@、表向き"
           }
         },
         "ko" : {
@@ -353,6 +383,18 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld carte"
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld枚"
                 }
               }
             }
@@ -499,6 +541,12 @@
                 }
               }
             }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "裏向き%lld枚"
           }
         },
         "ko" : {
@@ -651,6 +699,18 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld mosse"
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld手"
                 }
               }
             }
@@ -817,6 +877,18 @@
             }
           }
         },
+        "ja" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld周"
+                }
+              }
+            }
+          }
+        },
         "ko" : {
           "variations" : {
             "plural" : {
@@ -978,6 +1050,18 @@
             }
           }
         },
+        "ja" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld点"
+                }
+              }
+            }
+          }
+        },
         "ko" : {
           "variations" : {
             "plural" : {
@@ -1055,6 +1139,12 @@
             "value" : "-$%lld"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-$%lld"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1108,6 +1198,12 @@
             "value" : "Un numero da %1$@ a %2$@."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@から%2$@までの数字。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1152,6 +1248,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Informazioni"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "情報"
           }
         },
         "ko" : {
@@ -1201,6 +1303,12 @@
             "value" : "Tutte"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1247,6 +1355,12 @@
             "value" : "Record"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最高"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1291,6 +1405,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punteggi migliori"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ベストスコア"
           }
         },
         "ko" : {
@@ -1340,6 +1460,12 @@
             "value" : "Punteggi migliori, %@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ベストスコア、%@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1384,6 +1510,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annulla"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
           }
         },
         "ko" : {
@@ -1432,6 +1564,12 @@
             "value" : "Dorso delle carte"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードの背面"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1476,6 +1614,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carte"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード"
           }
         },
         "ko" : {
@@ -1524,6 +1668,12 @@
             "value" : "Riporta il saldo da una partita all’altra"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ゲーム間で残高を持ち越す"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1570,6 +1720,12 @@
             "value" : "Le modifiche hanno effetto dalla prossima partita."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "変更は次のゲームから有効になります。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1614,6 +1770,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colonna %lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "列%lld"
           }
         },
         "ko" : {
@@ -1669,6 +1831,12 @@
             "value" : "Colonna %1$lld, %2$@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "列%1$lld、%2$@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1713,6 +1881,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colonna %lld, vuota"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "列%lld、空"
           }
         },
         "ko" : {
@@ -1761,6 +1935,12 @@
             "value" : "Attuale"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現在"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1805,6 +1985,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mano"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディール"
           }
         },
         "ko" : {
@@ -1854,6 +2040,12 @@
             "value" : "Mano %@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディール%@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1898,6 +2090,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Numero di mano"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディール番号"
           }
         },
         "ko" : {
@@ -1946,6 +2144,12 @@
             "value" : "Distribuzione…"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配布中…"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1990,6 +2194,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quadri blu e fiori verdi, così nessun seme condivide il colore con un altro."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ダイヤは青、クラブは緑になり、同じ色のスートがなくなります。"
           }
         },
         "ko" : {
@@ -2038,6 +2248,12 @@
             "value" : "Fine"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2082,6 +2298,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tocca due volte per pescare"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ダブルタップしてカードを引きます"
           }
         },
         "ko" : {
@@ -2130,6 +2352,12 @@
             "value" : "Tocca due volte per spostarla nel posto migliore, oppure scorri su o giù per scegliere"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ダブルタップで最適な場所に移動します。上下にスワイプすると移動先を選べます"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2176,6 +2404,12 @@
             "value" : "Tocca due volte per rigirare gli scarti"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ダブルタップして捨て札をめくります"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2220,6 +2454,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pesca"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ドロー"
           }
         },
         "ko" : {
@@ -2281,6 +2521,12 @@
             "value" : "Pesca %lld"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld枚ドロー"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2326,6 +2572,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pesca dal tallone"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "山札からカードを引く"
           }
         },
         "ko" : {
@@ -2374,6 +2626,12 @@
             "value" : "Ogni mano ha un numero. Condividilo, oppure inseriscine uno per rigiocare quella mano."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディールにはそれぞれ番号があります。番号を共有したり、番号を入力して同じディールをもう一度プレイできます。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2418,6 +2676,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ogni modalità di pesca riparte da zero. L’azione non si può annullare."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべてのドローモードの記録がゼロに戻ります。この操作は取り消せません。"
           }
         },
         "ko" : {
@@ -2466,6 +2730,12 @@
             "value" : "Il tavolo di ogni modalità di pesca viene svuotato. Le statistiche restano. L’azione non si può annullare."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべてのドローモードの表がリセットされます。統計は保持されます。この操作は取り消せません。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2510,6 +2780,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carta coperta"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "裏向きのカード"
           }
         },
         "ko" : {
@@ -2558,6 +2834,12 @@
             "value" : "Meno mosse"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最少手数"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2602,6 +2884,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Termina"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仕上げ"
           }
         },
         "ko" : {
@@ -2650,6 +2938,12 @@
             "value" : "Termina automaticamente"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動で仕上げる"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2694,6 +2988,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Termina automaticamente gioca le carte rimanenti non appena possono tutte andare sulle fondazioni."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動で仕上げると、残りのカードがすべて台札に移動できるようになった時点で自動的にプレイされます。"
           }
         },
         "ko" : {
@@ -2748,6 +3048,12 @@
             "value" : "Fondazione %1$lld, %2$@ in cima"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台札%1$lld、%2$@が一番上"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2792,6 +3098,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fondazione %lld, vuota"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台札%lld、空"
           }
         },
         "ko" : {
@@ -2840,6 +3152,12 @@
             "value" : "Mazzo a quattro colori"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4色デッキ"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2884,6 +3202,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gratis, senza pubblicità, senza tracciamento, senza account."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無料、広告なし、トラッキングなし、アカウント不要。"
           }
         },
         "ko" : {
@@ -2932,6 +3256,12 @@
             "value" : "Partita"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ゲーム"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2976,6 +3306,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Partite"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ゲーム"
           }
         },
         "ko" : {
@@ -3024,6 +3360,12 @@
             "value" : "Feedback aptico"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "触覚フィードバック"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3068,6 +3410,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suggerimento"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ヒント"
           }
         },
         "ko" : {
@@ -3116,6 +3464,12 @@
             "value" : "Caratteri grandi"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大きな文字"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3160,6 +3514,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "I caratteri grandi ingrandiscono il valore e il seme nell’angolo di ogni carta."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大きな文字にすると、各カードの角にランクとスートが大きく表示されます。"
           }
         },
         "ko" : {
@@ -3208,6 +3568,12 @@
             "value" : "Disposizione per mancini"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "左利き用レイアウト"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3254,6 +3620,12 @@
             "value" : "La disposizione per mancini mette il tallone e gli scarti a destra."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "左利き用レイアウトでは、山札と捨て札が右側に配置されます。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3298,6 +3670,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Più lunga"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最長"
           }
         },
         "ko" : {
@@ -3353,6 +3731,12 @@
             "value" : "Sposta %1$@ verso %2$@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@を%2$@に移動"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3398,6 +3782,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sposta %@ su una fondazione"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@を台札に移動"
           }
         },
         "ko" : {
@@ -3447,6 +3837,12 @@
             "value" : "Sposta %@ sulla colonna vuota"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@を空の列に移動"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3491,6 +3887,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sposta sulla colonna %lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "列%lldに移動"
           }
         },
         "ko" : {
@@ -3539,6 +3941,12 @@
             "value" : "Sposta su una fondazione"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "台札に移動"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3583,6 +3991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nuova partita"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいゲーム"
           }
         },
         "ko" : {
@@ -3631,6 +4045,12 @@
             "value" : "Si distribuiscono nuove partite finché il risolutore non trova il modo di vincerne una; un numero di mano inserito viene giocato tale e quale."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ソルバーが勝てる方法を見つけるまで新しいゲームが配られます。番号を入力した場合は、そのディールがそのまま配られます。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3675,6 +4095,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nessuna mossa consentita"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有効な手がありません"
           }
         },
         "ko" : {
@@ -3724,6 +4150,12 @@
             "value" : "Nessun passaggio rimasto"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "残りの周回がありません"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3768,6 +4200,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ancora nessuna vittoria con punteggio standard."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スタンダードスコアでの勝利はまだありません。"
           }
         },
         "ko" : {
@@ -3817,6 +4255,12 @@
             "value" : "Nessuna mossa utile"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "役に立つ手はありません"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3862,6 +4306,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nessuno"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "なし"
           }
         },
         "ko" : {
@@ -3910,6 +4360,12 @@
             "value" : "Solo le vittorie con punteggio standard sono classificate: a Vegas ogni vittoria paga lo stesso importo."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランキングはスタンダードスコアの勝利のみが対象です。ベガスの勝利はすべて同じ扱いになります。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3954,6 +4410,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gioca"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プレイ"
           }
         },
         "ko" : {
@@ -4002,6 +4464,12 @@
             "value" : "Gioca un numero di mano"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディール番号を入力"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4046,6 +4514,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gioca un numero di mano…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディール番号を入力…"
           }
         },
         "ko" : {
@@ -4094,6 +4568,12 @@
             "value" : "Giocate"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プレイ数"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4138,6 +4618,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ripeti"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "やり直す"
           }
         },
         "ko" : {
@@ -4186,6 +4672,12 @@
             "value" : "Rigioca questa mano"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このディールをもう一度プレイ"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4230,6 +4722,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Azzera"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リセット"
           }
         },
         "ko" : {
@@ -4278,6 +4776,12 @@
             "value" : "Azzera i punteggi migliori"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ベストスコアをリセット"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4322,6 +4826,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Azzera le statistiche"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "統計をリセット"
           }
         },
         "ko" : {
@@ -4370,6 +4880,12 @@
             "value" : "Azzerare tutti i punteggi migliori?"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべてのベストスコアをリセットしますか？"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4414,6 +4930,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Azzerare tutte le statistiche?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべての統計をリセットしますか？"
           }
         },
         "ko" : {
@@ -4462,6 +4984,12 @@
             "value" : "Regole"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ルール"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4507,6 +5035,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punteggio: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スコア%@"
           }
         },
         "ko" : {
@@ -4562,6 +5096,12 @@
             "value" : "Punteggio: %1$@, con un bonus di tempo di %2$lld"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スコア%1$@(タイムボーナス%2$lldを含む)"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4606,6 +5146,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punteggio"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スコア方式"
           }
         },
         "ko" : {
@@ -4654,6 +5200,12 @@
             "value" : "Impostazioni"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4698,6 +5250,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Condividi questa mano"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このディールを共有"
           }
         },
         "ko" : {
@@ -4753,6 +5311,12 @@
             "value" : "Solitario, mano n. %1$@, %2$@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ソリティア ディール%1$@、%2$@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4799,6 +5363,12 @@
             "value" : "Effetti sonori"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "効果音"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4843,6 +5413,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gli effetti sonori sono silenziati in modalità silenziosa e non interrompono mai la tua musica."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "効果音はサイレントモードでは再生されず、音楽の再生を止めることもありません。"
           }
         },
         "ko" : {
@@ -4892,6 +5468,12 @@
             "value" : "Standard"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スタンダード"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4936,6 +5518,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Iniziare una nuova partita?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいゲームを始めますか？"
           }
         },
         "ko" : {
@@ -4984,6 +5572,12 @@
             "value" : "Statistiche"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "統計"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5028,6 +5622,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tallone"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "山札"
           }
         },
         "ko" : {
@@ -5076,6 +5676,12 @@
             "value" : "Tallone, vuoto"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "山札、空"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5120,6 +5726,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Serie"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "連勝"
           }
         },
         "ko" : {
@@ -5168,6 +5780,12 @@
             "value" : "Scorri su o giù per scegliere dove spostarla"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上下にスワイプして移動先を選択"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5212,6 +5830,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tavolo"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テーブル"
           }
         },
         "ko" : {
@@ -5260,6 +5884,12 @@
             "value" : "Il cronometro si ferma quando l’app è in background o le impostazioni sono aperte."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリがバックグラウンドにあるとき、または設定が開いているときは、タイマーが一時停止します。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5306,6 +5936,12 @@
             "value" : "La partita in corso andrà persa."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現在のゲームは失われます。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5350,6 +5986,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tempo"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "時間"
           }
         },
         "ko" : {
@@ -5399,6 +6041,12 @@
             "value" : "Tempo %@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "時間%@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5443,6 +6091,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cronometro"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タイマー"
           }
         },
         "ko" : {
@@ -5492,6 +6146,12 @@
             "value" : "Rigira gli scarti"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "捨て札を山札に戻す"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5536,6 +6196,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annulla"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取り消す"
           }
         },
         "ko" : {
@@ -5584,6 +6250,12 @@
             "value" : "Senza cronometro: nessun tempo, nessun bonus di tempo e nessun miglior tempo."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タイマーなし：時計もタイムボーナスもベストタイムもありません。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5629,6 +6301,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vegas"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ベガス"
           }
         },
         "ko" : {
@@ -5684,6 +6362,12 @@
             "value" : "Vegas: ogni partita costa %1$lld $, ogni carta sulla fondazione paga %2$lld $ (ritirati se la lascia), e la modalità %3$@ permette %4$@ nel tallone."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ベガス：1ゲームにつき$%1$lldを支払い、台札に置いたカード1枚ごとに$%2$lldを獲得します(カードが台札から戻ると取り消されます)。%3$@では山札を%4$@通過できます。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5728,6 +6412,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Versione"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バージョン"
           }
         },
         "ko" : {
@@ -5776,6 +6466,12 @@
             "value" : "Scarti, %@ in cima"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "捨て札、一番上は%@"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5820,6 +6516,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scarti, vuoti"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "捨て札、空"
           }
         },
         "ko" : {
@@ -5868,6 +6570,12 @@
             "value" : "Percentuale di vittorie"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "勝率"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5912,6 +6620,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Solo mani risolvibili"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "勝てるディールのみ"
           }
         },
         "ko" : {
@@ -5960,6 +6674,12 @@
             "value" : "Vinte"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "勝利数"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6004,6 +6724,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hai vinto!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "勝利！"
           }
         },
         "ko" : {
@@ -6060,6 +6786,12 @@
             "value" : "l’asso di %@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@のエース"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6112,6 +6844,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "l’otto di %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@の8"
           }
         },
         "ko" : {
@@ -6168,6 +6906,12 @@
             "value" : "il cinque di %@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@の5"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6220,6 +6964,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "il quattro di %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@の4"
           }
         },
         "ko" : {
@@ -6276,6 +7026,12 @@
             "value" : "il fante di %@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@のジャック"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6328,6 +7084,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "il re di %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@のキング"
           }
         },
         "ko" : {
@@ -6384,6 +7146,12 @@
             "value" : "il nove di %@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@の9"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6436,6 +7204,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "la regina di %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@のクイーン"
           }
         },
         "ko" : {
@@ -6492,6 +7266,12 @@
             "value" : "il sette di %@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@の7"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6544,6 +7324,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "il sei di %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@の6"
           }
         },
         "ko" : {
@@ -6600,6 +7386,12 @@
             "value" : "il dieci di %@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@の10"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6652,6 +7444,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "il tre di %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@の3"
           }
         },
         "ko" : {
@@ -6708,6 +7506,12 @@
             "value" : "il due di %@"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@の2"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6760,6 +7564,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Blu"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブルー"
           }
         },
         "ko" : {
@@ -6816,6 +7626,12 @@
             "value" : "Cornici viola"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パープルフレーム"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6868,6 +7684,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reticolo rosso"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "レッドラティス"
           }
         },
         "ko" : {
@@ -6924,6 +7746,12 @@
             "value" : "Blu"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブルー"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6976,6 +7804,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bordeaux"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バーガンディ"
           }
         },
         "ko" : {
@@ -7032,6 +7866,12 @@
             "value" : "Antracite"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チャコール"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7086,6 +7926,12 @@
             "value" : "Verde"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グリーン"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7131,6 +7977,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "nessuno"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "なし"
           }
         },
         "ko" : {
@@ -7187,6 +8039,12 @@
             "value" : "asso"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エース"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7239,6 +8097,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "otto"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "8"
           }
         },
         "ko" : {
@@ -7295,6 +8159,12 @@
             "value" : "cinque"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7347,6 +8217,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "quattro"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4"
           }
         },
         "ko" : {
@@ -7403,6 +8279,12 @@
             "value" : "fante"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ジャック"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7455,6 +8337,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "re"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キング"
           }
         },
         "ko" : {
@@ -7511,6 +8399,12 @@
             "value" : "nove"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "9"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7563,6 +8457,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "regina"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "クイーン"
           }
         },
         "ko" : {
@@ -7619,6 +8519,12 @@
             "value" : "sette"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7671,6 +8577,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "sei"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6"
           }
         },
         "ko" : {
@@ -7727,6 +8639,12 @@
             "value" : "dieci"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7779,6 +8697,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "tre"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3"
           }
         },
         "ko" : {
@@ -7835,6 +8759,12 @@
             "value" : "due"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7887,6 +8817,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "fiori"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "クラブ"
           }
         },
         "ko" : {
@@ -7943,6 +8879,12 @@
             "value" : "quadri"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ダイヤ"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7997,6 +8939,12 @@
             "value" : "cuori"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ハート"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8049,6 +8997,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "picche"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スペード"
           }
         },
         "ko" : {

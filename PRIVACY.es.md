@@ -1,6 +1,6 @@
 # Política de privacidad
 
-*Solitario minimalista para iPhone y iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versione italiana](PRIVACY.it.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md) · [한국어](PRIVACY.ko.md).*
+*Solitario minimalista para iPhone y iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versione italiana](PRIVACY.it.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md) · [日本語](PRIVACY.ja.md) · [한국어](PRIVACY.ko.md).*
 
 La app no recopila ningún dato. No tiene cuenta, ni anuncios, ni analíticas,
 ni informes de fallos, ni rastreo, y nunca se conecta a internet.
