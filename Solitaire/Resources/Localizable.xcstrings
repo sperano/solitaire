@@ -22,6 +22,12 @@
             "value" : "%lld $"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld $"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -55,6 +61,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ et les cartes par-dessus"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ en de kaarten erop"
           }
         },
         "pt-BR" : {
@@ -98,6 +110,12 @@
             "value" : "%1$@ en %2$@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ in %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -139,6 +157,12 @@
             "value" : "%1$@ de %2$@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@ %1$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -172,6 +196,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@, face visible"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, open"
           }
         },
         "pt-BR" : {
@@ -269,6 +299,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld cartes"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld kaart"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld kaarten"
                 }
               }
             }
@@ -376,6 +424,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld cartes cachées"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld verborgen kaart"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld verborgen kaarten"
                 }
               }
             }
@@ -495,6 +561,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld coups"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld zet"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld zetten"
                 }
               }
             }
@@ -625,6 +709,24 @@
             }
           }
         },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld doorgang"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld doorgangen"
+                }
+              }
+            }
+          }
+        },
         "pt-BR" : {
           "variations" : {
             "plural" : {
@@ -750,6 +852,24 @@
             }
           }
         },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld punt"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld punten"
+                }
+              }
+            }
+          }
+        },
         "pt-BR" : {
           "variations" : {
             "plural" : {
@@ -809,6 +929,12 @@
             "value" : "-%lld $"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-%lld $"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -850,6 +976,12 @@
             "value" : "Un nombre de %1$@ à %2$@."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een getal van %1$@ tot %2$@."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -882,6 +1014,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "À propos"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Over"
           }
         },
         "pt-BR" : {
@@ -919,6 +1057,12 @@
             "value" : "Toutes"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -953,6 +1097,12 @@
             "value" : "Records"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beste"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -985,6 +1135,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meilleurs pointages"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beste scores"
           }
         },
         "pt-BR" : {
@@ -1022,6 +1178,12 @@
             "value" : "Meilleurs pointages, %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beste scores, %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1054,6 +1216,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annuler"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuleer"
           }
         },
         "pt-BR" : {
@@ -1090,6 +1258,12 @@
             "value" : "Dos des cartes"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaartrug"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1122,6 +1296,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cartes"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaarten"
           }
         },
         "pt-BR" : {
@@ -1158,6 +1338,12 @@
             "value" : "Reporter le solde d’une partie à l’autre"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo overdragen tussen spellen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1192,6 +1378,12 @@
             "value" : "Les changements s’appliquent à la prochaine partie."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wijzigingen gaan in bij het volgende spel."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1224,6 +1416,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colonne %lld"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolom %lld"
           }
         },
         "pt-BR" : {
@@ -1267,6 +1465,12 @@
             "value" : "Colonne %1$lld, %2$@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolom %1$lld, %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1299,6 +1503,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colonne %lld, vide"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolom %lld, leeg"
           }
         },
         "pt-BR" : {
@@ -1335,6 +1545,12 @@
             "value" : "En cours"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Huidig"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1367,6 +1583,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Donne"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deling"
           }
         },
         "pt-BR" : {
@@ -1404,6 +1626,12 @@
             "value" : "Donne %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deling %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1436,6 +1664,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Numéro de donne"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delingnummer"
           }
         },
         "pt-BR" : {
@@ -1472,6 +1706,12 @@
             "value" : "Distribution…"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wordt gedeeld…"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1504,6 +1744,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les carreaux en bleu et les trèfles en vert, pour que chaque enseigne ait sa couleur."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruiten zijn blauw en klaveren groen, zodat elke kleur een eigen kleur heeft."
           }
         },
         "pt-BR" : {
@@ -1540,6 +1786,12 @@
             "value" : "OK"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gereed"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1572,6 +1824,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Touchez deux fois pour piger"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dubbeltik om te trekken"
           }
         },
         "pt-BR" : {
@@ -1608,6 +1866,12 @@
             "value" : "Touchez deux fois pour la déplacer au meilleur endroit, ou balayez vers le haut ou le bas pour choisir"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dubbeltik om hem naar de beste plek te verplaatsen, of veeg omhoog of omlaag om te kiezen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1642,6 +1906,12 @@
             "value" : "Touchez deux fois pour retourner la défausse"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dubbeltik om de aflegstapel om te draaien"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1674,6 +1944,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Piger"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trekken"
           }
         },
         "pt-BR" : {
@@ -1723,6 +1999,12 @@
             "value" : "Piger %lld"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trek %lld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1756,6 +2038,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pigez dans la pioche"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trek van de stok"
           }
         },
         "pt-BR" : {
@@ -1792,6 +2080,12 @@
             "value" : "Chaque donne a un numéro. Partagez-le, ou entrez-en un pour rejouer cette donne."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elke deling heeft een nummer. Deel het, of voer er een in om die deling opnieuw te spelen."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1824,6 +2118,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chaque mode de pige repart de zéro. Cette action est irréversible."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elke trekmodus begint weer bij nul. Dit kan niet ongedaan worden gemaakt."
           }
         },
         "pt-BR" : {
@@ -1860,6 +2160,12 @@
             "value" : "Le tableau de chaque mode de pige est vidé. Les statistiques sont conservées. Cette action est irréversible."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De tabel van elke trekmodus wordt leeggemaakt. Statistieken blijven bewaard. Dit kan niet ongedaan worden gemaakt."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1892,6 +2198,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carte face cachée"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verborgen kaart"
           }
         },
         "pt-BR" : {
@@ -1928,6 +2240,12 @@
             "value" : "Moins de coups"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minste zetten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1960,6 +2278,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terminer"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voltooien"
           }
         },
         "pt-BR" : {
@@ -1996,6 +2320,12 @@
             "value" : "Terminer automatiquement"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisch voltooien"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2028,6 +2358,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terminer automatiquement joue les cartes restantes dès qu’elles peuvent toutes aller sur les fondations."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisch voltooien speelt de resterende kaarten zodra ze allemaal naar een doel kunnen."
           }
         },
         "pt-BR" : {
@@ -2070,6 +2406,12 @@
             "value" : "Fondation %1$lld, %2$@ sur le dessus"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doel %1$lld, %2$@ boven"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2102,6 +2444,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fondation %lld, vide"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doel %lld, leeg"
           }
         },
         "pt-BR" : {
@@ -2138,6 +2486,12 @@
             "value" : "Jeu à quatre couleurs"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vierkleurig kaartspel"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2170,6 +2524,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gratuit, sans publicité, sans pistage, sans compte."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratis, zonder advertenties, zonder tracking, zonder account."
           }
         },
         "pt-BR" : {
@@ -2206,6 +2566,12 @@
             "value" : "Partie"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spel"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2238,6 +2604,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parties"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spellen"
           }
         },
         "pt-BR" : {
@@ -2274,6 +2646,12 @@
             "value" : "Retour haptique"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptiek"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2306,6 +2684,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Indice"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tip"
           }
         },
         "pt-BR" : {
@@ -2342,6 +2726,12 @@
             "value" : "Gros caractères"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grote letters"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2374,6 +2764,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les gros caractères agrandissent la valeur et la couleur dans le coin de chaque carte."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grote letters tonen een grotere waarde en kleur in de hoek van elke kaart."
           }
         },
         "pt-BR" : {
@@ -2410,6 +2806,12 @@
             "value" : "Disposition pour gaucher"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linkshandige indeling"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2444,6 +2846,12 @@
             "value" : "La disposition pour gaucher place la pioche et la défausse à droite."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De linkshandige indeling plaatst de stok en de aflegstapel rechts."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2476,6 +2884,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La plus longue"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langste"
           }
         },
         "pt-BR" : {
@@ -2519,6 +2933,12 @@
             "value" : "Déplacez %1$@ sur %2$@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats %1$@ naar %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2552,6 +2972,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Déplacez %@ vers une fondation"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats %@ naar een doel"
           }
         },
         "pt-BR" : {
@@ -2589,6 +3015,12 @@
             "value" : "Déplacez %@ vers la colonne vide"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats %@ naar de lege kolom"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2621,6 +3053,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Déplacer vers la colonne %lld"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats naar kolom %lld"
           }
         },
         "pt-BR" : {
@@ -2657,6 +3095,12 @@
             "value" : "Déplacer vers une fondation"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats naar een doel"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2689,6 +3133,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nouvelle partie"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuw spel"
           }
         },
         "pt-BR" : {
@@ -2725,6 +3175,12 @@
             "value" : "Les nouvelles parties sont distribuées jusqu’à ce que le solveur trouve comment en gagner une; un numéro de donne entré est joué tel quel."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuwe spellen worden gedeeld totdat de oplosser een manier vindt om er een te winnen; een ingevoerd delingnummer wordt gespeeld zoals het is."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2757,6 +3213,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun coup permis"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen toegestane zet"
           }
         },
         "pt-BR" : {
@@ -2794,6 +3256,12 @@
             "value" : "Plus aucun passage"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen doorgangen meer"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2826,6 +3294,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucune victoire avec pointage standard pour l’instant."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog geen overwinningen met standaardscore."
           }
         },
         "pt-BR" : {
@@ -2863,6 +3337,12 @@
             "value" : "Aucun coup utile"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen nuttige zetten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2896,6 +3376,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen"
           }
         },
         "pt-BR" : {
@@ -2932,6 +3418,12 @@
             "value" : "Seules les victoires avec pointage standard sont classées : toute victoire à Vegas rapporte la même somme."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alleen overwinningen met standaardscore worden gerangschikt: elke Vegas-overwinning levert evenveel op."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2964,6 +3456,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jouer"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spelen"
           }
         },
         "pt-BR" : {
@@ -3000,6 +3498,12 @@
             "value" : "Jouer un numéro de donne"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een delingnummer spelen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3032,6 +3536,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jouer un numéro de donne…"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een delingnummer spelen…"
           }
         },
         "pt-BR" : {
@@ -3068,6 +3578,12 @@
             "value" : "Jouées"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gespeeld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3100,6 +3616,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rétablir"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opnieuw doen"
           }
         },
         "pt-BR" : {
@@ -3136,6 +3658,12 @@
             "value" : "Rejouer cette donne"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze deling opnieuw spelen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3168,6 +3696,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réinitialiser"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resetten"
           }
         },
         "pt-BR" : {
@@ -3204,6 +3738,12 @@
             "value" : "Réinitialiser les meilleurs pointages"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beste scores resetten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3236,6 +3776,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réinitialiser les statistiques"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistieken resetten"
           }
         },
         "pt-BR" : {
@@ -3272,6 +3818,12 @@
             "value" : "Réinitialiser tous les meilleurs pointages?"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle beste scores resetten?"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3304,6 +3856,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réinitialiser toutes les statistiques?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle statistieken resetten?"
           }
         },
         "pt-BR" : {
@@ -3340,6 +3898,12 @@
             "value" : "Règles"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regels"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3373,6 +3937,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pointage : %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Score: %@"
           }
         },
         "pt-BR" : {
@@ -3416,6 +3986,12 @@
             "value" : "Pointage : %1$@, dont un boni de temps de %2$lld"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Score: %1$@, inclusief een tijdsbonus van %2$lld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3448,6 +4024,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pointage"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puntentelling"
           }
         },
         "pt-BR" : {
@@ -3484,6 +4066,12 @@
             "value" : "Réglages"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instellingen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3516,6 +4104,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Partager cette donne"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze deling delen"
           }
         },
         "pt-BR" : {
@@ -3559,6 +4153,12 @@
             "value" : "Solitaire, donne n° %1$@, %2$@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solitaire, deling nr. %1$@, %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3593,6 +4193,12 @@
             "value" : "Effets sonores"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geluidseffecten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3625,6 +4231,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les effets sonores se taisent en mode silencieux et n’interrompent jamais votre musique."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geluidseffecten zijn gedempt in de stille modus en onderbreken je muziek nooit."
           }
         },
         "pt-BR" : {
@@ -3662,6 +4274,12 @@
             "value" : "Standard"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standaard"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3694,6 +4312,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Commencer une nouvelle partie?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuw spel starten?"
           }
         },
         "pt-BR" : {
@@ -3730,6 +4354,12 @@
             "value" : "Statistiques"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistieken"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3762,6 +4392,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pioche"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stok"
           }
         },
         "pt-BR" : {
@@ -3798,6 +4434,12 @@
             "value" : "Pioche, vide"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stok, leeg"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3830,6 +4472,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Séries"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reeksen"
           }
         },
         "pt-BR" : {
@@ -3866,6 +4514,12 @@
             "value" : "Balayez vers le haut ou le bas pour choisir où la déplacer"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veeg omhoog of omlaag om te kiezen waar je hem naartoe verplaatst"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3898,6 +4552,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tapis"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tafel"
           }
         },
         "pt-BR" : {
@@ -3934,6 +4594,12 @@
             "value" : "Le chronomètre s’arrête quand l’app est en arrière-plan ou que les réglages sont ouverts."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De klok stopt zolang de app op de achtergrond staat of Instellingen open is."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3968,6 +4634,12 @@
             "value" : "La partie en cours sera perdue."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het huidige spel gaat verloren."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4000,6 +4672,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Temps"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tijd"
           }
         },
         "pt-BR" : {
@@ -4037,6 +4715,12 @@
             "value" : "Temps %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tijd %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4069,6 +4753,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chronomètre"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timer"
           }
         },
         "pt-BR" : {
@@ -4106,6 +4796,12 @@
             "value" : "Retournez la défausse"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draai de aflegstapel om"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4138,6 +4834,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annuler"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ongedaan maken"
           }
         },
         "pt-BR" : {
@@ -4174,6 +4876,12 @@
             "value" : "Sans chronomètre : pas de temps, ni boni de temps ni meilleur temps."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zonder klok: geen tijd, geen tijdsbonus en geen beste tijd."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4204,6 +4912,12 @@
           }
         },
         "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegas"
+          }
+        },
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vegas"
@@ -4250,6 +4964,12 @@
             "value" : "Vegas : chaque partie coûte %1$lld $, chaque carte sur une fondation rapporte %2$lld $ (repris si elle en sort), et le mode %3$@ permet %4$@ dans la pioche."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegas: elk spel kost %1$lld $, elke kaart op een doel levert %2$lld $ op (teruggenomen als ze eraf gaat), en modus %3$@ staat %4$@ door de stok toe."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4282,6 +5002,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versie"
           }
         },
         "pt-BR" : {
@@ -4318,6 +5044,12 @@
             "value" : "Défausse, %@ sur le dessus"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aflegstapel, %@ boven"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4350,6 +5082,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Défausse, vide"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aflegstapel, leeg"
           }
         },
         "pt-BR" : {
@@ -4386,6 +5124,12 @@
             "value" : "Taux de victoire"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Winstpercentage"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4418,6 +5162,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Donnes gagnables seulement"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alleen oplosbare delingen"
           }
         },
         "pt-BR" : {
@@ -4454,6 +5204,12 @@
             "value" : "Gagnées"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gewonnen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4486,6 +5242,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vous avez gagné!"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je hebt gewonnen!"
           }
         },
         "pt-BR" : {
@@ -4530,6 +5292,12 @@
             "value" : "l’as de %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ aas"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4570,6 +5338,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le huit de %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ acht"
           }
         },
         "pt-BR" : {
@@ -4614,6 +5388,12 @@
             "value" : "le cinq de %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ vijf"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4654,6 +5434,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le quatre de %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ vier"
           }
         },
         "pt-BR" : {
@@ -4698,6 +5484,12 @@
             "value" : "le valet de %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ boer"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4738,6 +5530,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le roi de %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ koning"
           }
         },
         "pt-BR" : {
@@ -4782,6 +5580,12 @@
             "value" : "le neuf de %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ negen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4822,6 +5626,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "la dame de %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ dame"
           }
         },
         "pt-BR" : {
@@ -4866,6 +5676,12 @@
             "value" : "le sept de %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ zeven"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4906,6 +5722,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le six de %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ zes"
           }
         },
         "pt-BR" : {
@@ -4950,6 +5772,12 @@
             "value" : "le dix de %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ tien"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4990,6 +5818,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le trois de %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ drie"
           }
         },
         "pt-BR" : {
@@ -5034,6 +5868,12 @@
             "value" : "le deux de %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ twee"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5074,6 +5914,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bleu"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blauw"
           }
         },
         "pt-BR" : {
@@ -5118,6 +5964,12 @@
             "value" : "Cadres violets"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paarse kaders"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5158,6 +6010,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Treillis rouge"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rood raster"
           }
         },
         "pt-BR" : {
@@ -5202,6 +6060,12 @@
             "value" : "Bleu"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blauw"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5239,6 +6103,12 @@
           }
         },
         "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bordeaux"
+          }
+        },
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bordeaux"
@@ -5286,6 +6156,12 @@
             "value" : "Anthracite"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antraciet"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5328,6 +6204,12 @@
             "value" : "Vert"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Groen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5361,6 +6243,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "aucun"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "geen"
           }
         },
         "pt-BR" : {
@@ -5405,6 +6293,12 @@
             "value" : "as"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "aas"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5445,6 +6339,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "huit"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "acht"
           }
         },
         "pt-BR" : {
@@ -5489,6 +6389,12 @@
             "value" : "cinq"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vijf"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5529,6 +6435,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "quatre"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vier"
           }
         },
         "pt-BR" : {
@@ -5573,6 +6485,12 @@
             "value" : "valet"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "boer"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5613,6 +6531,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "roi"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "koning"
           }
         },
         "pt-BR" : {
@@ -5657,6 +6581,12 @@
             "value" : "neuf"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "negen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5694,6 +6624,12 @@
           }
         },
         "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dame"
+          }
+        },
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "dame"
@@ -5741,6 +6677,12 @@
             "value" : "sept"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zeven"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5781,6 +6723,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "six"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zes"
           }
         },
         "pt-BR" : {
@@ -5825,6 +6773,12 @@
             "value" : "dix"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tien"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5865,6 +6819,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "trois"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "drie"
           }
         },
         "pt-BR" : {
@@ -5909,6 +6869,12 @@
             "value" : "deux"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "twee"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5949,6 +6915,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "trèfle"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "klaveren"
           }
         },
         "pt-BR" : {
@@ -5993,6 +6965,12 @@
             "value" : "carreau"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ruiten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6035,6 +7013,12 @@
             "value" : "cœur"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "harten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6075,6 +7059,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "pique"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "schoppen"
           }
         },
         "pt-BR" : {

@@ -44,8 +44,8 @@ interrupts the game with something.
   same deal over
 - Winnable deals only (Settings → Rules): new games are dealt until a solver
   finds a way to win them
-- English, French (Canada), German, Portuguese (Brazil), Simplified Chinese and Spanish, following the
-  language set on the device
+- English, Dutch, French (Canada), German, Portuguese (Brazil), Simplified Chinese and Spanish, following
+  the language set on the device
 
 ## Devices
 
@@ -109,7 +109,7 @@ Design/Sounds/convert_sounds.sh     # after changing a sound; commit the .m4a fi
 
 ## Languages
 
-The app is in English, French (Canada), German (`de`), Portuguese (Brazil)
+The app is in English, Dutch (`nl`), French (Canada), German (`de`), Portuguese (Brazil)
 (`pt-BR`), Simplified Chinese (`zh-Hans`) and Spanish (`es`, Latin American, which Spain reads too). Every string the player reads or
 VoiceOver speaks is in the String Catalog `Solitaire/Resources/Localizable.xcstrings`:
 SwiftUI looks up the literals in `Text`, `Button`, `Toggle` and the like by
@@ -202,8 +202,8 @@ the App Store"). From the second version on, each language gets
 a `release_notes.txt` for the version; the first version takes none.
 `AppStoreMetadataTests` checks the fields and their length limits. The privacy
 policy is `PRIVACY.md` (`PRIVACY.fr-CA.md` in French, `PRIVACY.es.md` in
-Spanish, `PRIVACY.de.md` in German, `PRIVACY.pt-BR.md` in Portuguese and
-`PRIVACY.zh-Hans.md` in Simplified Chinese).
+Spanish, `PRIVACY.de.md` in German, `PRIVACY.pt-BR.md` in Portuguese,
+`PRIVACY.zh-Hans.md` in Simplified Chinese and `PRIVACY.nl.md` in Dutch).
 
 Privacy: `Solitaire/Resources/PrivacyInfo.xcprivacy` declares no tracking and
 no data collected, and the one API Apple asks a reason for, `UserDefaults`
@@ -293,7 +293,7 @@ Each release:
 | `Design/` | The app icon's source artwork (`AppIcon.svg`) and the script that renders the icon variants from it. |
 | `AppStore/metadata/` | App Store name, subtitle, description, keywords, promotional text and URLs, per store language, plus copyright and category. |
 | `AppStore/ExportOptions.plist` | How the release workflow signs and uploads the archive. |
-| `PRIVACY.md`, `PRIVACY.fr-CA.md`, `PRIVACY.es.md`, `PRIVACY.de.md`, `PRIVACY.pt-BR.md`, `PRIVACY.zh-Hans.md` | The privacy policy the App Store listing links to. |
+| `PRIVACY.md`, `PRIVACY.fr-CA.md`, `PRIVACY.es.md`, `PRIVACY.de.md`, `PRIVACY.pt-BR.md`, `PRIVACY.zh-Hans.md`, `PRIVACY.nl.md` | The privacy policy the App Store listing links to. |
 | `Scripts/string-catalog.sh` | Syncs or checks the String Catalog against the strings the compiler extracted (`make strings`, `make check-strings`). |
 | `Scripts/coverage.sh` | Line coverage as a table: the engine's, with its minimum (`make coverage`), or the app's from a test result bundle. CI puts both in the job summary. |
 | `Scripts/screenshots.sh` | Takes the App Store screenshots (see Releasing). |
