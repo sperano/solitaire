@@ -1,6 +1,6 @@
 # Privacybeleid
 
-*Minimalistische Patience voor iPhone en iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md).*
+*Minimalistische Patience voor iPhone en iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versione italiana](PRIVACY.it.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md).*
 
 De app verzamelt geen gegevens. Ze heeft geen account, geen advertenties, geen
 analyse, geen crashrapportage en geen tracking, en maakt nooit verbinding met
