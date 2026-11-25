@@ -44,7 +44,7 @@ interrupts the game with something.
   same deal over
 - Winnable deals only (Settings → Rules): new games are dealt until a solver
   finds a way to win them
-- English, French (Canada), German, Portuguese (Brazil), Simplified Chinese and Spanish, following the
+- English, French (Canada), German, Italian, Portuguese (Brazil), Simplified Chinese and Spanish, following the
   language set on the device
 
 ## Devices
@@ -203,7 +203,7 @@ the App Store"). From the second version on, each language gets
 a `release_notes.txt` for the version; the first version takes none.
 `AppStoreMetadataTests` checks the fields and their length limits. The privacy
 policy is `PRIVACY.md` (`PRIVACY.fr-CA.md` in French, `PRIVACY.es.md` in
-Spanish, `PRIVACY.de.md` in German, `PRIVACY.pt-BR.md` in Portuguese and
+Spanish, `PRIVACY.de.md` in German, `PRIVACY.it.md` in Italian, `PRIVACY.pt-BR.md` in Portuguese and
 `PRIVACY.zh-Hans.md` in Simplified Chinese).
 
 Privacy: `Solitaire/Resources/PrivacyInfo.xcprivacy` declares no tracking and
@@ -294,7 +294,7 @@ Each release:
 | `Design/` | The app icon's source artwork (`AppIcon.svg`) and the script that renders the icon variants from it. |
 | `AppStore/metadata/` | App Store name, subtitle, description, keywords, promotional text and URLs, per store language, plus copyright and category. |
 | `AppStore/ExportOptions.plist` | How the release workflow signs and uploads the archive. |
-| `PRIVACY.md`, `PRIVACY.fr-CA.md`, `PRIVACY.es.md`, `PRIVACY.de.md`, `PRIVACY.pt-BR.md`, `PRIVACY.zh-Hans.md` | The privacy policy the App Store listing links to. |
+| `PRIVACY.md`, `PRIVACY.fr-CA.md`, `PRIVACY.es.md`, `PRIVACY.de.md`, `PRIVACY.it.md`, `PRIVACY.pt-BR.md`, `PRIVACY.zh-Hans.md` | The privacy policy the App Store listing links to. |
 | `Scripts/string-catalog.sh` | Syncs or checks the String Catalog against the strings the compiler extracted (`make strings`, `make check-strings`). |
 | `Scripts/coverage.sh` | Line coverage as a table: the engine's, with its minimum (`make coverage`), or the app's from a test result bundle. CI puts both in the job summary. |
 | `Scripts/screenshots.sh` | Takes the App Store screenshots (see Releasing). |
