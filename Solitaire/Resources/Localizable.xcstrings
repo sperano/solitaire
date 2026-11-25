@@ -22,6 +22,12 @@
             "value" : "%lld $"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$%lld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -55,6 +61,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ et les cartes par-dessus"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ e le carte sopra"
           }
         },
         "pt-BR" : {
@@ -98,6 +110,12 @@
             "value" : "%1$@ en %2$@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ in %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -139,6 +157,12 @@
             "value" : "%1$@ de %2$@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ di %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -172,6 +196,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@, face visible"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, scoperta"
           }
         },
         "pt-BR" : {
@@ -269,6 +299,30 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld cartes"
+                }
+              }
+            }
+          }
+        },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld di carte"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld carta"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld carte"
                 }
               }
             }
@@ -376,6 +430,30 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld cartes cachées"
+                }
+              }
+            }
+          }
+        },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld di carte coperte"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld carta coperta"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld carte coperte"
                 }
               }
             }
@@ -495,6 +573,30 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld coups"
+                }
+              }
+            }
+          }
+        },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld di mosse"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld mossa"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld mosse"
                 }
               }
             }
@@ -625,6 +727,30 @@
             }
           }
         },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld di passaggi"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld passaggio"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld passaggi"
+                }
+              }
+            }
+          }
+        },
         "pt-BR" : {
           "variations" : {
             "plural" : {
@@ -750,6 +876,30 @@
             }
           }
         },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld di punti"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld punto"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld punti"
+                }
+              }
+            }
+          }
+        },
         "pt-BR" : {
           "variations" : {
             "plural" : {
@@ -809,6 +959,12 @@
             "value" : "-%lld $"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-$%lld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -850,6 +1006,12 @@
             "value" : "Un nombre de %1$@ à %2$@."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un numero da %1$@ a %2$@."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -882,6 +1044,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "À propos"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informazioni"
           }
         },
         "pt-BR" : {
@@ -919,6 +1087,12 @@
             "value" : "Toutes"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutte"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -953,6 +1127,12 @@
             "value" : "Records"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -985,6 +1165,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meilleurs pointages"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punteggi migliori"
           }
         },
         "pt-BR" : {
@@ -1022,6 +1208,12 @@
             "value" : "Meilleurs pointages, %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punteggi migliori, %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1054,6 +1246,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
           }
         },
         "pt-BR" : {
@@ -1090,6 +1288,12 @@
             "value" : "Dos des cartes"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dorso delle carte"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1122,6 +1326,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cartes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carte"
           }
         },
         "pt-BR" : {
@@ -1158,6 +1368,12 @@
             "value" : "Reporter le solde d’une partie à l’autre"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riporta il saldo da una partita all’altra"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1192,6 +1408,12 @@
             "value" : "Les changements s’appliquent à la prochaine partie."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le modifiche hanno effetto dalla prossima partita."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1224,6 +1446,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colonne %lld"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colonna %lld"
           }
         },
         "pt-BR" : {
@@ -1267,6 +1495,12 @@
             "value" : "Colonne %1$lld, %2$@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colonna %1$lld, %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1299,6 +1533,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colonne %lld, vide"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colonna %lld, vuota"
           }
         },
         "pt-BR" : {
@@ -1335,6 +1575,12 @@
             "value" : "En cours"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attuale"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1367,6 +1613,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Donne"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mano"
           }
         },
         "pt-BR" : {
@@ -1404,6 +1656,12 @@
             "value" : "Donne %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mano %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1436,6 +1694,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Numéro de donne"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numero di mano"
           }
         },
         "pt-BR" : {
@@ -1472,6 +1736,12 @@
             "value" : "Distribution…"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distribuzione…"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1504,6 +1774,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les carreaux en bleu et les trèfles en vert, pour que chaque enseigne ait sa couleur."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quadri blu e fiori verdi, così nessun seme condivide il colore con un altro."
           }
         },
         "pt-BR" : {
@@ -1540,6 +1816,12 @@
             "value" : "OK"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fine"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1572,6 +1854,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Touchez deux fois pour piger"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tocca due volte per pescare"
           }
         },
         "pt-BR" : {
@@ -1608,6 +1896,12 @@
             "value" : "Touchez deux fois pour la déplacer au meilleur endroit, ou balayez vers le haut ou le bas pour choisir"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tocca due volte per spostarla nel posto migliore, oppure scorri su o giù per scegliere"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1642,6 +1936,12 @@
             "value" : "Touchez deux fois pour retourner la défausse"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tocca due volte per rigirare gli scarti"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1674,6 +1974,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Piger"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pesca"
           }
         },
         "pt-BR" : {
@@ -1723,6 +2029,12 @@
             "value" : "Piger %lld"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pesca %lld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1756,6 +2068,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pigez dans la pioche"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pesca dal tallone"
           }
         },
         "pt-BR" : {
@@ -1792,6 +2110,12 @@
             "value" : "Chaque donne a un numéro. Partagez-le, ou entrez-en un pour rejouer cette donne."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ogni mano ha un numero. Condividilo, oppure inseriscine uno per rigiocare quella mano."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1824,6 +2148,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chaque mode de pige repart de zéro. Cette action est irréversible."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ogni modalità di pesca riparte da zero. L’azione non si può annullare."
           }
         },
         "pt-BR" : {
@@ -1860,6 +2190,12 @@
             "value" : "Le tableau de chaque mode de pige est vidé. Les statistiques sont conservées. Cette action est irréversible."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il tavolo di ogni modalità di pesca viene svuotato. Le statistiche restano. L’azione non si può annullare."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1892,6 +2228,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carte face cachée"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carta coperta"
           }
         },
         "pt-BR" : {
@@ -1928,6 +2270,12 @@
             "value" : "Moins de coups"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meno mosse"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1960,6 +2308,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terminer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termina"
           }
         },
         "pt-BR" : {
@@ -1996,6 +2350,12 @@
             "value" : "Terminer automatiquement"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termina automaticamente"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2028,6 +2388,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terminer automatiquement joue les cartes restantes dès qu’elles peuvent toutes aller sur les fondations."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termina automaticamente gioca le carte rimanenti non appena possono tutte andare sulle fondazioni."
           }
         },
         "pt-BR" : {
@@ -2070,6 +2436,12 @@
             "value" : "Fondation %1$lld, %2$@ sur le dessus"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fondazione %1$lld, %2$@ in cima"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2102,6 +2474,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fondation %lld, vide"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fondazione %lld, vuota"
           }
         },
         "pt-BR" : {
@@ -2138,6 +2516,12 @@
             "value" : "Jeu à quatre couleurs"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mazzo a quattro colori"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2170,6 +2554,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gratuit, sans publicité, sans pistage, sans compte."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratis, senza pubblicità, senza tracciamento, senza account."
           }
         },
         "pt-BR" : {
@@ -2206,6 +2596,12 @@
             "value" : "Partie"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partita"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2238,6 +2634,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parties"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partite"
           }
         },
         "pt-BR" : {
@@ -2274,6 +2676,12 @@
             "value" : "Retour haptique"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback aptico"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2306,6 +2714,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Indice"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggerimento"
           }
         },
         "pt-BR" : {
@@ -2342,6 +2756,12 @@
             "value" : "Gros caractères"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caratteri grandi"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2374,6 +2794,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les gros caractères agrandissent la valeur et la couleur dans le coin de chaque carte."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I caratteri grandi ingrandiscono il valore e il seme nell’angolo di ogni carta."
           }
         },
         "pt-BR" : {
@@ -2410,6 +2836,12 @@
             "value" : "Disposition pour gaucher"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disposizione per mancini"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2444,6 +2876,12 @@
             "value" : "La disposition pour gaucher place la pioche et la défausse à droite."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La disposizione per mancini mette il tallone e gli scarti a destra."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2476,6 +2914,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La plus longue"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Più lunga"
           }
         },
         "pt-BR" : {
@@ -2519,6 +2963,12 @@
             "value" : "Déplacez %1$@ sur %2$@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta %1$@ verso %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2552,6 +3002,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Déplacez %@ vers une fondation"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta %@ su una fondazione"
           }
         },
         "pt-BR" : {
@@ -2589,6 +3045,12 @@
             "value" : "Déplacez %@ vers la colonne vide"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta %@ sulla colonna vuota"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2621,6 +3083,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Déplacer vers la colonne %lld"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta sulla colonna %lld"
           }
         },
         "pt-BR" : {
@@ -2657,6 +3125,12 @@
             "value" : "Déplacer vers une fondation"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta su una fondazione"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2689,6 +3163,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nouvelle partie"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuova partita"
           }
         },
         "pt-BR" : {
@@ -2725,6 +3205,12 @@
             "value" : "Les nouvelles parties sont distribuées jusqu’à ce que le solveur trouve comment en gagner une; un numéro de donne entré est joué tel quel."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si distribuiscono nuove partite finché il risolutore non trova il modo di vincerne una; un numero di mano inserito viene giocato tale e quale."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2757,6 +3243,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun coup permis"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna mossa consentita"
           }
         },
         "pt-BR" : {
@@ -2794,6 +3286,12 @@
             "value" : "Plus aucun passage"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessun passaggio rimasto"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2826,6 +3324,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucune victoire avec pointage standard pour l’instant."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ancora nessuna vittoria con punteggio standard."
           }
         },
         "pt-BR" : {
@@ -2863,6 +3367,12 @@
             "value" : "Aucun coup utile"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna mossa utile"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2896,6 +3406,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuno"
           }
         },
         "pt-BR" : {
@@ -2932,6 +3448,12 @@
             "value" : "Seules les victoires avec pointage standard sont classées : toute victoire à Vegas rapporte la même somme."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo le vittorie con punteggio standard sono classificate: a Vegas ogni vittoria paga lo stesso importo."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2964,6 +3486,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jouer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gioca"
           }
         },
         "pt-BR" : {
@@ -3000,6 +3528,12 @@
             "value" : "Jouer un numéro de donne"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gioca un numero di mano"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3032,6 +3566,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jouer un numéro de donne…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gioca un numero di mano…"
           }
         },
         "pt-BR" : {
@@ -3068,6 +3608,12 @@
             "value" : "Jouées"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giocate"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3100,6 +3646,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rétablir"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ripeti"
           }
         },
         "pt-BR" : {
@@ -3136,6 +3688,12 @@
             "value" : "Rejouer cette donne"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rigioca questa mano"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3168,6 +3726,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réinitialiser"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azzera"
           }
         },
         "pt-BR" : {
@@ -3204,6 +3768,12 @@
             "value" : "Réinitialiser les meilleurs pointages"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azzera i punteggi migliori"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3236,6 +3806,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réinitialiser les statistiques"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azzera le statistiche"
           }
         },
         "pt-BR" : {
@@ -3272,6 +3848,12 @@
             "value" : "Réinitialiser tous les meilleurs pointages?"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azzerare tutti i punteggi migliori?"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3304,6 +3886,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réinitialiser toutes les statistiques?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azzerare tutte le statistiche?"
           }
         },
         "pt-BR" : {
@@ -3340,6 +3928,12 @@
             "value" : "Règles"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regole"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3373,6 +3967,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pointage : %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punteggio: %@"
           }
         },
         "pt-BR" : {
@@ -3416,6 +4016,12 @@
             "value" : "Pointage : %1$@, dont un boni de temps de %2$lld"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punteggio: %1$@, con un bonus di tempo di %2$lld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3448,6 +4054,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pointage"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punteggio"
           }
         },
         "pt-BR" : {
@@ -3484,6 +4096,12 @@
             "value" : "Réglages"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3516,6 +4134,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Partager cette donne"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condividi questa mano"
           }
         },
         "pt-BR" : {
@@ -3559,6 +4183,12 @@
             "value" : "Solitaire, donne n° %1$@, %2$@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solitario, mano n. %1$@, %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3591,6 +4221,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Effets sonores"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effetti sonori"
           }
         },
         "pt-BR" : {
@@ -3627,6 +4263,12 @@
             "value" : "Les effets sonores se taisent en mode silencieux et n’interrompent jamais votre musique."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gli effetti sonori sono silenziati in modalità silenziosa e non interrompono mai la tua musica."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3657,6 +4299,12 @@
           }
         },
         "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standard"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Standard"
@@ -3696,6 +4344,12 @@
             "value" : "Commencer une nouvelle partie?"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniziare una nuova partita?"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3728,6 +4382,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Statistiques"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistiche"
           }
         },
         "pt-BR" : {
@@ -3764,6 +4424,12 @@
             "value" : "Pioche"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tallone"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3796,6 +4462,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pioche, vide"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tallone, vuoto"
           }
         },
         "pt-BR" : {
@@ -3832,6 +4504,12 @@
             "value" : "Séries"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serie"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3864,6 +4542,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Balayez vers le haut ou le bas pour choisir où la déplacer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scorri su o giù per scegliere dove spostarla"
           }
         },
         "pt-BR" : {
@@ -3900,6 +4584,12 @@
             "value" : "Tapis"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tavolo"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3932,6 +4622,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le chronomètre s’arrête quand l’app est en arrière-plan ou que les réglages sont ouverts."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il cronometro si ferma quando l’app è in background o le impostazioni sono aperte."
           }
         },
         "pt-BR" : {
@@ -3968,6 +4664,12 @@
             "value" : "La partie en cours sera perdue."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La partita in corso andrà persa."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4000,6 +4702,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Temps"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempo"
           }
         },
         "pt-BR" : {
@@ -4037,6 +4745,12 @@
             "value" : "Temps %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempo %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4069,6 +4783,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chronomètre"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cronometro"
           }
         },
         "pt-BR" : {
@@ -4106,6 +4826,12 @@
             "value" : "Retournez la défausse"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rigira gli scarti"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4138,6 +4864,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
           }
         },
         "pt-BR" : {
@@ -4174,6 +4906,12 @@
             "value" : "Sans chronomètre : pas de temps, ni boni de temps ni meilleur temps."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Senza cronometro: nessun tempo, nessun bonus di tempo e nessun miglior tempo."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4204,6 +4942,12 @@
           }
         },
         "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegas"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vegas"
@@ -4250,6 +4994,12 @@
             "value" : "Vegas : chaque partie coûte %1$lld $, chaque carte sur une fondation rapporte %2$lld $ (repris si elle en sort), et le mode %3$@ permet %4$@ dans la pioche."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegas: ogni partita costa %1$lld $, ogni carta sulla fondazione paga %2$lld $ (ritirati se la lascia), e la modalità %3$@ permette %4$@ nel tallone."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4282,6 +5032,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versione"
           }
         },
         "pt-BR" : {
@@ -4318,6 +5074,12 @@
             "value" : "Défausse, %@ sur le dessus"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scarti, %@ in cima"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4350,6 +5112,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Défausse, vide"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scarti, vuoti"
           }
         },
         "pt-BR" : {
@@ -4386,6 +5154,12 @@
             "value" : "Taux de victoire"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Percentuale di vittorie"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4418,6 +5192,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Donnes gagnables seulement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo mani risolvibili"
           }
         },
         "pt-BR" : {
@@ -4454,6 +5234,12 @@
             "value" : "Gagnées"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vinte"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4486,6 +5272,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vous avez gagné!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hai vinto!"
           }
         },
         "pt-BR" : {
@@ -4530,6 +5322,12 @@
             "value" : "l’as de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l’asso di %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4570,6 +5368,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le huit de %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l’otto di %@"
           }
         },
         "pt-BR" : {
@@ -4614,6 +5418,12 @@
             "value" : "le cinq de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il cinque di %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4654,6 +5464,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le quatre de %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il quattro di %@"
           }
         },
         "pt-BR" : {
@@ -4698,6 +5514,12 @@
             "value" : "le valet de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il fante di %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4738,6 +5560,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le roi de %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il re di %@"
           }
         },
         "pt-BR" : {
@@ -4782,6 +5610,12 @@
             "value" : "le neuf de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il nove di %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4822,6 +5656,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "la dame de %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "la regina di %@"
           }
         },
         "pt-BR" : {
@@ -4866,6 +5706,12 @@
             "value" : "le sept de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il sette di %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4906,6 +5752,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le six de %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il sei di %@"
           }
         },
         "pt-BR" : {
@@ -4950,6 +5802,12 @@
             "value" : "le dix de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il dieci di %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4990,6 +5848,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "le trois de %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il tre di %@"
           }
         },
         "pt-BR" : {
@@ -5034,6 +5898,12 @@
             "value" : "le deux de %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "il due di %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5074,6 +5944,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bleu"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blu"
           }
         },
         "pt-BR" : {
@@ -5118,6 +5994,12 @@
             "value" : "Cadres violets"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornici viola"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5158,6 +6040,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Treillis rouge"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reticolo rosso"
           }
         },
         "pt-BR" : {
@@ -5202,6 +6090,12 @@
             "value" : "Bleu"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blu"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5239,6 +6133,12 @@
           }
         },
         "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bordeaux"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bordeaux"
@@ -5286,6 +6186,12 @@
             "value" : "Anthracite"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antracite"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5328,6 +6234,12 @@
             "value" : "Vert"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verde"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5361,6 +6273,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "aucun"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nessuno"
           }
         },
         "pt-BR" : {
@@ -5405,6 +6323,12 @@
             "value" : "as"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "asso"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5445,6 +6369,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "huit"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "otto"
           }
         },
         "pt-BR" : {
@@ -5489,6 +6419,12 @@
             "value" : "cinq"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cinque"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5529,6 +6465,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "quatre"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "quattro"
           }
         },
         "pt-BR" : {
@@ -5573,6 +6515,12 @@
             "value" : "valet"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fante"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5613,6 +6561,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "roi"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "re"
           }
         },
         "pt-BR" : {
@@ -5657,6 +6611,12 @@
             "value" : "neuf"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nove"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5697,6 +6657,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "dame"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "regina"
           }
         },
         "pt-BR" : {
@@ -5741,6 +6707,12 @@
             "value" : "sept"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sette"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5781,6 +6753,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "six"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sei"
           }
         },
         "pt-BR" : {
@@ -5825,6 +6803,12 @@
             "value" : "dix"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dieci"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5865,6 +6849,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "trois"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tre"
           }
         },
         "pt-BR" : {
@@ -5909,6 +6899,12 @@
             "value" : "deux"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "due"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5949,6 +6945,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "trèfle"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fiori"
           }
         },
         "pt-BR" : {
@@ -5993,6 +6995,12 @@
             "value" : "carreau"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "quadri"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6035,6 +7043,12 @@
             "value" : "cœur"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cuori"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6075,6 +7089,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "pique"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "picche"
           }
         },
         "pt-BR" : {

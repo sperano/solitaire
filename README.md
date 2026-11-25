@@ -109,8 +109,9 @@ Design/Sounds/convert_sounds.sh     # after changing a sound; commit the .m4a fi
 
 ## Languages
 
-The app is in English, French (Canada), German (`de`), Portuguese (Brazil)
-(`pt-BR`), Simplified Chinese (`zh-Hans`) and Spanish (`es`, Latin American, which Spain reads too). Every string the player reads or
+The app is in English, French (Canada), German (`de`), Italian (`it`),
+Portuguese (Brazil) (`pt-BR`), Simplified Chinese (`zh-Hans`) and Spanish
+(`es`, Latin American, which Spain reads too). Every string the player reads or
 VoiceOver speaks is in the String Catalog `Solitaire/Resources/Localizable.xcstrings`:
 SwiftUI looks up the literals in `Text`, `Button`, `Toggle` and the like by
 themselves, and text built in code goes through `String(localized:)`. The
