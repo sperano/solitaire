@@ -1,6 +1,6 @@
 # プライバシーポリシー
 
-*iPhoneおよびiPad向けミニマルソリティア。[English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md)。*
+*iPhoneおよびiPad向けミニマルソリティア。[English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versione italiana](PRIVACY.it.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md)。*
 
 本アプリはいかなるデータも収集しません。アカウント、広告、アナリティクス、クラッシュレポート、トラッキングのいずれもなく、インターネットに接続することもありません。
 
