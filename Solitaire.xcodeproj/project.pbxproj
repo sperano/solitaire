@@ -663,6 +663,7 @@
 				es,
 				"fr-CA",
 				it,
+				ko,
 				nl,
 				"pt-BR",
 				"zh-Hans",
