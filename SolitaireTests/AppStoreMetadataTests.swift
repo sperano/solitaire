@@ -52,6 +52,7 @@ final class AppStoreMetadataTests: XCTestCase {
         "fr-CA": "PRIVACY.fr-CA.md",
         "it": "PRIVACY.it.md",
         "ja": "PRIVACY.ja.md",
+        "ko": "PRIVACY.ko.md",
         "pt-BR": "PRIVACY.pt-BR.md",
         "zh-Hans": "PRIVACY.zh-Hans.md",
     ]

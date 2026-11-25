@@ -1,6 +1,6 @@
 # 隐私政策
 
-*适用于 iPhone 和 iPad 的极简纸牌接龙。[English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versione italiana](PRIVACY.it.md) · [Versão em português](PRIVACY.pt-BR.md) · [日本語](PRIVACY.ja.md)。*
+*适用于 iPhone 和 iPad 的极简纸牌接龙。[English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versione italiana](PRIVACY.it.md) · [Versão em português](PRIVACY.pt-BR.md) · [日本語](PRIVACY.ja.md) · [한국어](PRIVACY.ko.md)。*
 
 本应用不会收集任何数据。应用不设账户，不含广告，不收集分析数据或崩溃报告，不进行跟踪，也从不连接互联网。
 

@@ -1,6 +1,6 @@
 # Politique de confidentialité
 
-*Solitaire minimaliste pour iPhone et iPad. [English version](PRIVACY.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versione italiana](PRIVACY.it.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md) · [日本語](PRIVACY.ja.md).*
+*Solitaire minimaliste pour iPhone et iPad. [English version](PRIVACY.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versione italiana](PRIVACY.it.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md) · [日本語](PRIVACY.ja.md) · [한국어](PRIVACY.ko.md).*
 
 L’app ne recueille aucune donnée. Elle n’a ni compte, ni publicité, ni
 analytique, ni rapport de plantage, ni pistage, et elle ne se connecte

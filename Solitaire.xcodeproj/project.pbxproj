@@ -664,6 +664,7 @@
 				"fr-CA",
 				it,
 				ja,
+				ko,
 				"pt-BR",
 				"zh-Hans",
 			);
