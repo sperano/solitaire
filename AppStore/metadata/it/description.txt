@@ -1,0 +1,16 @@
+Il solitario Klondike, senza fronzoli. Senza pubblicità, senza acquisti in-app, senza account, senza tracciamento né analisi: il gioco non invia mai nulla da nessuna parte.
+
+• Pesca 1 o Pesca 3
+• Punteggio standard, Vegas o nessuno, con il saldo Vegas riportato da una partita all’altra se vuoi
+• Solo mani risolvibili: un risolutore verifica ogni nuova mano prima che tu la giochi
+• Ogni mano ha un numero da condividere o per rigiocarla
+• Annulla e ripeti illimitati, suggerimenti e fine automatica non appena tutte le carte possono salire
+• Statistiche per ogni modalità di pesca: partite vinte, miglior tempo, meno mosse, serie
+• I tuoi dieci migliori punteggi, con il numero di mano per rigiocare ognuno
+• Una modalità senza cronometro per giocare con calma, e una disposizione per mancini
+• Effetti sonori se li vuoi: disattivati finché non li attivi, silenziati in modalità silenziosa, mai sopra la tua musica
+• Supporto completo a VoiceOver: ogni carta si sposta senza trascinarla
+• Mazzo a quattro colori, caratteri grandi, Aumenta contrasto, Riduci movimento e testo grande
+• Una scelta di dorsi delle carte e colori del tavolo
+• iPhone e iPad, verticale e orizzontale, Split View e Stage Manager, scorciatoie da tastiera
+• In italiano, cinese semplificato, francese, inglese, portoghese (Brasile), spagnolo e tedesco

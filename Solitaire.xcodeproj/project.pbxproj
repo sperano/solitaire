@@ -662,6 +662,7 @@
 				en,
 				es,
 				"fr-CA",
+				it,
 				nl,
 				"pt-BR",
 				"zh-Hans",
