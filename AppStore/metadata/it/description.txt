@@ -13,4 +13,4 @@ Il solitario Klondike, senza fronzoli. Senza pubblicità, senza acquisti in-app,
 • Mazzo a quattro colori, caratteri grandi, Aumenta contrasto, Riduci movimento e testo grande
 • Una scelta di dorsi delle carte e colori del tavolo
 • iPhone e iPad, verticale e orizzontale, Split View e Stage Manager, scorciatoie da tastiera
-• In italiano, cinese semplificato, francese, inglese, portoghese (Brasile), spagnolo e tedesco
+• In italiano, cinese semplificato, francese, inglese, olandese, portoghese (Brasile), spagnolo e tedesco
