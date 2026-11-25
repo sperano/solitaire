@@ -663,6 +663,7 @@
 				es,
 				"fr-CA",
 				it,
+				ja,
 				ko,
 				nl,
 				"pt-BR",
