@@ -40,6 +40,12 @@
             "value" : "$%lld"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld $"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -91,6 +97,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@와(과) 그 위에 놓인 카드"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ en de kaarten erop"
           }
         },
         "pt-BR" : {
@@ -152,6 +164,12 @@
             "value" : "%2$@ 동안 %1$@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ in %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -211,6 +229,12 @@
             "value" : "%2$@ %1$@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@ %1$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -262,6 +286,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@, 앞면"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, open"
           }
         },
         "pt-BR" : {
@@ -412,6 +442,24 @@
             }
           }
         },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld kaart"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld kaarten"
+                }
+              }
+            }
+          }
+        },
         "pt-BR" : {
           "variations" : {
             "plural" : {
@@ -556,6 +604,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "뒷면 %lld장"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld verborgen kaart"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld verborgen kaarten"
                 }
               }
             }
@@ -723,6 +789,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "이동 %lld회"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld zet"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld zetten"
                 }
               }
             }
@@ -901,6 +985,24 @@
             }
           }
         },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld doorgang"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld doorgangen"
+                }
+              }
+            }
+          }
+        },
         "pt-BR" : {
           "variations" : {
             "plural" : {
@@ -1074,6 +1176,24 @@
             }
           }
         },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld punt"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld punten"
+                }
+              }
+            }
+          }
+        },
         "pt-BR" : {
           "variations" : {
             "plural" : {
@@ -1151,6 +1271,12 @@
             "value" : "-$%lld"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-%lld $"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1210,6 +1336,12 @@
             "value" : "%1$@부터 %2$@까지의 숫자입니다."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een getal van %1$@ tot %2$@."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1260,6 +1392,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "정보"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Over"
           }
         },
         "pt-BR" : {
@@ -1315,6 +1453,12 @@
             "value" : "전체"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1367,6 +1511,12 @@
             "value" : "최고"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beste"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1417,6 +1567,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "최고 점수"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beste scores"
           }
         },
         "pt-BR" : {
@@ -1472,6 +1628,12 @@
             "value" : "최고 점수, %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beste scores, %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1522,6 +1684,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "취소"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuleer"
           }
         },
         "pt-BR" : {
@@ -1576,6 +1744,12 @@
             "value" : "카드 뒷면"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaartrug"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1626,6 +1800,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카드"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaarten"
           }
         },
         "pt-BR" : {
@@ -1680,6 +1860,12 @@
             "value" : "게임 간 잔액 이어가기"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo overdragen tussen spellen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1732,6 +1918,12 @@
             "value" : "변경 사항은 다음 게임부터 적용됩니다."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wijzigingen gaan in bij het volgende spel."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1782,6 +1974,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld번 열"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolom %lld"
           }
         },
         "pt-BR" : {
@@ -1843,6 +2041,12 @@
             "value" : "%1$lld번 열, %2$@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolom %1$lld, %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1893,6 +2097,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld번 열, 비어 있음"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolom %lld, leeg"
           }
         },
         "pt-BR" : {
@@ -1947,6 +2157,12 @@
             "value" : "현재"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Huidig"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1997,6 +2213,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "배열"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deling"
           }
         },
         "pt-BR" : {
@@ -2052,6 +2274,12 @@
             "value" : "배열 %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deling %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2102,6 +2330,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "배열 번호"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delingnummer"
           }
         },
         "pt-BR" : {
@@ -2156,6 +2390,12 @@
             "value" : "배열 중…"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wordt gedeeld…"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2206,6 +2446,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "다이아몬드는 파란색, 클럽은 초록색으로 표시되어 두 무늬가 같은 색을 공유하지 않습니다."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruiten zijn blauw en klaveren groen, zodat elke kleur een eigen kleur heeft."
           }
         },
         "pt-BR" : {
@@ -2260,6 +2506,12 @@
             "value" : "완료"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gereed"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2310,6 +2562,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "두 번 탭하여 뽑기"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dubbeltik om te trekken"
           }
         },
         "pt-BR" : {
@@ -2364,6 +2622,12 @@
             "value" : "두 번 탭하면 최적의 위치로 이동하거나, 위아래로 스와이프하여 선택하세요"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dubbeltik om hem naar de beste plek te verplaatsen, of veeg omhoog of omlaag om te kiezen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2416,6 +2680,12 @@
             "value" : "두 번 탭하여 웨이스트 뒤집기"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dubbeltik om de aflegstapel om te draaien"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2466,6 +2736,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "뽑기"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trekken"
           }
         },
         "pt-BR" : {
@@ -2533,6 +2809,12 @@
             "value" : "%lld장 뽑기"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trek %lld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2584,6 +2866,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "스톡에서 뽑기"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trek van de stok"
           }
         },
         "pt-BR" : {
@@ -2638,6 +2926,12 @@
             "value" : "모든 카드 배열에는 번호가 있습니다. 번호를 공유하거나 입력하여 같은 배열을 다시 플레이하세요."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elke deling heeft een nummer. Deel het, of voer er een in om die deling opnieuw te spelen."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2688,6 +2982,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "모든 뽑기 모드가 0으로 초기화됩니다. 이 작업은 취소할 수 없습니다."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elke trekmodus begint weer bij nul. Dit kan niet ongedaan worden gemaakt."
           }
         },
         "pt-BR" : {
@@ -2742,6 +3042,12 @@
             "value" : "모든 뽑기 모드의 순위표가 비워집니다. 통계는 유지됩니다. 이 작업은 취소할 수 없습니다."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De tabel van elke trekmodus wordt leeggemaakt. Statistieken blijven bewaard. Dit kan niet ongedaan worden gemaakt."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2792,6 +3098,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "뒷면 카드"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verborgen kaart"
           }
         },
         "pt-BR" : {
@@ -2846,6 +3158,12 @@
             "value" : "최소 이동 수"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minste zetten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2896,6 +3214,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "마무리"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voltooien"
           }
         },
         "pt-BR" : {
@@ -2950,6 +3274,12 @@
             "value" : "자동 마무리"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisch voltooien"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3000,6 +3330,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "자동 마무리를 켜면 남은 카드가 모두 파운데이션으로 이동할 수 있게 되었을 때 나머지 카드를 대신 이동합니다."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisch voltooien speelt de resterende kaarten zodra ze allemaal naar een doel kunnen."
           }
         },
         "pt-BR" : {
@@ -3060,6 +3396,12 @@
             "value" : "파운데이션 %1$lld, 맨 위에 %2$@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doel %1$lld, %2$@ boven"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3110,6 +3452,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "파운데이션 %lld, 비어 있음"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doel %lld, leeg"
           }
         },
         "pt-BR" : {
@@ -3164,6 +3512,12 @@
             "value" : "4색 카드"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vierkleurig kaartspel"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3214,6 +3568,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "무료, 광고 없음, 추적 없음, 계정 필요 없음."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratis, zonder advertenties, zonder tracking, zonder account."
           }
         },
         "pt-BR" : {
@@ -3268,6 +3628,12 @@
             "value" : "게임"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spel"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3318,6 +3684,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "게임"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spellen"
           }
         },
         "pt-BR" : {
@@ -3372,6 +3744,12 @@
             "value" : "햅틱"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptiek"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3422,6 +3800,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "힌트"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tip"
           }
         },
         "pt-BR" : {
@@ -3476,6 +3860,12 @@
             "value" : "큰 글씨"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grote letters"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3526,6 +3916,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "큰 글씨는 각 카드 모서리의 값과 무늬를 더 크게 표시합니다."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grote letters tonen een grotere waarde en kleur in de hoek van elke kaart."
           }
         },
         "pt-BR" : {
@@ -3580,6 +3976,12 @@
             "value" : "왼손잡이 레이아웃"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linkshandige indeling"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3632,6 +4034,12 @@
             "value" : "왼손잡이 레이아웃은 스톡과 웨이스트를 오른쪽에 배치합니다."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De linkshandige indeling plaatst de stok en de aflegstapel rechts."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3682,6 +4090,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "최장"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langste"
           }
         },
         "pt-BR" : {
@@ -3743,6 +4157,12 @@
             "value" : "%1$@을(를) %2$@(으)로 이동"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats %1$@ naar %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3794,6 +4214,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@을(를) 파운데이션으로 이동"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats %@ naar een doel"
           }
         },
         "pt-BR" : {
@@ -3849,6 +4275,12 @@
             "value" : "%@을(를) 빈 열로 이동"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats %@ naar de lege kolom"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3899,6 +4331,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld번 열로 이동"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats naar kolom %lld"
           }
         },
         "pt-BR" : {
@@ -3953,6 +4391,12 @@
             "value" : "파운데이션으로 이동"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats naar een doel"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4003,6 +4447,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "새 게임"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuw spel"
           }
         },
         "pt-BR" : {
@@ -4057,6 +4507,12 @@
             "value" : "해결 가능한 배열을 찾을 때까지 새 게임이 계속 배분되며, 입력한 배열 번호는 그대로 플레이됩니다."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuwe spellen worden gedeeld totdat de oplosser een manier vindt om er een te winnen; een ingevoerd delingnummer wordt gespeeld zoals het is."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4107,6 +4563,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "가능한 수 없음"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen toegestane zet"
           }
         },
         "pt-BR" : {
@@ -4162,6 +4624,12 @@
             "value" : "남은 패스 없음"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen doorgangen meer"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4212,6 +4680,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "아직 표준 점수로 승리한 기록이 없습니다."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog geen overwinningen met standaardscore."
           }
         },
         "pt-BR" : {
@@ -4267,6 +4741,12 @@
             "value" : "유용한 수 없음"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen nuttige zetten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4318,6 +4798,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "없음"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen"
           }
         },
         "pt-BR" : {
@@ -4372,6 +4858,12 @@
             "value" : "표준 점수로 거둔 승리만 순위에 오릅니다. 베가스 모드는 승리할 때마다 같은 금액을 지급하기 때문입니다."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alleen overwinningen met standaardscore worden gerangschikt: elke Vegas-overwinning levert evenveel op."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4422,6 +4914,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "플레이"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spelen"
           }
         },
         "pt-BR" : {
@@ -4476,6 +4974,12 @@
             "value" : "번호로 배열 플레이"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een delingnummer spelen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4526,6 +5030,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "번호로 배열 플레이…"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een delingnummer spelen…"
           }
         },
         "pt-BR" : {
@@ -4580,6 +5090,12 @@
             "value" : "플레이"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gespeeld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4630,6 +5146,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "다시 실행"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opnieuw doen"
           }
         },
         "pt-BR" : {
@@ -4684,6 +5206,12 @@
             "value" : "이 배열 다시 하기"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze deling opnieuw spelen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4734,6 +5262,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "초기화"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resetten"
           }
         },
         "pt-BR" : {
@@ -4788,6 +5322,12 @@
             "value" : "최고 점수 초기화"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beste scores resetten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4838,6 +5378,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "통계 초기화"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistieken resetten"
           }
         },
         "pt-BR" : {
@@ -4892,6 +5438,12 @@
             "value" : "모든 최고 점수를 초기화할까요?"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle beste scores resetten?"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4942,6 +5494,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "모든 통계를 초기화할까요?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle statistieken resetten?"
           }
         },
         "pt-BR" : {
@@ -4996,6 +5554,12 @@
             "value" : "규칙"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regels"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5047,6 +5611,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "점수: %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Score: %@"
           }
         },
         "pt-BR" : {
@@ -5108,6 +5678,12 @@
             "value" : "점수: %1$@ (시간 보너스 %2$lld점 포함)"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Score: %1$@, inclusief een tijdsbonus van %2$lld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5158,6 +5734,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "점수 방식"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puntentelling"
           }
         },
         "pt-BR" : {
@@ -5212,6 +5794,12 @@
             "value" : "설정"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instellingen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5262,6 +5850,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이 배열 공유"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze deling delen"
           }
         },
         "pt-BR" : {
@@ -5323,6 +5917,12 @@
             "value" : "솔리테어 배열 %1$@, %2$@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solitaire, deling nr. %1$@, %2$@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5375,6 +5975,12 @@
             "value" : "음향 효과"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geluidseffecten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5425,6 +6031,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "음향 효과는 무음 모드에서 꺼지며, 재생 중인 음악을 멈추지 않습니다."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geluidseffecten zijn gedempt in de stille modus en onderbreken je muziek nooit."
           }
         },
         "pt-BR" : {
@@ -5480,6 +6092,12 @@
             "value" : "표준"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standaard"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5530,6 +6148,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "새 게임을 시작할까요?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuw spel starten?"
           }
         },
         "pt-BR" : {
@@ -5584,6 +6208,12 @@
             "value" : "통계"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistieken"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5634,6 +6264,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "스톡"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stok"
           }
         },
         "pt-BR" : {
@@ -5688,6 +6324,12 @@
             "value" : "스톡, 비어 있음"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stok, leeg"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5738,6 +6380,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "연승"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reeksen"
           }
         },
         "pt-BR" : {
@@ -5792,6 +6440,12 @@
             "value" : "위아래로 스와이프하여 이동할 위치를 선택하세요"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veeg omhoog of omlaag om te kiezen waar je hem naartoe verplaatst"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5842,6 +6496,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "테이블"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tafel"
           }
         },
         "pt-BR" : {
@@ -5896,6 +6556,12 @@
             "value" : "앱이 백그라운드에 있거나 설정이 열려 있는 동안에는 시계가 멈춥니다."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De klok stopt zolang de app op de achtergrond staat of Instellingen open is."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5948,6 +6614,12 @@
             "value" : "현재 게임이 사라집니다."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het huidige spel gaat verloren."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5998,6 +6670,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "시간"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tijd"
           }
         },
         "pt-BR" : {
@@ -6053,6 +6731,12 @@
             "value" : "시간 %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tijd %@"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6103,6 +6787,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "타이머"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timer"
           }
         },
         "pt-BR" : {
@@ -6158,6 +6848,12 @@
             "value" : "웨이스트를 스톡으로 뒤집기"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draai de aflegstapel om"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6208,6 +6904,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "실행 취소"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ongedaan maken"
           }
         },
         "pt-BR" : {
@@ -6262,6 +6964,12 @@
             "value" : "시간 제한 없음: 시계, 시간 보너스, 최고 시간 기록이 없습니다."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zonder klok: geen tijd, geen tijdsbonus en geen beste tijd."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6313,6 +7021,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "베가스"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegas"
           }
         },
         "pt-BR" : {
@@ -6374,6 +7088,12 @@
             "value" : "베가스: 게임마다 $%1$lld가 들고, 파운데이션에 올린 카드마다 $%2$lld를 받으며(카드가 빠지면 다시 차감됨), %3$@ 모드에서는 스톡을 %4$@까지 통과할 수 있습니다."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegas: elk spel kost %1$lld $, elke kaart op een doel levert %2$lld $ op (teruggenomen als ze eraf gaat), en modus %3$@ staat %4$@ door de stok toe."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6424,6 +7144,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "버전"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versie"
           }
         },
         "pt-BR" : {
@@ -6478,6 +7204,12 @@
             "value" : "웨이스트, 맨 위에 %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aflegstapel, %@ boven"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6528,6 +7260,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "웨이스트, 비어 있음"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aflegstapel, leeg"
           }
         },
         "pt-BR" : {
@@ -6582,6 +7320,12 @@
             "value" : "승률"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Winstpercentage"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6632,6 +7376,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "풀 수 있는 배열만"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alleen oplosbare delingen"
           }
         },
         "pt-BR" : {
@@ -6686,6 +7436,12 @@
             "value" : "승리"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gewonnen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6736,6 +7492,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "승리했습니다!"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je hebt gewonnen!"
           }
         },
         "pt-BR" : {
@@ -6798,6 +7560,12 @@
             "value" : "%@ 에이스"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ aas"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6856,6 +7624,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ 8"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ acht"
           }
         },
         "pt-BR" : {
@@ -6918,6 +7692,12 @@
             "value" : "%@ 5"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ vijf"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6976,6 +7756,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ 4"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ vier"
           }
         },
         "pt-BR" : {
@@ -7038,6 +7824,12 @@
             "value" : "%@ 잭"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ boer"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7096,6 +7888,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ 킹"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ koning"
           }
         },
         "pt-BR" : {
@@ -7158,6 +7956,12 @@
             "value" : "%@ 9"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ negen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7216,6 +8020,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ 퀸"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ dame"
           }
         },
         "pt-BR" : {
@@ -7278,6 +8088,12 @@
             "value" : "%@ 7"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ zeven"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7336,6 +8152,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ 6"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ zes"
           }
         },
         "pt-BR" : {
@@ -7398,6 +8220,12 @@
             "value" : "%@ 10"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ tien"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7456,6 +8284,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ 3"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ drie"
           }
         },
         "pt-BR" : {
@@ -7518,6 +8352,12 @@
             "value" : "%@ 2"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ twee"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7576,6 +8416,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "파란색"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blauw"
           }
         },
         "pt-BR" : {
@@ -7638,6 +8484,12 @@
             "value" : "보라색 테두리"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paarse kaders"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7696,6 +8548,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "빨간색 격자"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rood raster"
           }
         },
         "pt-BR" : {
@@ -7758,6 +8616,12 @@
             "value" : "파란색"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blauw"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7816,6 +8680,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "버건디"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bordeaux"
           }
         },
         "pt-BR" : {
@@ -7878,6 +8748,12 @@
             "value" : "차콜"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antraciet"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7938,6 +8814,12 @@
             "value" : "초록색"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Groen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7989,6 +8871,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "없음"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "geen"
           }
         },
         "pt-BR" : {
@@ -8051,6 +8939,12 @@
             "value" : "에이스"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "aas"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8109,6 +9003,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "8"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "acht"
           }
         },
         "pt-BR" : {
@@ -8171,6 +9071,12 @@
             "value" : "5"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vijf"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8229,6 +9135,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "4"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vier"
           }
         },
         "pt-BR" : {
@@ -8291,6 +9203,12 @@
             "value" : "잭"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "boer"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8349,6 +9267,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "킹"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "koning"
           }
         },
         "pt-BR" : {
@@ -8411,6 +9335,12 @@
             "value" : "9"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "negen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8469,6 +9399,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "퀸"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dame"
           }
         },
         "pt-BR" : {
@@ -8531,6 +9467,12 @@
             "value" : "7"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zeven"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8589,6 +9531,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "6"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zes"
           }
         },
         "pt-BR" : {
@@ -8651,6 +9599,12 @@
             "value" : "10"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tien"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8709,6 +9663,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "3"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "drie"
           }
         },
         "pt-BR" : {
@@ -8771,6 +9731,12 @@
             "value" : "2"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "twee"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8829,6 +9795,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "클럽"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "klaveren"
           }
         },
         "pt-BR" : {
@@ -8891,6 +9863,12 @@
             "value" : "다이아몬드"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ruiten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8951,6 +9929,12 @@
             "value" : "하트"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "harten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9009,6 +9993,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "스페이드"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "schoppen"
           }
         },
         "pt-BR" : {

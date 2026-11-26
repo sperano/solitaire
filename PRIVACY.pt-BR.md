@@ -1,6 +1,6 @@
 # Política de privacidade
 
-*Paciência minimalista para iPhone e iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versione italiana](PRIVACY.it.md) · [简体中文](PRIVACY.zh-Hans.md) · [日本語](PRIVACY.ja.md) · [한국어](PRIVACY.ko.md).*
+*Paciência minimalista para iPhone e iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versione italiana](PRIVACY.it.md) · [한국어](PRIVACY.ko.md) · [简体中文](PRIVACY.zh-Hans.md) · [日本語](PRIVACY.ja.md) · [Nederlandse versie](PRIVACY.nl.md).*
 
 O app não coleta nenhum dado. Não tem conta, anúncios, análises, relatórios de
 falhas ou rastreamento e nunca se conecta à internet.

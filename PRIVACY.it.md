@@ -1,6 +1,6 @@
 # Informativa sulla privacy
 
-*Solitario minimalista per iPhone e iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md) · [日本語](PRIVACY.ja.md).*
+*Solitario minimalista per iPhone e iPad. [English version](PRIVACY.md) · [Version française](PRIVACY.fr-CA.md) · [Versión en español](PRIVACY.es.md) · [Deutsche Fassung](PRIVACY.de.md) · [Versão em português](PRIVACY.pt-BR.md) · [简体中文](PRIVACY.zh-Hans.md) · [日本語](PRIVACY.ja.md) · [Nederlandse versie](PRIVACY.nl.md).*
 
 L’app non raccoglie alcun dato. Non ha account, non ha pubblicità, non ha
 analisi, non ha segnalazioni di arresti anomali e non traccia, e non si
